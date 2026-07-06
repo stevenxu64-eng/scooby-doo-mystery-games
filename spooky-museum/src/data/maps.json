@@ -254,7 +254,7 @@
   "egypt_wing": {
     "id": "egypt_wing",
     "name": "Egypt Wing",
-    "intro": "The Egypt Wing. Sarcophagi line the wall \u2014 roomy enough to hide inside. The Mummy prowls here too... and one sarcophagus is sealed with a strange rotating lock.",
+    "intro": "The Egypt Wing. Sarcophagi line the wall \u2014 roomy enough to hide inside. The Mummy prowls here too... and one sarcophagus is sealed with a strange rotating lock. Armor glints through an archway to the east.",
     "grid": [
       [
         1,
@@ -338,7 +338,7 @@
         1,
         0,
         0,
-        1
+        4
       ],
       [
         1,
@@ -434,6 +434,16 @@
           "y": 5
         },
         "label": "Grand Hall"
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "target": "hall_of_armor",
+        "spawn": {
+          "x": 1,
+          "y": 4
+        },
+        "label": "Hall of Armor"
       }
     ],
     "interactives": [
@@ -649,13 +659,9 @@
         "id": "supply_crate",
         "x": 2,
         "y": 7,
-        "kind": "pickup",
+        "kind": "note",
         "label": "Supply Crate",
-        "message": "You pry open the supply crate... inside is a heavy BRASS KEY stamped 'ARCHIVES'. That's the locked door in the Grand Hall!",
-        "done_message": "The empty crate smells like old sandwiches. Shaggy checked. Twice.",
-        "items": [
-          "brass_key"
-        ]
+        "message": "The supply crate has already been pried open \u2014 nothing left but packing straw and a candy-bar wrapper. Whoever emptied it was in a hurry... and left boot prints heading back toward the lobby."
       }
     ],
     "palette": {
@@ -808,6 +814,178 @@
       "wall_top": "#5c4049",
       "wall_left": "#3b2a31",
       "wall_right": "#4a343d"
+    },
+    "ambience": "ambience_museum"
+  },
+  "hall_of_armor": {
+    "id": "hall_of_armor",
+    "name": "Hall of Armor",
+    "intro": "The Hall of Armor. Empty suits of plate stand watch between the display cases \u2014 and the Mummy stalks these aisles too. The guard station in the back corner looks recently used.",
+    "grid": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "player_spawn": {
+      "x": 1,
+      "y": 4
+    },
+    "monster": {
+      "patrol": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "speed": 2.2,
+      "chase_speed": 3.4,
+      "sight_range": 3.5
+    },
+    "doors": [
+      {
+        "x": 0,
+        "y": 4,
+        "target": "egypt_wing",
+        "spawn": {
+          "x": 10,
+          "y": 5
+        },
+        "label": "Egypt Wing"
+      }
+    ],
+    "interactives": [
+      {
+        "id": "guard_locker",
+        "x": 5,
+        "y": 2,
+        "kind": "pickup",
+        "label": "Guard Station Locker",
+        "message": "Burt's locker hangs open: racing forms, six cold coffees... and a heavy BRASS KEY stamped 'ARCHIVES' tucked under a spare guard cap. Why is the NIGHT GUARD hiding the archive key?",
+        "done_message": "Racing forms and cold coffee. Burt is not winning at either.",
+        "items": [
+          "brass_key"
+        ]
+      },
+      {
+        "id": "armor_plaque",
+        "x": 7,
+        "y": 2,
+        "kind": "note",
+        "label": "Haunted Armor Display",
+        "message": "A rusty suit of armor. The plaque reads: 'ON LOAN FROM THE GRIMSLEY FAMILY ESTATE.' ...Grimsley. Now where has the gang heard that name?"
+      }
+    ],
+    "palette": {
+      "floor_a": "#2b2f3d",
+      "floor_b": "#252938",
+      "wall_top": "#4a5270",
+      "wall_left": "#303650",
+      "wall_right": "#3b4360"
     },
     "ambience": "ambience_museum"
   }

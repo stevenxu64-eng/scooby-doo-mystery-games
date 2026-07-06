@@ -25,16 +25,22 @@ npm run build    # type-check + production build
   entering a room.
 - **Case Board** (**C**): click a clue, then the suspect it implicates. Pin all three on
   one suspect to enable UNMASK. Accuse wisely.
+- **Difficulty** (sidebar): Easy / Normal / Spooky scale the Mummy's sight range, speed,
+  and your post-spawn grace window. Switch any time.
 
 <details>
 <summary><b>Walkthrough (spoilers!)</b></summary>
 
-1. **Dinosaur Hall** (west, safe): boots behind the T-Rex → clue; supply crate → brass key.
+1. **Dinosaur Hall** (west, safe): boots behind the T-Rex → clue. (The supply crate has
+   already been emptied...)
 2. **Egypt Wing** (east): read the hieroglyph plaque, then set the sarcophagus dials to
    **Eye, Scarab, Eye** → glow paint clue. Use the sarcophagi to dodge the Mummy.
-3. **Archives** (north, brass key): flip the 2nd and 4th mirrors so the beam runs
+3. **Hall of Armor** (east of Egypt): the brass key is in Burt's guard locker — one tile
+   off the patrol lane. Stage in the display case, wait for the south leg, smash-and-grab,
+   and sprint out the door if spotted. The Grimsley armor plaque is a bonus hint.
+4. **Archives** (north, brass key): flip the 2nd and 4th mirrors so the beam runs
    right → down → right into the film sensor → gambling IOU clue.
-4. Open the **Case Board**, link all three clues to **Burt Grimsley**, and unmask him.
+5. Open the **Case Board**, link all three clues to **Burt Grimsley**, and unmask him.
 
 </details>
 

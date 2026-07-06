@@ -100,7 +100,27 @@
       "start": {
         "text": "You yank the lever! The Phantom Guest — mid-lunge at the Scooby Snack — is snatched into the laundry net and hauled kicking toward the ceiling! 'RELEASE ME, MEDDLERS! THE PHANTOM CURSES YOU ALLLL!'",
         "choices": [
-          { "text": "Unmask the phantom!", "next": "reveal" }
+          { "text": "Unmask the phantom!", "next": "whodunit" }
+        ]
+      },
+      "whodunit": {
+        "text": "The phantom writhes in the net, sheet still on. Velma adjusts her glasses: 'Hold on, gang — a proper unmasking needs a proper ACCUSATION. Think about the evidence... WHO is under that sheet?'",
+        "choices": [
+          { "text": "'Like, it's obviously Janitor Gus! It's HIS closet!'", "next": "wrong_gus" },
+          { "text": "'ZOINKS! It's a REAL ghost — RUN!'", "next": "wrong_ghost" },
+          { "text": "'It's Mr. Crane. The ledger, the paint invoice, the boiler room — it all fits.'", "next": "reveal" }
+        ]
+      },
+      "wrong_gus": {
+        "text": "Daphne glances out the boiler-room grate... Gus is STILL up on the grounds, raking leaves in the moonlight. He waves back, sarcastically. Velma sighs: 'Also, the phantom is a full head taller than Gus. The boots were size 12 — Gus wears galoshes. Try again.'",
+        "choices": [
+          { "text": "'Okay, okay... let me rethink this.'", "next": "whodunit" }
+        ]
+      },
+      "wrong_ghost": {
+        "text": "Shaggy and Scooby are already halfway up a steam pipe! Inside the net, the 'ghost' rolls its eyes and checks its wristwatch. Velma taps her foot: 'Ghosts do not wear GRAND PALM STAFF watches, you two. Get down here.'",
+        "choices": [
+          { "text": "'Right. A staff watch... interesting.'", "next": "whodunit" }
         ]
       },
       "reveal": {

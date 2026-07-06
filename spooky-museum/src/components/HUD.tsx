@@ -1,6 +1,12 @@
-import { ClipboardList, Eye, EyeOff, Key, ScrollText, Search, Skull } from 'lucide-react'
+import { ClipboardList, Eye, EyeOff, Gauge, Key, ScrollText, Search, Skull } from 'lucide-react'
 import { CLUES, CLUE_ORDER, ITEMS } from '../data/mystery'
-import { currentObjective, MAPS, useGameStore } from '../store/gameStore'
+import {
+  currentObjective,
+  DIFFICULTY_MODS,
+  MAPS,
+  useGameStore,
+  type Difficulty,
+} from '../store/gameStore'
 
 function ModeChip() {
   const gameMode = useGameStore((s) => s.gameMode)
@@ -104,6 +110,17 @@ export function Sidebar() {
         Case Board (C)
       </button>
 
+      <div>
+        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-stone-400">
+          <Gauge size={13} /> Difficulty
+        </h3>
+        <div className="flex gap-1.5">
+          {(Object.keys(DIFFICULTY_MODS) as Difficulty[]).map((d) => (
+            <DifficultyButton key={d} value={d} />
+          ))}
+        </div>
+      </div>
+
       <div className="mt-auto rounded-lg bg-stone-900/60 p-2 text-[11px] leading-relaxed text-stone-500">
         <b className="text-stone-400">Controls:</b> WASD/arrows or click to move · E to
         interact · stand on a <span className="text-green-500">green diamond</span> to hide ·
@@ -111,6 +128,28 @@ export function Sidebar() {
         Avoid the Mummy's line of sight!
       </div>
     </aside>
+  )
+}
+
+function DifficultyButton({ value }: { value: Difficulty }) {
+  const difficulty = useGameStore((s) => s.difficulty)
+  const setDifficulty = useGameStore((s) => s.setDifficulty)
+  const active = difficulty === value
+  const activeStyle =
+    value === 'easy'
+      ? 'bg-green-900 text-green-200'
+      : value === 'spooky'
+        ? 'bg-red-900 text-red-200'
+        : 'bg-indigo-900 text-indigo-200'
+  return (
+    <button
+      onClick={() => setDifficulty(value)}
+      className={`btn flex-1 px-2 py-1 text-[11px] font-extrabold uppercase tracking-wide ${
+        active ? activeStyle : 'bg-stone-900 text-stone-500'
+      }`}
+    >
+      {DIFFICULTY_MODS[value].label}
+    </button>
   )
 }
 

@@ -13,7 +13,18 @@ export const MAPS = mapsJson as unknown as MapData
 const START_ROOM = 'grand_hall'
 const PLAYER_SPEED = 4.2
 const TOTAL_CLUES = 3
-const SPOT_GRACE_SECONDS = 2.5
+
+export type Difficulty = 'easy' | 'normal' | 'spooky'
+
+/** Multipliers applied to every room's monster config, plus the spawn grace window. */
+export const DIFFICULTY_MODS: Record<
+  Difficulty,
+  { label: string; sight: number; patrol: number; chase: number; grace: number }
+> = {
+  easy: { label: 'Easy', sight: 0.75, patrol: 0.9, chase: 0.85, grace: 4 },
+  normal: { label: 'Normal', sight: 1, patrol: 1, chase: 1, grace: 2.5 },
+  spooky: { label: 'Spooky', sight: 1.3, patrol: 1.15, chase: 1.15, grace: 1.5 },
+}
 
 function freshMonster(roomId: string): { pos: Vec2 | null; rt: MonsterRuntime | null } {
   const cfg = MAPS[roomId].monster
@@ -43,8 +54,10 @@ export interface GameState {
   lastDoorKey: string | null
   /** Seconds of "unnoticed" mercy after spawning/entering a room. */
   spotGraceLeft: number
+  difficulty: Difficulty
 
   tick: (dt: number) => void
+  setDifficulty: (d: Difficulty) => void
   clickTile: (tile: Vec2) => void
   interact: () => void
   closePuzzle: () => void
@@ -76,14 +89,26 @@ function initialState(roomId = START_ROOM) {
     message: MAPS[roomId].intro,
     messageId: 0,
     lastDoorKey: null as string | null,
-    spotGraceLeft: SPOT_GRACE_SECONDS,
+    spotGraceLeft: DIFFICULTY_MODS.normal.grace,
   }
 }
 
 export const useGameStore = create<GameState>((set, get) => ({
   ...initialState(),
+  difficulty: 'normal' as Difficulty,
 
   showMessage: (text) => set((s) => ({ message: text, messageId: s.messageId + 1 })),
+
+  setDifficulty: (d) => {
+    set({ difficulty: d, spotGraceLeft: DIFFICULTY_MODS[d].grace })
+    get().showMessage(
+      d === 'easy'
+        ? 'Difficulty: EASY — the Mummy is nearsighted and slow. Like, perfect.'
+        : d === 'spooky'
+          ? 'Difficulty: SPOOKY — the Mummy sees farther, moves faster, and forgives nothing. Good luck.'
+          : 'Difficulty: NORMAL — a classic haunting.',
+    )
+  },
 
   tick: (dt) => {
     const s = get()
@@ -138,7 +163,7 @@ export const useGameStore = create<GameState>((set, get) => ({
           monsterAI: rt,
           gameMode: 'EXPLORE',
           lastDoorKey: null,
-          spotGraceLeft: SPOT_GRACE_SECONDS,
+          spotGraceLeft: DIFFICULTY_MODS[s.difficulty].grace,
         })
         get().showMessage(targetRoom.intro)
         return
@@ -165,7 +190,14 @@ export const useGameStore = create<GameState>((set, get) => ({
       const rt: MonsterRuntime = { ...s.monsterAI, path: s.monsterAI.path.map((p) => ({ ...p })) }
       // During the post-spawn grace window the Mummy "hasn't noticed" the player yet.
       const hiddenForAI = hidden || (grace > 0 && rt.mode === 'PATROL')
-      const events = updateMonster(mPos, rt, room.monster, grid, pos, hiddenForAI, dt)
+      const mods = DIFFICULTY_MODS[s.difficulty]
+      const effectiveCfg = {
+        ...room.monster,
+        sight_range: room.monster.sight_range * mods.sight,
+        speed: room.monster.speed * mods.patrol,
+        chase_speed: room.monster.chase_speed * mods.chase,
+      }
+      const events = updateMonster(mPos, rt, effectiveCfg, grid, pos, hiddenForAI, dt)
       patch.monsterPosition = mPos
       patch.monsterAI = rt
       if (events.startedChase) {
@@ -328,14 +360,20 @@ export const useGameStore = create<GameState>((set, get) => ({
       monsterAI: rt,
       gameMode: 'EXPLORE',
       lastDoorKey: null,
-      spotGraceLeft: SPOT_GRACE_SECONDS,
+      spotGraceLeft: DIFFICULTY_MODS[get().difficulty].grace,
     })
     get().showMessage('Zoinks! The gang regroups... all clues and items are safe. Try again — and this time, HIDE.')
   },
 
   resetGame: () => {
     setChaseLoop(false)
-    set({ ...initialState(), messageId: get().messageId + 1 })
+    const difficulty = get().difficulty
+    set({
+      ...initialState(),
+      difficulty,
+      spotGraceLeft: DIFFICULTY_MODS[difficulty].grace,
+      messageId: get().messageId + 1,
+    })
   },
 }))
 
@@ -346,6 +384,10 @@ export function currentObjective(s: GameState): string {
   if (!s.foundClues.includes('muddy_boots')) parts.push('search the Dinosaur Hall')
   if (!s.foundClues.includes('glow_paint')) parts.push('open the sealed sarcophagus (Egypt Wing)')
   if (!s.foundClues.includes('pay_stub'))
-    parts.push(s.inventory.includes('brass_key') ? 'fix the Archives projector' : 'get into the locked Archives')
+    parts.push(
+      s.inventory.includes('brass_key')
+        ? 'fix the Archives projector'
+        : 'find the Archives key (the guard station is in the Hall of Armor, east of Egypt)',
+    )
   return `Clues ${s.foundClues.length}/${TOTAL_CLUES} — ${parts.join(', ')}.`
 }
