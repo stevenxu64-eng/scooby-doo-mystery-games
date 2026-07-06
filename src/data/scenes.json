@@ -1299,7 +1299,7 @@
           },
           {
             "type": "show_message",
-            "text": "Fred pops the trunk with one knee-drop. Inside: mothballs, spare linens... and CUT CHAINS that used to lock it shut. He grabs a clean old bedsheet. 'Trap supplies, gang. Trust me.'"
+            "text": "Fred pops the trunk with one knee-drop. Inside: mothballs, spare linens... and CUT CHAINS that used to lock it shut. He grabs a clean old bedsheet. 'Trap supplies, gang. Trust me — a splash of that GLOWING PAINT and this sheet could star in its own haunting.'"
           }
         ]
       },
@@ -1430,7 +1430,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma scans the chalk outlines: 'BOLT CUTTERS — gone. PAINT SPRAYER — gone. Cutters open padlocks; sprayers paint phantoms. Somebody's been shopping in here after hours, and it wasn't for gardening.'"
+            "text": "Velma scans the chalk outlines: 'BOLT CUTTERS — gone. PAINT SPRAYER — gone. Cutters open padlocks; sprayers paint phantoms. Somebody's been shopping in here after hours.' She taps her chin. 'And while we're inventorying — someone padlocked that little red toolbox. Daphne, that sounds like your kind of invitation.'"
           }
         ]
       },
@@ -1487,7 +1487,7 @@
           },
           {
             "type": "show_message",
-            "text": "Click. Daphne flips the toolbox open: oiled, organized, ALPHABETIZED... and one HORSESHOE MAGNET with a fresh price sticker. 'Somebody's been buying gear for this haunting. I'm borrowing the magnet.'"
+            "text": "Click. Daphne flips the toolbox open: oiled, organized, ALPHABETIZED... and one HORSESHOE MAGNET with a fresh price sticker. 'Somebody's been buying gear for this haunting. I'm borrowing the magnet — now we just need a good long LINE to swing it from.'"
           }
         ]
       },
@@ -1749,6 +1749,11 @@
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "read_lifeguard_log",
+            "value": true
+          },
+          {
             "type": "show_message",
             "text": "Velma deciphers the log: 'Final season \u2014 guest counts fell off a CLIFF the same week the Phantom first appeared. Almost like the haunting was... scheduled.'"
           }
@@ -1859,6 +1864,11 @@
           {
             "type": "play_sfx",
             "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "read_pump_log",
+            "value": true
           },
           {
             "type": "show_message",

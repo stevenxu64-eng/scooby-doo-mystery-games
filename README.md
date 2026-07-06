@@ -55,7 +55,9 @@ replays on a fresh game).
   *second* item to try combining them (e.g. Long Stick + Chewing Gum).
 - **Walkie-talkie**: switch between Fred / Daphne / Velma / Shaggy & Scooby. Some obstacles
   only yield to the right gang member (Fred rigs traps and moves heavy things, Velma reads
-  documents, Shaggy & Scooby handle snacks and bait, Daphne picks locks).
+  documents, Shaggy & Scooby handle snacks and bait, Daphne picks locks). **Stuck? Flip
+  through the walkie** — whoever you switch to calls out what they'd try in the current room,
+  until their job there is done.
 - **Dialogue**: click a branch or press **1–9**. Choices appear/disappear based on the
   clues (flags) you've gathered.
 

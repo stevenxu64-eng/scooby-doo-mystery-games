@@ -13,6 +13,7 @@ import scenesJson from '../data/scenes.json'
 import dialoguesJson from '../data/dialogues.json'
 import { COMBINE_RECIPES, ITEMS } from '../data/items'
 import { CHARACTERS } from '../data/characters'
+import { ROOM_HINTS } from '../data/hints'
 import { playSfx } from '../engine/audio'
 
 export const SCENES = scenesJson as unknown as SceneMap
@@ -239,11 +240,18 @@ export const useGameStore = create<GameState>()(
   },
 
   setCharacter: (id) => {
-    if (get().activeCharacter === id) return
+    const state = get()
+    if (state.activeCharacter === id) return
     playSfx('switch', 0.4)
+    // Room-aware walkie chatter: the character calls out what they'd try in
+    // the current room, until that job is done — the built-in hint system.
+    const hint = ROOM_HINTS[state.activeRoom]?.[id]
+    const fresh = hint && !(hint.done_flag && state.gameFlags[hint.done_flag])
     set((s) => ({
       activeCharacter: id,
-      message: `📻 ${CHARACTERS[id].name}: "${CHARACTERS[id].catchphrase}" — ${CHARACTERS[id].skill}.`,
+      message: fresh
+        ? `📻 ${CHARACTERS[id].name}: "${hint.text}"`
+        : `📻 ${CHARACTERS[id].name}: "${CHARACTERS[id].catchphrase}" — ${CHARACTERS[id].skill}.`,
       messageId: s.messageId + 1,
     }))
   },
