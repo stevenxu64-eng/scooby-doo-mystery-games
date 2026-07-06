@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Eye, EyeOff, Ghost, RotateCcw, Volume2, VolumeX } from 'lucide-react'
+import { Eye, EyeOff, Ghost, NotebookText, RotateCcw, Volume2, VolumeX } from 'lucide-react'
 import { Viewport } from './components/Viewport'
 import { Inventory } from './components/Inventory'
 import { CharacterHub } from './components/CharacterHub'
 import { MessageBar } from './components/MessageBar'
+import { NotebookOverlay } from './components/NotebookOverlay'
 import { IntroScreen } from './components/IntroScreen'
 import { useGameStore } from './store/gameStore'
 import { attachAudioUnlock, toggleMute } from './engine/audio'
@@ -29,7 +30,9 @@ export default function App() {
   const resetGame = useGameStore((s) => s.resetGame)
   const introSeen = useGameStore((s) => s.introSeen)
   const completeIntro = useGameStore((s) => s.completeIntro)
+  const caseCount = useGameStore((s) => s.caseLog.length)
   const [muted, setMuted] = useState(false)
+  const [notebookOpen, setNotebookOpen] = useState(false)
 
   useEffect(() => {
     attachAudioUnlock()
@@ -40,7 +43,10 @@ export default function App() {
         moveTo(dir)
       } else if (e.key === 'h') {
         toggleHotspotHints()
+      } else if (e.key === 'n') {
+        setNotebookOpen((v) => !v)
       } else if (e.key === 'Escape') {
+        setNotebookOpen(false)
         useGameStore.setState({ selectedItem: null })
       }
     }
@@ -64,6 +70,18 @@ export default function App() {
           </div>
         </div>
         <div className="flex gap-2">
+          <button
+            onClick={() => setNotebookOpen((v) => !v)}
+            title="Velma's Case Notes (N)"
+            className={`kenney-btn relative p-2 ${notebookOpen ? 'bg-amber-800 text-amber-200' : 'bg-stone-800 text-amber-300'}`}
+          >
+            <NotebookText size={18} />
+            {caseCount > 0 && (
+              <span className="absolute -right-1.5 -top-1.5 rounded-full bg-amber-400 px-1.5 text-[9px] font-bold leading-4 text-stone-900">
+                {caseCount}
+              </span>
+            )}
+          </button>
           <button
             onClick={toggleHotspotHints}
             title="Toggle hotspot hints (H)"
@@ -108,6 +126,9 @@ export default function App() {
         <Inventory />
         <CharacterHub />
       </div>
+
+      {/* Velma's Case Notes overlay */}
+      {notebookOpen && <NotebookOverlay onClose={() => setNotebookOpen(false)} />}
 
       {/* Opening cutscene: the Mystery Machine arrives at the Grand Palm */}
       {!introSeen && <IntroScreen onDone={completeIntro} />}

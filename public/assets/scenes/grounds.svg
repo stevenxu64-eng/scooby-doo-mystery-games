@@ -453,7 +453,8 @@
 <path d="M1218 752 h28 M1218 776 h28 M1218 800 h28"/>
 </g>
 <path d="M1220 810 V732" stroke="#d8e6ee" stroke-width="1.5" opacity="0.6"/>
-<!-- HATCH : open shaft base under lid overlay (864,720)-(992,828) -->
+<!-- HATCH : moved to the lawn LEFT of the pool; open shaft base under lid overlay (416,739)-(544,847) -->
+<g transform="translate(-448 19)">
 <ellipse cx="928" cy="776" rx="64" ry="50" fill="#141c22"/>
 <ellipse cx="928" cy="771" rx="64" ry="50" fill="#46525a" stroke="#1c262c" stroke-width="5"/>
 <ellipse cx="928" cy="773" rx="46" ry="34" fill="url(#groundsShaft)" stroke="#4ade80" stroke-opacity="0.3" stroke-width="2.5"/>
@@ -467,6 +468,7 @@
 <path d="M902 814 q3 8 0 14" stroke="#6b4a2a" stroke-width="3" fill="none" opacity="0.6"/>
 <ellipse cx="884" cy="756" rx="9" ry="4.5" fill="#7c9a3a" transform="rotate(-18 884 756)"/>
 <ellipse cx="972" cy="792" rx="8" ry="4" fill="#a8552e" transform="rotate(12 972 792)"/>
+</g>
 <!-- south path to greenhouse -->
 <ellipse cx="560" cy="762" rx="30" ry="11" fill="#3a5c4a"/><path d="M532 760 a30 11 0 0 1 56 -2 q-28 -8 -56 2" fill="#4c7058"/>
 <ellipse cx="602" cy="806" rx="28" ry="10" fill="#3a5c4a"/><path d="M576 804 a28 10 0 0 1 52 -2 q-26 -7 -52 2" fill="#4c7058"/>

@@ -161,7 +161,7 @@ const GROUNDS: OverlayDef[] = [
   {
     id: 'hatch_lid_closed',
     unless: ['hatch_open'],
-    style: pct(54, 80, 8, 12),
+    style: pct(26, 81, 8, 12),
     node: (
       <svg viewBox="0 0 128 108" className="h-full w-full" preserveAspectRatio="none">
         <ellipse cx="64" cy="54" rx="58" ry="44" fill="#3d4a52" stroke="#1c262c" strokeWidth="5" />
@@ -182,7 +182,7 @@ const GROUNDS: OverlayDef[] = [
     animFlag: 'hatch_open',
     animClass: 'msg-in anim-soft-glow',
     staticClass: 'anim-soft-glow',
-    style: pct(53.4, 79, 9.2, 14),
+    style: pct(25.4, 80, 9.2, 14),
     node: (
       <svg viewBox="0 0 147 126" className="h-full w-full" preserveAspectRatio="none">
         <ellipse cx="73" cy="60" rx="62" ry="47" fill="#04070a" />

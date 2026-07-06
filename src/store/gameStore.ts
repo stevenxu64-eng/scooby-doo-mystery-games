@@ -14,6 +14,7 @@ import dialoguesJson from '../data/dialogues.json'
 import { COMBINE_RECIPES, ITEMS } from '../data/items'
 import { CHARACTERS } from '../data/characters'
 import { ROOM_HINTS } from '../data/hints'
+import { NOTEBOOK_BY_FLAG, NOTEBOOK_NOTES, type CaseLogEntry } from '../data/notebook'
 import { playSfx } from '../engine/audio'
 
 export const SCENES = scenesJson as unknown as SceneMap
@@ -41,7 +42,11 @@ export interface GameState {
   actionPulse: number
   /** Where + who last acted, for the in-scene character cameo. */
   lastCameo: { id: number; x: number; y: number; character: CharacterId } | null
+  /** Velma's Case Notes: every clue, pickup, and key event in discovery order (persisted). */
+  caseLog: CaseLogEntry[]
 
+  /** Append deduped entries to Velma's Case Notes. */
+  logCase: (drafts: Array<Omit<CaseLogEntry, 'id'>>) => void
   hasFlag: (flag: string) => boolean
   hasAllFlags: (flags?: string[]) => boolean
   isHotspotVisible: (h: Hotspot) => boolean
@@ -72,12 +77,25 @@ const initialState = {
   flagStamps: {} as Record<string, number>,
   actionPulse: 0,
   lastCameo: null as { id: number; x: number; y: number; character: CharacterId } | null,
+  caseLog: [] as CaseLogEntry[],
 }
 
 export const useGameStore = create<GameState>()(
   persist(
     (set, get) => ({
   ...initialState,
+
+  logCase: (drafts) => {
+    if (!drafts.length) return
+    set((s) => {
+      const have = new Set(s.caseLog.map((e) => e.key))
+      const fresh = drafts.filter((d) => !have.has(d.key))
+      if (fresh.length === 0) return {}
+      return {
+        caseLog: [...s.caseLog, ...fresh.map((d, i) => ({ ...d, id: s.caseLog.length + i }))],
+      }
+    })
+  },
 
   hasFlag: (flag) => !!get().gameFlags[flag],
 
@@ -99,6 +117,13 @@ export const useGameStore = create<GameState>()(
         case 'add_to_inventory':
           if (action.item && !get().playerInventory.includes(action.item)) {
             set((s) => ({ playerInventory: [...s.playerInventory, action.item!] }))
+            get().logCase([
+              {
+                key: `item:${action.item}`,
+                kind: 'item',
+                text: `Picked up: ${ITEMS[action.item]?.name ?? action.item}`,
+              },
+            ])
           }
           break
         case 'remove_from_inventory':
@@ -114,6 +139,10 @@ export const useGameStore = create<GameState>()(
               gameFlags: { ...s.gameFlags, [action.flag!]: action.value ?? true },
               flagStamps: { ...s.flagStamps, [action.flag!]: Date.now() },
             }))
+            const note = action.value !== false ? NOTEBOOK_BY_FLAG[action.flag] : undefined
+            if (note) {
+              get().logCase([{ key: `flag:${note.flag}`, kind: note.kind, text: note.text }])
+            }
           }
           break
         case 'show_message':
@@ -279,6 +308,13 @@ export const useGameStore = create<GameState>()(
           ],
           selectedItem: null,
         }))
+        get().logCase([
+          {
+            key: `item:${recipe.result}`,
+            kind: 'item',
+            text: `Crafted: ${ITEMS[recipe.result]?.name ?? recipe.result}`,
+          },
+        ])
         state.showMessage(recipe.message)
         return
       }
@@ -305,6 +341,12 @@ export const useGameStore = create<GameState>()(
         for (const f of choice.set_flags!) flags[f] = true
         return { gameFlags: flags }
       })
+      state.logCase(
+        choice.set_flags
+          .map((f) => NOTEBOOK_BY_FLAG[f])
+          .filter((n): n is (typeof NOTEBOOK_NOTES)[number] => !!n)
+          .map((n) => ({ key: `flag:${n.flag}`, kind: n.kind, text: n.text })),
+      )
     }
     if (choice.give_items) {
       set((s) => ({
@@ -313,6 +355,13 @@ export const useGameStore = create<GameState>()(
           ...choice.give_items!.filter((i) => !s.playerInventory.includes(i)),
         ],
       }))
+      state.logCase(
+        choice.give_items.map((i) => ({
+          key: `item:${i}`,
+          kind: 'item' as const,
+          text: `Picked up: ${ITEMS[i]?.name ?? i}`,
+        })),
+      )
     }
     if (choice.end_game) {
       set({ activeDialogue: null, gameWon: true })
@@ -342,12 +391,32 @@ export const useGameStore = create<GameState>()(
         gameFlags: s.gameFlags,
         activeCharacter: s.activeCharacter,
         introSeen: s.introSeen,
+        caseLog: s.caseLog,
       }),
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<GameState>
         // Guard against saves referencing rooms that no longer exist.
         if (!p.activeRoom || !SCENES[p.activeRoom]) return current
-        return { ...current, ...p, message: SCENES[p.activeRoom].description }
+        // Older saves have no notebook — backfill it from their flags + items.
+        let caseLog = p.caseLog
+        if (!caseLog || caseLog.length === 0) {
+          const drafts: CaseLogEntry[] = []
+          for (const note of NOTEBOOK_NOTES) {
+            if (p.gameFlags?.[note.flag]) {
+              drafts.push({ id: drafts.length, key: `flag:${note.flag}`, kind: note.kind, text: note.text })
+            }
+          }
+          for (const item of p.playerInventory ?? []) {
+            drafts.push({
+              id: drafts.length,
+              key: `item:${item}`,
+              kind: 'item',
+              text: `Picked up: ${ITEMS[item]?.name ?? item}`,
+            })
+          }
+          caseLog = drafts
+        }
+        return { ...current, ...p, caseLog, message: SCENES[p.activeRoom].description }
       },
     },
   ),

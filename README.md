@@ -60,6 +60,8 @@ replays on a fresh game).
   until their job there is done.
 - **Dialogue**: click a branch or press **1–9**. Choices appear/disappear based on the
   clues (flags) you've gathered.
+- **Velma's Case Notes** (**N**, or the notebook button in the header): a running list of
+  every clue found, item picked up, and key event — review the whole case at any time.
 
 <details>
 <summary><b>Full walkthrough (spoilers!)</b></summary>

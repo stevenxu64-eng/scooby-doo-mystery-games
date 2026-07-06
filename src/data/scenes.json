@@ -321,7 +321,7 @@
         "target": "pump_room",
         "label": "Pump Room",
         "locked_by_flag": "hatch_open",
-        "locked_message": "The pool's maintenance hatch is cranked shut. No handle, no entry."
+        "locked_message": "The maintenance hatch beside the pool is cranked shut. No handle, no entry."
       }
     ],
     "clickable_hotspots": [
@@ -500,8 +500,8 @@
       {
         "id": "pool_hatch",
         "label": "Pool Maintenance Hatch",
-        "x": 54,
-        "y": 80,
+        "x": 26,
+        "y": 81,
         "w": 8,
         "h": 12,
         "required_item": "crank_handle",
@@ -510,7 +510,7 @@
         "hidden_if_flags": [
           "hatch_open"
         ],
-        "missing_item_message": "A rusted steel hatch in the pool floor, stamped 'PUMP ROOM'. The crank socket is empty \u2014 the handle must be stored with the tools somewhere.",
+        "missing_item_message": "A rusted steel hatch set into the lawn beside the pool, stamped 'PUMP ROOM'. The crank socket is empty \u2014 the handle must be stored with the tools somewhere.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1840,7 +1840,7 @@
       {
         "direction": "up",
         "target": "grounds",
-        "label": "Pool (ladder up)"
+        "label": "Grounds (ladder up)"
       },
       {
         "direction": "east",
