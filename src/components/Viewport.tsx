@@ -74,7 +74,10 @@ export function Viewport() {
   void gameFlags
 
   return (
-    <div className="kenney-panel relative w-full overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
+    <div
+      className="kenney-panel relative w-full overflow-hidden"
+      style={{ aspectRatio: '16 / 9', width: 'min(100cqw, calc(100cqh * 16 / 9))' }}
+    >
       {/* Backdrop: real render if present, semantic gradient placeholder otherwise */}
       <div className="absolute inset-0" style={{ background: scene.fallback_gradient }} />
       {!imageFailed && (

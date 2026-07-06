@@ -500,6 +500,154 @@ function TunnelMapArt() {
   )
 }
 
+function MagnetArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="magnet-body" from="#f87171" to="#b91c1c" x2={0.15} />
+      </defs>
+      <g transform="rotate(14 24 24)">
+        {/* horseshoe body, poles up */}
+        <path d="M10 20 a14 14 0 0 1 28 0 v10 h-10 v-10 a4 4 0 0 0 -8 0 v10 h-10 Z" fill="url(#magnet-body)" stroke={OUTLINE} strokeWidth="2" transform="rotate(180 24 25)" />
+        {/* silver pole shoes */}
+        <rect x="10" y="9" width="10" height="7" rx="1.4" fill="#cbd5e1" stroke={OUTLINE} strokeWidth="1.8" />
+        <rect x="28" y="9" width="10" height="7" rx="1.4" fill="#cbd5e1" stroke={OUTLINE} strokeWidth="1.8" />
+        <path d="M12 30 a12 12 0 0 0 24 0" stroke="#fca5a5" strokeWidth="1.6" fill="none" opacity="0.8" />
+        {/* price sticker */}
+        <circle cx="36.5" cy="33.5" r="5" fill="#fef9c3" stroke={OUTLINE} strokeWidth="1.5" transform="rotate(-14 36.5 33.5)" />
+        <text x="36.5" y="35.6" textAnchor="middle" fontFamily="Trebuchet MS" fontWeight="bold" fontSize="5" fill="#a16207" transform="rotate(-14 36.5 33.5)">$2</text>
+        {/* attraction ticks */}
+        <path d="M13 4.5 l1.5 3 M19 3 l0.6 3.2 M31 3.5 l-0.6 3.2 M36 5 l-1.5 2.8" stroke="#94a3b8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      </g>
+    </>
+  )
+}
+
+function ClotheslineArt() {
+  return (
+    <>
+      <g transform="rotate(-8 24 24)">
+        {/* coiled line */}
+        <circle cx="21" cy="26" r="12.5" fill="none" stroke={OUTLINE} strokeWidth="8.4" />
+        <circle cx="21" cy="26" r="12.5" fill="none" stroke="#d6d3d1" strokeWidth="5.2" />
+        <circle cx="21" cy="26" r="8" fill="none" stroke={OUTLINE} strokeWidth="6.6" />
+        <circle cx="21" cy="26" r="8" fill="none" stroke="#c7c2bc" strokeWidth="3.6" />
+        <path d="M12 18.5 a12.5 12.5 0 0 1 14 -4" stroke="#fff" strokeWidth="1.6" fill="none" opacity="0.55" />
+        {/* loose end with a knot */}
+        <path d="M32.5 32 Q39 34 41 28.5" stroke={OUTLINE} strokeWidth="6.4" fill="none" strokeLinecap="round" />
+        <path d="M32.5 32 Q39 34 41 28.5" stroke="#d6d3d1" strokeWidth="3.4" fill="none" strokeLinecap="round" />
+        <circle cx="41.4" cy="27.6" r="3" fill="#a8a29e" stroke={OUTLINE} strokeWidth="1.7" />
+        {/* wooden clothespin riding the coil */}
+        <g transform="rotate(28 31 12)">
+          <rect x="28.5" y="5.5" width="3.2" height="12" rx="1.4" fill="#d9b36c" stroke={OUTLINE} strokeWidth="1.5" />
+          <rect x="32.1" y="5.5" width="3.2" height="12" rx="1.4" fill="#c89c50" stroke={OUTLINE} strokeWidth="1.5" />
+          <rect x="27.9" y="9.4" width="8.2" height="2.6" rx="1.3" fill="#8a8078" stroke={OUTLINE} strokeWidth="1.2" />
+        </g>
+      </g>
+    </>
+  )
+}
+
+function MagnetLineArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="magnet_line-body" from="#f87171" to="#b91c1c" x2={0.15} />
+      </defs>
+      {/* small coil up top */}
+      <g transform="rotate(-10 14 11)">
+        <circle cx="14" cy="11" r="7" fill="none" stroke={OUTLINE} strokeWidth="6.6" />
+        <circle cx="14" cy="11" r="7" fill="none" stroke="#d6d3d1" strokeWidth="3.6" />
+      </g>
+      {/* line snaking down to the magnet */}
+      <path d="M20.5 13.5 Q30 16 27 23 Q24.5 28.5 30 31" stroke={OUTLINE} strokeWidth="5.6" fill="none" strokeLinecap="round" />
+      <path d="M20.5 13.5 Q30 16 27 23 Q24.5 28.5 30 31" stroke="#d6d3d1" strokeWidth="2.8" fill="none" strokeLinecap="round" />
+      {/* lashed knot */}
+      <path d="M28.6 30 l5 3.4 M28.2 32.6 l5.4 1.6" stroke="#a8a29e" strokeWidth="1.8" strokeLinecap="round" />
+      {/* hanging horseshoe magnet, poles down-left */}
+      <g transform="rotate(-32 34 38)">
+        <path d="M27 36 a7.5 7.5 0 0 1 15 0 v6 h-5.4 v-6 a2.2 2.2 0 0 0 -4.4 0 v6 H27 Z" fill="url(#magnet_line-body)" stroke={OUTLINE} strokeWidth="1.9" />
+        <rect x="27" y="40.5" width="5.4" height="3.6" rx="1" fill="#cbd5e1" stroke={OUTLINE} strokeWidth="1.4" />
+        <rect x="36.6" y="40.5" width="5.4" height="3.6" rx="1" fill="#cbd5e1" stroke={OUTLINE} strokeWidth="1.4" />
+      </g>
+      <Sparkle cx={41} cy={26} r={1.8} />
+      <Sparkle cx={6.5} cy={20} r={1.4} />
+    </>
+  )
+}
+
+function OldBedsheetArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="old_bedsheet-cloth" from="#fafaf9" to="#d6d3d1" x2={0.2} />
+      </defs>
+      <g transform="rotate(-5 24 24)">
+        {/* folded stack */}
+        <rect x="7" y="27" width="34" height="9" rx="2.5" fill="#e7e5e4" stroke={OUTLINE} strokeWidth="2" />
+        <rect x="6" y="19" width="36" height="9" rx="2.5" fill="url(#old_bedsheet-cloth)" stroke={OUTLINE} strokeWidth="2" />
+        <rect x="7.5" y="11" width="33" height="9" rx="2.5" fill="#f5f5f4" stroke={OUTLINE} strokeWidth="2" />
+        {/* flopped corner */}
+        <path d="M40.5 11.5 Q45.5 13 44 18 L37 16.5 Z" fill="#e7e5e4" stroke={OUTLINE} strokeWidth="1.8" />
+        {/* fold shadows + stitching */}
+        <path d="M9.5 24 h29 M10.5 32 h27" stroke="#a8a29e" strokeWidth="1.3" opacity="0.7" />
+        <path d="M9.5 15.5 h8 M31 15.5 h7" stroke="#d6d3d1" strokeWidth="1.3" />
+        <path d="M8 13 l4 -1.5" stroke="#fff" strokeWidth="1.5" opacity="0.8" />
+        {/* laundry tag */}
+        <rect x="12" y="33.5" width="7.5" height="5" rx="1" fill="#bfdbfe" stroke={OUTLINE} strokeWidth="1.4" transform="rotate(8 15 36)" />
+      </g>
+    </>
+  )
+}
+
+function DecoyCostumeArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="decoy-sheet" from="#e9fbe9" to="#86efac" x2={0.25} />
+        <Glow id="decoy-glow" color="#4ade80" opacity={0.45} />
+      </defs>
+      <circle cx="24" cy="25" r="19" fill="url(#decoy-glow)" />
+      {/* wobbly ghost sheet with a lopsided hem */}
+      <path d="M12 40 Q10 24 14 15 Q17 7.5 24 7.5 Q31 7.5 34 15 Q38 24 36.5 40 L33 36.5 L30 41 L26.5 36.5 L23 41 L19.5 36.5 L16 41 Z" fill="url(#decoy-sheet)" stroke={OUTLINE} strokeWidth="2.2" />
+      {/* lopsided scissor-cut eye holes */}
+      <path d="M18.2 19.5 Q20 17.5 21.8 19.8 Q20.6 22.6 18.6 21.8 Q17.6 20.8 18.2 19.5 Z" fill="#1c1917" />
+      <path d="M27 20.5 Q29.4 18 30.8 21 Q30.4 24.2 28 23.2 Q26.4 22.2 27 20.5 Z" fill="#1c1917" />
+      {/* drippy fresh paint */}
+      <path d="M15.5 27 q0.6 3.5 -0.4 5.5 M32.6 25.5 q0.8 3 0 5" stroke="#22c55e" strokeWidth="1.7" fill="none" strokeLinecap="round" opacity="0.8" />
+      <path d="M16 12.5 Q20 10.5 24 10.8" stroke="#fff" strokeWidth="1.6" fill="none" opacity="0.7" />
+      <Sparkle cx={38.5} cy={12} r={2} fill="#bbf7d0" />
+      <Sparkle cx={9} cy={31} r={1.5} fill="#bbf7d0" />
+    </>
+  )
+}
+
+function MarkedMapArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="marked_map-paper" from="#faf3dc" to="#d9c390" x2={0.2} />
+      </defs>
+      <g transform="rotate(4 24 24)">
+        {/* brochure page under the tunnel overlay */}
+        <rect x="5.5" y="10" width="26" height="30" rx="2" fill="#e8eef2" stroke={OUTLINE} strokeWidth="1.8" transform="rotate(-7 18 25)" />
+        {/* cream map on top */}
+        <path d="M11 9 L23 12 L35 9 L41.5 12.5 L41.5 38 L29 35 L17 38 L11 35 Z" fill="url(#marked_map-paper)" stroke={OUTLINE} strokeWidth="2" />
+        <path d="M23 12 L23 35.5 M35 9 L35 36.5" stroke="#a08c5a" strokeWidth="1.1" fill="none" opacity="0.8" />
+        {/* overlaid tunnel route crossing both */}
+        <path d="M14 31.5 Q19 33 23 28 Q27 23 31.5 21 Q35 19.5 38 17.5" stroke="#2f8f3c" strokeWidth="2" strokeDasharray="3 2.4" fill="none" />
+        {/* the X junction, circled */}
+        <circle cx="31.5" cy="21" r="5.2" fill="none" stroke="#dc2626" strokeWidth="1.7" />
+        <path d="M29.3 18.8 l4.4 4.4 M33.7 18.8 l-4.4 4.4" stroke="#dc2626" strokeWidth="2.5" fill="none" />
+        {/* little pool + palm doodles from the brochure plan */}
+        <path d="M14.5 16 q2 -1.3 4 0 q2 1.3 4 0" stroke="#60a5fa" strokeWidth="1.3" fill="none" />
+        <path d="M17 24.5 v-3.4 M17 21.1 q-2 -0.6 -2.8 1 M17 21.1 q2 -0.6 2.8 1" stroke="#4d7c0f" strokeWidth="1.3" fill="none" />
+        <path d="M13 11.5 l5.5 -1.4" stroke="#fff" strokeWidth="1.4" fill="none" opacity="0.6" />
+      </g>
+    </>
+  )
+}
+
 const ART: Record<string, () => ReactElement> = {
   flashlight: FlashlightArt,
   stick: () => <StickBody prefix="stick" />,
@@ -518,6 +666,12 @@ const ART: Record<string, () => ReactElement> = {
   garden_shears: GardenShearsArt,
   crank_handle: CrankHandleArt,
   tunnel_map: TunnelMapArt,
+  magnet: MagnetArt,
+  clothesline: ClotheslineArt,
+  magnet_line: MagnetLineArt,
+  old_bedsheet: OldBedsheetArt,
+  decoy_costume: DecoyCostumeArt,
+  marked_map: MarkedMapArt,
 }
 
 /**

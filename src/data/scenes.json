@@ -122,6 +122,16 @@
         "y": 30,
         "w": 15,
         "h": 46,
+        "item_reactions": {
+          "decoy_costume": {
+            "message": "You unfurl the counterfeit phantom. Crane doesn't scream — he INSPECTS it. 'The hem is wrong,' he sniffs... then freezes. Velma, sweetly: 'Wrong compared to WHAT, Mr. Crane?'",
+            "set_flag": "crane_rattled"
+          },
+          "muddy_glove": {
+            "message": "You dangle the muddy glove. Crane's hand twitches toward his jacket pocket — where its TWIN is peeking out. 'Never seen it. Gloves are... common.' His left hand, notably, is bare.",
+            "set_flag": "crane_glove_slip"
+          }
+        },
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -145,14 +155,21 @@
         "y": 22,
         "w": 12,
         "h": 26,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A sun-bleached poster with something scrawled across it. Threatening graffiti is Shaggy and Scooby's area of expertise \u2014 mostly the running-away part.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "sniffed_poster",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A sun-bleached poster: 'GRAND PALM RESORT \u2014 Paradise Awaits!' Someone has scrawled a glowing green figure over the pool with the words: THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT."
+            "text": "Shaggy reads the scrawl aloud: 'THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT.' Scooby sniffs it and recoils \u2014 'Rarker!' Fresh marker ink. Like, fifty-year-old ghosts don't buy NEW markers, man!"
           }
         ]
       },
@@ -212,6 +229,56 @@
           {
             "type": "show_message",
             "text": "Gus's passkey fits! The office door creaks open at the top of the stairs. Head north."
+          }
+        ]
+      },
+      {
+        "id": "sheeted_furniture",
+        "label": "Dust-Sheeted Armchair",
+        "x": 76.3,
+        "y": 80.5,
+        "w": 10.6,
+        "h": 15,
+        "required_character": "Fred",
+        "wrong_character_message": "A hulking armchair under a dust sheet, wedged hard against the wall. Shoving heavy suspicious furniture is Freddy's whole personality.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_moved_chair",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred yanks off the sheet and walks the armchair aside — fresh DRAG TRACKS score the dust underneath, arrow-straight toward the office stairs. 'Somebody rearranges this lobby after hours, gang. Furniture doesn't moonwalk.'"
+          }
+        ]
+      },
+      {
+        "id": "daphne_chandelier",
+        "label": "Swaying Chandelier",
+        "x": 42,
+        "y": 9,
+        "w": 16,
+        "h": 12.5,
+        "required_character": "Daphne",
+        "wrong_character_message": "The chandelier sways with NO breeze. Somebody with an eye for stagecraft should study it — where's Daphne?",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "daphne_saw_wire",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne squints up: 'FISHING LINE. The chandelier's rigged to a pull-wire that runs into the wall. Our phantom does his own special effects... on a community-theater budget.'"
           }
         ]
       }
@@ -295,6 +362,12 @@
         "y": 32,
         "w": 14,
         "h": 46,
+        "item_reactions": {
+          "decoy_costume": {
+            "message": "You raise the glowing sheet. Gus levels his rake like a lance: 'BACK, HAUNT!' ...then squints closer. 'That's paint and a bedsheet, ain't it.' He lowers the rake, thoroughly disgusted. 'Congratulations, kids. You built a SECOND ghost.'",
+            "set_flag": "gus_spooked"
+          }
+        },
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -346,14 +419,21 @@
         "y": 82,
         "w": 34,
         "h": 14,
+        "required_character": "Velma",
+        "wrong_character_message": "Fresh footprints crisscross the leaf muck at the bottom of the drained pool. Reading a trail like a crime scene is Velma's kind of fun.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "read_pool_prints",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "The pool has been empty for years, but there are fresh footprints in the leaf muck at the bottom... leading toward the lobby. Ghosts don't leave sneaker prints."
+            "text": "Velma crouches at the rim: 'Size 12 sneakers, even stride, no drifting — our phantom WALKS his haunting route, and he always exits toward the lobby. Ghosts float, gentlemen. Employees commute.'"
           }
         ]
       },
@@ -364,6 +444,8 @@
         "y": 84,
         "w": 9,
         "h": 10,
+        "required_character": "Daphne",
+        "wrong_character_message": "Something pale is half-buried in the pool muck. Identifying designer anything at twenty paces is Daphne's superpower — radio her in.",
         "hidden_if_flags": [
           "got_glove"
         ],
@@ -423,6 +505,8 @@
         "w": 8,
         "h": 12,
         "required_item": "crank_handle",
+        "required_character": "Fred",
+        "wrong_character_message": "A rusted steel hatch stamped 'PUMP ROOM'. Even with a crank, winding open a decade of rust is a job for team muscle \u2014 get Fred on the walkie.",
         "hidden_if_flags": [
           "hatch_open"
         ],
@@ -440,6 +524,31 @@
           {
             "type": "show_message",
             "text": "The crank fits! Fred winds it and the hatch grinds open, breathing out cold, chlorine-and-mildew air. A ladder drops DOWN into the dark under the resort. Shaggy: 'I vote we never.'"
+          }
+        ]
+      },
+      {
+        "id": "shaggy_mushrooms",
+        "label": "Wild Mushrooms",
+        "x": 42.3,
+        "y": 63.5,
+        "w": 5.5,
+        "h": 9.5,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A clump of fat wild mushrooms by the shed. Only two members of this gang consider lawn fungus 'a snack situation'.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "shaggy_found_tracks",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby hoovers up a mushroom before Shaggy can yell 'POISON!' ...It's fine. Probably. Between caps, Shaggy spots a line of CRUSHED mushrooms — somebody heavy tromped toward the shed, recently. 'Like, ghosts FLOAT, man. This dude STOMPS.'"
           }
         ]
       }
@@ -564,14 +673,21 @@
         "y": 50,
         "w": 12,
         "h": 12,
+        "required_character": "Velma",
+        "wrong_character_message": "A crumpled invoice covered in smudged fine print. Deciphering supplier paperwork is Velma's department.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "read_invoice",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A crumpled invoice: '6 cans LUMO-GLOW paint \u2014 CHARGED TO ROOM 217.' Wait... the ledger said the resort doesn't HAVE a room 217. Somebody's hiding purchases."
+            "text": "Velma smooths the invoice: '6 cans LUMO-GLOW paint \u2014 CHARGED TO ROOM 217.' She pushes up her glasses. 'The ledger says there IS no Room 217. Somebody's hiding purchases inside a fake room number.'"
           }
         ]
       },
@@ -602,6 +718,56 @@
           {
             "type": "show_message",
             "text": "A box cutter on the shelf edge. Handy for opening crates \u2014 or cutting somebody loose."
+          }
+        ]
+      },
+      {
+        "id": "fred_shelf",
+        "label": "Dented Supply Cabinet",
+        "x": 63,
+        "y": 48.5,
+        "w": 6.6,
+        "h": 15,
+        "required_character": "Fred",
+        "wrong_character_message": "A dented steel supply cabinet, wedged crooked against the wall. Heavy-appliance choreography is a Fred event.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_moved_cabinet",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred walks the cabinet aside in three grunts. Scratched into the wall behind it: a stash hollow, EMPTY except for fresh paint-can rings. 'Somebody used this closet as a supply drop long before we showed up, gang.'"
+          }
+        ]
+      },
+      {
+        "id": "shaggy_mops",
+        "label": "Mop Bucket Corner",
+        "x": 68.5,
+        "y": 64.5,
+        "w": 9.5,
+        "h": 14,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A mop bucket that smells like bleach and regret. Snout-first investigation is the Shaggy & Scooby specialty.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "scooby_found_wrappers",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby noses the mop bucket \u2014 SNEEZE \u2014 and out rolls a crumpled BURGER WRAPPER and a soda cup, still cold. Shaggy: 'Zoinks, the phantom eats FAST FOOD? Like... same, but SUSPICIOUS.'"
           }
         ]
       }
@@ -691,14 +857,46 @@
         "y": 28,
         "w": 14,
         "h": 34,
+        "required_character": "Daphne",
+        "wrong_character_message": "A glowing bedsheet 'costume' hangs by the furnace. One of us can read fabric like a fingerprint \u2014 get Daphne on the walkie.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "daphne_read_costume",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A bedsheet cut with eye holes, soaked in glowing green paint. Still wet. The Phantom Guest will be back for it soon \u2014 better spring the trap before then!"
+            "text": "Daphne pinches the hem at arm's length: 'Still WET. And this stitching matches a hurried hand \u2014 same thread as the sheets someone's been sewing. He'll be back for his costume soon... better spring the trap before then!'"
+          }
+        ]
+      },
+      {
+        "id": "velma_gauge",
+        "label": "Boiler Pressure Gauge",
+        "x": 60.2,
+        "y": 42.5,
+        "w": 6,
+        "h": 9,
+        "required_character": "Velma",
+        "wrong_character_message": "The boiler's pressure gauge needle is drifting lazily upward. Interpreting dials is peak Velma content.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "velma_read_gauge",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Velma taps the gauge: 'Pressure's UP. This boiler ran within the HOUR \u2014 in a resort that's been \"abandoned\" for years. Heating bills are murder... unless you're planning to own the place by Friday.'"
           }
         ]
       },
@@ -878,19 +1076,51 @@
       },
       {
         "id": "crane_desk",
-        "label": "Crane's Desk",
+        "label": "Crane's Desk (locked drawer)",
         "x": 26,
         "y": 58,
         "w": 26,
         "h": 20,
+        "required_character": "Daphne",
+        "wrong_character_message": "Crane's desk is drowning in paperwork \u2014 and the center drawer is LOCKED. Locked drawers are Daphne's favorite genre.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "daphne_picked_desk",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne's hairpin pops the drawer in four seconds flat. Inside: overdue notices, foreclosure warnings, and a fresh newspaper \u2014 'PALM HEIR RETURNS: GEORGE PALM III TO DECIDE RESORT'S FATE.' The heir is HERE? Then where is he?"
+          }
+        ]
+      },
+      {
+        "id": "shaggy_snacks",
+        "label": "Globe Bar",
+        "x": 53.5,
+        "y": 66.5,
+        "w": 9.5,
+        "h": 23.5,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A fancy globe that's secretly a snack bar. Detecting hidden snacks is a joint Shaggy & Scooby operation.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "found_fresh_snacks",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "Overdue notices, foreclosure warnings, and a fresh newspaper: 'PALM HEIR RETURNS \u2014 GEORGE PALM III TO DECIDE RESORT'S FATE.' The heir is HERE? Then where is he?"
+            "text": "Shaggy cracks the globe open \u2014 fancy peanuts, fresh crackers, ZERO dust. Scooby inhales the peanuts. 'Like, who restocks the SNACK GLOBE of an abandoned resort? A guy who still LIVES here, that's who!'"
           }
         ]
       }
@@ -998,14 +1228,21 @@
         "y": 26,
         "w": 18,
         "h": 44,
+        "required_character": "Daphne",
+        "wrong_character_message": "A rack of half-finished phantom sheets. Only one of us can read a hem line like a police report — get Daphne on the walkie.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "daphne_read_rack",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A rack of half-finished phantom sheets in three sizes, plus a tin labeled LUMO-GLOW THINNER. Somebody sews their own nightmares. Neat stitching, too."
+            "text": "Daphne works the rack like a sample sale: 'Machine-stitched hems, brand-new interfacing, and — a-HA — a receipt pinned inside: PALM COUNTY FABRIC, bought in BULK twelve days ago. Our ghost has a store account.'"
           }
         ]
       },
@@ -1016,14 +1253,78 @@
         "y": 56,
         "w": 12,
         "h": 16,
+        "required_character": "Velma",
+        "wrong_character_message": "A pedal sewing machine mid-project. Reverse-engineering machinery is Velma's happy place.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "velma_read_machine",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A pedal sewing machine threaded with glow-green thread. The needle's still warm. Velma: 'Our phantom does his own tailoring. Frugal AND theatrical.'"
+            "text": "A pedal sewing machine threaded with glow-green thread. Velma touches the needle: 'Still WARM. Our phantom does his own tailoring — frugal, theatrical, and here within the hour.'"
+          }
+        ]
+      },
+      {
+        "id": "fred_trunk",
+        "label": "Steamer Trunk",
+        "x": 81.3,
+        "y": 78.2,
+        "w": 13.7,
+        "h": 16.9,
+        "required_character": "Fred",
+        "hidden_if_flags": [
+          "fred_opened_trunk"
+        ],
+        "wrong_character_message": "A steamer trunk with rusted-shut latches. Percussive maintenance is Fred's love language.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "old_bedsheet"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_opened_trunk",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred pops the trunk with one knee-drop. Inside: mothballs, spare linens... and CUT CHAINS that used to lock it shut. He grabs a clean old bedsheet. 'Trap supplies, gang. Trust me.'"
+          }
+        ]
+      },
+      {
+        "id": "shaggy_tray",
+        "label": "Room-Service Tray",
+        "x": 45,
+        "y": 84.5,
+        "w": 9.5,
+        "h": 8.9,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A room-service tray under a silver dome. Investigating unattended food is the founding charter of Shaggy & Scooby Incorporated.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "found_fresh_sandwich",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby lifts the cloche: half a club sandwich, STILL SOFT. Shaggy goes pale. 'Like, this is TODAY'S sandwich, man. The phantom had LUNCH here!' Scooby finishes the evidence. For safekeeping."
           }
         ]
       }
@@ -1115,14 +1416,103 @@
         "y": 40,
         "w": 22,
         "h": 24,
+        "required_character": "Velma",
+        "wrong_character_message": "Gus chalked an outline for every tool on this wall. Deducing what's MISSING — and why — is textbook Velma.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "velma_read_outlines",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "Gus chalked outlines for every tool. The BOLT CUTTERS outline is empty... and so is one labeled 'PAINT SPRAYER'. Somebody's been shopping in here after hours."
+            "text": "Velma scans the chalk outlines: 'BOLT CUTTERS — gone. PAINT SPRAYER — gone. Cutters open padlocks; sprayers paint phantoms. Somebody's been shopping in here after hours, and it wasn't for gardening.'"
+          }
+        ]
+      },
+      {
+        "id": "fred_bench",
+        "label": "Heavy Workbench",
+        "x": 30.2,
+        "y": 48,
+        "w": 6.5,
+        "h": 20,
+        "required_character": "Fred",
+        "wrong_character_message": "The workbench is bolted down... no, wait — just unbelievably HEAVY. Heavy is Fred's entire category.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_moved_bench",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred drags the workbench a foot — behind it, stuffed in the wall gap: an old LUMO-GLOW can converted into a stash tin, holding green-stained rags. 'Our phantom preps his act right here in Gus's shed. Bold.'"
+          }
+        ]
+      },
+      {
+        "id": "daphne_toolbox",
+        "label": "Padlocked Toolbox",
+        "x": 67,
+        "y": 71.5,
+        "w": 10.8,
+        "h": 12,
+        "required_character": "Daphne",
+        "hidden_if_flags": [
+          "got_magnet"
+        ],
+        "wrong_character_message": "A little red toolbox with a padlock the size of a grape. Adorable. Daphne eats grape-sized padlocks for breakfast.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "magnet"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_magnet",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Click. Daphne flips the toolbox open: oiled, organized, ALPHABETIZED... and one HORSESHOE MAGNET with a fresh price sticker. 'Somebody's been buying gear for this haunting. I'm borrowing the magnet.'"
+          }
+        ]
+      },
+      {
+        "id": "shaggy_sacks",
+        "label": "Potting-Soil Sacks",
+        "x": 6,
+        "y": 71,
+        "w": 14.5,
+        "h": 19.5,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "Lumpy burlap sacks of potting soil. Poking suspicious lumps is a job for the gang's two professional lump-pokers.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "rattle"
+          },
+          {
+            "type": "set_flag",
+            "flag": "found_sleeping_bag",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby pounces the lumpiest sack — POOF, soil everywhere — and drags out a rolled-up SLEEPING BAG stashed inside. Shaggy: 'Like, phantoms don't NAP, man! Somebody's been CAMPING in here!'"
           }
         ]
       }
@@ -1180,14 +1570,21 @@
         "y": 62,
         "w": 14,
         "h": 16,
+        "required_character": "Velma",
+        "wrong_character_message": "A shattered pot dusted with faintly glowing residue. Sample-swabbing is strictly a Velma operation.",
         "action_triggers": [
           {
             "type": "play_sfx",
             "sfx": "click"
           },
           {
+            "type": "set_flag",
+            "flag": "velma_swabbed_pot",
+            "value": true
+          },
+          {
             "type": "show_message",
-            "text": "A big pot lies shattered \u2014 and the shards are dusted with GLOWING GREEN residue. Velma swabs a sample: 'Someone stored paint cans in here before moving them. Our phantom rotates his hiding spots.'"
+            "text": "A big pot lies shattered \u2014 the shards dusted with GLOWING GREEN residue. Velma swabs a sample: 'Someone stored paint cans in here before moving them. Our phantom rotates his hiding spots.'"
           }
         ]
       },
@@ -1206,6 +1603,81 @@
           {
             "type": "show_message",
             "text": "A topiary grown wild into a lumpy, sheet-like shape. Shaggy points, screams, and climbs Scooby. Scooby climbs a shelf. The topiary continues to be a bush."
+          }
+        ]
+      },
+      {
+        "id": "dig_spot",
+        "label": "Freshly Turned Soil",
+        "x": 63.5,
+        "y": 79.5,
+        "w": 12,
+        "h": 10.5,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "A mound of freshly turned soil. Digging in questionable dirt is a certified two-expert job: one Shaggy, one Scooby.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "rattle"
+          },
+          {
+            "type": "set_flag",
+            "flag": "scooby_dug_soil",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby digs like a furry backhoe — dirt EVERYWHERE — and unearths a wax-paper bundle: salami sandwich crusts and a soda bottle, still fizzy. Shaggy: 'Like, phantoms don't pack a LUNCH, man!'"
+          }
+        ]
+      },
+      {
+        "id": "fred_planter",
+        "label": "Tipped Stone Urn",
+        "x": 25.5,
+        "y": 80,
+        "w": 12,
+        "h": 12,
+        "required_character": "Fred",
+        "wrong_character_message": "A tipped stone urn the size of Scooby. Righting furniture-adjacent boulders: that's a Fred call.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_found_bootprint",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred deadlifts the urn upright — pressed into the soil beneath: a PERFECT size-12 boot print, diamond tread. 'Same tread as the pool prints, gang. Our phantom knocked this over running... and phantoms don't trip.'"
+          }
+        ]
+      },
+      {
+        "id": "daphne_thread",
+        "label": "Snagged Thread",
+        "x": 0.5,
+        "y": 32,
+        "w": 6.5,
+        "h": 10,
+        "required_character": "Daphne",
+        "wrong_character_message": "Something glints on the thorny vine by the west frame. Daphne notices details like that before the rest of us notice the greenhouse.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "daphne_found_thread",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne plucks a GLOW-GREEN thread off a thorn: 'Torn poly-cotton, machine-hemmed, snagged at shoulder height. Our phantom came through here in costume — and he's exactly Mr. Crane's height, by the way.'"
           }
         ]
       }
@@ -1299,6 +1771,56 @@
             "text": "Mildewed towels, one abandoned flip-flop, and a fossilized herring. Scooby eats the herring before anyone can object. 'Relicious.'"
           }
         ]
+      },
+      {
+        "id": "staff_locker",
+        "label": "Padlocked Staff Cabinet",
+        "x": 79.5,
+        "y": 84.9,
+        "w": 6,
+        "h": 14,
+        "required_character": "Daphne",
+        "wrong_character_message": "A padlocked STAFF cabinet built into the tiki bar. Rusty padlock, no key in sight — in other words, a Daphne problem.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "daphne_picked_locker",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne's hairpin defeats the padlock before anyone finishes saying 'jinkies'. Inside: a staff blazer, DRY-CLEANED last week — ticket signed 'A.C.' 'An abandoned resort with a laundry day? Somebody still dresses like management.'"
+          }
+        ]
+      },
+      {
+        "id": "fred_chair",
+        "label": "Broken Lifeguard Stand",
+        "x": 15,
+        "y": 34.5,
+        "w": 7.5,
+        "h": 15,
+        "required_character": "Fred",
+        "wrong_character_message": "The lifeguard stand lists like a sinking ship — one leg snapped clean off. Sounds like a Fred-sized fix.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_fixed_chair",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred heaves the lifeguard stand level and braces it with the broken leg. From the top: 'Gang — you can see EVERY window of the resort from up here, including the office. Perfect lookout for scheduling a haunting around witnesses.'"
+          }
+        ]
       }
     ]
   },
@@ -1314,6 +1836,13 @@
         "direction": "up",
         "target": "grounds",
         "label": "Pool (ladder up)"
+      },
+      {
+        "direction": "east",
+        "target": "trap_room",
+        "label": "Boiler Room",
+        "locked_by_flag": "boiler_door_open",
+        "locked_message": "The steel BOILER door is barred from the far side. The phantom clearly has his own way through... maybe you can fish that bar loose somehow."
       }
     ],
     "clickable_hotspots": [
@@ -1356,6 +1885,92 @@
         ]
       },
       {
+        "id": "fred_valve",
+        "label": "Main Pump Valve",
+        "x": 58.5,
+        "y": 49.5,
+        "w": 6.8,
+        "h": 11.5,
+        "required_character": "Fred",
+        "required_item": "crank_handle",
+        "hidden_if_flags": [
+          "fred_turned_valve"
+        ],
+        "wrong_character_message": "The main pump's handwheel is frozen solid, its spindle sheared to a bare square socket. Fred-grade torque required.",
+        "missing_item_message": "The handwheel spins uselessly — the spindle's sheared. Beside it: a square crank socket, the exact size of a certain iron handle...",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "fred_turned_valve",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Fred seats the crank and HEAVES. The pumps shudder, cough — and a black puddle gurgles away down a drain. Beneath it: MORE glowing prints and a LUMO-GLOW lid. 'These pumps work FINE, gang. The drained pool is a CHOICE. Somebody wanted paradise looking haunted.'"
+          }
+        ]
+      },
+      {
+        "id": "daphne_panel",
+        "label": "Locked Breaker Cabinet",
+        "x": 29.2,
+        "y": 33.2,
+        "w": 6,
+        "h": 12.6,
+        "required_character": "Daphne",
+        "hidden_if_flags": [
+          "daphne_opened_panel"
+        ],
+        "wrong_character_message": "A steel breaker cabinet, latched tight, green light leaking from the seam. Cabinet locks are Daphne's cardio.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "daphne_opened_panel",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne pops the latch: every resort breaker is OFF... except one unlabeled circuit, brand-new, wired straight past the meter and humming toward the boiler room. 'Our ghost doesn't pay an electric bill. Classy.'"
+          }
+        ]
+      },
+      {
+        "id": "notched_bricks",
+        "label": "Oddly New Brickwork",
+        "x": 30,
+        "y": 62,
+        "w": 9,
+        "h": 12,
+        "required_item": "marked_map",
+        "hidden_if_flags": [
+          "found_phantom_kit"
+        ],
+        "missing_item_message": "Pipes, rust, and old brick... though one patch of bricks looks decades NEWER than the rest. Odd spot for renovations.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "found_phantom_kit",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The marked map lines up — the X sits RIGHT HERE. The new bricks pull out like drawer handles: inside, Gus's missing BOLT CUTTERS and PAINT SPRAYER, wrapped in a monogrammed handkerchief. 'A.C.' The entire haunting kit, walled up in one hole."
+          }
+        ]
+      },
+      {
         "id": "tunnel_map_spot",
         "label": "Map Pinned to a Beam",
         "x": 44,
@@ -1388,18 +2003,54 @@
       {
         "id": "sealed_boiler_door",
         "label": "Steel Door \u2014 'BOILER'",
-        "x": 86,
+        "x": 84,
         "y": 34,
-        "w": 10,
+        "w": 6,
         "h": 32,
+        "required_item": "magnet_line",
+        "consume_item": true,
+        "hidden_if_flags": [
+          "boiler_door_open"
+        ],
+        "missing_item_message": "A steel door stenciled 'BOILER', barred from the other side. Cold green light seeps under a finger-high gap. Something long, thin, and MAGNETIC might fish that bar loose...",
         "action_triggers": [
           {
             "type": "play_sfx",
-            "sfx": "error"
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "boiler_door_open",
+            "value": true
           },
           {
             "type": "show_message",
-            "text": "A steel door stenciled 'BOILER', barred from the other side. Cold green light seeps under it. The phantom's private commute \u2014 you'll have to reach the boiler room through the janitor's closet."
+            "text": "You feed the magnet under the door, walk it up the far side... CLICK \u2014 it grabs the latch bar. Everyone pulls. CLANG! The bar drops and the door groans open: a straight shot into the BOILER ROOM. The phantom's commute is now YOUR commute \u2014 head east."
+          }
+        ]
+      },
+      {
+        "id": "glow_trail",
+        "label": "Glowing Footprints",
+        "x": 65,
+        "y": 75,
+        "w": 20,
+        "h": 15,
+        "required_character": "Shaggy_Scooby",
+        "wrong_character_message": "Glowing footprints track through the dust. Telling FRESH spooky paint from old spooky paint calls for a world-class nose \u2014 Scooby's, specifically.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "scooby_sniffed_trail",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Scooby snuffles along the prints... and his tail SHOOTS straight up. 'RESH! RERY RESH!' The phantom walked through MINUTES ago, heading for the boiler door. Shaggy climbs onto Scooby. Scooby climbs onto Shaggy. Somehow it works."
           }
         ]
       }

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Backpack, Combine } from 'lucide-react'
 import { ITEMS } from '../data/items'
 import { ItemIcon } from './ItemArt'
@@ -10,15 +11,33 @@ export function Inventory() {
   const selectedItem = useGameStore((s) => s.selectedItem)
   const selectItem = useGameStore((s) => s.selectItem)
 
+  // The tray scrolls horizontally once the gang hoards more than fits;
+  // new pickups slide into view on the right.
+  const trayRef = useRef<HTMLDivElement>(null)
+  const prevCount = useRef(0)
+  useEffect(() => {
+    const el = trayRef.current
+    if (el && playerInventory.length > prevCount.current) {
+      el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' })
+    }
+    prevCount.current = playerInventory.length
+  }, [playerInventory.length])
+
+  const slotCount = Math.max(SLOT_COUNT, playerInventory.length)
+
   return (
-    <div className="kenney-panel flex flex-1 items-center gap-3 px-4 py-3">
-      <div className="flex flex-col items-center text-amber-400">
+    <div className="kenney-panel flex min-w-0 flex-1 items-center gap-3 px-4 py-3">
+      <div className="flex shrink-0 flex-col items-center text-amber-400">
         <Backpack size={26} />
         <span className="text-[10px] font-bold uppercase tracking-wider">Items</span>
       </div>
 
-      <div className="flex flex-1 gap-2">
-        {Array.from({ length: SLOT_COUNT }, (_, i) => {
+      <div
+        ref={trayRef}
+        className="flex min-w-0 flex-1 gap-2 overflow-x-auto py-1"
+        style={{ scrollbarWidth: 'thin', scrollbarColor: '#78716c #1c1917' }}
+      >
+        {Array.from({ length: slotCount }, (_, i) => {
           const itemId = playerInventory[i]
           const item = itemId ? ITEMS[itemId] : undefined
           const isSelected = itemId != null && itemId === selectedItem
@@ -26,7 +45,7 @@ export function Inventory() {
             return (
               <div
                 key={i}
-                className="aspect-square w-12 rounded-lg border-2 border-dashed border-stone-600/70 bg-stone-900/60 md:w-14"
+                className="aspect-square w-12 shrink-0 rounded-lg border-2 border-dashed border-stone-600/70 bg-stone-900/60 md:w-14"
               />
             )
           }
@@ -37,7 +56,7 @@ export function Inventory() {
               key={i}
               onClick={() => selectItem(item.id)}
               title={`${item.name} — ${item.description}`}
-              className={`kenney-btn flex aspect-square w-12 items-center justify-center bg-stone-800 md:w-14 ${
+              className={`kenney-btn flex aspect-square w-12 shrink-0 items-center justify-center bg-stone-800 md:w-14 ${
                 isSelected ? 'ring-4 ring-amber-400 brightness-125' : ''
               }`}
             >

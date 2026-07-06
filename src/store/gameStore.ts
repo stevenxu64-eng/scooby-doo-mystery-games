@@ -147,6 +147,31 @@ export const useGameStore = create<GameState>()(
       return
     }
 
+    // 1b. Bespoke item reaction — waving specific evidence at specific things.
+    const reaction = state.selectedItem ? h.item_reactions?.[state.selectedItem] : undefined
+    if (reaction) {
+      playSfx('click', 0.4)
+      set((s) => ({
+        selectedItem: null,
+        actionPulse: s.actionPulse + 1,
+        lastCameo: {
+          id: s.actionPulse + 1,
+          x: h.x + h.w / 2,
+          y: h.y + h.h,
+          character: s.activeCharacter,
+        },
+      }))
+      state.runActions(
+        reaction.set_flag
+          ? [
+              { type: 'set_flag', flag: reaction.set_flag, value: true },
+              { type: 'show_message', text: reaction.message },
+            ]
+          : [{ type: 'show_message', text: reaction.message }],
+      )
+      return
+    }
+
     // 2. Flag gate — puzzle prerequisites.
     if (!state.hasAllFlags(h.required_flags)) {
       playSfx('error', 0.4)

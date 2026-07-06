@@ -92,8 +92,13 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main scene viewport */}
-      <Viewport />
+      {/* Main scene viewport — letterboxed so the stage is always exactly 16:9 */}
+      <div
+        className="flex min-h-0 flex-1 items-center justify-center"
+        style={{ containerType: 'size' }}
+      >
+        <Viewport />
+      </div>
 
       {/* Narration */}
       <MessageBar />

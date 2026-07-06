@@ -202,6 +202,19 @@
 <g>
 <rect x="697" y="580" width="5" height="12" fill="#b8a08a"/><path d="M691 582 a9 7 0 0 1 17 0 Z" fill="#8a5a4a"/>
 <rect x="710" y="584" width="4" height="9" fill="#b8a08a"/><path d="M705 586 a7 6 0 0 1 14 0 Z" fill="#8a5a4a"/>
+<g id="groundsShroomCluster">
+<ellipse cx="716" cy="650" rx="30" ry="6" fill="#000" opacity="0.22"/>
+<rect x="688" y="630" width="5" height="16" rx="2" fill="#b8a08a"/>
+<path d="M681 633 a10 8 0 0 1 19 0 Z" fill="#8a5a4a"/>
+<rect x="705" y="608" width="9" height="38" rx="3" fill="#b8a08a"/>
+<path d="M708 614 v28" stroke="#9a836e" stroke-width="2"/>
+<path d="M692 612 a18 13 0 0 1 35 0 Z" fill="#8a5a4a"/>
+<path d="M692 612 a18 13 0 0 1 35 0 q-18 -5 -35 0 Z" fill="#a06a56"/>
+<ellipse cx="702" cy="604" rx="3" ry="2" fill="#c9b298"/><ellipse cx="714" cy="600" rx="3.4" ry="2.2" fill="#c9b298"/><ellipse cx="722" cy="606" rx="2.6" ry="1.8" fill="#c9b298"/>
+<rect x="734" y="624" width="7" height="24" rx="2.5" fill="#b8a08a"/>
+<path d="M725 628 a13 10 0 0 1 25 0 Z" fill="#8a5a4a"/>
+<ellipse cx="733" cy="621" rx="2.6" ry="1.8" fill="#c9b298"/><ellipse cx="743" cy="623" rx="2.2" ry="1.6" fill="#c9b298"/>
+</g>
 </g>
 <!-- plain lawn (grate puzzle moved inside the shed) -->
 <ellipse cx="522" cy="634" rx="112" ry="40" fill="#35744e" opacity="0.15"/>

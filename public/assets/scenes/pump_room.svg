@@ -199,6 +199,26 @@
 <rect x="112" y="258" width="16" height="10" rx="3" fill="#2c3a3e"/>
 <rect x="556" y="212" width="128" height="36" rx="5" fill="#9aa88c" stroke="#2c3a3e" stroke-width="3"/>
 <text x="620" y="237" font-family="Trebuchet MS" font-size="16" font-weight="bold" fill="#3a4a4e" text-anchor="middle">PUMP DECK 3</text>
+<!-- breaker cabinet with keyhole latch -->
+<g id="pump_room_breaker_panel">
+<rect x="509" y="262" width="10" height="44" fill="#2c3a3e"/>
+<circle cx="514" cy="262" r="6" fill="#2c3a3e"/>
+<rect x="472" y="304" width="84" height="104" rx="5" fill="#3e4c52" stroke="#26343a" stroke-width="4"/>
+<rect x="479" y="311" width="58" height="90" rx="3" fill="#4c5a60"/>
+<path d="M483 318 q26 -5 50 0" stroke="#7d8c90" stroke-width="2" fill="none" opacity="0.5"/>
+<rect x="481" y="322" width="13" height="6" rx="2" fill="#26343a"/>
+<rect x="481" y="384" width="13" height="6" rx="2" fill="#26343a"/>
+<text x="508" y="344" font-family="Trebuchet MS" font-size="9" font-weight="bold" fill="#26343a" text-anchor="middle" opacity="0.85">BREAKERS</text>
+<ellipse cx="537" cy="356" rx="9" ry="46" fill="url(#pumpSeep)" opacity="0.45"/>
+<path d="M537 314 V398" stroke="#7dfba2" stroke-width="2" opacity="0.9">
+<animate attributeName="opacity" values="0.9;0.5;0.9" dur="2.4s" repeatCount="indefinite"/>
+</path>
+<circle cx="546" cy="352" r="8" fill="#9aa0a8" stroke="#26343a" stroke-width="2"/>
+<circle cx="546" cy="350" r="2.6" fill="#1a2326"/>
+<path d="M546 350 l-2.5 7 h5 Z" fill="#1a2326"/>
+<rect x="541" y="368" width="10" height="16" rx="2" fill="#33403f"/>
+<path d="M476 408 q4 16 -2 30" stroke="#6a4426" stroke-width="3" opacity="0.3" fill="none"/>
+</g>
 <!-- ===== PUMP NO.1 (west) + MAINTENANCE LOG : hotspot 192-416 x 414-576 ===== -->
 <ellipse cx="305" cy="652" rx="185" ry="20" fill="#000" opacity="0.35"/>
 <rect x="293" y="150" width="26" height="168" fill="#2f4c52"/>
@@ -297,6 +317,17 @@
 <path d="M1100 444 q6 76 -2 152" stroke="#4ade80" stroke-width="3" opacity="0.3" fill="none"/>
 <text x="985" y="584" font-family="Trebuchet MS" font-size="15" font-weight="bold" fill="#1a2f31" text-anchor="middle" opacity="0.85">NO.2</text>
 <use href="#pumpDialG" transform="translate(906 468) scale(0.85)"/>
+<!-- big rust handwheel on pump NO.2 -->
+<g id="pump_room_valve_wheel">
+<circle cx="985" cy="500" r="14" fill="#2c4248"/>
+<circle cx="985" cy="500" r="42" fill="none" stroke="#5c2c22" stroke-width="12"/>
+<circle cx="985" cy="500" r="42" fill="none" stroke="#8a4a3a" stroke-width="8"/>
+<path d="M985 458 V542 M943 500 h84 M955 470 l60 60 M1015 470 l-60 60" stroke="#8a4a3a" stroke-width="6"/>
+<circle cx="985" cy="500" r="9" fill="#5c2c22"/>
+<circle cx="985" cy="500" r="4" fill="#3a1c16"/>
+<path d="M951 478 a42 42 0 0 1 32 -20" stroke="#c97f5f" stroke-width="3" fill="none" opacity="0.7"/>
+<path d="M1008 538 q10 14 8 28" stroke="#6a4426" stroke-width="3" opacity="0.4" fill="none"/>
+</g>
 <!-- floor tools -->
 <ellipse cx="500" cy="662" rx="40" ry="8" fill="#000" opacity="0.3"/>
 <path d="M472 604 h56 l-6 54 h-44 Z" fill="#55707c"/>
@@ -400,6 +431,22 @@
 <path d="M0 150 Q60 176 108 150 M0 208 Q52 200 92 162 M40 150 Q46 196 18 224"/>
 <path d="M718 106 Q762 132 812 108 M736 106 Q748 142 726 162"/>
 <path d="M1368 300 Q1408 322 1452 302 M1368 348 Q1398 336 1380 306"/>
+</g>
+<!-- oddly new brick patch : notched_bricks hotspot 480-624 x 558-666 -->
+<g>
+<rect x="486" y="548" width="128" height="68" rx="3" fill="#16282e"/>
+<g fill="#33484e" stroke="#1a2c32" stroke-width="3">
+<rect x="490" y="552" width="58" height="28" rx="2"/>
+<rect x="552" y="552" width="58" height="28" rx="2"/>
+<rect x="490" y="584" width="28" height="28" rx="2"/>
+<rect x="522" y="584" width="58" height="28" rx="2"/>
+<rect x="584" y="584" width="26" height="28" rx="2"/>
+</g>
+<path d="M496 558 h20 M560 558 h22 M530 590 h24" stroke="#42585e" stroke-width="2.5" opacity="0.8"/>
+<rect x="522" y="584" width="58" height="28" rx="2" fill="none" stroke="#0c181c" stroke-width="2"/>
+<path d="M524 612 q26 8 54 0 l0 6 q-28 8 -54 0 Z" fill="#06121a" opacity="0.7"/>
+<path d="M612 560 q6 10 0 22" stroke="#4ade80" stroke-width="2" opacity="0.25" fill="none"/>
+<circle cx="500" cy="618" r="2" fill="#4ade80" opacity="0.3"/><circle cx="509" cy="621" r="1.5" fill="#4ade80" opacity="0.25"/>
 </g>
 <rect width="1600" height="900" filter="url(#pumpGrain)" opacity="0.3"/>
 <rect width="1600" height="900" fill="url(#pumpVign)"/>

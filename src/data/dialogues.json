@@ -319,10 +319,27 @@
         "text": "'Better. When he shoved me in here, his sheet snagged the door and lifted.' George looks grim. 'Silver hair. Staff watch. And a keyring that jingled like sleigh bells \u2014 the master ring only ONE person at this resort carries. I'll testify to the police, but you'll need to catch him in the act.'",
         "choices": [
           {
-            "text": "'Then we build a trap. Stay hidden until you hear the net spring!'",
+            "text": "'Then we build a trap. Stay hidden \u2014 and we'll take that clothesline he tied you with. Fred collects rope.'",
+            "next": null,
+            "set_flags": [
+              "george_witness",
+              "got_clothesline"
+            ],
+            "give_items": [
+              "clothesline"
+            ],
+            "hidden_if_flags": [
+              "got_clothesline"
+            ]
+          },
+          {
+            "text": "'We're on it. Stay hidden until you hear the net spring!'",
             "next": null,
             "set_flags": [
               "george_witness"
+            ],
+            "required_flags": [
+              "got_clothesline"
             ]
           }
         ]

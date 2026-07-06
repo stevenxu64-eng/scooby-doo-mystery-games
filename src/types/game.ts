@@ -41,6 +41,12 @@ export interface Hotspot {
   wrong_character_message?: string
   missing_item_message?: string
   locked_message?: string
+  /**
+   * Optional flavor uses: arming one of these items and clicking the hotspot
+   * shows a bespoke reaction (and optionally sets a flag) instead of the
+   * normal gate handling. Great for waving evidence at suspects.
+   */
+  item_reactions?: Record<string, { message: string; set_flag?: string }>
   action_triggers: GameAction[]
 }
 

@@ -283,9 +283,12 @@ function ShaggyScoobyBust() {
       <path d="M70 73 q9 6.5 18 0" stroke="#8a5a30" strokeWidth="2.4" fill="none" strokeLinecap="round" />
       <path d="M72 74 q7 5 14 0 q-2.5 4.6 -7 4.6 q-4.5 0 -7 -4.6 Z" fill="#6e2c1c" />
       <path d="M73.6 75 q5.4 3.2 10.8 0 l-0.3 2 q-5.1 2.4 -10.2 0 Z" fill="#f4ecdc" />
-      {/* goatee with stray tufts */}
-      <path d="M72 80 q7 8 14 0 q-0.6 9.5 -7 10 q-6.4 -0.5 -7 -10 Z" fill="url(#sh-hair)" />
-      <path d="M75 88.5 l-1 3 M79 90 l0 3 M83 88.5 l1 3" stroke="#6b4a1e" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      {/* scraggly goatee: compact patch right under the lower lip, jagged edge */}
+      <path d="M74.8 79.2 q4.2 2.6 8.4 0 q0.6 2.8 -0.6 5 l-1.2 -1.6 l-0.9 3.4 l-1.5 -2 l-1.5 2 l-0.9 -3.4 l-1.2 1.6 q-1.2 -2.2 -0.6 -5 Z" fill="url(#sh-hair)" />
+      <path d="M76.4 80.8 q-0.5 2.4 0.2 4.2 M79 81.4 q-0.3 2.6 0 4.6 M81.6 80.8 q0.5 2.4 -0.2 4.2" stroke="#6b4a1e" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.9" />
+      <g fill="#7a5a28" opacity="0.7">
+        <circle cx="73.4" cy="78" r="0.55" /><circle cx="84.6" cy="78" r="0.55" /><circle cx="75.6" cy="76.4" r="0.5" /><circle cx="82.4" cy="76.4" r="0.5" />
+      </g>
       <ellipse cx="63" cy="63" rx="5" ry="3.4" fill="url(#sh-cheek)" />
       <ellipse cx="95" cy="63" rx="5" ry="3.4" fill="url(#sh-cheek)" />
     </svg>

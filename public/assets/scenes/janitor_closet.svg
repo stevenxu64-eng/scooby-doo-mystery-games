@@ -300,6 +300,26 @@
   <circle cx="814" cy="638" r="2.5" fill="#26262c"/>
   <path d="M794 632 v-12 a6 6 0 0 1 12 0 v12" stroke="#8a8a92" stroke-width="5" fill="none"/>
 
+  <!-- tall dented metal supply cabinet (fred_shelf hotspot zone) -->
+  <g id="janitor_closet_fredcab">
+    <ellipse cx="1062" cy="650" rx="72" ry="10" fill="#000" opacity="0.32"/>
+    <rect x="1006" y="252" width="112" height="392" rx="4" fill="url(#jcmetal)"/>
+    <rect x="1006" y="252" width="112" height="392" rx="4" fill="none" stroke="#2e2e34" stroke-width="4"/>
+    <rect x="1012" y="244" width="100" height="12" rx="3" fill="#74747c"/>
+    <path d="M1062 258 v380" stroke="#3a3a40" stroke-width="3"/>
+    <rect x="1050" y="430" width="7" height="26" rx="3" fill="#2e2e34"/>
+    <rect x="1067" y="430" width="7" height="26" rx="3" fill="#2e2e34"/>
+    <g stroke="#4a4a52" stroke-width="3" fill="none">
+      <path d="M1018 282 h34 M1018 292 h34 M1018 302 h34"/>
+      <path d="M1072 282 h34 M1072 292 h34 M1072 302 h34"/>
+    </g>
+    <path d="M1014 560 q22 14 40 2" stroke="#3c3c44" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M1078 486 q16 10 30 -2" stroke="#3c3c44" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M1024 600 q14 10 26 0" stroke="#33333a" stroke-width="3" fill="none" opacity="0.7"/>
+    <path d="M1098 300 q4 30 0 54" stroke="#7a4a30" stroke-width="4" opacity="0.35" fill="none"/>
+    <path d="M1010 258 v380" stroke="#c2c2ca" stroke-width="2" opacity="0.25"/>
+  </g>
+
   <!-- warm light pool on the floor under the bulb -->
   <ellipse cx="800" cy="724" rx="330" ry="120" fill="url(#jcpool)"/>
 

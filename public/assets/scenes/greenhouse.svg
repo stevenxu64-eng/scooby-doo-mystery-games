@@ -277,6 +277,12 @@
 <use href="#greenhouseBloom" transform="translate(44 300)"/>
 <use href="#greenhouseBloom" transform="translate(36 392) scale(0.9)"/>
 <use href="#greenhouseBloom" transform="translate(56 236) scale(0.8)"/>
+<g id="greenhouseThornCane">
+<path d="M30 352 l10 -3 l-6 -8 Z M29 326 l-9 -5 l8 -6 Z M36 302 l10 -2 l-5 -8 Z M40 372 l9 -4 l-6 -7 Z" fill="#0e2f24"/>
+<path d="M34 338 q9 -3 14 -9" stroke="#4ade80" stroke-width="6" fill="none" opacity="0.22"/>
+<path d="M34 338 q9 -3 14 -9 M35 341 q11 0 18 -4 M33 335 q6 -6 8 -12" stroke="#4ade80" stroke-width="2" fill="none" opacity="0.9"/>
+<path d="M34 338 q9 -3 14 -9" stroke="#b6ffd0" stroke-width="1" fill="none" opacity="0.8"/>
+</g>
 <path d="M1572 568 Q1556 500 1570 440 Q1580 396 1562 350" stroke="#16452f" stroke-width="5" fill="none"/>
 <g fill="#1d5c40">
 <ellipse cx="1566" cy="500" rx="10" ry="5" transform="rotate(-20 1566 500)"/>
@@ -460,6 +466,45 @@
 <path d="M1262 588 q-8 -12 -4 -22" stroke="#8a7a54" stroke-width="2" fill="none"/>
 <!-- glass glints fallen from the broken pane -->
 <path d="M1156 594 l10 -4 l-2 8 Z M1176 602 l8 -2 l-3 7 Z" fill="#cfe8e4" opacity="0.5"/>
+<!-- freshly dug soil mound east of the path -->
+<g id="greenhouseDigMound">
+<ellipse cx="1110" cy="772" rx="94" ry="17" fill="#000" opacity="0.3"/>
+<ellipse cx="1110" cy="765" rx="92" ry="26" fill="#241a10"/>
+<ellipse cx="1102" cy="756" rx="58" ry="14" fill="#302012"/>
+<ellipse cx="1066" cy="770" rx="16" ry="6" fill="#120b06"/>
+<ellipse cx="1130" cy="750" rx="42" ry="10" fill="#ffbf6a" opacity="0.08"/>
+<ellipse cx="1074" cy="752" rx="10" ry="5.5" fill="#3a2a16" transform="rotate(-14 1074 752)"/>
+<ellipse cx="1122" cy="746" rx="11" ry="6" fill="#3a2a16" transform="rotate(10 1122 746)"/>
+<ellipse cx="1096" cy="768" rx="9" ry="5" fill="#3a2a16" transform="rotate(-8 1096 768)"/>
+<ellipse cx="1160" cy="764" rx="10" ry="5" fill="#3a2a16" transform="rotate(16 1160 764)"/>
+<ellipse cx="1052" cy="766" rx="8" ry="4.5" fill="#3a2a16" transform="rotate(12 1052 766)"/>
+<g fill="#3a2a16">
+<circle cx="1032" cy="782" r="2.5"/><circle cx="1064" cy="790" r="2"/><circle cx="1118" cy="794" r="2.4"/>
+<circle cx="1166" cy="788" r="2"/><circle cx="1192" cy="778" r="2.2"/><circle cx="1146" cy="798" r="1.8"/>
+<circle cx="1086" cy="798" r="1.7"/>
+</g>
+<path d="M1146 758 l10 -6 l6 10 Z" fill="#7c8890"/>
+<rect x="1152" y="716" width="9" height="34" rx="3" fill="#6b4a30" transform="rotate(24 1156 733)"/>
+<rect x="1150" y="746" width="12" height="6" rx="2" fill="#8a929c" transform="rotate(24 1156 749)"/>
+</g>
+<!-- heavy stone urn tipped over, soil spilled -->
+<g id="greenhouseFredUrn">
+<ellipse cx="512" cy="816" rx="86" ry="11" fill="#000" opacity="0.32"/>
+<ellipse cx="452" cy="798" rx="42" ry="11" fill="#241a10"/>
+<ellipse cx="434" cy="794" rx="12" ry="5" fill="#3a2a16"/>
+<ellipse cx="462" cy="804" rx="9" ry="4" fill="#3a2a16"/>
+<circle cx="420" cy="804" r="2.2" fill="#241a10"/>
+<circle cx="474" cy="810" r="2" fill="#3a2a16"/>
+<circle cx="442" cy="811" r="1.8" fill="#1c130b"/>
+<g transform="rotate(-96 512 778)">
+<path d="M464 736 h96 l-9 15 h-78 Z" fill="#4a5a52"/>
+<path d="M474 751 q-16 34 8 56 q13 11 30 11 q17 0 30 -11 q24 -22 8 -56 Z" fill="#4a5a52"/>
+<path d="M472 776 q40 10 80 0 M478 796 q34 9 68 0" stroke="#37453e" stroke-width="4" fill="none"/>
+<path d="M480 754 q-6 20 2 36" stroke="#5c6e64" stroke-width="2.5" fill="none" opacity="0.6"/>
+<rect x="490" y="816" width="44" height="10" rx="2" fill="#37453e"/>
+</g>
+<path d="M468 784 q-10 8 -20 12" stroke="#241a10" stroke-width="5" fill="none" opacity="0.75"/>
+</g>
 <!-- ===== coiled hose foreground ===== -->
 <ellipse cx="190" cy="812" rx="92" ry="12" fill="#000" opacity="0.3"/>
 <g fill="none" stroke="#2c6e50" stroke-width="9">

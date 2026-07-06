@@ -351,6 +351,23 @@
 <rect x="1372" y="742" width="150" height="54" rx="6" fill="#6b4a26" stroke="#3a2410" stroke-width="3"/>
 <text x="1447" y="776" font-family="Trebuchet MS" font-size="20" font-weight="bold" fill="#e8c07c" text-anchor="middle">TIKI BAR</text>
 </g>
+<!-- padlocked STAFF cabinet door on the bar front -->
+<g id="poolcab_staff_door">
+<rect x="1276" y="768" width="88" height="124" rx="3" fill="#5a442c" stroke="#3a2410" stroke-width="4"/>
+<path d="M1300 772 V888 M1322 772 V888 M1344 772 V888" stroke="#3a2410" stroke-width="2" opacity="0.6"/>
+<path d="M1283 772 V888" stroke="#7a5c3a" stroke-width="2" opacity="0.4"/>
+<rect x="1272" y="788" width="11" height="18" rx="2" fill="#2a2622"/>
+<rect x="1272" y="850" width="11" height="18" rx="2" fill="#2a2622"/>
+<path d="M1275 793 h5 M1275 801 h5 M1275 855 h5 M1275 863 h5" stroke="#4a4a52" stroke-width="1.5"/>
+<text x="1320" y="808" font-family="Trebuchet MS" font-size="15" font-weight="bold" fill="#b8ad8c" text-anchor="middle" opacity="0.85" letter-spacing="2">STAFF</text>
+<rect x="1336" y="818" width="24" height="8" rx="2" fill="#8a8a94"/>
+<circle cx="1341" cy="822" r="1.5" fill="#4a4a52"/>
+<path d="M1346 828 v-4 a6 6 0 0 1 12 0 v4" stroke="#8a7a5c" stroke-width="3.5" fill="none"/>
+<rect x="1342" y="826" width="20" height="16" rx="3" fill="#e8b73a"/>
+<path d="M1342 831 h20" stroke="#c99b28" stroke-width="2"/>
+<circle cx="1352" cy="835" r="2.2" fill="#7a4b12"/>
+<path d="M1352 835 v3.5" stroke="#7a4b12" stroke-width="1.5"/>
+</g>
 <path d="M1252 664 L1600 640 L1600 678 L1252 702 Z" fill="#5a442c"/>
 <path d="M1252 664 L1600 640 L1600 654 L1252 678 Z" fill="#7a5c3a"/>
 <path d="M1252 664 L1600 640" stroke="#d9b06a" stroke-width="2.5" opacity="0.4"/>

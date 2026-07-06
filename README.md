@@ -64,9 +64,9 @@ replays on a fresh game).
 
 1. **Lobby** — flashlight from the front desk drawer; the 1969 brochure from the abandoned
    luggage; as Velma, read the guest ledger; talk to Mr. Crane.
-2. **Grounds (east)** — the hub: stick from the bushes, monogrammed glove from the pool muck,
-   and Gus raking eternally. Four ways out: toolshed (north, dark), greenhouse (south),
-   vine-choked archway (east), pool hatch (down, cranked shut).
+2. **Grounds (east)** — the hub: stick from the bushes, and (as Daphne) the monogrammed glove
+   from the pool muck. Gus rakes eternally. Four ways out: toolshed (north, dark), greenhouse
+   (south), vine-choked archway (east), pool hatch (down, cranked shut — Fred's job).
 2a. **Greenhouse (south)** — grab the **garden shears** from the planter bench.
 2b. **Grounds** — use the shears on the **overgrown archway** → the pool cabana opens (east).
 2c. **Pool Cabana (east)** — as Shaggy & Scooby, shake the **vending machine** (Scooby Snack +
@@ -74,8 +74,8 @@ replays on a fresh game).
 2d. **Grounds** — flashlight on the dark **toolshed doorway**, then head north inside.
 2e. **Toolshed** — Sticky Stick on the floor grate → **Maintenance Key**; take the **crank
    handle** off the pegboard; read the chalk outlines.
-2f. *(Optional)* **Grounds** — crank handle on the **pool hatch** → climb down to the **Pump
-   Room**: the phantom's tunnel map, Crane's pump shutdown order, and his supply stash.
+2f. *(Optional)* **Grounds** — as **Fred**, crank handle on the **pool hatch** → climb down to
+   the **Pump Room**: the phantom's tunnel map, Crane's pump shutdown order, and his supply stash.
 3. **Janitor's Closet (west of lobby, use the key)** — flashlight on the shadowy shelf
    (glowing paint!); take the rope and the box cutter; as Daphne, pick the padlocked
    floor grate.
@@ -90,6 +90,19 @@ replays on a fresh game).
    as Shaggy & Scooby, Scooby Snack on the bait crate; pull the red lever.
 8. **The accusation** — Gus, George, and "a real ghost" all get comedic rebuttals;
    accuse **Mr. Crane** to close the case.
+
+**Every room has one job per character** (10 gated interactions each for Fred, Daphne, Velma,
+and Shaggy & Scooby) — press **H** in any room and try the walkie.
+
+**Combine side-quests** (inventory: click item A, then item B):
+- **Clothesline + Horseshoe Magnet → Magnet on a Line.** George hands over the clothesline with
+  his testimony; Daphne picks the toolshed toolbox for the magnet. Use it on the pump room's
+  barred **BOILER door** → opens a secret east passage straight into the boiler room.
+- **Old Bedsheet + Glowing Paint → Counterfeit Phantom.** Fred pops the Room 217 steamer trunk
+  for the sheet. Wave it at Mr. Crane (or Gus) and watch the reaction. Also try showing Crane
+  the muddy glove...
+- **Resort Brochure + Tunnel Map → Marked Resort Map.** Velma overlays them; use the marked map
+  on the pump room's **oddly new brickwork** → the phantom's walled-up tool cache.
 
 </details>
 

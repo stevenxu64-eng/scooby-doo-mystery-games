@@ -5,10 +5,14 @@ import {
   Cookie,
   FileText,
   Flashlight,
+  Ghost,
   Hand,
   Key,
   KeyRound,
+  Layers,
+  Magnet,
   Map,
+  MapPin,
   Megaphone,
   PaintBucket,
   Scissors,
@@ -154,6 +158,54 @@ export const ITEMS: Record<string, ItemDef> = {
     icon: Map,
     color: '#fbbf24',
   },
+  magnet: {
+    id: 'magnet',
+    name: 'Horseshoe Magnet',
+    description:
+      "A brand-new horseshoe magnet from the phantom's tidy toolbox — price sticker still on. Strong enough to lift a latch bar... if you could reach one.",
+    icon: Magnet,
+    color: '#ef4444',
+  },
+  clothesline: {
+    id: 'clothesline',
+    name: 'Clothesline',
+    description:
+      'The knotted clothesline George was tied up with. Long, thin, and happy to be out of a job.',
+    icon: Cable,
+    color: '#a8a29e',
+  },
+  magnet_line: {
+    id: 'magnet_line',
+    name: 'Magnet on a Line',
+    description:
+      'A horseshoe magnet lashed to a clothesline. For fishing ferrous treasure out of impossible gaps.',
+    icon: Magnet,
+    color: '#f87171',
+  },
+  old_bedsheet: {
+    id: 'old_bedsheet',
+    name: 'Old Bedsheet',
+    description:
+      'A clean spare bedsheet from the Room 217 trunk. Suspiciously phantom-shaped, if you squint.',
+    icon: Layers,
+    color: '#e7e5e4',
+  },
+  decoy_costume: {
+    id: 'decoy_costume',
+    name: 'Counterfeit Phantom',
+    description:
+      'A bedsheet slathered in LUMO-GLOW with two lopsided eye holes. Show it to a "witness" and watch their face very, very closely.',
+    icon: Ghost,
+    color: '#4ade80',
+  },
+  marked_map: {
+    id: 'marked_map',
+    name: 'Marked Resort Map',
+    description:
+      "The 1969 brochure plan overlaid with the phantom's tunnel routes. One junction is circled with an X — behind the pump-room brickwork.",
+    icon: MapPin,
+    color: '#fbbf24',
+  },
 }
 
 export interface CombineRecipe {
@@ -168,5 +220,23 @@ export const COMBINE_RECIPES: CombineRecipe[] = [
     result: 'sticky_stick',
     message:
       "You mash the gum onto the end of the stick. Behold: the Sticky Stick! Perfect for fishing shiny things out of narrow gaps.",
+  },
+  {
+    ingredients: ['clothesline', 'magnet'],
+    result: 'magnet_line',
+    message:
+      "You lash the horseshoe magnet to the clothesline and give it a test swing. Fred nods slowly: 'Now THAT is a latch-fisher.' Somewhere, a barred door just got very nervous.",
+  },
+  {
+    ingredients: ['old_bedsheet', 'glowing_paint'],
+    result: 'decoy_costume',
+    message:
+      "You slop LUMO-GLOW across the bedsheet and scissor two lopsided eye holes. Behold: a COUNTERFEIT PHANTOM! Scooby refuses to look at it. Shaggy salutes it. Maybe show it to a 'witness' and study their reaction...",
+  },
+  {
+    ingredients: ['old_brochure', 'tunnel_map'],
+    result: 'marked_map',
+    message:
+      "Velma flattens the phantom's tunnel map over the 1969 brochure plan: 'Jinkies — the tunnels ARE the old service corridors! And this junction is marked X... right behind the pump-room brickwork!'",
   },
 ]
