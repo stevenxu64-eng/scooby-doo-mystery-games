@@ -1,4 +1,4 @@
-export type CharacterId = 'Velma' | 'Shaggy_Scooby' | 'Daphne'
+export type CharacterId = 'Fred' | 'Velma' | 'Shaggy_Scooby' | 'Daphne'
 
 export type Direction = 'north' | 'south' | 'east' | 'west' | 'up' | 'down'
 

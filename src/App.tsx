@@ -4,6 +4,7 @@ import { Viewport } from './components/Viewport'
 import { Inventory } from './components/Inventory'
 import { CharacterHub } from './components/CharacterHub'
 import { MessageBar } from './components/MessageBar'
+import { IntroScreen } from './components/IntroScreen'
 import { useGameStore } from './store/gameStore'
 import { attachAudioUnlock, toggleMute } from './engine/audio'
 import type { Direction } from './types/game'
@@ -26,6 +27,8 @@ export default function App() {
   const showHotspotHints = useGameStore((s) => s.showHotspotHints)
   const toggleHotspotHints = useGameStore((s) => s.toggleHotspotHints)
   const resetGame = useGameStore((s) => s.resetGame)
+  const introSeen = useGameStore((s) => s.introSeen)
+  const completeIntro = useGameStore((s) => s.completeIntro)
   const [muted, setMuted] = useState(false)
 
   useEffect(() => {
@@ -100,6 +103,9 @@ export default function App() {
         <Inventory />
         <CharacterHub />
       </div>
+
+      {/* Opening cutscene: the Mystery Machine arrives at the Grand Palm */}
+      {!introSeen && <IntroScreen onDone={completeIntro} />}
     </div>
   )
 }

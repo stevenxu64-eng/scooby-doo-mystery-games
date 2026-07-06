@@ -637,9 +637,11 @@
           },
           {
             "type": "show_message",
-            "text": "You string the rope through the hook and rig the old laundry net above the crate. One tug of the lever and WHOOSH \u2014 instant phantom pi\u00f1ata."
+            "text": "Fred whips the rope into a double-pulley snare net like he's done it a hundred times. (He has.) 'Classic Palm Beach Snare, gang. When the phantom takes the bait \u2014 WHOOSH.'"
           }
-        ]
+        ],
+        "required_character": "Fred",
+        "wrong_character_message": "An iron hook, a coil of rope, a phantom to catch... this is a job for Freddy 'The Trap' Jones. Radio him in!"
       },
       {
         "id": "bait_crate",
@@ -858,9 +860,11 @@
           },
           {
             "type": "show_message",
-            "text": "Following the blueprint, you tug the one clean book on the shelf \u2014 'GHOST STORIES, Vol. 2' \u2014 and the whole bookshelf swings aside! Room 217 is real. Head east... carefully."
+            "text": "Fred plants his feet, tugs the one clean book \u2014 'GHOST STORIES, Vol. 2' \u2014 and muscles the whole bookshelf aside! Room 217 is real. 'And THAT, gang, is why you stretch first.' Head east... carefully."
           }
-        ]
+        ],
+        "required_character": "Fred",
+        "wrong_character_message": "Velma taps the shelf: 'The blueprint says this moves... but it must weigh a ton.' Moving suspicious furniture is Freddy's department."
       },
       {
         "id": "crane_desk",

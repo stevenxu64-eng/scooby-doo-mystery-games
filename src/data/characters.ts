@@ -1,4 +1,4 @@
-import { Dog, Gem, Glasses, type LucideIcon } from 'lucide-react'
+import { Dog, Gem, Glasses, Wrench, type LucideIcon } from 'lucide-react'
 import type { CharacterId } from '../types/game'
 
 export interface CharacterDef {
@@ -11,6 +11,14 @@ export interface CharacterDef {
 }
 
 export const CHARACTERS: Record<CharacterId, CharacterDef> = {
+  Fred: {
+    id: 'Fred',
+    name: 'Fred',
+    skill: 'Rigs traps & moves heavy things',
+    catchphrase: "Alright gang, let's split up and look for clues.",
+    icon: Wrench,
+    color: '#2f7bd9',
+  },
   Velma: {
     id: 'Velma',
     name: 'Velma',
@@ -37,4 +45,4 @@ export const CHARACTERS: Record<CharacterId, CharacterDef> = {
   },
 }
 
-export const CHARACTER_ORDER: CharacterId[] = ['Velma', 'Shaggy_Scooby', 'Daphne']
+export const CHARACTER_ORDER: CharacterId[] = ['Fred', 'Daphne', 'Velma', 'Shaggy_Scooby']

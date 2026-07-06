@@ -195,7 +195,63 @@ function DaphneBust() {
   )
 }
 
+function FredBust() {
+  return (
+    <svg viewBox="0 0 120 130" className="h-full w-full drop-shadow-lg">
+      <Defs prefix="f" skinA="#f7d8ab" skinB="#e4b384" hairA="#e8c860" hairB="#c9a53e" />
+      {/* shoulders: white long-sleeve shirt with folds */}
+      <path d="M22 130 q1 -33 23 -39 q8 9 15 9 q7 0 15 -9 q22 6 23 39 Z" fill="#f7f4ec" />
+      <path d="M22 130 q1 -33 23 -39 q8 9 15 9 q7 0 15 -9 q22 6 23 39" fill="none" stroke="#d8d2c2" strokeWidth="2.5" />
+      <path d="M34 112 q26 10 52 0" stroke="#ded7c6" strokeWidth="2.6" fill="none" opacity="0.9" />
+      <path d="M32 104 q3 8 2 14 M88 104 q-3 8 -2 14" stroke="#ded7c6" strokeWidth="2.2" fill="none" opacity="0.8" />
+      {/* blue jeans waist hint at the crop */}
+      <path d="M22 130 q0 -5 1 -9 q37 12 74 0 q1 4 1 9 Z" fill="#3b5b8a" />
+      <path d="M23 121 q37 12 74 0" fill="none" stroke="#2c4569" strokeWidth="2" />
+      <path d="M27 126 q33 9 66 0" fill="none" stroke="#5577a6" strokeWidth="1.5" opacity="0.7" />
+      {/* soft blue shirt collar flaps */}
+      <path d="M46 92 l-13 13 l17 -3 Z" fill="#bcd2e8" stroke="#8fb0d0" strokeWidth="2" />
+      <path d="M74 92 l13 13 l-17 -3 Z" fill="#bcd2e8" stroke="#8fb0d0" strokeWidth="2" />
+      {/* neck */}
+      <path d="M53 77 h14 v13 a7 5 0 0 1 -14 0 Z" fill="url(#f-skin)" />
+      <path d="M53 81 q7 4.6 14 0 v4 q-7 4.6 -14 0 Z" fill="#cfa377" opacity="0.5" />
+      {/* iconic orange ascot: drape, hanging tail, knot */}
+      <path d="M44 93 q16 13 32 0 q5 5 6 12 q-22 15 -44 0 q1 -7 6 -12 Z" fill="#f59e0b" stroke="#d97706" strokeWidth="2.5" />
+      <path d="M50 100 q3 6 2 10 M70 100 q-3 6 -2 10" stroke="#d97706" strokeWidth="2" fill="none" opacity="0.8" />
+      <path d="M55 111 q-4 10 0 16 q5 4 10 0 q4 -6 0 -16 Z" fill="#f59e0b" stroke="#d97706" strokeWidth="2" />
+      <path d="M60 113 v11" stroke="#d97706" strokeWidth="1.8" opacity="0.8" />
+      <path d="M54 103 q6 -4 12 0 q2.5 4.5 0 9 q-6 3.5 -12 0 q-2.5 -4.5 0 -9 Z" fill="#f59e0b" stroke="#d97706" strokeWidth="2.2" />
+      <path d="M57 104.5 q-1.5 4 0 7 M63 104.5 q1.5 4 0 7" stroke="#d97706" strokeWidth="1.6" fill="none" opacity="0.8" />
+      {/* head: strong square jaw */}
+      <path d="M32 46 q0 -28 28 -28 q28 0 28 28 q0 16 -6 24 q-6 9 -22 9 q-16 0 -22 -9 q-6 -8 -6 -24 Z" fill="url(#f-skin)" />
+      <path d="M44 66 q3 6 8 9 M76 66 q-3 6 -8 9" stroke="#d8ab7c" strokeWidth="1.8" fill="none" opacity="0.5" />
+      {/* ears */}
+      <ellipse cx="31" cy="54" rx="4.5" ry="7" fill="url(#f-skin)" />
+      <ellipse cx="89" cy="54" rx="4.5" ry="7" fill="url(#f-skin)" />
+      {/* neat blond side-parted hair, swooped left-to-right */}
+      <path d="M29 52 q-4 -41 31 -41 q35 0 31 41 q-1 -6 -5 -8 q-4 -14 -18 -17 q-14 -3 -24 4 q-6 4 -6 10 q-6 6 -9 11 Z" fill="url(#f-hair)" />
+      <path d="M29 50 q0 8 4 12 l4 -4 q-2 -4 -2 -9 Z" fill="url(#f-hair)" />
+      <path d="M91 50 q0 8 -4 12 l-4 -4 q2 -4 2 -9 Z" fill="url(#f-hair)" />
+      {/* comb lines of the swoop + part + shine */}
+      <path d="M40 31 q16 -10 34 -4 q10 4 13 13" stroke="#b08c2e" strokeWidth="2.2" fill="none" opacity="0.8" strokeLinecap="round" />
+      <path d="M44 24 q18 -8 34 0" stroke="#b08c2e" strokeWidth="2" fill="none" opacity="0.5" strokeLinecap="round" />
+      <path d="M42 30 q-2 5 -3 10" stroke="#a5802a" strokeWidth="2" fill="none" opacity="0.85" strokeLinecap="round" />
+      <path d="M46 17 q12 -4 24 1" stroke="#f2d989" strokeWidth="2.6" fill="none" strokeLinecap="round" opacity="0.8" />
+      <Eye cx={47} cy={53} iris="#3f6d8e" />
+      <Eye cx={73} cy={53} iris="#3f6d8e" />
+      {/* thicker straight confident brows */}
+      <path d="M40.5 48 l13 -0.8 M66.5 47.2 l13 0.8" stroke="#7a5c1e" strokeWidth="3.2" fill="none" strokeLinecap="round" />
+      {/* nose + confident smile */}
+      <path d="M60 57 q-2.4 6 0 9 q2 1.5 3.8 0" stroke="#cfa377" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+      <path d="M50 71 q10 8 20 0" stroke="#a3542e" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M53 73.5 q7 3.6 14 0" stroke="#d9776b" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7" />
+      <ellipse cx="41" cy="63" rx="5.5" ry="3.6" fill="url(#f-cheek)" />
+      <ellipse cx="79" cy="63" rx="5.5" ry="3.6" fill="url(#f-cheek)" />
+    </svg>
+  )
+}
+
 export function CharacterBust({ id }: { id: CharacterId }) {
+  if (id === 'Fred') return <FredBust />
   if (id === 'Velma') return <VelmaBust />
   if (id === 'Daphne') return <DaphneBust />
   return <ShaggyScoobyBust />

@@ -32,6 +32,8 @@ export interface GameState {
   activeDialogue: { id: string; node: string } | null
   gameWon: boolean
   showHotspotHints: boolean
+  /** Whether the Mystery Machine intro cutscene has played (persisted). */
+  introSeen: boolean
   /** ms timestamps of when each flag flipped true — drives scene-change animations. */
   flagStamps: Record<string, number>
   /** Bumped on every performed action — makes the character portrait react. */
@@ -50,6 +52,7 @@ export interface GameState {
   chooseDialogueOption: (choice: DialogueChoice) => void
   showMessage: (text: string) => void
   toggleHotspotHints: () => void
+  completeIntro: () => void
   resetGame: () => void
 }
 
@@ -57,13 +60,14 @@ const initialState = {
   activeRoom: START_ROOM,
   playerInventory: [] as string[],
   gameFlags: {} as Record<string, boolean>,
-  activeCharacter: 'Velma' as CharacterId,
+  activeCharacter: 'Fred' as CharacterId,
   selectedItem: null as string | null,
   message: SCENES[START_ROOM].description,
   messageId: 0,
   activeDialogue: null as { id: string; node: string } | null,
   gameWon: false,
   showHotspotHints: false,
+  introSeen: false,
   flagStamps: {} as Record<string, number>,
   actionPulse: 0,
   lastCameo: null as { id: number; x: number; y: number; character: CharacterId } | null,
@@ -291,6 +295,8 @@ export const useGameStore = create<GameState>()(
 
   toggleHotspotHints: () => set((s) => ({ showHotspotHints: !s.showHotspotHints })),
 
+  completeIntro: () => set({ introSeen: true }),
+
   resetGame: () => set({ ...initialState, messageId: get().messageId + 1 }),
     }),
     {
@@ -302,6 +308,7 @@ export const useGameStore = create<GameState>()(
         playerInventory: s.playerInventory,
         gameFlags: s.gameFlags,
         activeCharacter: s.activeCharacter,
+        introSeen: s.introSeen,
       }),
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<GameState>

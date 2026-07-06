@@ -1,5 +1,6 @@
 import { Backpack, Combine } from 'lucide-react'
 import { ITEMS } from '../data/items'
+import { ItemIcon } from './ItemArt'
 import { useGameStore } from '../store/gameStore'
 
 const SLOT_COUNT = 8
@@ -30,6 +31,7 @@ export function Inventory() {
             )
           }
           const Icon = item.icon
+          const art = ItemIcon({ id: item.id, className: 'h-9 w-9 md:h-10 md:w-10' })
           return (
             <button
               key={i}
@@ -39,7 +41,7 @@ export function Inventory() {
                 isSelected ? 'ring-4 ring-amber-400 brightness-125' : ''
               }`}
             >
-              <Icon size={26} color={item.color} strokeWidth={2.25} />
+              {art ?? <Icon size={26} color={item.color} strokeWidth={2.25} />}
             </button>
           )
         })}

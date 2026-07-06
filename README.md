@@ -44,13 +44,18 @@ before `.svg`) and is harmless.
 
 ## How to play
 
+The game opens with an animated intro: George Palm III's letter hires Mystery Inc., and the
+Mystery Machine rolls up to the abandoned Grand Palm Resort ("Skip intro" any time; it
+replays on a fresh game).
+
+
 - **Move** between screens with the on-screen arrows, or **Arrows/WASD** (Q/E for up/down).
 - **Click hotspots** to examine, collect, and talk. Press **H** to outline all hotspots.
 - **Inventory**: click an item to arm it, then click a hotspot to use it — or click a
   *second* item to try combining them (e.g. Long Stick + Chewing Gum).
-- **Walkie-talkie**: switch between Velma / Shaggy & Scooby / Daphne. Some obstacles only
-  yield to the right gang member (Velma reads documents, Shaggy & Scooby handle snacks
-  and bait, Daphne picks locks).
+- **Walkie-talkie**: switch between Fred / Daphne / Velma / Shaggy & Scooby. Some obstacles
+  only yield to the right gang member (Fred rigs traps and moves heavy things, Velma reads
+  documents, Shaggy & Scooby handle snacks and bait, Daphne picks locks).
 - **Dialogue**: click a branch or press **1–9**. Choices appear/disappear based on the
   clues (flags) you've gathered.
 
@@ -70,11 +75,11 @@ before `.svg`) and is harmless.
    office passkey.
 5. **Manager's Office (north of lobby, use the passkey)** — as Velma, read the blueprint
    chest (Room 217 exists!); examine the founder's portrait (6-9-1969); open the wall
-   safe → draft deed; pull the clean book on the east shelf → the bookshelf slides aside.
+   safe → draft deed; as Fred, muscle the east bookshelf aside (pull the clean book).
 6. **Room 217 (east)** — bag the Wail-o-Phone; cut **George Palm III** free with the box
    cutter; hear his testimony → he'll back you up.
-7. **Boiler Room (down from the closet)** — rope on the ceiling hook; as Shaggy & Scooby,
-   Scooby Snack on the bait crate; pull the red lever.
+7. **Boiler Room (down from the closet)** — as Fred, rig the rope on the ceiling hook;
+   as Shaggy & Scooby, Scooby Snack on the bait crate; pull the red lever.
 8. **The accusation** — Gus, George, and "a real ghost" all get comedic rebuttals;
    accuse **Mr. Crane** to close the case.
 
