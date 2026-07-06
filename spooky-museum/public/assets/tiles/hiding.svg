@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48" viewBox="0 0 64 48">
+  <!-- Open sarcophagus hiding spot, isometric footprint 64x32 at the bottom -->
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d9a93f"/>
+      <stop offset="100%" stop-color="#9a742a"/>
+    </linearGradient>
+  </defs>
+  <!-- base slab (iso diamond) -->
+  <path d="M32 16 L62 32 L32 48 L2 32 Z" fill="url(#gold)" stroke="#6e521d" stroke-width="1.5"/>
+  <!-- dark opening -->
+  <path d="M32 21 L54 32 L32 43 L10 32 Z" fill="#17130a"/>
+  <path d="M32 21 L54 32 L32 43 L10 32 Z" fill="none" stroke="#f2cf6e" stroke-width="1" opacity="0.7"/>
+  <!-- propped lid behind -->
+  <path d="M32 2 L58 15 L50 21 L26 9 Z" fill="#c79a38" stroke="#6e521d" stroke-width="1.2"/>
+  <path d="M35 6 L51 14" stroke="#8a6a26" stroke-width="1.4"/>
+  <ellipse cx="41" cy="11" rx="3.2" ry="2" fill="#2b6d8a"/>
+  <!-- welcoming glow from inside -->
+  <path d="M32 24 L48 32 L32 40 L16 32 Z" fill="#4ade80" opacity="0.12"/>
+</svg>

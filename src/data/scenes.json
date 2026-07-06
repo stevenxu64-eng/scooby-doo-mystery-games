@@ -1,0 +1,593 @@
+{
+  "lobby": {
+    "id": "lobby",
+    "name": "Resort Lobby",
+    "background_image_url": "/assets/scenes/lobby.svg",
+    "fallback_gradient": "linear-gradient(180deg, #3b2f4f 0%, #6d4c2f 55%, #2a1d14 100%)",
+    "ambience": "ambience_lobby",
+    "description": "The Grand Palm Resort lobby. Dust sheets drape the furniture and a chandelier sways with no breeze. Mr. Crane, the caretaker, hovers behind the front desk.",
+    "navigation_links": [
+      {
+        "direction": "east",
+        "target": "grounds",
+        "label": "Resort Grounds"
+      },
+      {
+        "direction": "west",
+        "target": "janitor_closet",
+        "label": "Janitor's Closet",
+        "locked_by_flag": "closet_unlocked",
+        "locked_message": "The janitor's closet door is locked tight. A heavy old lock \u2014 you'd need the right key."
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "closet_door_lock",
+        "label": "Locked Closet Door",
+        "x": 2,
+        "y": 28,
+        "w": 12,
+        "h": 48,
+        "required_item": "janitor_key",
+        "consume_item": true,
+        "hidden_if_flags": [
+          "closet_unlocked"
+        ],
+        "missing_item_message": "The janitor's closet. The lock is old but sturdy \u2014 no key, no entry.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "closet_unlocked",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The key turns with a rusty CLUNK. The janitor's closet is open! Head west to look inside."
+          }
+        ]
+      },
+      {
+        "id": "front_desk_drawer",
+        "label": "Front Desk Drawer",
+        "x": 38,
+        "y": 62,
+        "w": 16,
+        "h": 16,
+        "hidden_if_flags": [
+          "took_flashlight"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "flashlight"
+          },
+          {
+            "type": "set_flag",
+            "flag": "took_flashlight",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Inside the drawer: a heavy old flashlight. It still works! Added to inventory."
+          }
+        ]
+      },
+      {
+        "id": "guest_ledger",
+        "label": "Guest Ledger",
+        "x": 40,
+        "y": 48,
+        "w": 12,
+        "h": 10,
+        "required_character": "Velma",
+        "hidden_if_flags": [
+          "read_ledger"
+        ],
+        "wrong_character_message": "Rows of cramped, faded bookkeeping. Deciphering this is a job for Velma.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "read_ledger",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Velma: 'Jinkies! According to this ledger, the resort is drowning in debt... and someone's been billing supplies to a room that doesn't exist.'"
+          }
+        ]
+      },
+      {
+        "id": "mr_crane",
+        "label": "Mr. Crane (Caretaker)",
+        "x": 62,
+        "y": 30,
+        "w": 15,
+        "h": 46,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "talked_to_crane",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "crane_main"
+          }
+        ]
+      },
+      {
+        "id": "ghost_poster",
+        "label": "Faded Poster",
+        "x": 84,
+        "y": 22,
+        "w": 12,
+        "h": 26,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A sun-bleached poster: 'GRAND PALM RESORT \u2014 Paradise Awaits!' Someone has scrawled a glowing green figure over the pool with the words: THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT."
+          }
+        ]
+      }
+    ]
+  },
+  "grounds": {
+    "id": "grounds",
+    "name": "Resort Grounds",
+    "background_image_url": "/assets/scenes/grounds.svg",
+    "fallback_gradient": "linear-gradient(180deg, #0f2d3d 0%, #1d4a38 55%, #12291c 100%)",
+    "ambience": "ambience_grounds",
+    "description": "Overgrown gardens surround a drained, cracked swimming pool. A toolshed slumps in the shadows, and Janitor Gus rakes the same spot of dead leaves over and over.",
+    "navigation_links": [
+      {
+        "direction": "west",
+        "target": "lobby",
+        "label": "Resort Lobby"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "bushes",
+        "label": "Overgrown Bushes",
+        "x": 4,
+        "y": 58,
+        "w": 18,
+        "h": 26,
+        "hidden_if_flags": [
+          "got_stick"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "stick"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_stick",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "You fish a long, sturdy stick out of the bushes. You never know when a good stick will come in handy."
+          }
+        ]
+      },
+      {
+        "id": "vending_machine",
+        "label": "Old Vending Machine",
+        "x": 78,
+        "y": 34,
+        "w": 14,
+        "h": 42,
+        "required_character": "Shaggy_Scooby",
+        "hidden_if_flags": [
+          "shook_vending"
+        ],
+        "wrong_character_message": "An ancient vending machine with one Scooby Snax box dangling on the spiral. It won't budge. Shaking loose snacks is a job for Shaggy and Scooby.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "rattle"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "scooby_snack"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "chewing_gum"
+          },
+          {
+            "type": "set_flag",
+            "flag": "shook_vending",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Shaggy and Scooby rattle the machine like maniacs! Out drops a box of Scooby Snax... and a pack of extra-sticky chewing gum wedged under the flap. 'Like, jackpot!'"
+          }
+        ]
+      },
+      {
+        "id": "janitor_gus",
+        "label": "Janitor Gus",
+        "x": 48,
+        "y": 32,
+        "w": 14,
+        "h": 46,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "talked_to_janitor",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "gus_main"
+          }
+        ]
+      },
+      {
+        "id": "toolshed_dark",
+        "label": "Dark Toolshed",
+        "x": 24,
+        "y": 26,
+        "w": 18,
+        "h": 40,
+        "required_item": "flashlight",
+        "hidden_if_flags": [
+          "shed_lit"
+        ],
+        "missing_item_message": "The toolshed is pitch black inside. Without a light you can't see a thing \u2014 something skitters in the dark. Zoinks.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "shed_lit",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The flashlight beam sweeps the shed... There! Something metal glints beneath the floor grate. A key! But the gap is far too narrow for fingers."
+          }
+        ]
+      },
+      {
+        "id": "shed_grate",
+        "label": "Floor Grate (something glints below)",
+        "x": 26,
+        "y": 62,
+        "w": 14,
+        "h": 16,
+        "visible_if_flags": [
+          "shed_lit"
+        ],
+        "hidden_if_flags": [
+          "got_janitor_key"
+        ],
+        "required_item": "sticky_stick",
+        "consume_item": true,
+        "missing_item_message": "The key is wedged deep under the grate. Your arm can't fit \u2014 you need something long, thin, and sticky to fish it out.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "janitor_key"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_janitor_key",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "You lower the gummy stick through the grate... steady... GOT IT! A brass key stamped 'MAINTENANCE'. This must open the janitor's closet in the lobby."
+          }
+        ]
+      },
+      {
+        "id": "empty_pool",
+        "label": "Drained Pool",
+        "x": 44,
+        "y": 82,
+        "w": 34,
+        "h": 14,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "The pool has been empty for years, but there are fresh footprints in the leaf muck at the bottom... leading toward the lobby. Ghosts don't leave sneaker prints."
+          }
+        ]
+      }
+    ]
+  },
+  "janitor_closet": {
+    "id": "janitor_closet",
+    "name": "Janitor's Closet",
+    "background_image_url": "/assets/scenes/janitor_closet.svg",
+    "fallback_gradient": "linear-gradient(180deg, #1c1917 0%, #3f3a2f 50%, #171412 100%)",
+    "ambience": "ambience_closet",
+    "description": "A cramped closet reeking of bleach and something... chemical. Shelves sag with supplies, a coil of rope hangs on the wall, and a padlocked grate is set into the floor.",
+    "navigation_links": [
+      {
+        "direction": "east",
+        "target": "lobby",
+        "label": "Resort Lobby"
+      },
+      {
+        "direction": "down",
+        "target": "trap_room",
+        "label": "Boiler Room",
+        "locked_by_flag": "trap_room_open",
+        "locked_message": "A padlocked grate blocks the way down. The lock is rusted but stubborn."
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "paint_shelf",
+        "label": "Shadowy Back Shelf",
+        "x": 6,
+        "y": 22,
+        "w": 22,
+        "h": 34,
+        "required_item": "flashlight",
+        "hidden_if_flags": [
+          "found_glowing_paint"
+        ],
+        "missing_item_message": "The back shelves are lost in shadow. You can make out cans of... something. Too dark to read the labels.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "glowing_paint"
+          },
+          {
+            "type": "set_flag",
+            "flag": "found_glowing_paint",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The beam lands on a half-empty can of LUMO-GLOW PHANTOM GREEN theatrical paint \u2014 the exact eerie green of the Phantom Guest! You take the can as evidence."
+          }
+        ]
+      },
+      {
+        "id": "rope_coil",
+        "label": "Coil of Rope",
+        "x": 68,
+        "y": 26,
+        "w": 14,
+        "h": 22,
+        "hidden_if_flags": [
+          "got_rope"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "rope"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_rope",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "A long coil of sturdy rope. Freddy would be proud \u2014 this is prime trap-building material."
+          }
+        ]
+      },
+      {
+        "id": "floor_grate_lock",
+        "label": "Padlocked Floor Grate",
+        "x": 38,
+        "y": 72,
+        "w": 24,
+        "h": 20,
+        "required_character": "Daphne",
+        "hidden_if_flags": [
+          "trap_room_open"
+        ],
+        "wrong_character_message": "A rusty padlock seals the floor grate. Warm air and a faint green glow seep up from below. Picking locks is Daphne's department.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "trap_room_open",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Daphne slides a hairpin from her hair and works the padlock... click... CLICK! 'And Freddy says I'm danger-prone.' The way down to the boiler room is open!"
+          }
+        ]
+      },
+      {
+        "id": "supply_invoice",
+        "label": "Crumpled Invoice",
+        "x": 46,
+        "y": 50,
+        "w": 12,
+        "h": 12,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A crumpled invoice: '6 cans LUMO-GLOW paint \u2014 CHARGED TO ROOM 217.' Wait... the ledger said the resort doesn't HAVE a room 217. Somebody's hiding purchases."
+          }
+        ]
+      }
+    ]
+  },
+  "trap_room": {
+    "id": "trap_room",
+    "name": "Boiler Room (Trap Room)",
+    "background_image_url": "/assets/scenes/trap_room.svg",
+    "fallback_gradient": "linear-gradient(180deg, #14532d 0%, #052e16 45%, #1c1917 100%)",
+    "ambience": "ambience_boiler",
+    "description": "The boiler room glows sickly green \u2014 glowing footprints everywhere! A bedsheet 'costume' hangs by the furnace. An iron hook juts from a ceiling beam above a bait-sized crate, next to a big red lever marked 'LAUNDRY NET'.",
+    "navigation_links": [
+      {
+        "direction": "up",
+        "target": "janitor_closet",
+        "label": "Janitor's Closet"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "ceiling_hook",
+        "label": "Iron Ceiling Hook",
+        "x": 40,
+        "y": 8,
+        "w": 12,
+        "h": 18,
+        "required_item": "rope",
+        "consume_item": true,
+        "hidden_if_flags": [
+          "rope_set"
+        ],
+        "missing_item_message": "A sturdy iron hook juts from the beam, right above the crate. Perfect for rigging a net trap... if you had a rope.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "rope_set",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "You string the rope through the hook and rig the old laundry net above the crate. One tug of the lever and WHOOSH \u2014 instant phantom pi\u00f1ata."
+          }
+        ]
+      },
+      {
+        "id": "bait_crate",
+        "label": "Bait Crate",
+        "x": 42,
+        "y": 56,
+        "w": 16,
+        "h": 20,
+        "required_item": "scooby_snack",
+        "consume_item": true,
+        "required_character": "Shaggy_Scooby",
+        "hidden_if_flags": [
+          "bait_set"
+        ],
+        "wrong_character_message": "The crate sits right under the net. It needs bait \u2014 and nobody arranges a Scooby Snack more irresistibly than Shaggy and Scooby.",
+        "missing_item_message": "The crate sits right under the net. It needs bait. Something no phantom with taste could resist... like a Scooby Snack.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "bait_set",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Shaggy balances the Scooby Snack on the crate at the perfect tempting angle. Scooby whimpers: 'Rye rye, rittle ruddy...' The trap is baited!"
+          }
+        ]
+      },
+      {
+        "id": "ghost_costume",
+        "label": "Glowing Bedsheet",
+        "x": 76,
+        "y": 28,
+        "w": 14,
+        "h": 34,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A bedsheet cut with eye holes, soaked in glowing green paint. Still wet. The Phantom Guest will be back for it soon \u2014 better spring the trap before then!"
+          }
+        ]
+      },
+      {
+        "id": "trap_lever",
+        "label": "Red Lever \u2014 'LAUNDRY NET'",
+        "x": 10,
+        "y": 44,
+        "w": 10,
+        "h": 26,
+        "required_flags": [
+          "rope_set",
+          "bait_set",
+          "knows_truth"
+        ],
+        "locked_message": "Not yet! To spring the trap you need: the rope net rigged on the hook, a Scooby Snack set as bait, and enough EVIDENCE to know who's under that sheet. (Psst \u2014 has anyone shown the glowing paint to Gus?)",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "trap"
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "unmasking"
+          }
+        ]
+      }
+    ]
+  }
+}

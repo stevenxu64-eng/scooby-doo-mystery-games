@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="84" viewBox="0 0 64 84">
+  <!-- The Phantom Mummy: feet anchored at bottom-center -->
+  <defs>
+    <radialGradient id="aura" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#84cc16" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#84cc16" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="32" cy="40" rx="30" ry="38" fill="url(#aura)"/>
+  <ellipse cx="32" cy="79" rx="15" ry="5" fill="rgba(0,0,0,0.45)"/>
+  <!-- trailing wraps -->
+  <path d="M18 70 q-6 6 -3 11" stroke="#cdd9a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M47 68 q7 5 5 12" stroke="#cdd9a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- legs -->
+  <rect x="23" y="62" width="8" height="17" rx="4" fill="#a7b96b"/>
+  <rect x="33" y="62" width="8" height="17" rx="4" fill="#98aa5e"/>
+  <!-- arms reaching forward -->
+  <rect x="4" y="34" width="18" height="7" rx="3.5" fill="#a7b96b" transform="rotate(8 4 34)"/>
+  <rect x="42" y="33" width="18" height="7" rx="3.5" fill="#98aa5e" transform="rotate(-8 60 33)"/>
+  <path d="M6 38 h14 M44 37 h14" stroke="#e5edc4" stroke-width="1.4" opacity="0.8"/>
+  <!-- body -->
+  <rect x="18" y="30" width="28" height="36" rx="10" fill="#aebe75"/>
+  <!-- bandage wraps -->
+  <g stroke="#e5edc4" stroke-width="3" opacity="0.9">
+    <path d="M18 38 Q32 42 46 37"/>
+    <path d="M18 46 Q32 43 46 47"/>
+    <path d="M18 54 Q32 58 46 53"/>
+    <path d="M20 62 Q32 59 45 62"/>
+  </g>
+  <path d="M40 44 q5 8 -2 14" stroke="#6b7a3d" stroke-width="1.6" fill="none" opacity="0.6"/>
+  <!-- head -->
+  <ellipse cx="32" cy="17" rx="13.5" ry="12.5" fill="#b8c780"/>
+  <g stroke="#e5edc4" stroke-width="3" opacity="0.95">
+    <path d="M19 12 Q32 8 45 13"/>
+    <path d="M19 22 Q32 26 45 21"/>
+    <path d="M22 27 Q32 30 42 27"/>
+  </g>
+  <!-- glowing eyes through the wraps -->
+  <ellipse cx="26" cy="17" rx="3.4" ry="2.6" fill="#101408"/>
+  <ellipse cx="38" cy="17" rx="3.4" ry="2.6" fill="#101408"/>
+  <circle cx="26" cy="17" r="1.7" fill="#fbf98a"/>
+  <circle cx="38" cy="17" r="1.7" fill="#fbf98a"/>
+  <!-- loose bandage end -->
+  <path d="M45 14 q8 2 7 9 q-1 5 -6 5" stroke="#e5edc4" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</svg>

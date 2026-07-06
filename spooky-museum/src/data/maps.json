@@ -1,0 +1,814 @@
+{
+  "grand_hall": {
+    "id": "grand_hall",
+    "name": "Grand Hall",
+    "intro": "The Grand Hall. Moonlight spills through the skylight onto the fountain... and something is SHUFFLING between the exhibits. Like, stay out of its sight, man!",
+    "grid": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "player_spawn": {
+      "x": 3,
+      "y": 10
+    },
+    "monster": {
+      "patrol": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 7
+        }
+      ],
+      "speed": 2.1,
+      "chase_speed": 3.4,
+      "sight_range": 3.5
+    },
+    "doors": [
+      {
+        "x": 5,
+        "y": 0,
+        "target": "archives",
+        "spawn": {
+          "x": 5,
+          "y": 6
+        },
+        "required_item": "brass_key",
+        "locked_message": "The ARCHIVES door is bolted with a heavy brass lock. The key has to be somewhere in the museum.",
+        "label": "Archives (locked)"
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "target": "egypt_wing",
+        "spawn": {
+          "x": 1,
+          "y": 5
+        },
+        "label": "Egypt Wing"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "target": "dino_hall",
+        "spawn": {
+          "x": 9,
+          "y": 5
+        },
+        "label": "Dinosaur Hall"
+      },
+      {
+        "x": 6,
+        "y": 11,
+        "target": null,
+        "locked_message": "The main doors are chained from the OUTSIDE. Someone wanted the gang locked in tonight... solving the mystery is the only way out!",
+        "label": "Main Entrance (chained)"
+      }
+    ],
+    "interactives": [],
+    "palette": {
+      "floor_a": "#2e2a3f",
+      "floor_b": "#282438",
+      "wall_top": "#4c4368",
+      "wall_left": "#332c49",
+      "wall_right": "#3d3557"
+    },
+    "ambience": "ambience_museum"
+  },
+  "egypt_wing": {
+    "id": "egypt_wing",
+    "name": "Egypt Wing",
+    "intro": "The Egypt Wing. Sarcophagi line the wall \u2014 roomy enough to hide inside. The Mummy prowls here too... and one sarcophagus is sealed with a strange rotating lock.",
+    "grid": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        3,
+        0,
+        2,
+        0,
+        3,
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        4,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "player_spawn": {
+      "x": 1,
+      "y": 5
+    },
+    "monster": {
+      "patrol": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        }
+      ],
+      "speed": 2.0,
+      "chase_speed": 3.3,
+      "sight_range": 3.5
+    },
+    "doors": [
+      {
+        "x": 0,
+        "y": 5,
+        "target": "grand_hall",
+        "spawn": {
+          "x": 10,
+          "y": 5
+        },
+        "label": "Grand Hall"
+      }
+    ],
+    "interactives": [
+      {
+        "id": "sarcophagus_lock",
+        "x": 5,
+        "y": 1,
+        "kind": "puzzle",
+        "puzzle": "dials",
+        "label": "Sealed Sarcophagus",
+        "message": "A golden sarcophagus sealed by three rotating symbol dials. The hieroglyph plaque nearby might explain the order...",
+        "done_message": "The sarcophagus stands open. Whoever hid things in here didn't expect meddling kids.",
+        "solved_message": "The dials click into place and the lid grinds open! Inside: a can of LUMI-GLOW theatrical paint \u2014 the exact green of the Mummy. The receipt is signed 'B.G.'! (Clue added)",
+        "clues": [
+          "glow_paint"
+        ]
+      },
+      {
+        "id": "hieroglyph_plaque",
+        "x": 9,
+        "y": 1,
+        "kind": "note",
+        "label": "Hieroglyph Plaque",
+        "message": "Velma translates the plaque: 'The EYE watches. The SCARAB crawls. The EYE watches again.' ...Sounds like a combination to me!"
+      }
+    ],
+    "palette": {
+      "floor_a": "#3d3323",
+      "floor_b": "#352c1e",
+      "wall_top": "#6b5a35",
+      "wall_left": "#453a22",
+      "wall_right": "#57482b"
+    },
+    "ambience": "ambience_museum"
+  },
+  "dino_hall": {
+    "id": "dino_hall",
+    "name": "Dinosaur Hall",
+    "intro": "The Dinosaur Hall. A T-Rex skeleton looms over the exhibits. No Mummy in here \u2014 but SOMEONE left in a hurry: there's fresh mud on the floor.",
+    "grid": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        4,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "player_spawn": {
+      "x": 9,
+      "y": 5
+    },
+    "monster": null,
+    "doors": [
+      {
+        "x": 10,
+        "y": 5,
+        "target": "grand_hall",
+        "spawn": {
+          "x": 1,
+          "y": 6
+        },
+        "label": "Grand Hall"
+      }
+    ],
+    "interactives": [
+      {
+        "id": "boots_case",
+        "x": 9,
+        "y": 2,
+        "kind": "pickup",
+        "label": "Something Behind the T-Rex",
+        "message": "Stashed behind the T-Rex leg: size-12 GUARD-ISSUE BOOTS caked in glowing green mud. Jinkies \u2014 the 'Mummy' wears boots?!",
+        "done_message": "The muddy boots are already bagged as evidence.",
+        "clues": [
+          "muddy_boots"
+        ]
+      },
+      {
+        "id": "supply_crate",
+        "x": 2,
+        "y": 7,
+        "kind": "pickup",
+        "label": "Supply Crate",
+        "message": "You pry open the supply crate... inside is a heavy BRASS KEY stamped 'ARCHIVES'. That's the locked door in the Grand Hall!",
+        "done_message": "The empty crate smells like old sandwiches. Shaggy checked. Twice.",
+        "items": [
+          "brass_key"
+        ]
+      }
+    ],
+    "palette": {
+      "floor_a": "#23372e",
+      "floor_b": "#1e3028",
+      "wall_top": "#3c5c4a",
+      "wall_left": "#26402f",
+      "wall_right": "#2f4e3b"
+    },
+    "ambience": "ambience_museum"
+  },
+  "archives": {
+    "id": "archives",
+    "name": "Archives",
+    "intro": "The Archives. Dusty shelves, a whirring film projector... and no Mummy. Somebody has been doing their 'haunting homework' in here.",
+    "grid": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "player_spawn": {
+      "x": 5,
+      "y": 6
+    },
+    "monster": null,
+    "doors": [
+      {
+        "x": 5,
+        "y": 7,
+        "target": "grand_hall",
+        "spawn": {
+          "x": 5,
+          "y": 1
+        },
+        "label": "Grand Hall"
+      }
+    ],
+    "interactives": [
+      {
+        "id": "film_projector",
+        "x": 5,
+        "y": 2,
+        "kind": "puzzle",
+        "puzzle": "beam",
+        "label": "Jammed Film Projector",
+        "message": "The old film projector is jammed \u2014 its light beam is scattered by loose mirrors. Realign them to project the archive film onto the screen.",
+        "done_message": "The projector hums along, replaying the evidence reel.",
+        "solved_message": "The beam locks onto the screen and the film rolls: it's an IOU! 'Burt Grimsley owes Louie the Fish $12,000'... plus a triple-overtime pay stub for every 'haunted' night. (Clue added)",
+        "clues": [
+          "pay_stub"
+        ]
+      }
+    ],
+    "palette": {
+      "floor_a": "#33272c",
+      "floor_b": "#2c2126",
+      "wall_top": "#5c4049",
+      "wall_left": "#3b2a31",
+      "wall_right": "#4a343d"
+    },
+    "ambience": "ambience_museum"
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="56" viewBox="0 0 64 56">
+  <!-- Isometric wooden exhibit crate, footprint 64x32 at the bottom -->
+  <!-- left face -->
+  <path d="M2 24 L32 40 L32 56 L2 40 Z" fill="#6e4a1f"/>
+  <!-- right face -->
+  <path d="M62 24 L32 40 L32 56 L62 40 Z" fill="#835a27"/>
+  <!-- top face -->
+  <path d="M32 8 L62 24 L32 40 L2 24 Z" fill="#a9803c"/>
+  <!-- plank lines -->
+  <path d="M12 19 L42 35 M22 13 L52 29" stroke="#8a6830" stroke-width="1.6"/>
+  <path d="M2 32 L32 48 M62 32 L32 48" stroke="#553917" stroke-width="1.6"/>
+  <!-- edge trim -->
+  <path d="M32 8 L62 24 L32 40 L2 24 Z" fill="none" stroke="#553917" stroke-width="1.8"/>
+  <path d="M2 24 L2 40 L32 56 L62 40 L62 24" fill="none" stroke="#3f2a10" stroke-width="1.8"/>
+  <path d="M32 40 L32 56" stroke="#3f2a10" stroke-width="1.8"/>
+  <!-- corner brackets -->
+  <path d="M4 25 l5 2.6 M4 38 l5 2.6 M60 25 l-5 2.6 M60 38 l-5 2.6" stroke="#c9b06a" stroke-width="2"/>
+  <!-- museum stencil -->
+  <path d="M20 22 L32 28 L44 22" stroke="#553917" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

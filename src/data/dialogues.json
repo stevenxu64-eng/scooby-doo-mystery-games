@@ -1,0 +1,114 @@
+{
+  "crane_main": {
+    "speaker": "Mr. Crane",
+    "portrait_color": "#b45309",
+    "nodes": {
+      "start": {
+        "text": "Mr. Crane, the caretaker, polishes a spotless patch of the dusty front desk. 'Welcome to the Grand Palm Resort... or what's left of it. You kids shouldn't be here after dark. The Phantom doesn't like guests.'",
+        "choices": [
+          { "text": "Ask about the Phantom Guest", "next": "ghost" },
+          { "text": "Ask about Janitor Gus", "next": "janitor" },
+          { "text": "Ask about the resort sale", "next": "sale" },
+          {
+            "text": "'The ledger says supplies were billed to Room 217 — which doesn't exist.'",
+            "next": "ledger_press",
+            "required_flags": ["read_ledger"]
+          },
+          { "text": "That's all for now.", "next": null }
+        ]
+      },
+      "ghost": {
+        "text": "'Glows green as swamp gas, wails like a busted pipe organ. It's scared off every buyer I've shown the property to. Some nights I see it drifting across the grounds toward the old boiler room...'",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave", "next": null }
+        ]
+      },
+      "janitor": {
+        "text": "'Gus? Harmless enough. Keeps to himself. Though he does spend an awful lot of time in that locked closet of his. Lost his key recently, or so he claims.'",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave", "next": null }
+        ]
+      },
+      "sale": {
+        "text": "Crane's eye twitches. 'Between us? If the resort doesn't sell soon, the bank takes everything. Though with the hauntings, the price keeps dropping... and dropping...' He smiles faintly, then catches himself.",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave", "next": null }
+        ]
+      },
+      "ledger_press": {
+        "text": "Crane goes very still. 'You read the ledger? Nosy little... ahem. A clerical error, nothing more. Room 217 was — water damaged. Yes. Don't go poking around the boiler room, it isn't SAFE.' He didn't mention the boiler room before you did.",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave (very suspicious...)", "next": null }
+        ]
+      }
+    }
+  },
+  "gus_main": {
+    "speaker": "Janitor Gus",
+    "portrait_color": "#166534",
+    "nodes": {
+      "start": {
+        "text": "Janitor Gus stops raking and eyes you warily over the dead leaves. 'Resort's closed, kids. Nothin' out here but weeds and bad memories.'",
+        "choices": [
+          { "text": "Ask about the Phantom Guest", "next": "ghost" },
+          { "text": "Ask about the toolshed", "next": "shed" },
+          {
+            "text": "Show him the can of glowing paint",
+            "next": "confront",
+            "required_flags": ["found_glowing_paint"],
+            "hidden_if_flags": ["knows_truth"]
+          },
+          { "text": "Leave him to his raking.", "next": null }
+        ]
+      },
+      "ghost": {
+        "text": "'Ain't no ghost.' He grips the rake tighter. 'Just drafts, bad wiring, and folks seein' what they're told to see. Now scram before you get hurt. Or... before somethin' hurts you.'",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave", "next": null }
+        ]
+      },
+      "shed": {
+        "text": "'Toolshed? Dropped my maintenance key in there weeks back. Too dark to find it, and the boss won't spring for a new bulb. If you fish it out, don't go usin' it on my closet, y'hear?'",
+        "choices": [
+          { "text": "Ask something else", "next": "start" },
+          { "text": "Leave", "next": null }
+        ]
+      },
+      "confront": {
+        "text": "You hold up the can of LUMO-GLOW paint. Gus goes white as a — well, you know. 'Where'd you— okay, OKAY! I bought that paint, but only 'cause MR. CRANE told me to! Said it was for renovatin' the pool mural! Six cans of ghost-green paint for a mural, and him prowlin' the boiler room every night — I ain't stupid, kids, and I ain't takin' the fall!'",
+        "choices": [
+          { "text": "'So Crane IS the Phantom Guest...'", "next": "truth", "set_flags": ["knows_truth"] }
+        ]
+      },
+      "truth": {
+        "text": "Gus nods grimly. 'Catch him in the act and I'll back your story. He keeps his getup down in the boiler room, under my closet. There's an old laundry-net rig down there — Freddy-style trap practically builds itself.'",
+        "choices": [
+          { "text": "'Thanks, Gus. Gang — to the boiler room!'", "next": null }
+        ]
+      }
+    }
+  },
+  "unmasking": {
+    "speaker": "The Phantom Guest",
+    "portrait_color": "#15803d",
+    "nodes": {
+      "start": {
+        "text": "You yank the lever! The Phantom Guest — mid-lunge at the Scooby Snack — is snatched into the laundry net and hauled kicking toward the ceiling! 'RELEASE ME, MEDDLERS! THE PHANTOM CURSES YOU ALLLL!'",
+        "choices": [
+          { "text": "Unmask the phantom!", "next": "reveal" }
+        ]
+      },
+      "reveal": {
+        "text": "Velma yanks off the glowing sheet... 'MR. CRANE?!' The caretaker sags in the net. 'That's right! With the resort 'haunted', the price kept dropping — until I could buy paradise myself for pennies! And I would have gotten away with it too, if it weren't for you meddling kids and that mangy mutt!' Scooby grins: 'Rangy rutt? ROOBY-ROOBY-ROO!'",
+        "choices": [
+          { "text": "Case closed! (The End)", "next": null, "end_game": true }
+        ]
+      }
+    }
+  }
+}
