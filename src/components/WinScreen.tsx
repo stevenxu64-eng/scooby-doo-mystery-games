@@ -16,9 +16,10 @@ export function WinScreen() {
           Mystery Solved!
         </h2>
         <p className="text-sm leading-relaxed text-stone-200">
-          The Phantom Guest was <b>Mr. Crane the caretaker</b> all along, haunting the Grand Palm
-          Resort to crash its price and buy paradise for pennies. The police haul him off, Gus gets
-          his closet back, and the gang celebrates with a mountain of Scooby Snax.
+          The Phantom Guest was <b>Mr. Crane the caretaker</b> all along — haunting the Grand Palm
+          to crash its price, bankrupt the Palm estate, and buy paradise for pennies. The police
+          haul him off, <b>George Palm III</b> vows to reopen his grandfather's resort, Gus finally
+          gets his closet back, and the gang celebrates with a mountain of Scooby Snax.
         </p>
         <p className="text-xs italic text-stone-400">"Scooby-Dooby-Doo!"</p>
         <button

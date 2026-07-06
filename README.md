@@ -57,20 +57,26 @@ before `.svg`) and is harmless.
 <details>
 <summary><b>Full walkthrough (spoilers!)</b></summary>
 
-1. **Lobby** — take the flashlight from the front desk drawer; as Velma, read the guest
-   ledger; talk to Mr. Crane.
-2. **Grounds (east)** — grab the stick from the bushes; switch to Shaggy & Scooby and
-   shake the vending machine (Scooby Snack + chewing gum); combine stick + gum into the
-   Sticky Stick; use the flashlight on the dark toolshed, then the Sticky Stick on the
-   floor grate → Maintenance Key.
-3. **Lobby** — use the key on the closet door, go west into the **Janitor's Closet** —
-   use the flashlight on the shadowy shelf (glowing paint!), take the rope, and switch to
-   Daphne to pick the padlocked floor grate.
-4. **Grounds** — show Janitor Gus the glowing paint → he implicates Mr. Crane.
-5. **Boiler Room (down from the closet)** — use the rope on the ceiling hook, switch to
-   Shaggy & Scooby and use the Scooby Snack on the bait crate, then pull the red lever.
-6. **The accusation** — the gang won't pull the sheet until you name the culprit. Wrong
-   guesses (Gus, "a real ghost") get comedic rebuttals; accuse **Mr. Crane** to win.
+1. **Lobby** — flashlight from the front desk drawer; the 1969 brochure from the abandoned
+   luggage; as Velma, read the guest ledger; talk to Mr. Crane.
+2. **Grounds (east)** — stick from the bushes; the monogrammed glove from the pool muck;
+   as Shaggy & Scooby, shake the vending machine (Scooby Snack + gum); combine stick + gum
+   into the Sticky Stick; flashlight on the dark toolshed, Sticky Stick on the floor
+   grate → Maintenance Key.
+3. **Janitor's Closet (west of lobby, use the key)** — flashlight on the shadowy shelf
+   (glowing paint!); take the rope and the box cutter; as Daphne, pick the padlocked
+   floor grate.
+4. **Grounds** — show Gus the glowing paint → he implicates Mr. Crane and hands over the
+   office passkey.
+5. **Manager's Office (north of lobby, use the passkey)** — as Velma, read the blueprint
+   chest (Room 217 exists!); examine the founder's portrait (6-9-1969); open the wall
+   safe → draft deed; pull the clean book on the east shelf → the bookshelf slides aside.
+6. **Room 217 (east)** — bag the Wail-o-Phone; cut **George Palm III** free with the box
+   cutter; hear his testimony → he'll back you up.
+7. **Boiler Room (down from the closet)** — rope on the ceiling hook; as Shaggy & Scooby,
+   Scooby Snack on the bait crate; pull the red lever.
+8. **The accusation** — Gus, George, and "a real ghost" all get comedic rebuttals;
+   accuse **Mr. Crane** to close the case.
 
 </details>
 

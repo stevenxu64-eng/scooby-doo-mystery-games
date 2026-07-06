@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="owall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141d26"/>
+      <stop offset="55%" stop-color="#243440"/>
+      <stop offset="100%" stop-color="#2e4250"/>
+    </linearGradient>
+    <linearGradient id="ofloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c3f22"/>
+      <stop offset="100%" stop-color="#1f1408"/>
+    </linearGradient>
+    <radialGradient id="olamp" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd98a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ovign" cx="50%" cy="44%" r="72%">
+      <stop offset="52%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.66"/>
+    </radialGradient>
+    <filter id="ograin">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="620" fill="url(#owall)"/>
+  <rect y="620" width="1600" height="280" fill="url(#ofloor)"/>
+  <!-- wainscot panels -->
+  <rect y="470" width="1600" height="150" fill="#241a10"/>
+  <path d="M0 474 H1600" stroke="#5c452a" stroke-width="5"/>
+  <g stroke="#170f07" stroke-width="4" opacity="0.8">
+    <path d="M180 486 v120 M420 486 v120 M660 486 v120 M900 486 v120 M1140 486 v120 M1380 486 v120"/>
+  </g>
+  <path d="M0 620 H1600 V632 H0 Z" fill="#120b05"/>
+
+  <!-- moonlit window, left -->
+  <rect x="60" y="120" width="240" height="300" rx="8" fill="#0c1523"/>
+  <path d="M60 120 h240 v300 h-240 z M180 120 v300 M60 270 h240" stroke="#3b2c1a" stroke-width="10" fill="none"/>
+  <circle cx="238" cy="200" r="42" fill="#e8ecf5" opacity="0.9"/>
+  <circle cx="226" cy="190" r="9" fill="#c9cfdd" opacity="0.7"/>
+  <path d="M70 130 l100 120 M180 130 l110 130" stroke="#8fa4c9" stroke-width="3" opacity="0.25"/>
+  <!-- curtains -->
+  <path d="M52 110 q30 170 -8 320 l-20 0 l0 -320 Z" fill="#4a1f26"/>
+  <path d="M308 110 q-30 170 8 320 l20 0 l0 -320 Z" fill="#4a1f26"/>
+  <path d="M40 110 h280" stroke="#5c452a" stroke-width="10"/>
+  <!-- moonlight pool on floor -->
+  <path d="M100 640 L300 640 L390 830 L60 830 Z" fill="#cdd7ff" opacity="0.06"/>
+
+  <!-- rug -->
+  <path d="M470 700 L1060 700 L1140 860 L400 860 Z" fill="#5c2430" opacity="0.85"/>
+  <path d="M492 712 L1040 712 L1108 848 L432 848 Z" fill="none" stroke="#d8a44a" stroke-width="4" opacity="0.45"/>
+
+  <!-- PORTRAIT of George Palm Sr. (hotspot 41-58% x, 16-46% y) -->
+  <rect x="646" y="134" width="292" height="290" rx="6" fill="#171006"/>
+  <rect x="658" y="146" width="268" height="266" fill="#6b5426"/>
+  <rect x="672" y="160" width="240" height="238" fill="#2c3a2e"/>
+  <!-- stern founder -->
+  <ellipse cx="792" cy="252" rx="52" ry="58" fill="#d9b58a"/>
+  <path d="M740 240 q10 -44 52 -44 q42 0 52 44 q-14 -14 -52 -14 q-38 0 -52 14" fill="#c9cdd4"/>
+  <path d="M766 244 h20 M810 244 h20" stroke="#3d3d44" stroke-width="5"/>
+  <circle cx="776" cy="252" r="4.5" fill="#241c10"/>
+  <circle cx="808" cy="252" r="4.5" fill="#241c10"/>
+  <path d="M770 236 q6 -6 14 -3 M800 233 q8 -3 14 3" stroke="#8a8f96" stroke-width="3.5" fill="none"/>
+  <path d="M780 296 q12 -6 24 0" stroke="#8a6c50" stroke-width="4" fill="none"/>
+  <path d="M756 284 q36 26 72 0 l6 12 q-42 30 -84 0 Z" fill="#c9cdd4"/>
+  <path d="M712 398 q80 -68 160 0 Z" fill="#1e2c22"/>
+  <path d="M792 330 v40 M780 344 h24" stroke="#8f2d2d" stroke-width="8"/>
+  <!-- brass plate -->
+  <rect x="722" y="400" width="140" height="24" rx="4" fill="#c9a24a"/>
+  <text x="792" y="417" font-family="Trebuchet MS" font-size="14" font-weight="bold" fill="#4a3608" text-anchor="middle">FOUNDED 6-9-1969</text>
+  <!-- picture light -->
+  <path d="M742 128 q50 -22 100 0" stroke="#3b2c1a" stroke-width="8" fill="none"/>
+  <ellipse cx="792" cy="140" rx="70" ry="18" fill="url(#olamp)" opacity="0.7"/>
+
+  <!-- SAFE recess below portrait (hotspot 43-55% x, 50-66% y) — the door is a game overlay -->
+  <rect x="688" y="450" width="192" height="144" rx="8" fill="#0c0906"/>
+  <rect x="700" y="462" width="168" height="120" rx="6" fill="#171310"/>
+  <!-- papers visible when open (drawn dim; overlay covers when closed) -->
+  <rect x="726" y="500" width="80" height="58" rx="3" fill="#d9cba4" transform="rotate(-6 766 529)"/>
+  <path d="M738 516 h52 M738 528 h46 M738 540 h50" stroke="#8f825e" stroke-width="3" transform="rotate(-6 766 529)"/>
+
+  <!-- CRANE'S DESK (hotspot 26-52% x, 58-78% y) -->
+  <ellipse cx="620" cy="742" rx="200" ry="18" fill="#000" opacity="0.4"/>
+  <rect x="428" y="540" width="390" height="46" rx="6" fill="#6e4a22"/>
+  <path d="M428 548 h390" stroke="#8a6234" stroke-width="5"/>
+  <rect x="446" y="586" width="354" height="150" fill="#4e3315"/>
+  <path d="M470 596 v130 M776 596 v130" stroke="#33200a" stroke-width="4" opacity="0.7"/>
+  <rect x="600" y="600" width="120" height="52" rx="5" fill="#3b2609"/>
+  <circle cx="660" cy="626" r="7" fill="#c9a24a"/>
+  <!-- paper mess + banker's lamp -->
+  <g transform="rotate(-5 520 540)">
+    <rect x="470" y="518" width="90" height="30" rx="2" fill="#e0d6b0"/>
+    <path d="M480 528 h68 M480 538 h58" stroke="#8f825e" stroke-width="2.6"/>
+  </g>
+  <g transform="rotate(4 700 536)">
+    <rect x="650" y="516" width="100" height="32" rx="2" fill="#d9cba4"/>
+    <path d="M662 526 h74 M662 536 h60" stroke="#8f825e" stroke-width="2.6"/>
+    <path d="M712 522 l22 20" stroke="#8c2424" stroke-width="3"/>
+  </g>
+  <path d="M560 540 q-2 -30 20 -32 q26 -2 24 30" stroke="#1d1408" stroke-width="6" fill="none"/>
+  <path d="M556 512 h52 l-9 -20 h-33 Z" fill="#2f6e5e"/>
+  <ellipse cx="582" cy="508" rx="34" ry="12" fill="url(#olamp)" opacity="0.8"/>
+  <!-- newspaper on desk front -->
+  <g transform="rotate(-3 620 566)">
+    <rect x="566" y="552" width="112" height="34" rx="2" fill="#e8e2cc"/>
+    <path d="M574 562 h96 M574 570 h96 M574 578 h60" stroke="#6b6552" stroke-width="3"/>
+  </g>
+
+  <!-- BLUEPRINT CHEST (hotspot 6-22% x, 56-76% y) -->
+  <ellipse cx="220" cy="748" rx="150" ry="16" fill="#000" opacity="0.4"/>
+  <rect x="96" y="516" width="256" height="34" rx="4" fill="#5c452a"/>
+  <rect x="104" y="550" width="240" height="180" fill="#46331c"/>
+  <g stroke="#2c1f10" stroke-width="4">
+    <path d="M104 596 h240 M104 642 h240 M104 688 h240"/>
+  </g>
+  <g fill="#c9a24a">
+    <rect x="204" y="566" width="40" height="10" rx="3"/>
+    <rect x="204" y="612" width="40" height="10" rx="3"/>
+    <rect x="204" y="658" width="40" height="10" rx="3"/>
+    <rect x="204" y="700" width="40" height="10" rx="3"/>
+  </g>
+  <!-- rolled blueprints on top -->
+  <g>
+    <rect x="120" y="496" width="150" height="18" rx="9" fill="#3f6d8e"/>
+    <circle cx="270" cy="505" r="9" fill="#cfe0ee"/>
+    <rect x="150" y="480" width="130" height="18" rx="9" fill="#46779c" transform="rotate(-6 215 489)"/>
+    <circle cx="278" cy="475" r="9" fill="#cfe0ee"/>
+  </g>
+
+  <!-- EAST PASSAGE behind bookshelf (hotspot 72-94% x, 24-76% y) — bookshelf itself is a game overlay -->
+  <rect x="1152" y="216" width="352" height="468" fill="#050308"/>
+  <path d="M1152 216 h352 v468 h-352 Z" fill="none" stroke="#241a10" stroke-width="10"/>
+  <path d="M1200 684 q60 -30 120 -10" stroke="#4ade80" stroke-width="4" opacity="0.25" fill="none"/>
+  <path d="M1240 300 q40 60 20 160" stroke="#1c2438" stroke-width="8" fill="none" opacity="0.6"/>
+
+  <!-- ceiling light -->
+  <path d="M500 0 v54" stroke="#1d1408" stroke-width="5"/>
+  <path d="M470 54 h60 l-8 16 h-44 Z" fill="#2f4a3e"/>
+  <ellipse cx="500" cy="76" rx="46" ry="14" fill="url(#olamp)" opacity="0.7"/>
+
+  <rect width="1600" height="900" filter="url(#ograin)" opacity="0.5"/>
+  <rect width="1600" height="900" fill="url(#ovign)"/>
+</svg>

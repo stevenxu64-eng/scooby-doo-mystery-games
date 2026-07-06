@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="rwall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161226"/>
+      <stop offset="55%" stop-color="#241d3a"/>
+      <stop offset="100%" stop-color="#322747"/>
+    </linearGradient>
+    <linearGradient id="rfloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d2f22"/>
+      <stop offset="100%" stop-color="#150f08"/>
+    </linearGradient>
+    <radialGradient id="rmoon" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#cdd7ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#cdd7ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rvign" cx="50%" cy="44%" r="72%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.68"/>
+    </radialGradient>
+    <filter id="rgrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.06"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="620" fill="url(#rwall)"/>
+  <rect y="620" width="1600" height="280" fill="url(#rfloor)"/>
+  <path d="M0 620 H1600 V632 H0 Z" fill="#0d0812"/>
+
+  <!-- peeling striped wallpaper -->
+  <g stroke="#1c1630" stroke-width="26" opacity="0.5">
+    <path d="M120 0 V620 M260 0 V620 M400 0 V620 M540 0 V620 M1180 0 V620 M1320 0 V620 M1460 0 V620"/>
+  </g>
+  <path d="M120 0 q20 60 -8 90 l36 -12 q-16 40 8 52 L120 140 Z" fill="#0f0b1c" opacity="0.8"/>
+  <path d="M1460 90 q24 40 0 80 l30 -10 q-10 30 10 44 l-40 6 Z" fill="#0f0b1c" opacity="0.7"/>
+  <!-- room number on the wallpaper -->
+  <rect x="640" y="60" width="120" height="70" rx="8" fill="#241c3a"/>
+  <text x="700" y="110" font-family="Trebuchet MS" font-size="44" font-weight="bold" fill="#c9a24a" text-anchor="middle">217</text>
+
+  <!-- boarded window, center-left, moonlight leaking through -->
+  <rect x="430" y="150" width="230" height="300" rx="6" fill="#0a1220"/>
+  <circle cx="545" cy="270" r="120" fill="url(#rmoon)"/>
+  <g fill="#3b2c1a">
+    <rect x="415" y="190" width="260" height="34" rx="4" transform="rotate(-4 545 207)"/>
+    <rect x="415" y="290" width="260" height="34" rx="4" transform="rotate(3 545 307)"/>
+    <rect x="415" y="386" width="260" height="34" rx="4" transform="rotate(-2 545 403)"/>
+  </g>
+  <g fill="#171026">
+    <circle cx="432" cy="200" r="4"/><circle cx="658" cy="214" r="4"/>
+    <circle cx="432" cy="300" r="4"/><circle cx="658" cy="292" r="4"/>
+  </g>
+  <path d="M470 640 L640 640 L720 850 L410 850 Z" fill="#cdd7ff" opacity="0.06"/>
+
+  <!-- dusty bed, background right-center -->
+  <g opacity="0.9">
+    <rect x="920" y="430" width="300" height="60" rx="10" fill="#3d3152"/>
+    <rect x="908" y="360" width="26" height="130" rx="8" fill="#2c2440"/>
+    <rect x="1208" y="390" width="22" height="100" rx="8" fill="#2c2440"/>
+    <path d="M930 442 q140 -30 280 0 l0 30 q-140 -22 -280 0 Z" fill="#8d87a3"/>
+  </g>
+
+  <!-- WORKBENCH (megaphone overlay spot: 10-22% x, 52-68% y) -->
+  <ellipse cx="270" cy="740" rx="180" ry="16" fill="#000" opacity="0.4"/>
+  <rect x="120" y="580" width="310" height="30" rx="4" fill="#5c452a"/>
+  <path d="M138 610 v120 M402 610 v120 M138 680 h264" stroke="#3b2c1a" stroke-width="10"/>
+  <!-- paint cans + brushes on bench -->
+  <rect x="140" y="536" width="40" height="44" rx="4" fill="#173318"/>
+  <path d="M140 554 h40" stroke="#4ade80" stroke-width="4" opacity="0.7"/>
+  <rect x="188" y="544" width="34" height="36" rx="4" fill="#1e1810"/>
+  <path d="M340 546 l16 34 M356 542 l10 38" stroke="#8a6636" stroke-width="5" stroke-linecap="round"/>
+  <path d="M336 542 q10 -8 18 -2 M352 538 q10 -6 16 0" stroke="#4ade80" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="250" cy="600" r="20" fill="#4ade80" opacity="0.12"/>
+
+  <!-- SEWING MACHINE table (hotspot 30-42% x, 56-72% y) -->
+  <ellipse cx="580" cy="746" rx="130" ry="14" fill="#000" opacity="0.4"/>
+  <rect x="480" y="600" width="200" height="22" rx="4" fill="#46331c"/>
+  <path d="M496 622 v112 M664 622 v112 M496 690 h168" stroke="#2c1f10" stroke-width="9"/>
+  <!-- machine body -->
+  <path d="M520 600 v-46 q0 -12 12 -12 h70 q14 0 14 14 v10 q0 10 -10 10 h-40" fill="none" stroke="#1c1a2e" stroke-width="16" stroke-linecap="round"/>
+  <rect x="510" y="588" width="120" height="14" rx="6" fill="#1c1a2e"/>
+  <circle cx="614" cy="556" r="12" fill="#2e2b4a"/>
+  <path d="M566 566 v22" stroke="#8f8f96" stroke-width="4"/>
+  <path d="M540 540 q20 -18 44 -6" stroke="#4ade80" stroke-width="3" fill="none" opacity="0.8"/>
+
+  <!-- THE CHAIR (George overlays sit here: hotspot 56-72% x, 34-78% y) -->
+  <ellipse cx="1020" cy="756" rx="120" ry="15" fill="#000" opacity="0.45"/>
+  <g stroke="#53381c" stroke-width="12" fill="none">
+    <path d="M958 748 V620 M1082 748 V620"/>
+    <path d="M958 660 h124"/>
+  </g>
+  <rect x="946" y="600" width="148" height="26" rx="6" fill="#6e4a22"/>
+  <!-- cut clothesline on the floor -->
+  <path d="M900 770 q40 14 90 4 q50 -10 90 6" stroke="#b8b09a" stroke-width="5" fill="none" opacity="0.7"/>
+
+  <!-- COSTUME RACK (hotspot 76-94% x, 26-70% y) -->
+  <ellipse cx="1370" cy="740" rx="150" ry="15" fill="#000" opacity="0.4"/>
+  <path d="M1240 250 h280 M1250 250 V720 M1510 250 V720" stroke="#39312a" stroke-width="10" fill="none"/>
+  <!-- hanging half-finished sheets -->
+  <g>
+    <path d="M1272 250 v20 q-14 90 6 180 q-24 10 -20 -14 q-18 30 -12 -8 q-14 22 -10 -10 l8 -148 Z" fill="#a8c99a" opacity="0.9"/>
+    <path d="M1330 250 v22 q-16 110 8 210 q-26 12 -22 -16 q-20 34 -14 -8 q-16 24 -10 -12 l8 -174 Z" fill="#bcd9a8"/>
+    <ellipse cx="1326" cy="330" rx="8" ry="12" fill="#0c1a10" opacity="0.8"/>
+    <path d="M1408 250 v18 q-12 130 10 240 q-28 14 -24 -18 q-22 38 -16 -10 q-18 26 -10 -14 l10 -196 Z" fill="#cde3c0"/>
+    <ellipse cx="1404" cy="326" rx="9" ry="13" fill="#0c1a10"/>
+    <ellipse cx="1434" cy="326" rx="9" ry="13" fill="#0c1a10"/>
+  </g>
+  <path d="M1268 246 q6 -18 20 -18 M1326 246 q6 -18 20 -18 M1404 246 q6 -18 20 -18" stroke="#8f8f96" stroke-width="5" fill="none"/>
+  <!-- thinner tin -->
+  <rect x="1246" y="676" width="52" height="44" rx="5" fill="#2c3a31"/>
+  <path d="M1246 692 h52" stroke="#4ade80" stroke-width="3.4" opacity="0.7"/>
+
+  <!-- glow spill + footprints toward the west door -->
+  <g fill="#4ade80" opacity="0.4">
+    <ellipse cx="300" cy="800" rx="15" ry="7" transform="rotate(14 300 800)"/>
+    <ellipse cx="220" cy="826" rx="15" ry="7" transform="rotate(20 220 826)"/>
+    <ellipse cx="140" cy="850" rx="15" ry="7" transform="rotate(16 140 850)"/>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#rgrain)" opacity="0.55"/>
+  <rect width="1600" height="900" fill="url(#rvign)"/>
+</svg>

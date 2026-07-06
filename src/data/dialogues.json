@@ -6,43 +6,101 @@
       "start": {
         "text": "Mr. Crane, the caretaker, polishes a spotless patch of the dusty front desk. 'Welcome to the Grand Palm Resort... or what's left of it. You kids shouldn't be here after dark. The Phantom doesn't like guests.'",
         "choices": [
-          { "text": "Ask about the Phantom Guest", "next": "ghost" },
-          { "text": "Ask about Janitor Gus", "next": "janitor" },
-          { "text": "Ask about the resort sale", "next": "sale" },
           {
-            "text": "'The ledger says supplies were billed to Room 217 — which doesn't exist.'",
-            "next": "ledger_press",
-            "required_flags": ["read_ledger"]
+            "text": "Ask about the Phantom Guest",
+            "next": "ghost"
           },
-          { "text": "That's all for now.", "next": null }
+          {
+            "text": "Ask about Janitor Gus",
+            "next": "janitor"
+          },
+          {
+            "text": "Ask about the resort sale",
+            "next": "sale"
+          },
+          {
+            "text": "'The ledger says supplies were billed to Room 217 \u2014 which doesn't exist.'",
+            "next": "ledger_press",
+            "required_flags": [
+              "read_ledger"
+            ]
+          },
+          {
+            "text": "'Explain the deed in your safe. The one selling YOUR resort to YOU.'",
+            "next": "deed_press",
+            "required_flags": [
+              "safe_open"
+            ]
+          },
+          {
+            "text": "That's all for now.",
+            "next": null
+          }
         ]
       },
       "ghost": {
         "text": "'Glows green as swamp gas, wails like a busted pipe organ. It's scared off every buyer I've shown the property to. Some nights I see it drifting across the grounds toward the old boiler room...'",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
         ]
       },
       "janitor": {
         "text": "'Gus? Harmless enough. Keeps to himself. Though he does spend an awful lot of time in that locked closet of his. Lost his key recently, or so he claims.'",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
         ]
       },
       "sale": {
         "text": "Crane's eye twitches. 'Between us? If the resort doesn't sell soon, the bank takes everything. Though with the hauntings, the price keeps dropping... and dropping...' He smiles faintly, then catches himself.",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
         ]
       },
       "ledger_press": {
-        "text": "Crane goes very still. 'You read the ledger? Nosy little... ahem. A clerical error, nothing more. Room 217 was — water damaged. Yes. Don't go poking around the boiler room, it isn't SAFE.' He didn't mention the boiler room before you did.",
+        "text": "Crane goes very still. 'You read the ledger? Nosy little... ahem. A clerical error, nothing more. Room 217 was \u2014 water damaged. Yes. Don't go poking around the boiler room, it isn't SAFE.' He didn't mention the boiler room before you did.",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave (very suspicious...)", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave (very suspicious...)",
+            "next": null
+          }
+        ]
+      },
+      "deed_press": {
+        "text": "Crane's polishing rag stops mid-circle. For three full seconds the lobby is very, very quiet. 'You opened my safe.' He smiles like a crack spreading across ice. 'Enjoy the resort while you can, children. Its NEW OWNER may not be so... hospitable.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave (Scooby hides behind Daphne)",
+            "next": null
+          }
         ]
       }
     }
@@ -54,41 +112,106 @@
       "start": {
         "text": "Janitor Gus stops raking and eyes you warily over the dead leaves. 'Resort's closed, kids. Nothin' out here but weeds and bad memories.'",
         "choices": [
-          { "text": "Ask about the Phantom Guest", "next": "ghost" },
-          { "text": "Ask about the toolshed", "next": "shed" },
+          {
+            "text": "Ask about the Phantom Guest",
+            "next": "ghost"
+          },
+          {
+            "text": "Ask about the toolshed",
+            "next": "shed"
+          },
           {
             "text": "Show him the can of glowing paint",
             "next": "confront",
-            "required_flags": ["found_glowing_paint"],
-            "hidden_if_flags": ["knows_truth"]
+            "required_flags": [
+              "found_glowing_paint"
+            ],
+            "hidden_if_flags": [
+              "knows_truth"
+            ]
           },
-          { "text": "Leave him to his raking.", "next": null }
+          {
+            "text": "'Any way into Crane's office?'",
+            "next": "spare_key",
+            "required_flags": [
+              "knows_truth"
+            ],
+            "hidden_if_flags": [
+              "got_office_key"
+            ]
+          },
+          {
+            "text": "Leave him to his raking.",
+            "next": null
+          }
         ]
       },
       "ghost": {
         "text": "'Ain't no ghost.' He grips the rake tighter. 'Just drafts, bad wiring, and folks seein' what they're told to see. Now scram before you get hurt. Or... before somethin' hurts you.'",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
         ]
       },
       "shed": {
         "text": "'Toolshed? Dropped my maintenance key in there weeks back. Too dark to find it, and the boss won't spring for a new bulb. If you fish it out, don't go usin' it on my closet, y'hear?'",
         "choices": [
-          { "text": "Ask something else", "next": "start" },
-          { "text": "Leave", "next": null }
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
         ]
       },
       "confront": {
-        "text": "You hold up the can of LUMO-GLOW paint. Gus goes white as a — well, you know. 'Where'd you— okay, OKAY! I bought that paint, but only 'cause MR. CRANE told me to! Said it was for renovatin' the pool mural! Six cans of ghost-green paint for a mural, and him prowlin' the boiler room every night — I ain't stupid, kids, and I ain't takin' the fall!'",
+        "text": "You hold up the can of LUMO-GLOW paint. Gus goes white as a \u2014 well, you know. 'Where'd you\u2014 okay, OKAY! I bought that paint, but only 'cause MR. CRANE told me to! Said it was for renovatin' the pool mural! Six cans of ghost-green paint for a mural, and him prowlin' the boiler room every night \u2014 I ain't stupid, kids, and I ain't takin' the fall!'",
         "choices": [
-          { "text": "'So Crane IS the Phantom Guest...'", "next": "truth", "set_flags": ["knows_truth"] }
+          {
+            "text": "'So Crane IS the Phantom Guest...'",
+            "next": "truth",
+            "set_flags": [
+              "knows_truth"
+            ]
+          }
         ]
       },
       "truth": {
-        "text": "Gus nods grimly. 'Catch him in the act and I'll back your story. He keeps his getup down in the boiler room, under my closet. There's an old laundry-net rig down there — Freddy-style trap practically builds itself.'",
+        "text": "Gus nods grimly. 'Catch him in the act and I'll back your story. He keeps his getup down in the boiler room, under my closet \u2014 and take my spare passkey to his OFFICE. Whatever that man's really planning, the paperwork's up those lobby stairs. And kids... lately I hear BANGING from behind his office wall. Walls ain't supposed to bang.'",
         "choices": [
-          { "text": "'Thanks, Gus. Gang — to the boiler room!'", "next": null }
+          {
+            "text": "'Thanks, Gus. Gang \u2014 we've got an office to search!'",
+            "next": null,
+            "set_flags": [
+              "got_office_key"
+            ],
+            "give_items": [
+              "office_key"
+            ]
+          }
+        ]
+      },
+      "spare_key": {
+        "text": "'Figured you'd ask.' Gus fishes a brass passkey from his overalls. 'Spare passkey \u2014 opens the office at the top of the lobby stairs. And listen... some nights I hear BANGING behind his office wall. Walls ain't supposed to bang.'",
+        "choices": [
+          {
+            "text": "'Banging walls. Great. Thanks, Gus.'",
+            "next": null,
+            "set_flags": [
+              "got_office_key"
+            ],
+            "give_items": [
+              "office_key"
+            ]
+          }
         ]
       }
     }
@@ -98,35 +221,110 @@
     "portrait_color": "#15803d",
     "nodes": {
       "start": {
-        "text": "You yank the lever! The Phantom Guest — mid-lunge at the Scooby Snack — is snatched into the laundry net and hauled kicking toward the ceiling! 'RELEASE ME, MEDDLERS! THE PHANTOM CURSES YOU ALLLL!'",
+        "text": "You yank the lever! The Phantom Guest \u2014 mid-lunge at the Scooby Snack \u2014 is snatched into the laundry net and hauled kicking toward the ceiling! 'RELEASE ME, MEDDLERS! THE PHANTOM CURSES YOU ALLLL!'",
         "choices": [
-          { "text": "Unmask the phantom!", "next": "whodunit" }
+          {
+            "text": "Unmask the phantom!",
+            "next": "whodunit"
+          }
         ]
       },
       "whodunit": {
-        "text": "The phantom writhes in the net, sheet still on. Velma adjusts her glasses: 'Hold on, gang — a proper unmasking needs a proper ACCUSATION. Think about the evidence... WHO is under that sheet?'",
+        "text": "The phantom writhes in the net, sheet still on. Velma adjusts her glasses: 'Hold on, gang \u2014 a proper unmasking needs a proper ACCUSATION. Think about the evidence... WHO is under that sheet?'",
         "choices": [
-          { "text": "'Like, it's obviously Janitor Gus! It's HIS closet!'", "next": "wrong_gus" },
-          { "text": "'ZOINKS! It's a REAL ghost — RUN!'", "next": "wrong_ghost" },
-          { "text": "'It's Mr. Crane. The ledger, the paint invoice, the boiler room — it all fits.'", "next": "reveal" }
+          {
+            "text": "'Like, it's obviously Janitor Gus! It's HIS closet!'",
+            "next": "wrong_gus"
+          },
+          {
+            "text": "'It's George Palm! He wants the resort for himself!'",
+            "next": "wrong_george"
+          },
+          {
+            "text": "'ZOINKS! It's a REAL ghost \u2014 RUN!'",
+            "next": "wrong_ghost"
+          },
+          {
+            "text": "'It's Mr. Crane. The ledger, the paint invoice, the boiler room \u2014 it all fits.'",
+            "next": "reveal"
+          }
         ]
       },
       "wrong_gus": {
-        "text": "Daphne glances out the boiler-room grate... Gus is STILL up on the grounds, raking leaves in the moonlight. He waves back, sarcastically. Velma sighs: 'Also, the phantom is a full head taller than Gus. The boots were size 12 — Gus wears galoshes. Try again.'",
+        "text": "Daphne glances out the boiler-room grate... Gus is STILL up on the grounds, raking leaves in the moonlight. He waves back, sarcastically. Velma sighs: 'Also, the phantom is a full head taller than Gus. The boots were size 12 \u2014 Gus wears galoshes. Try again.'",
         "choices": [
-          { "text": "'Okay, okay... let me rethink this.'", "next": "whodunit" }
+          {
+            "text": "'Okay, okay... let me rethink this.'",
+            "next": "whodunit"
+          }
         ]
       },
       "wrong_ghost": {
         "text": "Shaggy and Scooby are already halfway up a steam pipe! Inside the net, the 'ghost' rolls its eyes and checks its wristwatch. Velma taps her foot: 'Ghosts do not wear GRAND PALM STAFF watches, you two. Get down here.'",
         "choices": [
-          { "text": "'Right. A staff watch... interesting.'", "next": "whodunit" }
+          {
+            "text": "'Right. A staff watch... interesting.'",
+            "next": "whodunit"
+          }
         ]
       },
       "reveal": {
-        "text": "Velma yanks off the glowing sheet... 'MR. CRANE?!' The caretaker sags in the net. 'That's right! With the resort 'haunted', the price kept dropping — until I could buy paradise myself for pennies! And I would have gotten away with it too, if it weren't for you meddling kids and that mangy mutt!' Scooby grins: 'Rangy rutt? ROOBY-ROOBY-ROO!'",
+        "text": "Velma yanks off the glowing sheet... 'MR. CRANE?!' The caretaker sags in the net as George Palm III steps forward with the deed draft. 'Scare off every buyer, bankrupt the estate, then buy paradise for pennies \u2014 with MY family's money troubles as cover. And the Wail-o-Phone, Ambrose? Really?' Crane thrashes: 'And I would have gotten away with it too, if it weren't for you meddling kids, the mangy mutt, and the HEIR I HAD TIED TO A CHAIR!' Scooby: 'ROOBY-ROOBY-ROO!'",
         "choices": [
-          { "text": "Case closed! (The End)", "next": null, "end_game": true }
+          {
+            "text": "Case closed! (The End)",
+            "next": null,
+            "end_game": true
+          }
+        ]
+      },
+      "wrong_george": {
+        "text": "A voice from the stairwell: 'I can hear you, you know.' George Palm III walks in, STILL picking clothesline out of his hair. Velma: 'The phantom tied George up because George refused to sell. Victims rarely haunt themselves. Think about who profits when the price hits rock bottom...'",
+        "choices": [
+          {
+            "text": "'Fair point. Let me rethink this.'",
+            "next": "whodunit"
+          }
+        ]
+      }
+    }
+  },
+  "george_main": {
+    "speaker": "George Palm III",
+    "portrait_color": "#3f6d8e",
+    "nodes": {
+      "start": {
+        "text": "You slice the clothesline and the young man bursts free, spitting out a sock. 'FINALLY! George Palm \u2014 the third. My grandfather BUILT this place, and I came back to reopen it, not sell it! Two nights ago I followed the \"phantom\" up here... and the phantom locked me in my own grandfather's secret suite!'",
+        "choices": [
+          {
+            "text": "'Did you see who it was under the sheet?'",
+            "next": "witness"
+          },
+          {
+            "text": "'Wait \u2014 reopen it? Crane says it has to sell.'",
+            "next": "motive"
+          }
+        ]
+      },
+      "motive": {
+        "text": "'Sell it? To WHO?' George's jaw tightens. 'The only offer on the table is some lowball buyer nobody's ever met. As the heir I was about to refuse it and reopen the Grand Palm myself. Funny thing \u2014 the hauntings started the same week I announced that.'",
+        "choices": [
+          {
+            "text": "'Did you see who it was under the sheet?'",
+            "next": "witness"
+          }
+        ]
+      },
+      "witness": {
+        "text": "'Better. When he shoved me in here, his sheet snagged the door and lifted.' George looks grim. 'Silver hair. Staff watch. And a keyring that jingled like sleigh bells \u2014 the master ring only ONE person at this resort carries. I'll testify to the police, but you'll need to catch him in the act.'",
+        "choices": [
+          {
+            "text": "'Then we build a trap. Stay hidden until you hear the net spring!'",
+            "next": null,
+            "set_flags": [
+              "george_witness"
+            ]
+          }
         ]
       }
     }

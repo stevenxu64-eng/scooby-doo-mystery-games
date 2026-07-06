@@ -1,10 +1,16 @@
 import {
+  BookOpen,
   Cable,
   Candy,
   Cookie,
+  FileText,
   Flashlight,
+  Hand,
   Key,
+  KeyRound,
+  Megaphone,
   PaintBucket,
+  Scissors,
   Wand,
   WandSparkles,
   type LucideIcon,
@@ -75,6 +81,52 @@ export const ITEMS: Record<string, ItemDef> = {
     description: "A long coil of sturdy rope from the janitor's closet. Prime trap material.",
     icon: Cable,
     color: '#94a3b8',
+  },
+  old_brochure: {
+    id: 'old_brochure',
+    name: 'Resort Brochure',
+    description:
+      "A 1969 grand-opening brochure. Founder George Palm Sr. beams beside the pool: 'A PARADISE FOR MY FAMILY, FOREVER.'",
+    icon: BookOpen,
+    color: '#93c5fd',
+  },
+  muddy_glove: {
+    id: 'muddy_glove',
+    name: 'Muddy Glove',
+    description:
+      "A dress glove caked in pool muck, monogrammed 'A.C.'. Who wears dress gloves to a haunting?",
+    icon: Hand,
+    color: '#a8a29e',
+  },
+  office_key: {
+    id: 'office_key',
+    name: 'Office Passkey',
+    description: "Gus's spare passkey to the manager's office, up the lobby stairs.",
+    icon: KeyRound,
+    color: '#f59e0b',
+  },
+  box_cutter: {
+    id: 'box_cutter',
+    name: 'Box Cutter',
+    description: 'A janitor\'s box cutter. For opening boxes... or cutting someone loose.',
+    icon: Scissors,
+    color: '#f87171',
+  },
+  deed_draft: {
+    id: 'deed_draft',
+    name: 'Draft Deed of Sale',
+    description:
+      "From Crane's safe: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for a tenth of its value. Dated next week.",
+    icon: FileText,
+    color: '#fbbf24',
+  },
+  voice_megaphone: {
+    id: 'voice_megaphone',
+    name: 'Wail-o-Phone',
+    description:
+      "A megaphone rigged with a warbling reed — it turns a whisper into the Phantom's famous pipe-organ wail.",
+    icon: Megaphone,
+    color: '#4ade80',
   },
 }
 

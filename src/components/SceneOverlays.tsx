@@ -79,6 +79,23 @@ const LOBBY: OverlayDef[] = [
     ),
   },
   {
+    id: 'brochure_suitcase',
+    unless: ['got_brochure'],
+    style: pct(18, 69, 6.5, 10),
+    node: (
+      <svg viewBox="0 0 104 90" className="h-full w-full">
+        <rect x="6" y="26" width="92" height="58" rx="8" fill="#6b4a2a" />
+        <rect x="6" y="26" width="92" height="16" rx="8" fill="#7c5a36" />
+        <path d="M40 26 v-8 h24 v8" stroke="#3d2c14" strokeWidth="6" fill="none" />
+        <rect x="26" y="42" width="12" height="42" fill="#3d2c14" />
+        <rect x="66" y="42" width="12" height="42" fill="#3d2c14" />
+        {/* brochure corner peeking out */}
+        <path d="M52 30 l30 -14 l6 12 l-30 12 z" fill="#93c5fd" />
+        <path d="M58 28 l20 -9 M60 33 l20 -9" stroke="#3f6d8e" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
     id: 'drawer_open',
     when: ['took_flashlight'],
     animFlag: 'took_flashlight',
@@ -172,6 +189,19 @@ const GROUNDS: OverlayDef[] = [
     ),
   },
   {
+    id: 'pool_glove',
+    unless: ['got_glove'],
+    style: pct(63.5, 86, 4.5, 6),
+    node: (
+      <svg viewBox="0 0 72 54" className="h-full w-full">
+        <path d="M14 40 q-4 -18 8 -22 l4 -10 q3 -5 6 0 l1 8 l4 -11 q3 -5 6 0 l0 11 l5 -9 q3 -5 6 1 l-2 10 q10 2 8 14 l-3 8 q-20 8 -43 0 Z" fill="#b8b0a4" />
+        <path d="M22 44 q14 5 28 0" stroke="#7a7468" strokeWidth="3" fill="none" />
+        <text x="36" y="38" fontFamily="Trebuchet MS" fontSize="10" fontWeight="bold" fill="#5c5548" textAnchor="middle">A.C.</text>
+        <path d="M8 46 q28 10 56 0" stroke="#1a3a24" strokeWidth="6" fill="none" opacity="0.6" />
+      </svg>
+    ),
+  },
+  {
     id: 'key_rise',
     when: ['got_janitor_key'],
     animFlag: 'got_janitor_key',
@@ -220,6 +250,18 @@ const CLOSET: OverlayDef[] = [
         <path d="M8 40 h52" stroke="#4ade80" strokeWidth="5" opacity="0.65" />
         <ellipse cx="34" cy="14" rx="26" ry="7" fill="#173318" />
         <ellipse cx="34" cy="40" rx="30" ry="24" fill="#4ade80" opacity="0.14" />
+      </svg>
+    ),
+  },
+  {
+    id: 'box_cutter_shelf',
+    unless: ['got_box_cutter'],
+    style: pct(29.5, 58, 4.5, 5),
+    node: (
+      <svg viewBox="0 0 72 45" className="h-full w-full">
+        <rect x="4" y="18" width="44" height="16" rx="5" fill="#8f2d2d" transform="rotate(-8 26 26)" />
+        <path d="M46 14 l20 6 l-4 8 l-18 -2 z" fill="#c9ced4" transform="rotate(-8 52 20)" />
+        <circle cx="14" cy="26" r="3" fill="#5c1d1d" transform="rotate(-8 14 26)" />
       </svg>
     ),
   },
@@ -378,11 +420,192 @@ const TRAP_ROOM: OverlayDef[] = [
   },
 ]
 
+/* --------------------------------------------------------------- office */
+
+const safeDoor = (
+  <svg viewBox="0 0 192 144" className="h-full w-full" preserveAspectRatio="none">
+    <rect width="192" height="144" rx="8" fill="#3d3d46" />
+    <rect x="10" y="10" width="172" height="124" rx="6" fill="none" stroke="#26262e" strokeWidth="6" />
+    <circle cx="96" cy="72" r="30" fill="#26262e" />
+    <circle cx="96" cy="72" r="22" fill="#4a4a54" />
+    <path d="M96 54 v10 M96 80 v10 M78 72 h10 M104 72 h10 M83 59 l7 7 M102 78 l7 7" stroke="#1a1a20" strokeWidth="4" />
+    <rect x="150" y="60" width="14" height="24" rx="4" fill="#26262e" />
+  </svg>
+)
+
+const OFFICE: OverlayDef[] = [
+  {
+    id: 'bookshelf_closed',
+    unless: ['door_217_open'],
+    style: pct(72, 24, 22, 52),
+    node: (
+      <svg viewBox="0 0 352 468" className="h-full w-full" preserveAspectRatio="none">
+        <rect width="352" height="468" rx="6" fill="#3b2a14" />
+        <g fill="#241708">
+          <rect x="18" y="20" width="316" height="88" rx="4" />
+          <rect x="18" y="128" width="316" height="88" rx="4" />
+          <rect x="18" y="236" width="316" height="88" rx="4" />
+          <rect x="18" y="344" width="316" height="88" rx="4" />
+        </g>
+        {/* rows of books */}
+        <g>
+          <rect x="26" y="34" width="22" height="74" fill="#5c2430" /><rect x="50" y="42" width="18" height="66" fill="#2f4a3a" />
+          <rect x="70" y="30" width="26" height="78" fill="#4a3a63" /><rect x="98" y="44" width="16" height="64" fill="#6b5426" />
+          <rect x="116" y="36" width="24" height="72" fill="#37536b" /><rect x="142" y="46" width="18" height="62" fill="#5c452a" />
+          <rect x="162" y="32" width="22" height="76" fill="#513828" /><rect x="186" y="40" width="20" height="68" fill="#2c3a2e" />
+          <rect x="208" y="34" width="24" height="74" fill="#4a2430" /><rect x="234" y="44" width="18" height="64" fill="#3b3052" />
+          <rect x="254" y="38" width="22" height="70" fill="#5c5426" /><rect x="278" y="30" width="26" height="78" fill="#2f3a52" />
+          <rect x="306" y="42" width="20" height="66" fill="#6b3426" />
+        </g>
+        <g opacity="0.92">
+          <rect x="26" y="142" width="20" height="74" fill="#2f4a3a" /><rect x="48" y="152" width="24" height="64" fill="#5c2430" />
+          <rect x="74" y="140" width="18" height="76" fill="#37536b" /><rect x="94" y="150" width="26" height="66" fill="#4a3a63" />
+          {/* the one clean, glowing book */}
+          <rect x="124" y="138" width="26" height="78" fill="#d8c795" />
+          <rect x="128" y="146" width="18" height="62" fill="none" stroke="#8f6f14" strokeWidth="3" />
+          <rect x="154" y="148" width="20" height="68" fill="#513828" /><rect x="176" y="142" width="24" height="74" fill="#2c3a2e" />
+          <rect x="202" y="152" width="18" height="64" fill="#6b5426" /><rect x="222" y="140" width="26" height="76" fill="#4a2430" />
+          <rect x="250" y="150" width="20" height="66" fill="#37536b" /><rect x="272" y="144" width="24" height="72" fill="#5c452a" />
+          <rect x="298" y="152" width="26" height="64" fill="#3b3052" />
+        </g>
+        <g opacity="0.85">
+          <rect x="26" y="250" width="24" height="74" fill="#4a3a63" /><rect x="52" y="260" width="18" height="64" fill="#6b3426" />
+          <rect x="72" y="248" width="26" height="76" fill="#2f3a52" /><rect x="100" y="258" width="20" height="66" fill="#5c452a" />
+          <rect x="122" y="252" width="24" height="72" fill="#2c3a2e" /><rect x="148" y="246" width="18" height="78" fill="#5c2430" />
+          <rect x="168" y="256" width="26" height="68" fill="#37536b" /><rect x="196" y="250" width="20" height="74" fill="#513828" />
+          <rect x="218" y="244" width="24" height="80" fill="#3b3052" /><rect x="244" y="256" width="18" height="68" fill="#6b5426" />
+          <rect x="264" y="250" width="28" height="74" fill="#2f4a3a" /><rect x="294" y="258" width="30" height="66" fill="#4a2430" />
+        </g>
+        <g opacity="0.8">
+          <rect x="26" y="358" width="70" height="74" fill="#241708" />
+          <rect x="30" y="380" width="62" height="48" fill="#3b2a14" />
+          <rect x="100" y="356" width="22" height="76" fill="#2f3a52" /><rect x="124" y="366" width="26" height="66" fill="#5c452a" />
+          <rect x="152" y="360" width="18" height="72" fill="#4a3a63" /><rect x="172" y="352" width="24" height="80" fill="#2c3a2e" />
+          <rect x="198" y="364" width="20" height="68" fill="#6b3426" /><rect x="220" y="356" width="26" height="76" fill="#37536b" />
+          <rect x="248" y="366" width="18" height="66" fill="#513828" /><rect x="268" y="358" width="28" height="74" fill="#5c2430" />
+          <rect x="298" y="364" width="26" height="68" fill="#2f4a3a" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    id: 'bookshelf_slides_away',
+    when: ['door_217_open'],
+    animFlag: 'door_217_open',
+    animClass: 'anim-shelf-slide',
+    ephemeralMs: 1300,
+    style: pct(72, 24, 22, 52),
+    node: (
+      <svg viewBox="0 0 352 468" className="h-full w-full" preserveAspectRatio="none">
+        <rect width="352" height="468" rx="6" fill="#3b2a14" />
+        <g fill="#241708">
+          <rect x="18" y="20" width="316" height="88" rx="4" />
+          <rect x="18" y="128" width="316" height="88" rx="4" />
+          <rect x="18" y="236" width="316" height="88" rx="4" />
+          <rect x="18" y="344" width="316" height="88" rx="4" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    id: 'safe_closed',
+    unless: ['safe_open'],
+    style: pct(43, 50, 12, 16),
+    node: safeDoor,
+  },
+  {
+    id: 'safe_door_open',
+    when: ['safe_open'],
+    animFlag: 'safe_open',
+    animClass: 'anim-door-swing',
+    staticClass: 'anim-door-open',
+    style: pct(43, 50, 12, 16),
+    node: safeDoor,
+  },
+]
+
+/* ------------------------------------------------------------- room 217 */
+
+const georgeFigure = (freed: boolean) => (
+  <svg viewBox="0 0 160 300" className="h-full w-full" preserveAspectRatio="xMidYMax meet">
+    {/* legs */}
+    <rect x="56" y="216" width="20" height="70" rx="8" fill="#b59a6b" />
+    <rect x="84" y="216" width="20" height="70" rx="8" fill="#a88d5e" />
+    <path d="M52 282 h28 M82 282 h28" stroke="#3d2c14" strokeWidth="10" strokeLinecap="round" />
+    {/* torso: light-blue oxford + navy blazer */}
+    <path d="M42 130 q0 -22 38 -22 q38 0 38 22 v70 q0 22 -38 22 q-38 0 -38 -22 Z" fill="#1e3a5c" />
+    <path d="M64 112 h32 v82 q-16 10 -32 0 Z" fill="#b8d4ea" />
+    <path d="M80 112 v82 M72 130 l8 -10 8 10" stroke="#8fb2cc" strokeWidth="3" fill="none" />
+    <path d="M74 136 l6 44 l6 -44 z" fill="#8f2d2d" />
+    {/* arms (behind back when tied, one raised when freed) */}
+    {freed ? (
+      <g>
+        <path d="M42 140 q-24 10 -26 44" stroke="#1e3a5c" strokeWidth="16" fill="none" strokeLinecap="round" />
+        <path d="M118 140 q26 -16 30 -48" stroke="#1e3a5c" strokeWidth="16" fill="none" strokeLinecap="round" />
+        <circle cx="150" cy="86" r="9" fill="#e8c9a0" />
+        <circle cx="15" cy="186" r="9" fill="#e8c9a0" />
+      </g>
+    ) : (
+      <g>
+        <path d="M42 138 q-16 26 -6 58 M118 138 q16 26 6 58" stroke="#1e3a5c" strokeWidth="16" fill="none" strokeLinecap="round" />
+        {/* ropes */}
+        <path d="M44 150 q36 14 72 0 M42 168 q38 16 76 0 M44 186 q36 14 72 0" stroke="#b8b09a" strokeWidth="7" fill="none" />
+      </g>
+    )}
+    {/* head */}
+    <ellipse cx="80" cy="76" rx="26" ry="28" fill="#eccc9f" />
+    <path d="M56 66 q-2 -26 24 -26 q26 0 24 26 q-6 -10 -24 -10 q-18 0 -24 10" fill="#5c3a1a" />
+    <path d="M56 66 q0 10 4 14 M104 66 q0 10 -4 14" stroke="#5c3a1a" strokeWidth="5" fill="none" strokeLinecap="round" />
+    <circle cx="70" cy="76" r="3" fill="#241c10" />
+    <circle cx="90" cy="76" r="3" fill="#241c10" />
+    <path d="M64 70 q5 -4 10 -1 M86 69 q5 -3 10 1" stroke="#3d2c14" strokeWidth="2" fill="none" />
+    {freed ? (
+      <path d="M70 92 q10 7 20 0" stroke="#a3542e" strokeWidth="3" fill="none" strokeLinecap="round" />
+    ) : (
+      <path d="M66 92 h28" stroke="#8f8f96" strokeWidth="10" strokeLinecap="round" />
+    )}
+  </svg>
+)
+
+const ROOM_217: OverlayDef[] = [
+  {
+    id: 'george_tied',
+    unless: ['george_freed'],
+    staticClass: 'anim-idle-bob',
+    style: pct(57, 32, 12, 46),
+    node: georgeFigure(false),
+  },
+  {
+    id: 'george_freed',
+    when: ['george_freed'],
+    animFlag: 'george_freed',
+    animClass: 'msg-in',
+    style: pct(49.5, 40, 11, 44),
+    node: georgeFigure(true),
+  },
+  {
+    id: 'bench_megaphone',
+    unless: ['got_megaphone'],
+    style: pct(11.5, 52.5, 8, 12),
+    node: (
+      <svg viewBox="0 0 128 108" className="h-full w-full">
+        <path d="M20 66 L74 36 L74 88 Z" fill="#3d3d46" />
+        <path d="M74 36 L112 16 L112 104 L74 88 Z" fill="#4a4a54" />
+        <path d="M112 16 L112 104" stroke="#26262e" strokeWidth="6" />
+        <rect x="8" y="60" width="20" height="18" rx="6" fill="#26262e" />
+        <path d="M84 40 q10 12 0 24 M96 34 q14 18 0 38" stroke="#4ade80" strokeWidth="4" fill="none" opacity="0.8" />
+      </svg>
+    ),
+  },
+]
+
 const SCENE_OVERLAYS: Record<string, OverlayDef[]> = {
   lobby: LOBBY,
   grounds: GROUNDS,
   janitor_closet: CLOSET,
   trap_room: TRAP_ROOM,
+  office: OFFICE,
+  room_217: ROOM_217,
 }
 
 const NO_OVERLAYS: OverlayDef[] = []

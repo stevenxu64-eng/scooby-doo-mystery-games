@@ -18,6 +18,13 @@
         "label": "Janitor's Closet",
         "locked_by_flag": "closet_unlocked",
         "locked_message": "The janitor's closet door is locked tight. A heavy old lock \u2014 you'd need the right key."
+      },
+      {
+        "direction": "north",
+        "target": "office",
+        "label": "Manager's Office",
+        "locked_by_flag": "office_unlocked",
+        "locked_message": "The manager's office at the top of the stairs is locked. Mr. Crane 'keeps the only key'... though Gus might know otherwise."
       }
     ],
     "clickable_hotspots": [
@@ -146,6 +153,65 @@
           {
             "type": "show_message",
             "text": "A sun-bleached poster: 'GRAND PALM RESORT \u2014 Paradise Awaits!' Someone has scrawled a glowing green figure over the pool with the words: THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT."
+          }
+        ]
+      },
+      {
+        "id": "old_luggage",
+        "label": "Abandoned Luggage",
+        "x": 17,
+        "y": 58,
+        "w": 12,
+        "h": 22,
+        "hidden_if_flags": [
+          "got_brochure"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "old_brochure"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_brochure",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Tucked in a dusty suitcase: a 1969 grand-opening brochure. Founder George Palm Sr. built this place 'for my family, forever.' Velma: 'So who inherits a resort nobody will buy...?'"
+          }
+        ]
+      },
+      {
+        "id": "office_door_lock",
+        "label": "Office Stairs (locked door)",
+        "x": 92,
+        "y": 26,
+        "w": 7,
+        "h": 26,
+        "required_item": "office_key",
+        "consume_item": true,
+        "hidden_if_flags": [
+          "office_unlocked"
+        ],
+        "missing_item_message": "A brass-railed staircase climbs to the manager's office. The door at the top is locked tight.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "office_unlocked",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Gus's passkey fits! The office door creaks open at the top of the stairs. Head north."
           }
         ]
       }
@@ -336,6 +402,36 @@
             "text": "The pool has been empty for years, but there are fresh footprints in the leaf muck at the bottom... leading toward the lobby. Ghosts don't leave sneaker prints."
           }
         ]
+      },
+      {
+        "id": "pool_glove",
+        "label": "Something in the Pool Muck",
+        "x": 62,
+        "y": 84,
+        "w": 9,
+        "h": 10,
+        "hidden_if_flags": [
+          "got_glove"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "muddy_glove"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_glove",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Half-buried in the leaf muck: a dress glove, monogrammed 'A.C.'. Daphne: 'Ambrose Crane wears gloves JUST like these. Ghosts don't do monograms.'"
+          }
+        ]
       }
     ]
   },
@@ -468,6 +564,36 @@
             "text": "A crumpled invoice: '6 cans LUMO-GLOW paint \u2014 CHARGED TO ROOM 217.' Wait... the ledger said the resort doesn't HAVE a room 217. Somebody's hiding purchases."
           }
         ]
+      },
+      {
+        "id": "box_cutter_shelf",
+        "label": "Box Cutter",
+        "x": 29.5,
+        "y": 57,
+        "w": 5,
+        "h": 8,
+        "hidden_if_flags": [
+          "got_box_cutter"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "box_cutter"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_box_cutter",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "A box cutter on the shelf edge. Handy for opening crates \u2014 or cutting somebody loose."
+          }
+        ]
       }
     ]
   },
@@ -574,9 +700,10 @@
         "required_flags": [
           "rope_set",
           "bait_set",
-          "knows_truth"
+          "knows_truth",
+          "george_witness"
         ],
-        "locked_message": "Not yet! To spring the trap you need: the rope net rigged on the hook, a Scooby Snack set as bait, and enough EVIDENCE to know who's under that sheet. (Psst \u2014 has anyone shown the glowing paint to Gus?)",
+        "locked_message": "Not yet! To spring the trap you need the net rigged, the bait set, Gus's testimony about the paint \u2014 and you'd better find whoever the phantom has been HIDING before you tip your hand. (Crane's office might hold answers.)",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -590,6 +717,299 @@
           {
             "type": "start_dialogue",
             "dialogue": "unmasking"
+          }
+        ]
+      }
+    ]
+  },
+  "office": {
+    "id": "office",
+    "name": "Manager's Office",
+    "background_image_url": "/assets/scenes/office.svg",
+    "fallback_gradient": "linear-gradient(180deg, #22303a 0%, #3a2f28 60%, #17110c 100%)",
+    "ambience": "ambience_lobby",
+    "description": "Mr. Crane's office. Founder George Palm Sr. glares from a portrait above a wall safe. A blueprint chest, a stuffed bookshelf, and a desk drowning in paperwork.",
+    "navigation_links": [
+      {
+        "direction": "south",
+        "target": "lobby",
+        "label": "Resort Lobby"
+      },
+      {
+        "direction": "east",
+        "target": "room_217",
+        "label": "Room 217",
+        "locked_by_flag": "door_217_open",
+        "locked_message": "The east wall is solid bookshelf... though the blueprint suggests otherwise."
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "blueprint_chest",
+        "label": "Blueprint Chest",
+        "x": 6,
+        "y": 56,
+        "w": 16,
+        "h": 20,
+        "required_character": "Velma",
+        "hidden_if_flags": [
+          "knows_217"
+        ],
+        "wrong_character_message": "A flat chest of yellowed blueprints. Deciphering 1960s architecture is Velma's kind of fun.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "knows_217",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Velma unrolls the master blueprint: 'Jinkies! There IS a Room 217 \u2014 right behind this office's east bookshelf! And someone pencilled in: PORTRAIT KNOWS THE COMBINATION.'"
+          }
+        ]
+      },
+      {
+        "id": "founder_portrait",
+        "label": "Portrait of George Palm Sr.",
+        "x": 41,
+        "y": 16,
+        "w": 17,
+        "h": 30,
+        "hidden_if_flags": [
+          "saw_portrait"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "saw_portrait",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "George Palm Sr., oil on canvas, stern as a heart attack. The brass plate reads: 'FOUNDED THIS PARADISE 6-9-1969.' ...That's a date you could open a safe with."
+          }
+        ]
+      },
+      {
+        "id": "wall_safe",
+        "label": "Wall Safe",
+        "x": 43,
+        "y": 50,
+        "w": 12,
+        "h": 16,
+        "required_flags": [
+          "saw_portrait"
+        ],
+        "hidden_if_flags": [
+          "safe_open"
+        ],
+        "locked_message": "A sturdy wall safe with a numeric dial. Without the combination you'd be spinning it all night.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "safe_open",
+            "value": true
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "deed_draft"
+          },
+          {
+            "type": "show_message",
+            "text": "6... 9... 1969 \u2014 CLUNK. Inside: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for pennies, dated NEXT WEEK. He wasn't scaring buyers away for fun \u2014 he was clearing the field."
+          }
+        ]
+      },
+      {
+        "id": "office_bookshelf",
+        "label": "East Bookshelf",
+        "x": 72,
+        "y": 24,
+        "w": 22,
+        "h": 52,
+        "required_flags": [
+          "knows_217"
+        ],
+        "hidden_if_flags": [
+          "door_217_open"
+        ],
+        "locked_message": "A wall of mildewed ledgers and romance novels. Solid... probably.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "door_217_open",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Following the blueprint, you tug the one clean book on the shelf \u2014 'GHOST STORIES, Vol. 2' \u2014 and the whole bookshelf swings aside! Room 217 is real. Head east... carefully."
+          }
+        ]
+      },
+      {
+        "id": "crane_desk",
+        "label": "Crane's Desk",
+        "x": 26,
+        "y": 58,
+        "w": 26,
+        "h": 20,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Overdue notices, foreclosure warnings, and a fresh newspaper: 'PALM HEIR RETURNS \u2014 GEORGE PALM III TO DECIDE RESORT'S FATE.' The heir is HERE? Then where is he?"
+          }
+        ]
+      }
+    ]
+  },
+  "room_217": {
+    "id": "room_217",
+    "name": "Room 217",
+    "background_image_url": "/assets/scenes/room_217.svg",
+    "fallback_gradient": "linear-gradient(180deg, #1c2438 0%, #2c2440 60%, #120e1c 100%)",
+    "ambience": "ambience_closet",
+    "description": "The room that 'doesn't exist'. A phantom workshop \u2014 costume rack, sewing machine, paint-spattered workbench... and a young man tied to a chair, glaring at everyone.",
+    "navigation_links": [
+      {
+        "direction": "west",
+        "target": "office",
+        "label": "Manager's Office"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "george_tied",
+        "label": "The Tied-Up Stranger",
+        "x": 56,
+        "y": 34,
+        "w": 16,
+        "h": 44,
+        "required_item": "box_cutter",
+        "consume_item": true,
+        "hidden_if_flags": [
+          "george_freed"
+        ],
+        "missing_item_message": "\"MMMPH! MMFF-MMPH!!\" He's trussed to the chair with knotted clothesline. You'll need something sharp to cut him free.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "george_freed",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "george_main"
+          }
+        ]
+      },
+      {
+        "id": "george_freed_npc",
+        "label": "George Palm III",
+        "x": 56,
+        "y": 34,
+        "w": 16,
+        "h": 44,
+        "visible_if_flags": [
+          "george_freed"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "george_main"
+          }
+        ]
+      },
+      {
+        "id": "workbench_megaphone",
+        "label": "Rigged Megaphone",
+        "x": 10,
+        "y": 52,
+        "w": 12,
+        "h": 16,
+        "hidden_if_flags": [
+          "got_megaphone"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "voice_megaphone"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_megaphone",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The workbench holds a megaphone rigged with a warbling reed \u2014 one whisper becomes the Phantom's pipe-organ WAIL. Shaggy tries it. Everyone regrets it. (Evidence bagged!)"
+          }
+        ]
+      },
+      {
+        "id": "costume_rack",
+        "label": "Costume Rack",
+        "x": 76,
+        "y": 26,
+        "w": 18,
+        "h": 44,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A rack of half-finished phantom sheets in three sizes, plus a tin labeled LUMO-GLOW THINNER. Somebody sews their own nightmares. Neat stitching, too."
+          }
+        ]
+      },
+      {
+        "id": "sewing_machine",
+        "label": "Sewing Machine",
+        "x": 30,
+        "y": 56,
+        "w": 12,
+        "h": 16,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A pedal sewing machine threaded with glow-green thread. The needle's still warm. Velma: 'Our phantom does his own tailoring. Frugal AND theatrical.'"
           }
         ]
       }
