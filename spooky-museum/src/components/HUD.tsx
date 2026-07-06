@@ -1,4 +1,4 @@
-import { ClipboardList, Eye, EyeOff, Gauge, Key, ScrollText, Search, Skull } from 'lucide-react'
+import { ClipboardList, Eye, EyeOff, Gauge, Key, RotateCcw, ScrollText, Search, Skull } from 'lucide-react'
 import { CLUES, CLUE_ORDER, ITEMS } from '../data/mystery'
 import {
   currentObjective,
@@ -37,6 +37,7 @@ export function Sidebar() {
   const foundClues = useGameStore((s) => s.foundClues)
   const inventory = useGameStore((s) => s.inventory)
   const openBoard = useGameStore((s) => s.openBoard)
+  const resetGame = useGameStore((s) => s.resetGame)
   const objective = useGameStore(currentObjective)
 
   return (
@@ -120,6 +121,17 @@ export function Sidebar() {
           ))}
         </div>
       </div>
+
+      <button
+        onClick={() => {
+          if (window.confirm('Restart the mystery? Clues, items, and case-board links will be lost.')) {
+            resetGame()
+          }
+        }}
+        className="btn flex items-center justify-center gap-2 bg-stone-900 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-stone-500"
+      >
+        <RotateCcw size={13} /> Restart Mystery
+      </button>
 
       <div className="mt-auto rounded-lg bg-stone-900/60 p-2 text-[11px] leading-relaxed text-stone-500">
         <b className="text-stone-400">Controls:</b> WASD/arrows or click to move · E to

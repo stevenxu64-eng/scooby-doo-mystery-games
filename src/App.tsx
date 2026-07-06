@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Eye, EyeOff, Ghost, Volume2, VolumeX } from 'lucide-react'
+import { Eye, EyeOff, Ghost, RotateCcw, Volume2, VolumeX } from 'lucide-react'
 import { Viewport } from './components/Viewport'
 import { Inventory } from './components/Inventory'
 import { CharacterHub } from './components/CharacterHub'
@@ -25,6 +25,7 @@ export default function App() {
   const moveTo = useGameStore((s) => s.moveTo)
   const showHotspotHints = useGameStore((s) => s.showHotspotHints)
   const toggleHotspotHints = useGameStore((s) => s.toggleHotspotHints)
+  const resetGame = useGameStore((s) => s.resetGame)
   const [muted, setMuted] = useState(false)
 
   useEffect(() => {
@@ -73,6 +74,17 @@ export default function App() {
             className={`kenney-btn p-2 ${muted ? 'bg-stone-800 text-stone-500' : 'bg-stone-800 text-amber-300'}`}
           >
             {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+          </button>
+          <button
+            onClick={() => {
+              if (window.confirm('Restart the mystery from the beginning? Your saved progress will be lost.')) {
+                resetGame()
+              }
+            }}
+            title="Restart mystery"
+            className="kenney-btn bg-stone-800 p-2 text-stone-400"
+          >
+            <RotateCcw size={18} />
           </button>
         </div>
       </header>

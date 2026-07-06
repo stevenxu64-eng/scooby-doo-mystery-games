@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 import mapsJson from '../data/maps.json'
 import { TILE, type GameMode, type MapData, type MonsterRuntime, type Vec2 } from '../types/game'
 import { findPath, isWalkableTile, walkableNeighbors } from '../utils/pathfinding'
@@ -93,7 +94,9 @@ function initialState(roomId = START_ROOM) {
   }
 }
 
-export const useGameStore = create<GameState>((set, get) => ({
+export const useGameStore = create<GameState>()(
+  persist(
+    (set, get) => ({
   ...initialState(),
   difficulty: 'normal' as Difficulty,
 
@@ -375,7 +378,42 @@ export const useGameStore = create<GameState>((set, get) => ({
       messageId: get().messageId + 1,
     })
   },
-}))
+    }),
+    {
+      name: 'spooky-museum-save',
+      version: 1,
+      // Durable progress only — entity positions and AI state respawn fresh,
+      // so a mid-chase save can't reload into an instant game over.
+      partialize: (s) => ({
+        activeRoomId: s.activeRoomId,
+        inventory: s.inventory,
+        foundClues: s.foundClues,
+        usedInteractives: s.usedInteractives,
+        clueLinks: s.clueLinks,
+        difficulty: s.difficulty,
+      }),
+      merge: (persisted, current) => {
+        const p = (persisted ?? {}) as Partial<GameState>
+        const roomId = p.activeRoomId
+        // Guard against saves referencing rooms that no longer exist.
+        if (!roomId || !MAPS[roomId]) return current
+        const { pos, rt } = freshMonster(roomId)
+        const difficulty = p.difficulty ?? 'normal'
+        return {
+          ...current,
+          ...p,
+          playerPosition: { ...MAPS[roomId].player_spawn },
+          playerPath: [],
+          monsterPosition: pos,
+          monsterAI: rt,
+          gameMode: 'EXPLORE' as GameMode,
+          message: MAPS[roomId].intro,
+          spotGraceLeft: DIFFICULTY_MODS[difficulty].grace,
+        }
+      },
+    },
+  ),
+)
 
 /** Objective line for the HUD, derived from progress. */
 export function currentObjective(s: GameState): string {

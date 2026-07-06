@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 import type {
   CharacterId,
   Direction,
@@ -59,7 +60,9 @@ const initialState = {
   showHotspotHints: false,
 }
 
-export const useGameStore = create<GameState>((set, get) => ({
+export const useGameStore = create<GameState>()(
+  persist(
+    (set, get) => ({
   ...initialState,
 
   hasFlag: (flag) => !!get().gameFlags[flag],
@@ -268,4 +271,23 @@ export const useGameStore = create<GameState>((set, get) => ({
   toggleHotspotHints: () => set((s) => ({ showHotspotHints: !s.showHotspotHints })),
 
   resetGame: () => set({ ...initialState, messageId: get().messageId + 1 }),
-}))
+    }),
+    {
+      name: 'scooby-resort-save',
+      version: 1,
+      // Only durable progress is saved; transient UI state stays fresh per session.
+      partialize: (s) => ({
+        activeRoom: s.activeRoom,
+        playerInventory: s.playerInventory,
+        gameFlags: s.gameFlags,
+        activeCharacter: s.activeCharacter,
+      }),
+      merge: (persisted, current) => {
+        const p = (persisted ?? {}) as Partial<GameState>
+        // Guard against saves referencing rooms that no longer exist.
+        if (!p.activeRoom || !SCENES[p.activeRoom]) return current
+        return { ...current, ...p, message: SCENES[p.activeRoom].description }
+      },
+    },
+  ),
+)
