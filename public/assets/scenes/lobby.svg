@@ -1,117 +1,207 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <defs>
     <linearGradient id="wallg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#241b3d"/>
-      <stop offset="70%" stop-color="#3d2f56"/>
-      <stop offset="100%" stop-color="#4a3a63"/>
+      <stop offset="0%" stop-color="#1a1230"/>
+      <stop offset="45%" stop-color="#2d2148"/>
+      <stop offset="85%" stop-color="#463358"/>
+      <stop offset="100%" stop-color="#523d60"/>
     </linearGradient>
     <linearGradient id="floorg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#5a4025"/>
-      <stop offset="100%" stop-color="#2a1d10"/>
+      <stop offset="0%" stop-color="#6d4e2c"/>
+      <stop offset="35%" stop-color="#4e3519"/>
+      <stop offset="100%" stop-color="#241708"/>
     </linearGradient>
-    <radialGradient id="moonbeam" cx="50%" cy="0%" r="80%">
-      <stop offset="0%" stop-color="#cdd7ff" stop-opacity="0.28"/>
-      <stop offset="60%" stop-color="#cdd7ff" stop-opacity="0"/>
+    <linearGradient id="rugg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c2d3a"/>
+      <stop offset="100%" stop-color="#4c1a24"/>
+    </linearGradient>
+    <radialGradient id="beamglow" cx="50%" cy="0%" r="85%">
+      <stop offset="0%" stop-color="#cdd7ff" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#cdd7ff" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="vign" cx="50%" cy="50%" r="75%">
-      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    <radialGradient id="lampglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd98a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="46%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.62"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
   </defs>
 
   <!-- walls & floor -->
   <rect width="1600" height="560" fill="url(#wallg)"/>
   <rect y="560" width="1600" height="340" fill="url(#floorg)"/>
-  <path d="M0 560 H1600 V575 H0 Z" fill="#1b1208"/>
-  <!-- floor boards -->
-  <g stroke="#1f150a" stroke-width="3" opacity="0.5">
-    <path d="M200 900 L420 560 M500 900 L620 560 M800 900 L800 560 M1100 900 L980 560 M1400 900 L1180 560"/>
+
+  <!-- wall paneling -->
+  <g stroke="#221838" stroke-width="3" opacity="0.6">
+    <path d="M270 90 V470 M520 60 V470 M940 60 V470 M1290 90 V470"/>
+  </g>
+  <rect y="440" width="1600" height="34" fill="#2a1e42"/>
+  <path d="M0 440 H1600" stroke="#5d4a74" stroke-width="4"/>
+  <path d="M0 474 H1600" stroke="#171026" stroke-width="5"/>
+  <!-- crown moulding + cracks -->
+  <rect width="1600" height="26" fill="#171026"/>
+  <path d="M1180 26 q14 60 -8 118 M1196 26 q4 40 22 66" stroke="#171026" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M340 26 q-10 70 12 128" stroke="#171026" stroke-width="3" fill="none" opacity="0.6"/>
+
+  <!-- grand staircase silhouette (right background) -->
+  <g fill="#241a3c">
+    <path d="M1470 440 L1600 340 L1600 440 Z"/>
+    <path d="M1470 440 h130 v20 h-130 z" opacity="0.9"/>
+  </g>
+  <g fill="#1d1533">
+    <path d="M1478 352 h10 v88 h-10 z M1516 328 h10 v112 h-10 z M1554 304 h10 v136 h-10 z M1590 282 h10 v158 h-10 z"/>
+    <path d="M1470 348 L1600 268 L1600 282 L1470 362 Z"/>
   </g>
 
-  <!-- skylight moonbeam -->
-  <rect width="1600" height="900" fill="url(#moonbeam)"/>
-  <path d="M700 0 L560 560 L1040 560 L900 0 Z" fill="#cdd7ff" opacity="0.07"/>
+  <!-- moonbeam through skylight -->
+  <path d="M660 0 L520 620 L1080 620 L940 0 Z" fill="#cdd7ff" opacity="0.10"/>
+  <path d="M700 0 L600 620 L1000 620 L900 0 Z" fill="#e3e9ff" opacity="0.07"/>
+  <rect width="1600" height="900" fill="url(#beamglow)"/>
+  <!-- dust motes in the beam -->
+  <g fill="#e7ecff" opacity="0.5">
+    <circle cx="700" cy="180" r="2.4"/><circle cx="760" cy="290" r="1.8"/>
+    <circle cx="820" cy="150" r="2"/><circle cx="880" cy="360" r="2.2"/>
+    <circle cx="742" cy="470" r="1.7"/><circle cx="838" cy="520" r="2"/>
+  </g>
 
   <!-- chandelier -->
-  <path d="M800 0 V70" stroke="#171021" stroke-width="6"/>
-  <path d="M720 110 Q800 160 880 110 L860 90 Q800 130 740 90 Z" fill="#171021"/>
-  <circle cx="726" cy="102" r="9" fill="#ffd98a" opacity="0.9"/>
-  <circle cx="800" cy="126" r="9" fill="#ffd98a" opacity="0.9"/>
-  <circle cx="874" cy="102" r="9" fill="#ffd98a" opacity="0.9"/>
+  <path d="M800 0 V64" stroke="#0e0a18" stroke-width="7"/>
+  <g fill="#0e0a18">
+    <path d="M706 106 Q800 162 894 106 L872 84 Q800 132 728 84 Z"/>
+    <path d="M726 84 q-8 -18 6 -26 M800 108 q0 -22 0 -30 M874 84 q8 -18 -6 -26" stroke="#0e0a18" stroke-width="6" fill="none"/>
+  </g>
+  <circle cx="716" cy="96" r="34" fill="url(#lampglow)"/>
+  <circle cx="800" cy="122" r="34" fill="url(#lampglow)"/>
+  <circle cx="884" cy="96" r="34" fill="url(#lampglow)"/>
+  <circle cx="716" cy="96" r="8" fill="#ffe6ae"/>
+  <circle cx="800" cy="122" r="8" fill="#ffe6ae"/>
+  <circle cx="884" cy="96" r="8" fill="#ffe6ae"/>
+  <!-- cobweb corner -->
+  <g stroke="#a8a4c4" stroke-width="1.4" opacity="0.35" fill="none">
+    <path d="M0 26 Q90 60 150 26 M0 96 Q70 96 118 44 M0 160 Q48 130 92 62"/>
+    <path d="M30 26 Q40 90 8 140 M84 30 Q80 80 40 118"/>
+  </g>
 
-  <!-- wainscot -->
-  <rect y="470" width="1600" height="90" fill="#312447"/>
-  <path d="M0 470 H1600" stroke="#54446f" stroke-width="4"/>
+  <!-- wall sconces -->
+  <g>
+    <rect x="392" y="300" width="16" height="44" rx="6" fill="#171026"/>
+    <circle cx="400" cy="296" r="26" fill="url(#lampglow)" opacity="0.7"/>
+    <circle cx="400" cy="296" r="6" fill="#ffe6ae"/>
+    <rect x="1192" y="300" width="16" height="44" rx="6" fill="#171026"/>
+    <circle cx="1200" cy="296" r="26" fill="url(#lampglow)" opacity="0.7"/>
+    <circle cx="1200" cy="296" r="6" fill="#ffe6ae"/>
+  </g>
 
-  <!-- JANITOR CLOSET DOOR (hotspot x2-14%, y28-76%) -->
-  <rect x="40" y="245" width="180" height="440" rx="8" fill="#241708"/>
-  <rect x="56" y="262" width="148" height="406" rx="6" fill="#3d2812"/>
-  <rect x="72" y="290" width="116" height="150" rx="4" fill="#2c1c0c"/>
-  <rect x="72" y="470" width="116" height="170" rx="4" fill="#2c1c0c"/>
-  <circle cx="188" cy="462" r="9" fill="#c9a24a"/>
-  <rect x="150" y="430" width="26" height="40" rx="4" fill="#6b6b70"/>
-  <rect x="78" y="330" width="104" height="26" rx="3" fill="#101d2c" transform="rotate(-2 130 343)"/>
-  <text x="130" y="349" font-family="Trebuchet MS" font-size="17" fill="#d8c795" text-anchor="middle" transform="rotate(-2 130 343)">MAINTENANCE</text>
+  <!-- floorboards + sheen -->
+  <g stroke="#1c1206" stroke-width="3" opacity="0.55">
+    <path d="M160 900 L400 560 M460 900 L610 560 M790 900 L795 560 M1120 900 L985 560 M1440 900 L1180 560"/>
+  </g>
+  <path d="M560 620 L1040 620 L1180 900 L420 900 Z" fill="#e3e9ff" opacity="0.05"/>
+  <!-- worn rug -->
+  <path d="M560 700 L1060 700 L1140 850 L480 850 Z" fill="url(#rugg)" opacity="0.85"/>
+  <path d="M580 712 L1042 712 L1112 838 L510 838 Z" fill="none" stroke="#d8a44a" stroke-width="4" opacity="0.5"/>
+
+  <!-- JANITOR CLOSET DOORWAY (hotspot x2-14%, y28-76%) — frame + dark interior; leaf is a game overlay -->
+  <rect x="36" y="238" width="190" height="452" rx="8" fill="#160d04"/>
+  <rect x="48" y="252" width="166" height="426" rx="6" fill="#2c1c0c"/>
+  <rect x="56" y="262" width="148" height="406" rx="4" fill="#070403"/>
+  <path d="M56 262 h148 M56 300 l148 22" stroke="#120a04" stroke-width="3" opacity="0.8"/>
+  <path d="M226 690 q60 8 120 0" stroke="#120a04" stroke-width="5" fill="none" opacity="0.5"/>
 
   <!-- dust-sheet furniture -->
-  <path d="M300 660 q30 -90 90 -70 q60 15 55 95 q-5 45 -75 40 q-75 -5 -70 -65" fill="#8d87a3"/>
-  <path d="M310 655 q40 20 120 5" stroke="#6f6987" stroke-width="4" fill="none"/>
-  <path d="M1280 700 q20 -110 105 -90 q80 20 70 115 q-8 55 -95 45 q-88 -10 -80 -70" fill="#847e9b"/>
-  <path d="M1295 690 q55 25 145 0" stroke="#67617f" stroke-width="4" fill="none"/>
+  <g filter="none">
+    <path d="M290 664 q28 -96 92 -74 q64 16 58 98 q-6 48 -78 42 q-78 -6 -72 -66" fill="#9791ad"/>
+    <path d="M300 658 q42 22 124 6" stroke="#736d8d" stroke-width="4" fill="none"/>
+    <path d="M330 596 q10 -22 34 -12" stroke="#b3aec7" stroke-width="4" fill="none"/>
+    <ellipse cx="350" cy="736" rx="86" ry="14" fill="#000" opacity="0.35"/>
+    <path d="M1270 706 q22 -116 110 -94 q84 22 74 120 q-10 58 -100 48 q-92 -12 -84 -74" fill="#8d879f"/>
+    <path d="M1286 696 q58 26 152 0" stroke="#6b657f" stroke-width="4" fill="none"/>
+    <ellipse cx="1350" cy="788" rx="98" ry="15" fill="#000" opacity="0.35"/>
+  </g>
 
-  <!-- FRONT DESK (drawer hotspot 38-54% x, 62-78% y; ledger 40-52% x, 48-58% y) -->
-  <rect x="580" y="430" width="330" height="60" rx="6" fill="#6e4a22"/>
-  <rect x="596" y="490" width="298" height="220" fill="#553517"/>
-  <rect x="620" y="552" width="250" height="130" rx="6" fill="#452a10"/>
-  <rect x="700" y="596" width="90" height="16" rx="8" fill="#c9a24a"/>
-  <path d="M596 490 h298" stroke="#7c5628" stroke-width="6"/>
+  <!-- FRONT DESK (drawer face is a game overlay; cavity painted dark) -->
+  <ellipse cx="748" cy="716" rx="180" ry="17" fill="#000" opacity="0.4"/>
+  <rect x="580" y="430" width="330" height="60" rx="6" fill="#7c5527"/>
+  <path d="M580 442 h330" stroke="#9a6f38" stroke-width="5"/>
+  <rect x="596" y="490" width="298" height="220" fill="#5b3a19"/>
+  <path d="M596 490 h298" stroke="#83592a" stroke-width="6"/>
+  <path d="M620 500 v200 M870 500 v200" stroke="#43290f" stroke-width="3" opacity="0.7"/>
+  <!-- drawer cavity -->
+  <rect x="620" y="552" width="250" height="130" rx="6" fill="#241505"/>
   <!-- ledger book on desk -->
   <g transform="rotate(-4 730 452)">
-    <rect x="648" y="432" width="164" height="44" rx="4" fill="#7c1f1f"/>
-    <rect x="656" y="438" width="148" height="32" rx="2" fill="#e8dcb8"/>
-    <path d="M730 438 v32" stroke="#b8a67c" stroke-width="2"/>
-    <path d="M668 448 h48 M668 458 h44 M742 448 h48 M742 458 h40" stroke="#8f815c" stroke-width="2"/>
+    <rect x="646" y="430" width="168" height="48" rx="4" fill="#8c2424"/>
+    <rect x="654" y="436" width="152" height="36" rx="2" fill="#ead9b0"/>
+    <path d="M730 436 v36" stroke="#bfa878" stroke-width="2.5"/>
+    <path d="M666 446 h48 M666 456 h44 M666 466 h40 M742 446 h48 M742 456 h42 M742 466 h46" stroke="#8f7c54" stroke-width="2.4"/>
   </g>
-  <!-- desk bell -->
-  <path d="M850 452 a16 14 0 0 1 32 0 z" fill="#d3b25c"/>
+  <!-- desk bell + lamp -->
+  <path d="M852 452 a16 14 0 0 1 32 0 z" fill="#e0bd60"/>
+  <circle cx="868" cy="438" r="3.4" fill="#f4d98c"/>
+  <g>
+    <path d="M628 430 q-4 -34 22 -36 q30 -2 26 34" stroke="#1d1408" stroke-width="6" fill="none"/>
+    <path d="M626 402 h54 l-10 -22 h-34 Z" fill="#2f6e5e"/>
+    <circle cx="653" cy="398" r="20" fill="url(#lampglow)" opacity="0.8"/>
+  </g>
 
   <!-- MR. CRANE (hotspot 62-77% x, 30-76% y) -->
   <g>
-    <ellipse cx="1105" cy="692" rx="60" ry="14" fill="#000" opacity="0.35"/>
-    <rect x="1068" y="418" width="74" height="200" rx="26" fill="#3a4a52"/>
-    <rect x="1080" y="430" width="50" height="90" fill="#c9c2ae"/>
-    <path d="M1094 430 l11 34 l11 -34 z" fill="#5d2a2a"/>
-    <rect x="1070" y="610" width="30" height="82" rx="8" fill="#2c3940"/>
-    <rect x="1110" y="610" width="30" height="82" rx="8" fill="#2c3940"/>
-    <rect x="1052" y="430" width="22" height="120" rx="10" fill="#3a4a52"/>
-    <rect x="1136" y="430" width="22" height="120" rx="10" fill="#3a4a52"/>
-    <ellipse cx="1063" cy="560" rx="11" ry="12" fill="#d8b98f"/>
-    <!-- lantern in hand -->
-    <rect x="1140" y="540" width="34" height="44" rx="6" fill="#2b2b30"/>
-    <rect x="1148" y="548" width="18" height="28" fill="#ffd98a" opacity="0.95"/>
-    <circle cx="1157" cy="562" r="26" fill="#ffd98a" opacity="0.18"/>
+    <ellipse cx="1105" cy="694" rx="62" ry="14" fill="#000" opacity="0.4"/>
+    <rect x="1066" y="416" width="78" height="204" rx="26" fill="#43545e"/>
+    <path d="M1066 448 q40 18 78 0" stroke="#36444c" stroke-width="5" fill="none"/>
+    <rect x="1080" y="428" width="50" height="92" fill="#cfc7b0"/>
+    <path d="M1094 428 l11 36 l11 -36 z" fill="#6b2f2f"/>
+    <rect x="1068" y="612" width="30" height="82" rx="8" fill="#313f47"/>
+    <rect x="1112" y="612" width="30" height="82" rx="8" fill="#313f47"/>
+    <path d="M1068 690 h30 M1112 690 h30" stroke="#171f24" stroke-width="8"/>
+    <rect x="1050" y="428" width="22" height="122" rx="10" fill="#43545e"/>
+    <rect x="1138" y="428" width="22" height="122" rx="10" fill="#43545e"/>
+    <ellipse cx="1061" cy="560" rx="11" ry="12" fill="#dcbf95"/>
+    <!-- lantern -->
+    <rect x="1140" y="540" width="34" height="46" rx="6" fill="#211f26"/>
+    <rect x="1148" y="548" width="18" height="30" fill="#ffd98a"/>
+    <circle cx="1157" cy="563" r="40" fill="url(#lampglow)" opacity="0.6"/>
     <!-- head -->
-    <ellipse cx="1105" cy="382" rx="30" ry="34" fill="#d8b98f"/>
-    <path d="M1075 372 q8 -26 30 -26 q22 0 30 26 q-8 -8 -30 -8 q-22 0 -30 8" fill="#9aa0a6"/>
-    <circle cx="1094" cy="382" r="3.5" fill="#222"/>
-    <circle cx="1116" cy="382" r="3.5" fill="#222"/>
-    <path d="M1090 374 l9 -4 M1120 374 l-9 -4" stroke="#555" stroke-width="2.5"/>
-    <path d="M1096 404 q9 4 18 0" stroke="#8a6c50" stroke-width="2.5" fill="none"/>
+    <ellipse cx="1105" cy="380" rx="30" ry="34" fill="#dcbf95"/>
+    <path d="M1105 366 q-14 -2 -20 8" stroke="#c5a67c" stroke-width="2" fill="none"/>
+    <path d="M1075 370 q8 -26 30 -26 q22 0 30 26 q-8 -8 -30 -8 q-22 0 -30 8" fill="#a3a8ad"/>
+    <circle cx="1094" cy="380" r="3.6" fill="#20242a"/>
+    <circle cx="1116" cy="380" r="3.6" fill="#20242a"/>
+    <path d="M1088 371 l10 -4 M1122 371 l-10 -4" stroke="#5b6167" stroke-width="2.6"/>
+    <path d="M1096 402 q9 4 18 0" stroke="#8a6c50" stroke-width="2.6" fill="none"/>
   </g>
 
   <!-- POSTER (hotspot 84-96% x, 22-48% y) -->
-  <rect x="1336" y="192" width="200" height="248" fill="#5c4a22"/>
-  <rect x="1348" y="204" width="176" height="224" fill="#e4d8b4"/>
-  <text x="1436" y="236" font-family="Trebuchet MS" font-size="22" font-weight="bold" fill="#7a5b1e" text-anchor="middle">GRAND PALM</text>
-  <text x="1436" y="260" font-family="Trebuchet MS" font-size="16" fill="#7a5b1e" text-anchor="middle">RESORT</text>
-  <path d="M1380 330 q10 -40 40 -30 q6 -22 30 -12 q22 8 12 34 q18 14 -2 30 q-30 20 -60 4 q-28 -10 -20 -26" fill="#59c26a" opacity="0.85"/>
+  <rect x="1330" y="186" width="212" height="260" fill="#241708" rx="4"/>
+  <rect x="1340" y="196" width="192" height="240" fill="#5f4c22"/>
+  <rect x="1348" y="204" width="176" height="224" fill="#e8dcb4"/>
+  <path d="M1348 204 h176 v50 h-176 z" fill="#d8c894"/>
+  <text x="1436" y="234" font-family="Trebuchet MS" font-size="22" font-weight="bold" fill="#7a5b1e" text-anchor="middle">GRAND PALM</text>
+  <text x="1436" y="256" font-family="Trebuchet MS" font-size="15" fill="#7a5b1e" text-anchor="middle" letter-spacing="4">R E S O R T</text>
+  <path d="M1380 330 q10 -40 40 -30 q6 -22 30 -12 q22 8 12 34 q18 14 -2 30 q-30 20 -60 4 q-28 -10 -20 -26" fill="#59c26a" opacity="0.9"/>
   <circle cx="1416" cy="316" r="4" fill="#143318"/>
   <circle cx="1438" cy="314" r="4" fill="#143318"/>
-  <text x="1436" y="400" font-family="Trebuchet MS" font-size="13" fill="#3f6b46" text-anchor="middle">THE PHANTOM GUEST</text>
-  <text x="1436" y="418" font-family="Trebuchet MS" font-size="13" fill="#3f6b46" text-anchor="middle">CHECKS IN...</text>
+  <path d="M1414 332 q12 8 26 -2" stroke="#143318" stroke-width="2.5" fill="none"/>
+  <text x="1436" y="398" font-family="Trebuchet MS" font-size="13" fill="#3f6b46" text-anchor="middle">THE PHANTOM GUEST</text>
+  <text x="1436" y="416" font-family="Trebuchet MS" font-size="13" fill="#3f6b46" text-anchor="middle">CHECKS IN... YOU CHECK OUT</text>
+  <path d="M1352 208 l168 216" stroke="#8d7c50" stroke-width="1.6" opacity="0.4"/>
 
   <!-- east archway hint -->
-  <path d="M1560 560 V300 q40 -20 40 20 V560 Z" fill="#171021"/>
+  <path d="M1560 560 V300 q40 -22 40 18 V560 Z" fill="#120c20"/>
+  <path d="M1560 560 V300" stroke="#2c2148" stroke-width="4"/>
 
+  <!-- grain + vignette -->
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.5"/>
   <rect width="1600" height="900" fill="url(#vign)"/>
 </svg>

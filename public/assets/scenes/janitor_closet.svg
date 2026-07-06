@@ -1,98 +1,140 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <defs>
     <linearGradient id="cwall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#181410"/>
-      <stop offset="100%" stop-color="#332a1e"/>
+      <stop offset="0%" stop-color="#100d0a"/>
+      <stop offset="60%" stop-color="#241d15"/>
+      <stop offset="100%" stop-color="#3b3022"/>
     </linearGradient>
     <linearGradient id="cfloor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#26201a"/>
-      <stop offset="100%" stop-color="#120e0a"/>
+      <stop offset="0%" stop-color="#2b241d"/>
+      <stop offset="100%" stop-color="#0f0b08"/>
     </linearGradient>
-    <radialGradient id="bulbglow" cx="50%" cy="0%" r="70%">
-      <stop offset="0%" stop-color="#ffe9b0" stop-opacity="0.5"/>
+    <radialGradient id="bulbglow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#ffe9b0" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#ffe9b0" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="vign3" cx="50%" cy="50%" r="75%">
-      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+    <radialGradient id="bulbcore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3cf" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffe9b0" stop-opacity="0"/>
     </radialGradient>
+    <radialGradient id="vign3" cx="50%" cy="42%" r="72%">
+      <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="grain3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.06"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
   </defs>
 
   <rect width="1600" height="620" fill="url(#cwall)"/>
   <rect y="620" width="1600" height="280" fill="url(#cfloor)"/>
-  <path d="M0 620 H1600 V632 H0 Z" fill="#0b0806"/>
+  <path d="M0 620 H1600 V634 H0 Z" fill="#090603"/>
 
-  <!-- hanging bulb + light cone -->
-  <path d="M800 0 V150" stroke="#3a352c" stroke-width="5"/>
-  <circle cx="800" cy="168" r="20" fill="#ffe9b0"/>
-  <path d="M800 168 L520 900 L1080 900 Z" fill="url(#bulbglow)"/>
+  <!-- wall pipes -->
+  <g stroke="#3f3526" stroke-width="16" fill="none" opacity="0.9">
+    <path d="M0 120 H620 q30 0 30 30 V240"/>
+    <path d="M1400 0 V180 q0 26 26 26 H1600"/>
+  </g>
+  <g stroke="#26200f" stroke-width="3" fill="none" opacity="0.8">
+    <path d="M120 112 v16 M300 112 v16 M520 112 v16 M642 168 h16 M1392 90 h16 M1392 150 h16"/>
+  </g>
+  <circle cx="650" cy="210" r="12" fill="#4a3f2c"/>
+  <path d="M638 210 h24 M650 198 v24" stroke="#26200f" stroke-width="3"/>
 
-  <!-- SHADOWY SHELVES (hotspot 6-28% x, 22-56% y) -->
-  <rect x="80" y="180" width="380" height="330" fill="#0d0a07"/>
-  <g fill="#241c12">
-    <rect x="92" y="200" width="356" height="16"/>
-    <rect x="92" y="300" width="356" height="16"/>
-    <rect x="92" y="400" width="356" height="16"/>
-    <rect x="92" y="494" width="356" height="16"/>
+  <!-- hanging bulb + cone of light + motes -->
+  <path d="M800 0 V148" stroke="#3a352c" stroke-width="5"/>
+  <path d="M786 148 h28 l-4 14 h-20 Z" fill="#4a4436"/>
+  <circle cx="800" cy="176" r="46" fill="url(#bulbcore)"/>
+  <circle cx="800" cy="174" r="17" fill="#ffedbb"/>
+  <path d="M800 168 L500 900 L1100 900 Z" fill="url(#bulbglow)"/>
+  <g fill="#ffe9b0" opacity="0.5">
+    <circle cx="742" cy="330" r="2.2"/><circle cx="826" cy="420" r="1.8"/><circle cx="778" cy="520" r="2"/>
+    <circle cx="860" cy="610" r="1.7"/><circle cx="742" cy="680" r="2.1"/>
   </g>
-  <!-- dim cans; one leaks a green hint -->
-  <g opacity="0.75">
-    <rect x="120" y="240" width="46" height="60" rx="4" fill="#1c1812"/>
-    <rect x="180" y="248" width="40" height="52" rx="4" fill="#211a12"/>
-    <rect x="250" y="238" width="50" height="62" rx="4" fill="#191510"/>
-    <rect x="120" y="342" width="44" height="58" rx="4" fill="#1c1812"/>
-    <rect x="190" y="348" width="52" height="52" rx="4" fill="#161310"/>
-    <rect x="280" y="340" width="46" height="60" rx="4" fill="#1f1a13"/>
-    <rect x="350" y="346" width="44" height="54" rx="4" fill="#181410"/>
+
+  <!-- SHADOWY SHELVES (hotspot 6-28% x, 22-56% y) — glowing can hint is a game overlay -->
+  <rect x="72" y="168" width="396" height="352" rx="6" fill="#0a0705"/>
+  <path d="M72 168 h396 M72 520 h396" stroke="#1c150d" stroke-width="8"/>
+  <g fill="#261d12">
+    <rect x="88" y="196" width="364" height="15"/>
+    <rect x="88" y="298" width="364" height="15"/>
+    <rect x="88" y="398" width="364" height="15"/>
+    <rect x="88" y="494" width="364" height="15"/>
   </g>
-  <rect x="352" y="238" width="52" height="62" rx="4" fill="#12200f"/>
-  <path d="M352 268 h52" stroke="#3f7a3a" stroke-width="4" opacity="0.5"/>
-  <circle cx="378" cy="300" r="26" fill="#4ade80" opacity="0.07"/>
+  <!-- dim cans and bottles -->
+  <g opacity="0.85">
+    <rect x="118" y="238" width="46" height="60" rx="4" fill="#1e1810"/>
+    <rect x="178" y="248" width="40" height="50" rx="4" fill="#231b10"/>
+    <path d="M244 250 a14 14 0 0 1 28 0 v48 h-28 Z" fill="#191510"/>
+    <rect x="296" y="240" width="50" height="58" rx="4" fill="#1a1611"/>
+    <rect x="360" y="236" width="52" height="62" rx="4" fill="#141d12"/>
+    <path d="M360 266 h52" stroke="#3f6e3a" stroke-width="4" opacity="0.45"/>
+    <rect x="118" y="342" width="44" height="56" rx="4" fill="#1e1810"/>
+    <path d="M182 348 a12 12 0 0 1 24 0 v50 h-24 Z" fill="#161310"/>
+    <rect x="226" y="346" width="52" height="52" rx="4" fill="#171310"/>
+    <rect x="292" y="340" width="46" height="58" rx="4" fill="#201a13"/>
+    <rect x="352" y="344" width="44" height="54" rx="4" fill="#181410"/>
+    <rect x="120" y="440" width="56" height="54" rx="4" fill="#1a1512"/>
+    <rect x="196" y="444" width="42" height="50" rx="4" fill="#141110"/>
+    <rect x="256" y="436" width="60" height="58" rx="4" fill="#1c1712"/>
+    <rect x="336" y="442" width="48" height="52" rx="4" fill="#151210"/>
+  </g>
+  <!-- cobweb on shelf corner -->
+  <g stroke="#8f8a7c" stroke-width="1.2" opacity="0.3" fill="none">
+    <path d="M72 168 Q120 190 150 168 M72 216 Q112 210 140 178"/>
+    <path d="M96 168 Q100 205 78 226"/>
+  </g>
 
   <!-- mop & bucket -->
-  <path d="M520 400 L560 640" stroke="#6b563a" stroke-width="10"/>
-  <path d="M545 636 q16 44 30 8 q6 30 22 4 q8 26 20 2 L600 630 Z" fill="#b8b09a"/>
-  <path d="M470 660 a46 30 0 0 0 92 0 l-8 -50 h-76 Z" fill="#3e4c55"/>
-  <ellipse cx="516" cy="610" rx="38" ry="12" fill="#222d33"/>
+  <path d="M520 396 L560 640" stroke="#6e5a3d" stroke-width="10"/>
+  <path d="M545 636 q16 46 30 8 q6 30 22 4 q8 26 20 2 L600 628 Z" fill="#b8b09a"/>
+  <path d="M470 662 a46 30 0 0 0 92 0 l-8 -52 h-76 Z" fill="#42525c"/>
+  <ellipse cx="516" cy="610" rx="38" ry="12" fill="#243038"/>
+  <ellipse cx="516" cy="612" rx="28" ry="8" fill="#39525e"/>
+  <ellipse cx="516" cy="694" rx="52" ry="9" fill="#000" opacity="0.4"/>
 
-  <!-- CRUMPLED INVOICE (hotspot 46-58% x, 50-62% y) on a stool -->
-  <rect x="740" y="510" width="130" height="16" rx="6" fill="#40342a"/>
-  <path d="M756 526 l-12 96 M844 526 l16 96 M800 526 v96" stroke="#40342a" stroke-width="10"/>
-  <g transform="rotate(-6 800 480)">
-    <path d="M752 452 l96 -6 l8 46 l-14 8 l6 12 l-90 8 Z" fill="#e0d6b4"/>
-    <path d="M766 466 l60 -4 M768 480 l68 -4 M772 494 l52 -2" stroke="#8f825e" stroke-width="3"/>
-    <path d="M812 500 l30 -2" stroke="#7c1f1f" stroke-width="3"/>
+  <!-- wet floor sign -->
+  <g transform="rotate(-6 1030 640)">
+    <path d="M1000 700 L1030 560 L1060 700 Z" fill="#c9a227"/>
+    <path d="M1008 688 L1030 584 L1052 688 Z" fill="#8f6f14"/>
+    <text x="1030" y="668" font-family="Trebuchet MS" font-size="17" font-weight="bold" fill="#241c04" text-anchor="middle" transform="rotate(0)">WET</text>
   </g>
 
-  <!-- ROPE COIL (hotspot 68-82% x, 26-48% y) -->
+  <!-- wall hook where the rope hangs (rope coil is a game overlay) -->
   <circle cx="1196" cy="266" r="12" fill="#4a4038"/>
-  <g fill="none" stroke="#b98b4e" stroke-width="14">
-    <circle cx="1196" cy="336" r="66"/>
-    <circle cx="1196" cy="336" r="42"/>
+  <path d="M1196 266 v18" stroke="#2c251e" stroke-width="6"/>
+
+  <!-- CRUMPLED INVOICE stool (hotspot 46-58% x, 50-62% y) -->
+  <ellipse cx="800" cy="632" rx="80" ry="11" fill="#000" opacity="0.4"/>
+  <rect x="738" y="508" width="134" height="17" rx="7" fill="#463a2e"/>
+  <path d="M754 525 l-12 98 M846 525 l16 98 M800 525 v98" stroke="#463a2e" stroke-width="10"/>
+  <path d="M746 560 h108" stroke="#463a2e" stroke-width="6"/>
+  <g transform="rotate(-6 800 478)">
+    <path d="M752 450 l96 -6 l8 46 l-14 8 l6 12 l-90 8 Z" fill="#e5dcbc"/>
+    <path d="M752 450 l8 40 l-6 8" fill="#cfc5a0"/>
+    <path d="M766 464 l60 -4 M768 478 l68 -4 M772 492 l52 -2" stroke="#8f825e" stroke-width="3"/>
+    <path d="M812 498 l30 -2" stroke="#8c2424" stroke-width="3"/>
   </g>
-  <g fill="none" stroke="#8a6636" stroke-width="4" opacity="0.8">
-    <circle cx="1196" cy="336" r="74"/>
-    <circle cx="1196" cy="336" r="56"/>
-    <circle cx="1196" cy="336" r="32"/>
-  </g>
-  <path d="M1148 388 q-16 40 10 44" stroke="#b98b4e" stroke-width="12" fill="none" stroke-linecap="round"/>
 
   <!-- broom leaning right -->
-  <path d="M1420 300 L1360 640" stroke="#6b563a" stroke-width="9"/>
-  <path d="M1345 632 l44 8 q-2 46 -18 60 l-40 -8 q12 -30 14 -60" fill="#a3803e"/>
+  <path d="M1420 298 L1360 640" stroke="#6e5a3d" stroke-width="9"/>
+  <path d="M1345 632 l44 8 q-2 46 -18 60 l-40 -8 q12 -30 14 -60" fill="#a8853f"/>
+  <path d="M1352 648 l34 6 M1348 668 l34 6" stroke="#7c5f26" stroke-width="3"/>
 
-  <!-- FLOOR GRATE (hotspot 38-62% x, 72-92% y) with padlock + green glow below -->
-  <rect x="600" y="640" width="400" height="192" rx="14" fill="#0a0d0b"/>
-  <rect x="614" y="652" width="372" height="168" rx="8" fill="#131a15"/>
+  <!-- FLOOR GRATE (hotspot 38-62% x, 72-92% y) — padlock + open-glow are game overlays -->
+  <rect x="596" y="636" width="408" height="200" rx="14" fill="#080b09"/>
+  <rect x="610" y="648" width="380" height="176" rx="8" fill="#141c16"/>
   <g stroke="#2c3a31" stroke-width="8">
-    <path d="M648 660 v152 M712 660 v152 M776 660 v152 M840 660 v152 M904 660 v152 M958 660 v152"/>
+    <path d="M646 656 v160 M710 656 v160 M774 656 v160 M838 656 v160 M902 656 v160 M956 656 v160"/>
   </g>
-  <path d="M614 700 h372 M614 760 h372" stroke="#243029" stroke-width="6"/>
-  <rect x="600" y="640" width="400" height="192" rx="14" fill="#4ade80" opacity="0.07"/>
-  <!-- padlock -->
-  <rect x="768" y="618" width="62" height="52" rx="10" fill="#8f8f96"/>
-  <path d="M781 618 v-14 a18 18 0 0 1 36 0 v14" stroke="#6e6e74" stroke-width="10" fill="none"/>
-  <circle cx="799" cy="644" r="8" fill="#3c3c42"/>
+  <path d="M610 700 h380 M610 762 h380" stroke="#243029" stroke-width="6"/>
+  <path d="M596 636 h408" stroke="#39493f" stroke-width="4" opacity="0.6"/>
+  <!-- latch plate where the padlock sits -->
+  <rect x="782" y="628" width="36" height="18" rx="4" fill="#39393f"/>
 
+  <rect width="1600" height="900" filter="url(#grain3)" opacity="0.55"/>
   <rect width="1600" height="900" fill="url(#vign3)"/>
 </svg>

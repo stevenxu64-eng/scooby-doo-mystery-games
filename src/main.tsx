@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@fontsource/creepster/index.css'
+import '@fontsource-variable/baloo-2/index.css'
 import './index.css'
 import App from './App.tsx'
 import { useGameStore } from './store/gameStore.ts'

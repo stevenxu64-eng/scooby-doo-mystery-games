@@ -13,6 +13,8 @@ import { SCENES, useGameStore } from '../store/gameStore'
 import { setAmbience } from '../engine/audio'
 import { DialogueOverlay } from './DialogueOverlay'
 import { WinScreen } from './WinScreen'
+import { SceneOverlays } from './SceneOverlays'
+import { CharacterBust } from './CharacterArt'
 
 const NAV_META: Record<
   Direction,
@@ -84,8 +86,11 @@ export function Viewport() {
         />
       )}
 
+      {/* Flag-driven scene layers (opened doors, rigged traps, ...) */}
+      <SceneOverlays sceneId={scene.id} />
+
       {/* Scene name plate */}
-      <div className="kenney-panel absolute left-2 top-2 z-20 px-3 py-1 text-sm font-bold uppercase tracking-widest text-amber-300">
+      <div className="kenney-panel font-title absolute left-2 top-2 z-20 px-3 py-1 text-base tracking-widest text-amber-300">
         {scene.name}
       </div>
 
@@ -101,7 +106,7 @@ export function Viewport() {
             showHotspotHints
               ? 'hotspot-hint border-cyan-300/80 bg-cyan-300/10'
               : 'border-transparent hover:border-amber-300/80 hover:bg-amber-200/10'
-          } ${selectedItem ? 'cursor-crosshair' : 'cursor-pointer'}`}
+          } ${selectedItem ? 'cursor-crosshair' : 'cursor-sleuth'}`}
         >
           <span className="pointer-events-none absolute -top-7 left-1/2 z-30 hidden -translate-x-1/2 whitespace-nowrap rounded border border-stone-500 bg-stone-900/95 px-2 py-0.5 text-xs font-bold text-amber-200 group-hover:block">
             <Search size={10} className="mr-1 inline" />
@@ -115,8 +120,30 @@ export function Viewport() {
         <NavArrow key={link.direction} link={link} />
       ))}
 
+      <ActionCameo />
       <DialogueOverlay />
       <WinScreen />
+    </div>
+  )
+}
+
+/** The active character pops up at the hotspot they just used, then fades. */
+function ActionCameo() {
+  const lastCameo = useGameStore((s) => s.lastCameo)
+  if (!lastCameo) return null
+  return (
+    <div
+      key={lastCameo.id}
+      className="pointer-events-none absolute z-30 -translate-x-1/2 -translate-y-full"
+      style={{
+        left: `${Math.min(Math.max(lastCameo.x, 6), 94)}%`,
+        top: `${Math.min(Math.max(lastCameo.y, 20), 96)}%`,
+        width: '9%',
+      }}
+    >
+      <div className="anim-cameo aspect-[120/130] w-full">
+        <CharacterBust id={lastCameo.character} />
+      </div>
     </div>
   )
 }

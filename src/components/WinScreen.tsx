@@ -12,7 +12,7 @@ export function WinScreen() {
       <div className="kenney-panel msg-in flex max-w-lg flex-col items-center gap-4 p-8 text-center">
         <Ghost size={56} className="ghost-float text-green-400" />
         <Trophy size={40} className="text-amber-400" />
-        <h2 className="text-3xl font-extrabold uppercase tracking-widest text-amber-300">
+        <h2 className="font-title text-4xl tracking-widest text-amber-300">
           Mystery Solved!
         </h2>
         <p className="text-sm leading-relaxed text-stone-200">

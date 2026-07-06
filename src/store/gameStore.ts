@@ -32,6 +32,12 @@ export interface GameState {
   activeDialogue: { id: string; node: string } | null
   gameWon: boolean
   showHotspotHints: boolean
+  /** ms timestamps of when each flag flipped true — drives scene-change animations. */
+  flagStamps: Record<string, number>
+  /** Bumped on every performed action — makes the character portrait react. */
+  actionPulse: number
+  /** Where + who last acted, for the in-scene character cameo. */
+  lastCameo: { id: number; x: number; y: number; character: CharacterId } | null
 
   hasFlag: (flag: string) => boolean
   hasAllFlags: (flags?: string[]) => boolean
@@ -58,6 +64,9 @@ const initialState = {
   activeDialogue: null as { id: string; node: string } | null,
   gameWon: false,
   showHotspotHints: false,
+  flagStamps: {} as Record<string, number>,
+  actionPulse: 0,
+  lastCameo: null as { id: number; x: number; y: number; character: CharacterId } | null,
 }
 
 export const useGameStore = create<GameState>()(
@@ -98,6 +107,7 @@ export const useGameStore = create<GameState>()(
           if (action.flag) {
             set((s) => ({
               gameFlags: { ...s.gameFlags, [action.flag!]: action.value ?? true },
+              flagStamps: { ...s.flagStamps, [action.flag!]: Date.now() },
             }))
           }
           break
@@ -165,6 +175,16 @@ export const useGameStore = create<GameState>()(
       set({ selectedItem: null })
     }
 
+    // The action goes through — show the active character doing it on-screen.
+    set((s) => ({
+      actionPulse: s.actionPulse + 1,
+      lastCameo: {
+        id: s.actionPulse + 1,
+        x: h.x + h.w / 2,
+        y: h.y + h.h,
+        character: s.activeCharacter,
+      },
+    }))
     state.runActions(h.action_triggers)
   },
 
@@ -241,6 +261,7 @@ export const useGameStore = create<GameState>()(
   chooseDialogueOption: (choice) => {
     const state = get()
     playSfx('click', 0.3)
+    set((s) => ({ actionPulse: s.actionPulse + 1 }))
     if (choice.set_flags) {
       set((s) => {
         const flags = { ...s.gameFlags }

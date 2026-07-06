@@ -45,7 +45,7 @@ export function DialogueOverlay() {
           >
             <MessageSquare size={16} className="text-white" />
           </span>
-          <span className="text-lg font-extrabold uppercase tracking-wide text-amber-300">
+          <span className="font-title text-xl tracking-wide text-amber-300">
             {dialogue.speaker}
           </span>
         </div>

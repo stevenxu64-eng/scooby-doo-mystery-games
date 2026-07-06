@@ -52,7 +52,7 @@ export default function App() {
         <div className="flex items-center gap-3">
           <Ghost size={28} className="ghost-float text-green-400" />
           <div>
-            <h1 className="text-lg font-extrabold uppercase tracking-widest text-amber-300 md:text-xl">
+            <h1 className="font-title text-xl tracking-widest text-amber-300 md:text-2xl">
               Scooby-Doo: The Curse of the Abandoned Resort
             </h1>
             <p className="text-[11px] text-stone-400">

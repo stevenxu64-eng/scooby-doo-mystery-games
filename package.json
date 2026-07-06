@@ -11,6 +11,8 @@
     "build:site": "bash scripts/build-site.sh"
   },
   "dependencies": {
+    "@fontsource-variable/baloo-2": "^5.2.7",
+    "@fontsource/creepster": "^5.2.7",
     "lucide-react": "^1.23.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

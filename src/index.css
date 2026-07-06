@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Trebuchet MS", "Comic Sans MS", ui-rounded, sans-serif;
+  --font-display: "Baloo 2 Variable", "Trebuchet MS", ui-rounded, sans-serif;
+  --font-title: "Creepster", "Trebuchet MS", cursive;
 }
 
 html,
@@ -12,33 +13,50 @@ body,
 
 body {
   font-family: var(--font-display);
-  background: radial-gradient(ellipse at top, #1e1b4b 0%, #0c0a1d 70%);
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -10%, #2c2158 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, #120e24 0%, #08060f 80%);
   color: #f5f5f4;
   overflow: hidden;
 }
 
-/* Kenney-style chunky UI panel: soft rounded corners, thick border, inner bevel */
+.font-title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+/* Chunky adventure-game panel: layered bevel + faint gold trim */
 .kenney-panel {
-  border: 3px solid #78716c;
-  border-radius: 0.75rem;
-  background: linear-gradient(180deg, #292524 0%, #1c1917 100%);
+  border: 2px solid #6b6257;
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(180deg, rgba(255, 214, 130, 0.05) 0%, transparent 20%),
+    linear-gradient(180deg, #2b2723 0%, #191512 100%);
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.08),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.45),
-    0 4px 12px rgba(0, 0, 0, 0.6);
+    inset 0 2px 0 rgba(255, 226, 160, 0.1),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.45),
+    0 6px 18px rgba(0, 0, 0, 0.65);
 }
 
 .kenney-btn {
   border: 2px solid #a8a29e;
-  border-radius: 0.5rem;
+  border-radius: 0.55rem;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(0, 0, 0, 0.12));
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.35);
-  transition: transform 80ms ease, filter 80ms ease;
+    inset 0 2px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 80ms ease, filter 80ms ease, box-shadow 80ms ease;
 }
 
 .kenney-btn:hover {
-  filter: brightness(1.15);
+  filter: brightness(1.18);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(252, 211, 77, 0.25);
 }
 
 .kenney-btn:active {
@@ -46,29 +64,155 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Magnifying-glass cursor over scene hotspots */
+.cursor-sleuth {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="11" cy="11" r="7.5" fill="rgba(20,16,8,0.35)" stroke="%23fcd34d" stroke-width="2.5"/><path d="M17 17 L25 25" stroke="%23fcd34d" stroke-width="3.5" stroke-linecap="round"/></svg>')
+      11 11,
+    pointer;
+}
+
 @keyframes hotspot-pulse {
   0%, 100% { opacity: 0.35; }
   50% { opacity: 0.9; }
 }
-
-.hotspot-hint {
-  animation: hotspot-pulse 1.6s ease-in-out infinite;
-}
+.hotspot-hint { animation: hotspot-pulse 1.6s ease-in-out infinite; }
 
 @keyframes msg-in {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-.msg-in {
-  animation: msg-in 200ms ease-out;
-}
+.msg-in { animation: msg-in 200ms ease-out; }
 
 @keyframes ghost-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
+.ghost-float { animation: ghost-float 3s ease-in-out infinite; }
 
-.ghost-float {
-  animation: ghost-float 3s ease-in-out infinite;
+/* ---------- Scene state-change animations ---------- */
+
+/* Door leaf swinging open (2D fake-perspective) */
+@keyframes door-swing {
+  0% { transform: perspective(700px) rotateY(0deg); }
+  60% { transform: perspective(700px) rotateY(-72deg); }
+  80% { transform: perspective(700px) rotateY(-62deg); }
+  100% { transform: perspective(700px) rotateY(-68deg); }
 }
+.anim-door-swing {
+  transform-origin: left center;
+  animation: door-swing 900ms ease-in-out forwards;
+}
+.anim-door-open {
+  transform-origin: left center;
+  transform: perspective(700px) rotateY(-68deg);
+}
+
+/* Drawer sliding out */
+@keyframes drawer-slide {
+  0% { transform: translateY(-46%) scaleY(0.2); opacity: 0.4; }
+  70% { transform: translateY(6%) scaleY(1.04); opacity: 1; }
+  100% { transform: translateY(0) scaleY(1); opacity: 1; }
+}
+.anim-drawer-slide {
+  transform-origin: center top;
+  animation: drawer-slide 500ms ease-out forwards;
+}
+
+/* Something dropping in with a bounce (vending box, snack bait) */
+@keyframes drop-bounce {
+  0% { transform: translateY(-220%); opacity: 0; }
+  55% { transform: translateY(0); opacity: 1; }
+  72% { transform: translateY(-18%); }
+  86% { transform: translateY(0); }
+  94% { transform: translateY(-6%); }
+  100% { transform: translateY(0); }
+}
+.anim-drop-bounce { animation: drop-bounce 800ms cubic-bezier(0.3, 0, 0.7, 1) forwards; }
+
+/* One-shot: retrieved item rises and fades (key from the grate) */
+@keyframes rise-fade {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  25% { transform: translateY(-30%) scale(1.1); opacity: 1; }
+  70% { transform: translateY(-110%) scale(1); opacity: 1; }
+  100% { transform: translateY(-160%) scale(0.9); opacity: 0; }
+}
+.anim-rise-fade { animation: rise-fade 1.8s ease-out forwards; }
+
+/* One-shot: padlock pops off and drops */
+@keyframes pop-off {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  30% { transform: translate(6%, -60%) rotate(-18deg); opacity: 1; }
+  100% { transform: translate(14%, 180%) rotate(-50deg); opacity: 0; }
+}
+.anim-pop-off { animation: pop-off 900ms ease-in forwards; }
+
+/* Net + rope unrolling from the hook */
+@keyframes net-drop {
+  0% { transform: scaleY(0.05); opacity: 0; }
+  60% { transform: scaleY(1.08); opacity: 1; }
+  80% { transform: scaleY(0.96); }
+  100% { transform: scaleY(1); }
+}
+.anim-net-drop {
+  transform-origin: center top;
+  animation: net-drop 700ms ease-out forwards;
+}
+
+/* Captured ghost swinging in the net */
+@keyframes net-swing {
+  0%, 100% { transform: rotate(4deg); }
+  50% { transform: rotate(-4deg); }
+}
+.anim-net-swing {
+  transform-origin: 50% 0%;
+  animation: net-swing 2.2s ease-in-out infinite;
+}
+
+/* Vending machine rattle */
+@keyframes shake-x {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1.2%); }
+  40% { transform: translateX(1.2%); }
+  60% { transform: translateX(-0.8%); }
+  80% { transform: translateX(0.8%); }
+}
+.anim-shake-x { animation: shake-x 500ms ease-in-out 2; }
+
+/* Soft glowing pulse for lit/hint elements */
+@keyframes soft-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.anim-soft-glow { animation: soft-glow 1.8s ease-in-out infinite; }
+
+/* ---------- Character actor animations ---------- */
+
+/* Portrait pops when the active character acts or speaks */
+@keyframes actor-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.14) rotate(-3deg); }
+  60% { transform: scale(0.96) rotate(2deg); }
+  100% { transform: scale(1); }
+}
+.anim-actor-pop { animation: actor-pop 450ms ease-out; }
+
+/* In-scene cameo: character appears at the hotspot, does the deed, fades */
+@keyframes cameo {
+  0% { transform: translateY(24%) scale(0.5); opacity: 0; }
+  18% { transform: translateY(0) scale(1.05); opacity: 1; }
+  30% { transform: translateY(-4%) scale(1); }
+  42% { transform: translateY(0) scale(1.02); }
+  75% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-10%) scale(0.92); opacity: 0; }
+}
+.anim-cameo {
+  transform-origin: center bottom;
+  animation: cameo 1.6s ease-out forwards;
+}
+
+@keyframes idle-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.anim-idle-bob { animation: idle-bob 2.6s ease-in-out infinite; }
