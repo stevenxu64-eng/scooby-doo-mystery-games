@@ -1,141 +1,427 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <defs>
-    <linearGradient id="bwall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#081710"/>
-      <stop offset="55%" stop-color="#0f2c1c"/>
-      <stop offset="100%" stop-color="#1a4a2e"/>
+    <linearGradient id="trap_room_wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b2117"/>
+      <stop offset="45%" stop-color="#16382a"/>
+      <stop offset="80%" stop-color="#225437"/>
+      <stop offset="100%" stop-color="#2b6644"/>
     </linearGradient>
-    <linearGradient id="bfloor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#153823"/>
-      <stop offset="100%" stop-color="#06110a"/>
+    <linearGradient id="trap_room_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#276044"/>
+      <stop offset="45%" stop-color="#16402a"/>
+      <stop offset="100%" stop-color="#081711"/>
     </linearGradient>
-    <radialGradient id="greenglow" cx="50%" cy="55%" r="65%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.18"/>
+    <linearGradient id="trap_room_drum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#28383f"/>
+      <stop offset="35%" stop-color="#48626e"/>
+      <stop offset="55%" stop-color="#57737f"/>
+      <stop offset="80%" stop-color="#3a4f59"/>
+      <stop offset="100%" stop-color="#222e34"/>
+    </linearGradient>
+    <linearGradient id="trap_room_dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b7987"/>
+      <stop offset="100%" stop-color="#33444d"/>
+    </linearGradient>
+    <linearGradient id="trap_room_pipe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a3a42"/>
+      <stop offset="45%" stop-color="#5b7684"/>
+      <stop offset="100%" stop-color="#222e34"/>
+    </linearGradient>
+    <linearGradient id="trap_room_wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c79a4c"/>
+      <stop offset="100%" stop-color="#a5762f"/>
+    </linearGradient>
+    <radialGradient id="trap_room_fire" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffcf76" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#ff9e3d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff9e3d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="trap_room_green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="furnaceglow" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#ffb347" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#ffb347" stop-opacity="0"/>
+    <radialGradient id="trap_room_lampglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd98a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="vign4" cx="50%" cy="46%" r="72%">
-      <stop offset="52%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.66"/>
+    <radialGradient id="trap_room_vign" cx="50%" cy="46%" r="74%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4"/>
     </radialGradient>
-    <filter id="grain4">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <filter id="trap_room_grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
       <feColorMatrix type="saturate" values="0"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
       <feComposite operator="over" in2="SourceGraphic"/>
     </filter>
   </defs>
 
-  <rect width="1600" height="640" fill="url(#bwall)"/>
-  <rect y="640" width="1600" height="260" fill="url(#bfloor)"/>
-  <rect width="1600" height="900" fill="url(#greenglow)"/>
+  <!-- ==================== WALL ==================== -->
+  <rect width="1600" height="640" fill="url(#trap_room_wall)"/>
+  <rect width="1600" height="58" fill="#071710"/>
 
-  <!-- back-wall brick texture -->
-  <g stroke="#0a2013" stroke-width="2.5" opacity="0.7">
-    <path d="M0 180 H1600 M0 260 H1600 M0 340 H1600 M0 420 H1600 M0 500 H1600 M0 580 H1600"/>
-    <path d="M120 180 V260 M320 180 V260 M520 180 V260 M220 260 V340 M420 260 V340 M120 340 V420 M320 340 V420 M220 420 V500 M420 420 V500 M1480 180 V260 M1380 260 V340 M1480 340 V420"/>
+  <!-- brick courses -->
+  <g stroke="#0a2013" stroke-width="2.5" opacity="0.55">
+    <path d="M0 130 H1600 M0 196 H1600 M0 262 H1600 M0 328 H1600 M0 394 H1600 M0 460 H1600 M0 526 H1600 M0 592 H1600"/>
+    <path d="M90 130 V196 M266 130 V196 M442 130 V196 M618 130 V196 M1210 130 V196 M1386 130 V196 M1562 130 V196"/>
+    <path d="M178 196 V262 M354 196 V262 M530 196 V262 M1298 196 V262 M1474 196 V262"/>
+    <path d="M90 262 V328 M266 262 V328 M442 262 V328 M618 262 V328 M1210 262 V328 M1386 262 V328 M1562 262 V328"/>
+    <path d="M178 328 V394 M354 328 V394 M530 328 V394 M1298 328 V394 M1474 328 V394"/>
+    <path d="M90 394 V460 M266 394 V460 M442 394 V460 M618 394 V460 M1386 394 V460 M1562 394 V460"/>
+    <path d="M178 460 V526 M354 460 V526 M530 460 V526 M706 460 V526 M1474 460 V526"/>
+    <path d="M90 526 V592 M266 526 V592 M442 526 V592 M618 526 V592 M1386 526 V592 M1562 526 V592"/>
+  </g>
+  <g fill="#245a3a" opacity="0.35">
+    <rect x="268" y="132" width="172" height="62"/><rect x="444" y="264" width="172" height="62"/>
+    <rect x="92" y="396" width="172" height="62"/><rect x="1300" y="198" width="172" height="62"/>
+    <rect x="1476" y="330" width="172" height="62"/><rect x="620" y="462" width="172" height="62"/>
+  </g>
+  <g fill="#081d12" opacity="0.45">
+    <rect x="356" y="198" width="172" height="62"/><rect x="1212" y="396" width="170" height="62"/>
   </g>
 
-  <!-- boiler -->
-  <ellipse cx="1010" cy="640" rx="180" ry="30" fill="#000" opacity="0.45"/>
-  <ellipse cx="1010" cy="330" rx="152" ry="48" fill="#2b3b43"/>
-  <rect x="858" y="330" width="304" height="292" fill="#354852"/>
-  <ellipse cx="1010" cy="622" rx="152" ry="44" fill="#243139"/>
-  <path d="M858 330 v292 M1162 330 v292" stroke="#1c262c" stroke-width="6"/>
-  <g stroke="#1c262c" stroke-width="7">
-    <path d="M884 362 V600 M950 344 V614 M1070 344 V614 M1136 362 V600"/>
-  </g>
-  <g fill="#4a616d">
-    <circle cx="884" cy="400" r="5"/><circle cx="884" cy="470" r="5"/><circle cx="884" cy="540" r="5"/>
-    <circle cx="1136" cy="400" r="5"/><circle cx="1136" cy="470" r="5"/><circle cx="1136" cy="540" r="5"/>
-  </g>
-  <!-- pressure gauge -->
-  <circle cx="1010" cy="428" r="36" fill="#131a1f"/>
-  <circle cx="1010" cy="428" r="27" fill="#e8dcb4"/>
-  <path d="M1010 428 L1026 410" stroke="#8c2424" stroke-width="4"/>
-  <path d="M990 442 a27 27 0 0 1 6 -32" stroke="#8c2424" stroke-width="4" fill="none"/>
-  <circle cx="1010" cy="428" r="4" fill="#131a1f"/>
-  <!-- furnace door -->
-  <rect x="954" y="512" width="112" height="76" rx="10" fill="#131a1f"/>
-  <rect x="966" y="524" width="88" height="52" rx="6" fill="#0a0e11"/>
-  <ellipse cx="1010" cy="550" rx="34" ry="16" fill="url(#furnaceglow)"/>
-  <path d="M978 560 q10 -18 20 0 q10 -16 20 0 q10 -18 22 0" stroke="#ff9e3d" stroke-width="4" fill="none"/>
-  <path d="M966 550 h88" stroke="#26333b" stroke-width="3"/>
-  <!-- pipes + valves + steam -->
-  <path d="M884 330 q-24 -124 56 -146 L940 92" stroke="#42606e" stroke-width="22" fill="none"/>
-  <path d="M1136 330 q30 -104 -18 -166" stroke="#42606e" stroke-width="18" fill="none"/>
-  <path d="M1240 640 V420 q0 -30 30 -30 h90" stroke="#3a5462" stroke-width="16" fill="none"/>
-  <circle cx="940" cy="120" r="17" fill="#2b3b43"/>
-  <path d="M925 120 h30 M940 105 v30" stroke="#1c262c" stroke-width="4"/>
-  <circle cx="1350" cy="390" r="13" fill="#2b3b43"/>
-  <g fill="#9fc4b1" opacity="0.35">
-    <ellipse cx="944" cy="62" rx="16" ry="10"/>
-    <ellipse cx="962" cy="40" rx="22" ry="12"/>
-    <ellipse cx="988" cy="20" rx="28" ry="13"/>
+  <!-- catwalk shadow line high on the wall -->
+  <g fill="#02130a" opacity="0.18">
+    <path d="M100 150 L1500 168 L1500 190 L100 172 Z"/>
+    <path d="M240 172 l10 42 h-12 Z M480 176 l10 42 h-12 Z M720 180 l10 42 h-12 Z M960 182 l10 42 h-12 Z M1200 184 l10 42 h-12 Z"/>
   </g>
 
-  <!-- hanging chains -->
-  <path d="M300 104 V210 M304 210 q-8 10 0 20 q8 10 0 20 q-8 10 0 20" stroke="#22352a" stroke-width="6" fill="none"/>
-  <path d="M1490 104 V190 M1494 190 q-8 10 0 20 q8 10 0 20" stroke="#22352a" stroke-width="6" fill="none"/>
-
-  <!-- ceiling beam + IRON HOOK (hotspot 40-52% x, 8-26% y) — net & rope are game overlays -->
-  <rect x="200" y="58" width="1200" height="46" fill="#241a0e"/>
-  <path d="M200 58 h1200 M200 104 h1200" stroke="#0f0a05" stroke-width="6"/>
-  <g fill="#0f0a05" opacity="0.8">
-    <rect x="330" y="66" width="10" height="30"/><rect x="640" y="66" width="10" height="30"/>
-    <rect x="950" y="66" width="10" height="30"/><rect x="1260" y="66" width="10" height="30"/>
+  <!-- moisture streaks + moss -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M400 132 q7 92 -4 182 q-7 82 5 168 q4 42 -2 76" stroke="#05170d" stroke-width="16" opacity="0.25"/>
+    <path d="M412 140 q4 100 -3 200" stroke="#a5dcc0" stroke-width="3.5" opacity="0.07"/>
+    <path d="M640 132 q-6 84 4 160 q5 66 -3 130" stroke="#05170d" stroke-width="12" opacity="0.22"/>
+    <path d="M1190 132 q6 110 -4 220 q-6 110 5 236" stroke="#05170d" stroke-width="15" opacity="0.24"/>
+    <path d="M1201 140 q4 120 -2 240" stroke="#a5dcc0" stroke-width="3" opacity="0.06"/>
+    <path d="M1560 132 q-5 120 4 240 q5 120 -3 244" stroke="#05170d" stroke-width="13" opacity="0.24"/>
   </g>
-  <path d="M736 104 v54 q0 36 32 36 q28 0 28 -28 q0 -19 -19 -19" stroke="#7f878d" stroke-width="17" fill="none" stroke-linecap="round"/>
-  <path d="M736 104 v54" stroke="#5d666c" stroke-width="17" stroke-linecap="round"/>
+  <g fill="#3f8f52" opacity="0.42">
+    <ellipse cx="352" cy="612" rx="34" ry="12"/><ellipse cx="378" cy="600" rx="16" ry="8"/>
+    <ellipse cx="1188" cy="604" rx="30" ry="11"/><ellipse cx="1166" cy="616" rx="14" ry="7"/>
+    <ellipse cx="70" cy="592" rx="24" ry="10"/><ellipse cx="560" cy="628" rx="20" ry="8"/>
+    <ellipse cx="452" cy="330" rx="12" ry="5"/>
+  </g>
+  <g fill="#2c6a3d" opacity="0.4">
+    <ellipse cx="344" cy="620" rx="16" ry="6"/><ellipse cx="1196" cy="612" rx="13" ry="5"/>
+  </g>
 
-  <!-- BAIT CRATE (hotspot 42-58% x, 56-76% y) — the snack is a game overlay -->
+  <!-- eerie ambient green -->
+  <ellipse cx="1000" cy="770" rx="560" ry="180" fill="url(#trap_room_green)" opacity="0.45"/>
+
+  <!-- ==================== LADDER SHAFT UP (nav: janitor closet) ==================== -->
+  <rect x="36" y="0" width="112" height="96" fill="#041209"/>
+  <path d="M48 6 h88 l-14 90 h-60 Z" fill="#9fd8b4" opacity="0.05"/>
+  <path d="M112 100 l14 6 V640 h-14 Z" fill="#03150c" opacity="0.25"/>
+  <path d="M60 96 V648 M104 96 V648" stroke="#3d4f42" stroke-width="9"/>
+  <path d="M60 128 H104 M60 172 H104 M60 216 H104 M60 260 H104 M60 304 H104 M60 348 H104 M60 392 H104 M60 436 H104 M60 480 H104 M60 524 H104 M60 568 H104 M60 612 H104" stroke="#2e3d33" stroke-width="6"/>
+  <path d="M60 126 H104 M60 170 H104" stroke="#5d7a63" stroke-width="2"/>
+
+  <!-- ==================== LEVER PANEL (hotspot 160-320 / 396-630; handle is overlay) ==================== -->
+  <rect x="222" y="348" width="12" height="56" fill="#26343c"/>
+  <rect x="204" y="314" width="52" height="38" rx="4" fill="#2c3b43"/>
+  <rect x="226" y="108" width="8" height="206" fill="#22303a"/>
+  <circle cx="212" cy="322" r="2.5" fill="#141d22"/><circle cx="248" cy="322" r="2.5" fill="#141d22"/>
+  <!-- caged work lamp over the panel -->
+  <path d="M168 270 h42 M210 270 v12" stroke="#241c12" stroke-width="6"/>
+  <path d="M192 288 a18 18 0 0 1 36 0 Z" fill="#3a2c1a"/>
+  <circle cx="210" cy="296" r="7" fill="#ffe9b0"/>
+  <path d="M196 290 q14 16 28 0 M202 290 q8 22 16 0" stroke="#241c12" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M210 300 L148 416 H274 Z" fill="#ffd98a" opacity="0.1"/>
+  <rect x="168" y="404" width="136" height="222" rx="10" fill="#33454e"/>
+  <rect x="168" y="404" width="136" height="222" rx="10" fill="none" stroke="#1a252b" stroke-width="4"/>
+  <rect x="173" y="409" width="126" height="212" rx="7" fill="none" stroke="#4a616d" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="222" cy="430" rx="58" ry="16" fill="url(#trap_room_lampglow)" opacity="0.5"/>
+  <!-- hazard stripes -->
+  <rect x="180" y="414" width="112" height="15" fill="#d9a821"/>
+  <path d="M186 429 l10 -15 M208 429 l10 -15 M230 429 l10 -15 M252 429 l10 -15 M274 429 l10 -15" stroke="#16181a" stroke-width="7"/>
+  <rect x="180" y="598" width="112" height="15" fill="#d9a821"/>
+  <path d="M186 613 l10 -15 M208 613 l10 -15 M230 613 l10 -15 M252 613 l10 -15 M274 613 l10 -15" stroke="#16181a" stroke-width="7"/>
+  <!-- label plate (kept clear of the red knob overlay) -->
+  <rect x="184" y="438" width="78" height="42" rx="5" fill="#0e161b"/>
+  <text x="223" y="456" font-family="Trebuchet MS" font-size="14" font-weight="bold" fill="#e8b73a" text-anchor="middle">LAUNDRY</text>
+  <text x="223" y="474" font-family="Trebuchet MS" font-size="14" font-weight="bold" fill="#e8b73a" text-anchor="middle">NET</text>
+  <!-- lever slot scale + pivot boss (handle itself is a game overlay) -->
+  <path d="M214 522 A 40 40 0 0 1 279 519" stroke="#10181d" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <circle cx="214" cy="522" r="3" fill="#d9a821"/><circle cx="279" cy="519" r="3" fill="#c22f2f"/>
+  <circle cx="246" cy="545" r="17" fill="#10181d"/>
+  <circle cx="246" cy="545" r="9" fill="#26333b"/>
   <g>
-    <ellipse cx="800" cy="702" rx="132" ry="26" fill="#000" opacity="0.45"/>
-    <path d="M672 540 L800 500 L928 540 L928 660 L800 700 L672 660 Z" fill="#75501f"/>
-    <path d="M672 540 L800 580 L928 540 M800 580 V700" stroke="#3f2a10" stroke-width="7" fill="none"/>
-    <path d="M672 540 L800 500 L928 540 L800 580 Z" fill="#b0863c"/>
-    <path d="M700 600 h72 M820 600 h72 M700 636 h72 M820 636 h72" stroke="#553917" stroke-width="6"/>
-    <path d="M690 545 l110 33 M910 545 l-110 33" stroke="#8a6428" stroke-width="3" opacity="0.8"/>
-    <text x="800" y="668" font-family="Trebuchet MS" font-size="20" font-weight="bold" fill="#3f2a10" text-anchor="middle" opacity="0.8">FRAGILE</text>
+    <circle cx="182" cy="418" r="4" fill="#171f24"/><path d="M179 418 h6" stroke="#566b76" stroke-width="1.5"/>
+    <circle cx="290" cy="418" r="4" fill="#171f24"/><path d="M287 418 h6" stroke="#566b76" stroke-width="1.5"/>
+    <circle cx="182" cy="612" r="4" fill="#171f24"/><path d="M179 612 h6" stroke="#566b76" stroke-width="1.5"/>
+    <circle cx="290" cy="612" r="4" fill="#171f24"/><path d="M287 612 h6" stroke="#566b76" stroke-width="1.5"/>
   </g>
 
-  <!-- costume rod on the wall (hotspot 76-90% x, 28-62% y) — the sheet itself is a game overlay -->
-  <path d="M1240 244 h140" stroke="#39312a" stroke-width="8"/>
-  <path d="M1306 244 v-18 h12 v18" stroke="#39312a" stroke-width="6" fill="none"/>
+  <!-- ==================== RIGHT WALL: EMPTY COSTUME ROD (sheet is overlay) ==================== -->
+  <ellipse cx="1300" cy="380" rx="92" ry="128" fill="#4ade80" opacity="0.1"/>
+  <path d="M1238 246 h142" stroke="#39312a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1238 246 h142" stroke="#6b5c4a" stroke-width="2" opacity="0.6"/>
+  <path d="M1240 246 v12 M1376 246 v12" stroke="#241c12" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1306 246 v-18 h12 v18" stroke="#39312a" stroke-width="6" fill="none"/>
+  <!-- hanging lamp above the rod -->
+  <path d="M1308 104 V166" stroke="#241c12" stroke-width="4"/>
+  <path d="M1292 180 a16 16 0 0 1 32 0 Z" fill="#3a2c1a"/>
+  <circle cx="1308" cy="188" r="6" fill="#ffe9b0"/>
+  <path d="M1308 194 L1250 470 H1368 Z" fill="#ffd98a" opacity="0.07"/>
+  <!-- glowing handprint smear -->
+  <g fill="#4ade80" opacity="0.28">
+    <ellipse cx="1402" cy="308" rx="8" ry="10"/>
+    <ellipse cx="1394" cy="293" rx="2.6" ry="6" transform="rotate(-18 1394 293)"/>
+    <ellipse cx="1400" cy="290" rx="2.6" ry="6"/>
+    <ellipse cx="1406" cy="291" rx="2.6" ry="6" transform="rotate(10 1406 291)"/>
+    <ellipse cx="1412" cy="296" rx="2.5" ry="5" transform="rotate(24 1412 296)"/>
+    <ellipse cx="1414" cy="310" rx="2.5" ry="5" transform="rotate(60 1414 310)"/>
+  </g>
+  <!-- paint drips below where the costume hangs -->
+  <g stroke="#46d97f" stroke-linecap="round">
+    <path d="M1262 505 v46" stroke-width="4" opacity="0.5"/>
+    <path d="M1284 512 v70" stroke-width="3" opacity="0.45"/>
+    <path d="M1250 520 v34" stroke-width="3" opacity="0.4"/>
+  </g>
+  <g fill="#46d97f">
+    <circle cx="1262" cy="556" r="3" opacity="0.5"/><circle cx="1284" cy="586" r="2.5" opacity="0.45"/><circle cx="1250" cy="558" r="2.5" opacity="0.4"/>
+  </g>
+  <ellipse cx="1268" cy="604" rx="15" ry="5" fill="#46d97f" opacity="0.22"/>
 
-  <!-- LEVER PANEL (hotspot 10-20% x, 44-70% y) — the handle is a game overlay -->
-  <g>
-    <rect x="170" y="410" width="132" height="212" rx="12" fill="#2b3b43"/>
-    <rect x="170" y="410" width="132" height="212" rx="12" fill="none" stroke="#1c262c" stroke-width="4"/>
-    <rect x="188" y="428" width="96" height="62" rx="6" fill="#0e161b"/>
-    <text x="236" y="454" font-family="Trebuchet MS" font-size="15" font-weight="bold" fill="#e8b73a" text-anchor="middle">LAUNDRY</text>
-    <text x="236" y="474" font-family="Trebuchet MS" font-size="15" font-weight="bold" fill="#e8b73a" text-anchor="middle">NET</text>
-    <path d="M212 508 a26 26 0 0 1 48 0" stroke="#0e161b" stroke-width="5" fill="none"/>
-    <circle cx="236" cy="562" r="16" fill="#131a1f"/>
-    <circle cx="236" cy="562" r="7" fill="#26333b"/>
-    <g fill="#0e161b">
-      <circle cx="184" cy="424" r="4"/><circle cx="288" cy="424" r="4"/>
-      <circle cx="184" cy="608" r="4"/><circle cx="288" cy="608" r="4"/>
-    </g>
+  <!-- ==================== RIGHT WALL PIPE + VALVE + GAUGE + STEAM ==================== -->
+  <rect x="1460" y="30" width="22" height="602" fill="url(#trap_room_pipe)"/>
+  <rect x="1450" y="262" width="42" height="10" rx="2" fill="#2a3840"/>
+  <rect x="1450" y="276" width="42" height="10" rx="2" fill="#2a3840"/>
+  <rect x="1448" y="624" width="46" height="12" rx="2" fill="#26343c"/>
+  <rect x="1482" y="318" width="16" height="8" fill="#38464e"/>
+  <circle cx="1508" cy="322" r="16" fill="none" stroke="#7c98a4" stroke-width="5"/>
+  <path d="M1494 322 h28 M1508 308 v28" stroke="#7c98a4" stroke-width="4"/>
+  <circle cx="1508" cy="322" r="4" fill="#38464e"/>
+  <path d="M1508 340 v12" stroke="#6d6154" stroke-width="2"/>
+  <rect x="1486" y="352" width="44" height="20" rx="3" fill="#a32b2b"/>
+  <text x="1508" y="366" font-family="Trebuchet MS" font-size="10" font-weight="bold" fill="#f7dede" text-anchor="middle">DANGER</text>
+  <circle cx="1471" cy="212" r="19" fill="#1a2228"/>
+  <circle cx="1471" cy="212" r="13" fill="#efe3bd"/>
+  <path d="M1462 204 a13 13 0 0 1 6 -4" stroke="#c22f2f" stroke-width="3" fill="none"/>
+  <path d="M1471 212 L1479 202" stroke="#8c2424" stroke-width="3"/>
+  <circle cx="1471" cy="212" r="2.5" fill="#1a2228"/>
+  <!-- hissing steam at the flange -->
+  <g fill="#cfeee0">
+    <ellipse cx="1436" cy="252" rx="9" ry="6" opacity="0.28"/>
+    <ellipse cx="1418" cy="236" rx="13" ry="8" opacity="0.2"/>
+    <ellipse cx="1398" cy="216" rx="16" ry="10" opacity="0.12"/>
+  </g>
+  <path d="M1448 260 q-16 -8 -24 -24" stroke="#cfeee0" stroke-width="3" fill="none" opacity="0.22"/>
+
+  <!-- ==================== CHIMNEY + CEILING PIPE RUN ==================== -->
+  <rect x="988" y="30" width="44" height="256" fill="url(#trap_room_pipe)"/>
+  <rect x="982" y="96" width="56" height="12" rx="2" fill="#26343c"/>
+  <rect x="982" y="204" width="56" height="12" rx="2" fill="#26343c"/>
+  <rect x="140" y="0" width="8" height="30" fill="#262f35"/><rect x="540" y="0" width="8" height="30" fill="#262f35"/>
+  <rect x="940" y="0" width="8" height="30" fill="#262f35"/><rect x="1340" y="0" width="8" height="30" fill="#262f35"/>
+  <rect x="0" y="22" width="1600" height="20" fill="#3f5763"/>
+  <rect x="0" y="24" width="1600" height="4" fill="#6d8895" opacity="0.6"/>
+  <rect x="0" y="39" width="1600" height="3" fill="#22313a"/>
+  <rect x="473" y="18" width="7" height="28" fill="#2a3840"/><rect x="482" y="18" width="7" height="28" fill="#2a3840"/>
+  <rect x="1233" y="18" width="7" height="28" fill="#2a3840"/><rect x="1242" y="18" width="7" height="28" fill="#2a3840"/>
+  <rect x="1176" y="42" width="8" height="16" fill="#38464e"/>
+  <circle cx="1180" cy="70" r="14" fill="none" stroke="#7c98a4" stroke-width="5"/>
+  <path d="M1168 70 h24 M1180 58 v24" stroke="#7c98a4" stroke-width="4"/>
+  <circle cx="1180" cy="70" r="4" fill="#38464e"/>
+  <g fill="#cfeee0">
+    <ellipse cx="494" cy="14" rx="8" ry="5" opacity="0.25"/>
+    <ellipse cx="512" cy="9" rx="11" ry="6" opacity="0.16"/>
   </g>
 
-  <!-- glowing footprints -->
-  <g fill="#4ade80" opacity="0.5">
-    <ellipse cx="480" cy="750" rx="16" ry="8" transform="rotate(18 480 750)"/>
-    <ellipse cx="560" cy="780" rx="16" ry="8" transform="rotate(24 560 780)"/>
-    <ellipse cx="650" cy="806" rx="16" ry="8" transform="rotate(16 650 806)"/>
-    <ellipse cx="1060" cy="760" rx="16" ry="8" transform="rotate(-20 1060 760)"/>
-    <ellipse cx="1150" cy="730" rx="16" ry="8" transform="rotate(-26 1150 730)"/>
-    <ellipse cx="1230" cy="694" rx="16" ry="8" transform="rotate(-30 1230 694)"/>
+  <!-- ==================== FLOOR ==================== -->
+  <rect y="640" width="1600" height="260" fill="url(#trap_room_floor)"/>
+  <rect y="637" width="1600" height="5" fill="#06130c"/>
+  <g stroke="#0a2314" stroke-width="3" opacity="0.55">
+    <path d="M0 706 H1600 M0 792 H1600"/>
   </g>
-  <!-- drips of glow paint -->
-  <g fill="#4ade80" opacity="0.35">
-    <circle cx="1268" cy="560" r="5"/><circle cx="1284" cy="600" r="3.5"/><circle cx="1252" cy="628" r="4"/>
+  <g stroke="#0a2314" stroke-width="2.5" opacity="0.3">
+    <path d="M210 640 L70 900 M500 640 L430 900 M1100 640 L1170 900 M1400 640 L1540 900"/>
+  </g>
+  <ellipse cx="128" cy="708" rx="46" ry="11" fill="#0d2f1d"/>
+  <path d="M96 706 q30 -5 60 0" stroke="#9fd8b4" stroke-width="2" fill="none" opacity="0.18"/>
+  <ellipse cx="1150" cy="756" rx="330" ry="92" fill="url(#trap_room_green)" opacity="0.35"/>
+  <ellipse cx="500" cy="806" rx="240" ry="66" fill="url(#trap_room_green)" opacity="0.2"/>
+
+  <!-- ==================== THE BOILER ==================== -->
+  <ellipse cx="1010" cy="660" rx="182" ry="23" fill="#000" opacity="0.38"/>
+  <rect x="900" y="628" width="20" height="26" fill="#1a2429"/>
+  <rect x="1100" y="628" width="20" height="26" fill="#1a2429"/>
+  <rect x="1000" y="634" width="20" height="22" fill="#151d22"/>
+  <path d="M896 330 C856 232 842 132 842 42" stroke="#46626f" stroke-width="18" fill="none"/>
+  <path d="M892 322 C856 232 846 140 846 60" stroke="#6f8996" stroke-width="4" fill="none" opacity="0.5"/>
+  <rect x="828" y="40" width="26" height="10" rx="2" fill="#2a3840"/>
+  <path d="M1124 330 C1168 240 1176 140 1176 42" stroke="#3d5662" stroke-width="14" fill="none"/>
+  <rect x="1164" y="40" width="24" height="9" rx="2" fill="#2a3840"/>
+  <ellipse cx="1010" cy="608" rx="152" ry="40" fill="#2a3a42"/>
+  <rect x="858" y="330" width="304" height="278" fill="url(#trap_room_drum)"/>
+  <ellipse cx="1010" cy="330" rx="152" ry="48" fill="url(#trap_room_dome)"/>
+  <ellipse cx="1010" cy="322" rx="108" ry="28" fill="#6d8894" opacity="0.35"/>
+  <rect x="992" y="270" width="36" height="18" rx="4" fill="#33444d"/>
+  <!-- plate seams + rivet rows -->
+  <path d="M858 396 H1162 M858 462 H1162 M858 528 H1162" stroke="#26343b" stroke-width="4"/>
+  <rect x="858" y="396" width="304" height="66" fill="#0c1318" opacity="0.1"/>
+  <g stroke="#1e2a30" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 25">
+    <path d="M874 388 H1150 M874 454 H1150 M874 520 H1150 M874 586 H1150"/>
+    <path d="M884 348 V600" stroke-dasharray="0.1 30"/>
+    <path d="M1136 348 V600" stroke-dasharray="0.1 30"/>
+  </g>
+  <g stroke="#7d99a5" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 25" opacity="0.5">
+    <path d="M874 386 H1150 M874 452 H1150"/>
+  </g>
+  <path d="M902 350 q6 60 -2 120" stroke="#7a4a22" stroke-width="5" fill="none" opacity="0.4"/>
+  <path d="M1108 470 q4 44 -3 90" stroke="#7a4a22" stroke-width="4" fill="none" opacity="0.35"/>
+  <text x="1010" y="376" font-family="Trebuchet MS" font-size="22" font-weight="bold" letter-spacing="5" fill="#cfdfe3" text-anchor="middle" opacity="0.35">BOILER NO.3</text>
+  <!-- main pressure gauge -->
+  <circle cx="1010" cy="430" r="36" fill="#1a2228"/>
+  <circle cx="1010" cy="430" r="27" fill="#efe3bd"/>
+  <circle cx="1010" cy="430" r="21" fill="none" stroke="#5c5648" stroke-width="1.5" stroke-dasharray="0.1 11" stroke-linecap="round"/>
+  <path d="M1022 407 a27 27 0 0 1 12 18" stroke="#c22f2f" stroke-width="4" fill="none"/>
+  <path d="M1010 430 L1028 411" stroke="#8c2424" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="1010" cy="430" r="4" fill="#1a2228"/>
+  <!-- furnace door, ajar, fire spilling -->
+  <rect x="952" y="498" width="116" height="88" rx="8" fill="#0c1115"/>
+  <ellipse cx="1010" cy="546" rx="44" ry="26" fill="url(#trap_room_fire)"/>
+  <path d="M972 570 q8 -22 17 -2 q7 -26 16 -2 q8 -22 17 -2 q7 -24 16 0 q6 -16 12 -2" stroke="#ff9e3d" stroke-width="4" fill="none"/>
+  <path d="M984 572 q7 -12 12 0 q6 -14 12 0 q7 -12 12 0" stroke="#ffd27a" stroke-width="3" fill="none"/>
+  <path d="M1042 504 v78 l22 -6 v-66 Z" fill="#ffcf76" opacity="0.75"/>
+  <g transform="rotate(-10 952 545)">
+    <rect x="950" y="502" width="96" height="84" rx="8" fill="#232e35"/>
+    <rect x="957" y="509" width="82" height="70" rx="6" fill="none" stroke="#151d23" stroke-width="4"/>
+    <circle cx="998" cy="544" r="11" fill="#151d23"/>
+    <circle cx="998" cy="544" r="7" fill="#ff9e3d" opacity="0.9"/>
+    <circle cx="998" cy="544" r="14" fill="url(#trap_room_fire)" opacity="0.6"/>
+    <rect x="1032" y="536" width="10" height="18" rx="3" fill="#151d23"/>
+    <path d="M1044 506 v76" stroke="#ff9e3d" stroke-width="3.5" opacity="0.8"/>
+    <path d="M954 584 h88" stroke="#ff9e3d" stroke-width="2.5" opacity="0.4"/>
+  </g>
+  <rect x="944" y="508" width="9" height="16" rx="2" fill="#151d23"/>
+  <rect x="944" y="560" width="9" height="16" rx="2" fill="#151d23"/>
+  <rect x="974" y="598" width="72" height="8" rx="2" fill="#0c1115"/>
+  <path d="M978 602 h64" stroke="#ff9e3d" stroke-width="2" opacity="0.5"/>
+  <path d="M1050 586 L1130 654 H980 L1000 586 Z" fill="#ffb347" opacity="0.18"/>
+  <ellipse cx="1015" cy="668" rx="132" ry="24" fill="url(#trap_room_fire)" opacity="0.75"/>
+  <ellipse cx="1015" cy="696" rx="215" ry="46" fill="url(#trap_room_fire)" opacity="0.4"/>
+  <!-- coal + shovel -->
+  <g fill="#17120d">
+    <ellipse cx="905" cy="652" rx="14" ry="8"/><ellipse cx="930" cy="660" rx="11" ry="7"/><ellipse cx="884" cy="662" rx="10" ry="6"/>
+    <ellipse cx="912" cy="668" rx="9" ry="5"/><ellipse cx="953" cy="656" rx="8" ry="5"/><ellipse cx="862" cy="656" rx="7" ry="4"/>
+    <ellipse cx="1060" cy="662" rx="8" ry="5"/><ellipse cx="1088" cy="670" rx="7" ry="4"/><ellipse cx="840" cy="688" rx="6" ry="4"/>
+  </g>
+  <g fill="#2a221a" opacity="0.8">
+    <ellipse cx="902" cy="649" rx="6" ry="3"/><ellipse cx="928" cy="657" rx="5" ry="2.5"/><ellipse cx="950" cy="653" rx="3.5" ry="2"/>
+  </g>
+  <circle cx="958" cy="655" r="2" fill="#ff9e3d" opacity="0.8"/>
+  <circle cx="1056" cy="660" r="2" fill="#ff9e3d" opacity="0.7"/>
+  <path d="M1188 468 L1150 640" stroke="#6b4a26" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1176 464 h24" stroke="#6b4a26" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1150 636 l-22 10 q-6 16 8 22 l26 -8 Z" fill="#55707d"/>
+  <path d="M1150 636 l-22 10" stroke="#7c98a4" stroke-width="2.5"/>
+  <ellipse cx="1148" cy="668" rx="26" ry="6" fill="#000" opacity="0.3"/>
+
+  <!-- ==================== CHAINS + CHAIN HOIST ==================== -->
+  <path d="M340 104 V210 M344 210 q-8 10 0 20 q8 10 0 20 q-8 10 0 20" stroke="#22352a" stroke-width="6" fill="none"/>
+  <path d="M1544 104 V186 M1548 186 q-8 10 0 20 q8 10 0 20" stroke="#22352a" stroke-width="6" fill="none"/>
+  <rect x="450" y="100" width="40" height="12" rx="3" fill="#2a343a"/>
+  <rect x="458" y="112" width="24" height="34" rx="4" fill="#38464e"/>
+  <circle cx="470" cy="122" r="9" fill="#55707d"/>
+  <circle cx="470" cy="122" r="3" fill="#222c31"/>
+  <path d="M462 146 V308" stroke="#3a4d42" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+  <path d="M478 146 V262" stroke="#3a4d42" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+  <path d="M462 308 q0 14 10 16 q12 2 12 -12 q0 -9 -9 -9" stroke="#59666e" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- ==================== CEILING BEAM + IRON HOOK (hotspot 640-832 / 72-234; net+rope are overlays) ==================== -->
+  <rect y="58" width="1600" height="46" fill="#2d2113"/>
+  <rect y="58" width="1600" height="5" fill="#4a3820"/>
+  <rect y="99" width="1600" height="5" fill="#120c06"/>
+  <g fill="#1a1208">
+    <rect x="326" y="58" width="14" height="46"/><rect x="636" y="58" width="14" height="46"/>
+    <rect x="946" y="58" width="14" height="46"/><rect x="1256" y="58" width="14" height="46"/>
+  </g>
+  <path d="M20 72 H1580 M20 92 H1580" stroke="#15100a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 78"/>
+  <ellipse cx="775" cy="168" rx="50" ry="26" fill="url(#trap_room_green)" opacity="0.45"/>
+  <rect x="728" y="84" width="44" height="24" rx="4" fill="#3a444b"/>
+  <path d="M736 96 H764" stroke="#1c2429" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 18"/>
+  <path d="M750 108 v48 q0 34 30 34 q26 0 26 -26 q0 -18 -18 -18" stroke="#6c767d" stroke-width="15" fill="none" stroke-linecap="round"/>
+  <path d="M750 108 v46" stroke="#a7b1b8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M762 186 q12 6 22 -2" stroke="#a7b1b8" stroke-width="4" fill="none" opacity="0.7"/>
+  <circle cx="788" cy="146" r="7" fill="#97a1a8"/>
+  <circle cx="786" cy="143" r="2" fill="#cdd5da"/>
+
+  <!-- ==================== BAIT CRATE (hotspot 672-928 / 504-684; snack is overlay) ==================== -->
+  <ellipse cx="800" cy="700" rx="142" ry="24" fill="#000" opacity="0.35"/>
+  <path d="M676 546 L800 508 L924 546 L800 584 Z" fill="url(#trap_room_wood)"/>
+  <path d="M676 546 L800 584 L800 682 L676 648 Z" fill="#7c5522"/>
+  <path d="M924 546 L800 584 L800 682 L924 648 Z" fill="#8f6528"/>
+  <path d="M676 546 L800 584 L924 546 M800 584 V682" stroke="#5c3c14" stroke-width="6" fill="none"/>
+  <path d="M690 590 L786 620 M690 622 L786 652 M814 620 L910 590 M814 652 L910 622" stroke="#5c3c14" stroke-width="4" opacity="0.85"/>
+  <path d="M676 546 V648 M924 546 V648" stroke="#55380f" stroke-width="9"/>
+  <path d="M700 553 l88 27 M900 553 l-88 27" stroke="#d9ae62" stroke-width="3" opacity="0.7"/>
+  <g stroke="#3a250c" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 22" opacity="0.7">
+    <path d="M684 560 l108 33 M916 560 l-108 33 M684 640 l108 33 M916 640 l-108 33"/>
+  </g>
+  <text x="740" y="622" font-family="Trebuchet MS" font-size="17" font-weight="bold" fill="#3a250c" text-anchor="middle" opacity="0.75" transform="rotate(17 740 622)">RESORT SUPPLY</text>
+  <text x="864" y="618" font-family="Trebuchet MS" font-size="19" font-weight="bold" fill="#7a2c18" text-anchor="middle" opacity="0.7" transform="rotate(-17 864 618)">FRAGILE</text>
+  <!-- straw poking out -->
+  <g stroke="#d9b356" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M700 542 q-6 -14 -16 -18 M710 546 q0 -16 -6 -24 M722 549 q6 -14 -2 -26"/>
+    <path d="M876 543 q8 -14 18 -16 M888 548 q2 -16 10 -22 M866 540 q-2 -16 4 -24"/>
+    <path d="M760 636 q-10 6 -18 4 M764 646 q-12 2 -18 8"/>
+  </g>
+  <g stroke="#a5813a" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M706 544 q-2 -18 -12 -22 M882 545 q6 -16 14 -18"/>
+  </g>
+  <path d="M676 546 L800 508" stroke="#a7f3c0" stroke-width="3" opacity="0.25"/>
+  <path d="M924 546 V648" stroke="#ffb26b" stroke-width="4" opacity="0.5"/>
+  <path d="M800 508 L924 546" stroke="#ffcf8e" stroke-width="3" opacity="0.4"/>
+  <ellipse cx="742" cy="692" rx="26" ry="6" fill="#d9b356" opacity="0.35"/>
+
+  <!-- ==================== GLOWING FOOTPRINT TRAIL ==================== -->
+  <g fill="url(#trap_room_green)">
+    <ellipse cx="1366" cy="686" rx="42" ry="13" opacity="0.55"/>
+    <ellipse cx="1238" cy="744" rx="40" ry="13" opacity="0.45"/>
+    <ellipse cx="1086" cy="790" rx="38" ry="12" opacity="0.4"/>
+    <ellipse cx="914" cy="816" rx="36" ry="12" opacity="0.35"/>
+  </g>
+  <g fill="#56e88c">
+    <g opacity="0.8"><ellipse cx="1366" cy="684" rx="7.5" ry="12" transform="rotate(68 1366 684)"/><ellipse cx="1353" cy="689" rx="5" ry="7" transform="rotate(68 1353 689)"/></g>
+    <g opacity="0.74"><ellipse cx="1306" cy="716" rx="7.5" ry="12" transform="rotate(64 1306 716)"/><ellipse cx="1293" cy="721" rx="5" ry="7" transform="rotate(64 1293 721)"/></g>
+    <g opacity="0.68"><ellipse cx="1238" cy="742" rx="7.5" ry="12" transform="rotate(60 1238 742)"/><ellipse cx="1225" cy="747" rx="5" ry="7" transform="rotate(60 1225 747)"/></g>
+    <g opacity="0.6"><ellipse cx="1164" cy="766" rx="7.5" ry="12" transform="rotate(54 1164 766)"/><ellipse cx="1151" cy="771" rx="5" ry="7" transform="rotate(54 1151 771)"/></g>
+    <g opacity="0.52"><ellipse cx="1086" cy="788" rx="7.5" ry="12" transform="rotate(46 1086 788)"/><ellipse cx="1073" cy="792" rx="5" ry="7" transform="rotate(46 1073 792)"/></g>
+    <g opacity="0.44"><ellipse cx="1002" cy="804" rx="7.5" ry="12" transform="rotate(36 1002 804)"/><ellipse cx="990" cy="808" rx="5" ry="7" transform="rotate(36 990 808)"/></g>
+    <g opacity="0.36"><ellipse cx="914" cy="814" rx="7.5" ry="12" transform="rotate(24 914 814)"/><ellipse cx="902" cy="817" rx="5" ry="7" transform="rotate(24 902 817)"/></g>
+    <g opacity="0.28"><ellipse cx="830" cy="820" rx="7.5" ry="12" transform="rotate(14 830 820)"/><ellipse cx="818" cy="822" rx="5" ry="7" transform="rotate(14 818 822)"/></g>
+  </g>
+  <g fill="#56e88c" opacity="0.13">
+    <ellipse cx="210" cy="742" rx="8" ry="13" transform="rotate(-62 210 742)"/>
+    <ellipse cx="300" cy="758" rx="8" ry="13" transform="rotate(-56 300 758)"/>
+    <ellipse cx="396" cy="772" rx="8" ry="13" transform="rotate(-48 396 772)"/>
+    <ellipse cx="494" cy="784" rx="8" ry="13" transform="rotate(-40 494 784)"/>
   </g>
 
-  <rect width="1600" height="900" filter="url(#grain4)" opacity="0.5"/>
-  <rect width="1600" height="900" fill="url(#vign4)"/>
+  <!-- ==================== ABANDONED LUMO-GLOW CAN ==================== -->
+  <ellipse cx="1268" cy="716" rx="58" ry="15" fill="url(#trap_room_green)" opacity="0.6"/>
+  <path d="M1248 706 q28 -8 52 4 q10 10 -6 15 q-30 8 -52 -4 q-8 -10 6 -15" fill="#37e57e" opacity="0.5"/>
+  <ellipse cx="1272" cy="712" rx="16" ry="5" fill="#a5f7c4" opacity="0.55"/>
+  <ellipse cx="1224" cy="722" rx="34" ry="7" fill="#000" opacity="0.3"/>
+  <g transform="translate(1222 702) rotate(-24)">
+    <rect x="-26" y="-15" width="52" height="30" rx="4" fill="#c9d2d6"/>
+    <rect x="-26" y="-15" width="52" height="6" fill="#8fa0a8"/>
+    <rect x="-26" y="9" width="52" height="6" fill="#8fa0a8"/>
+    <rect x="-20" y="-7" width="40" height="14" rx="2" fill="#10281a"/>
+    <text x="0" y="4" font-family="Trebuchet MS" font-size="9" font-weight="bold" fill="#7df3a8" text-anchor="middle">LUMO-GLOW</text>
+    <ellipse cx="26" cy="0" rx="5" ry="15" fill="#9aa7ad"/>
+    <ellipse cx="26" cy="0" rx="2.5" ry="10" fill="#46d97f"/>
+  </g>
+
+  <!-- stray wrench by the panel -->
+  <g transform="rotate(24 352 700)">
+    <ellipse cx="358" cy="716" rx="22" ry="5" fill="#000" opacity="0.3"/>
+    <circle cx="340" cy="694" r="8" fill="none" stroke="#77909c" stroke-width="5"/>
+    <path d="M346 698 L376 712" stroke="#77909c" stroke-width="6" stroke-linecap="round"/>
+    <path d="M376 712 q10 2 8 12 q-12 4 -14 -4" stroke="#77909c" stroke-width="5" fill="none"/>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#trap_room_grain)" opacity="0.35"/>
+  <rect width="1600" height="900" fill="url(#trap_room_vign)"/>
 </svg>

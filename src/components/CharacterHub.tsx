@@ -1,10 +1,12 @@
 import { Radio } from 'lucide-react'
 import { CHARACTERS, CHARACTER_ORDER } from '../data/characters'
+import { CharacterBust } from './CharacterArt'
 import { useGameStore } from '../store/gameStore'
 
 /**
  * Walkie-talkie hub: switch the active gang member to bypass
- * character-gated obstacles (Velma reads, Shaggy/Scooby bait, Daphne picks locks).
+ * character-gated obstacles. Each button shows the character's actual
+ * portrait with their name beneath it.
  */
 export function CharacterHub() {
   const activeCharacter = useGameStore((s) => s.activeCharacter)
@@ -20,25 +22,35 @@ export function CharacterHub() {
       <div className="flex gap-2">
         {CHARACTER_ORDER.map((id) => {
           const c = CHARACTERS[id]
-          const Icon = c.icon
           const active = id === activeCharacter
           return (
             <button
               key={id}
               onClick={() => setCharacter(id)}
               title={`${c.name} — ${c.skill}`}
-              className={`kenney-btn flex w-20 flex-col items-center gap-1 px-2 py-2 md:w-24 ${
-                active ? 'bg-stone-700 ring-4 ring-offset-0' : 'bg-stone-900 opacity-75 hover:opacity-100'
+              className={`kenney-btn flex w-[4.6rem] flex-col items-center px-1 pb-1.5 pt-2 transition-all md:w-20 ${
+                active
+                  ? 'bg-stone-700'
+                  : 'bg-stone-900 opacity-65 saturate-50 hover:opacity-100 hover:saturate-100'
               }`}
-              style={active ? { borderColor: c.color, boxShadow: `0 0 12px ${c.color}66` } : undefined}
+              style={
+                active
+                  ? { borderColor: c.color, boxShadow: `0 0 14px ${c.color}66, inset 0 2px 0 rgba(255,255,255,0.15)` }
+                  : undefined
+              }
             >
+              <div className="pointer-events-none -mb-0.5 h-14 w-12 overflow-hidden md:h-16 md:w-14">
+                <CharacterBust id={id} />
+              </div>
               <span
-                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-stone-400"
-                style={{ backgroundColor: c.color }}
+                className="font-title mt-1 w-full text-center leading-none tracking-wide"
+                style={{
+                  color: active ? c.color : '#a8a29e',
+                  fontSize: c.name.length > 8 ? '8.5px' : '11px',
+                }}
               >
-                <Icon size={18} className="text-white" strokeWidth={2.5} />
+                {c.name}
               </span>
-              <span className="text-[10px] font-bold leading-tight text-stone-200">{c.name}</span>
             </button>
           )
         })}

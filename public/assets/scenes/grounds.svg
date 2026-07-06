@@ -1,197 +1,495 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs>
-    <linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#060d1e"/>
-      <stop offset="55%" stop-color="#0c2233"/>
-      <stop offset="100%" stop-color="#175046"/>
-    </linearGradient>
-    <linearGradient id="lawng" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#22523a"/>
-      <stop offset="60%" stop-color="#153b26"/>
-      <stop offset="100%" stop-color="#0a2114"/>
-    </linearGradient>
-    <radialGradient id="moonhalo" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e8ecf5" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#e8ecf5" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="vign2" cx="50%" cy="46%" r="72%">
-      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.62"/>
-    </radialGradient>
-    <radialGradient id="vendglow" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#ff8f8f" stop-opacity="0.30"/>
-      <stop offset="100%" stop-color="#ff8f8f" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="grain2">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
-      <feColorMatrix type="saturate" values="0"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
-      <feComposite operator="over" in2="SourceGraphic"/>
-    </filter>
-  </defs>
-
-  <rect width="1600" height="520" fill="url(#skyg)"/>
-  <rect y="520" width="1600" height="380" fill="url(#lawng)"/>
-
-  <!-- stars -->
-  <g fill="#dfe6f5">
-    <circle cx="120" cy="80" r="1.8"/><circle cx="300" cy="150" r="1.4"/><circle cx="480" cy="60" r="1.7"/>
-    <circle cx="640" cy="130" r="1.3"/><circle cx="760" cy="70" r="1.9"/><circle cx="900" cy="170" r="1.3"/>
-    <circle cx="1420" cy="60" r="1.6"/><circle cx="1540" cy="140" r="1.4"/><circle cx="230" cy="260" r="1.2"/>
-    <circle cx="560 " cy="230" r="1.2"/><circle cx="1330" cy="300" r="1.3"/>
-  </g>
-
-  <!-- moon + halo + clouds -->
-  <circle cx="1180" cy="150" r="120" fill="url(#moonhalo)"/>
-  <circle cx="1180" cy="150" r="70" fill="#eaeef7"/>
-  <circle cx="1156" cy="132" r="14" fill="#cad0de" opacity="0.8"/>
-  <circle cx="1204" cy="168" r="10" fill="#cad0de" opacity="0.8"/>
-  <circle cx="1186" cy="118" r="7" fill="#cad0de" opacity="0.6"/>
-  <path d="M960 208 q70 -30 150 -2 q66 24 132 4 q-44 40 -144 26 q-100 -8 -138 -28" fill="#081326" opacity="0.85"/>
-  <path d="M1290 230 q50 -18 104 0 q-30 26 -104 12 Z" fill="#081326" opacity="0.7"/>
-
-  <!-- palms + hedge line -->
-  <g fill="#04101a">
-    <path d="M120 520 q14 -160 -10 -230 q40 40 60 -20 q10 46 44 30 q-24 30 8 44 q-40 4 -44 30 q30 -6 44 22 q-40 -8 -56 14 q10 60 4 110 Z"/>
-    <path d="M1500 520 q-16 -180 6 -250 q-36 44 -60 -14 q-6 48 -42 34 q22 28 -10 42 q42 2 46 28 q-32 -4 -44 24 q40 -10 54 12 q-8 66 -2 124 Z"/>
-    <path d="M1360 520 q-8 -110 4 -150 q-24 28 -40 -8 q-2 32 -28 22 q14 20 -8 28 q28 2 30 20 q-20 -4 -28 16 q26 -6 36 8 q-6 40 -2 64 Z" opacity="0.8"/>
-  </g>
-  <path d="M0 500 q200 -24 420 -10 q300 18 640 0 q300 -14 540 10 V530 H0 Z" fill="#06131c" opacity="0.9"/>
-
-  <!-- fence -->
-  <g stroke="#050f16" stroke-width="9">
-    <path d="M0 468 H1600" stroke-width="7"/>
-    <path d="M60 468 V520 M220 468 V520 M380 468 V524 M1230 468 V520 M1400 468 V520 M1560 468 V520"/>
-  </g>
-
-  <!-- stone path to pool -->
-  <g fill="#2c4a3a" opacity="0.8">
-    <ellipse cx="700" cy="620" rx="34" ry="12"/><ellipse cx="770" cy="660" rx="30" ry="11"/>
-    <ellipse cx="850" cy="700" rx="34" ry="12"/><ellipse cx="930" cy="736" rx="30" ry="11"/>
-  </g>
-
-  <!-- fireflies -->
-  <g fill="#d9f27e">
-    <circle cx="330" cy="560" r="2.6" opacity="0.9"/><circle cx="1015" cy="600" r="2.2" opacity="0.7"/>
-    <circle cx="1230" cy="560" r="2.4" opacity="0.8"/><circle cx="608" cy="545" r="2" opacity="0.6"/>
-  </g>
-
-  <!-- TOOLSHED (hotspot 24-42% x, 26-66% y) -->
-  <ellipse cx="540" cy="600" rx="190" ry="22" fill="#000" opacity="0.4"/>
-  <path d="M370 300 L530 226 L690 300 V592 H370 Z" fill="#2a1e12"/>
-  <path d="M370 300 L530 226 L690 300 L690 312 L530 240 L370 312 Z" fill="#0d0803"/>
-  <path d="M344 314 L530 216 L716 314 L690 300 L530 230 L370 300 Z" fill="#120b05"/>
-  <g stroke="#1e1610" stroke-width="4" opacity="0.9">
-    <path d="M392 322 V584 M432 310 V584 M472 300 V588 M512 296 V592"/>
-  </g>
-  <!-- window -->
-  <rect x="398" y="358" width="112" height="92" rx="4" fill="#0a0703"/>
-  <path d="M398 358 h112 v92 h-112 z M454 358 v92 M398 404 h112" stroke="#3b2c1c" stroke-width="6" fill="none"/>
-  <path d="M404 364 l44 36" stroke="#68829c" stroke-width="3" opacity="0.35"/>
-  <!-- open doorway (interior dark; light is a game overlay) -->
-  <rect x="545" y="348" width="118" height="244" fill="#040302"/>
-  <rect x="531" y="348" width="14" height="244" fill="#3b2c1c"/>
-  <path d="M545 348 h118 v244" stroke="#241a10" stroke-width="5" fill="none"/>
-  <!-- tuft grass at base -->
-  <path d="M380 590 q6 -18 14 0 M400 592 q6 -16 12 0 M666 590 q6 -18 14 0" stroke="#1d4a2e" stroke-width="4" fill="none"/>
-
-  <!-- FLOOR GRATE (hotspot 26-40% x, 62-78% y) — key glint is a game overlay -->
-  <rect x="414" y="568" width="224" height="128" rx="12" fill="#0d1411"/>
-  <rect x="424" y="576" width="204" height="112" rx="8" fill="#15201a"/>
-  <g stroke="#2c3a31" stroke-width="6">
-    <path d="M446 584 v96 M484 584 v96 M522 584 v96 M560 584 v96 M598 584 v96"/>
-  </g>
-  <path d="M424 612 h204 M424 652 h204" stroke="#232f28" stroke-width="5"/>
-
-  <!-- OVERGROWN BUSHES (hotspot 4-22% x, 58-84% y) — stick is a game overlay -->
-  <g fill="#153a20">
-    <ellipse cx="120" cy="660" rx="112" ry="78"/>
-    <ellipse cx="240" cy="700" rx="122" ry="88"/>
-    <ellipse cx="80" cy="742" rx="102" ry="72"/>
-  </g>
-  <g fill="#1e5230">
-    <ellipse cx="170" cy="638" rx="72" ry="48"/>
-    <ellipse cx="272" cy="670" rx="68" ry="46"/>
-  </g>
-  <g fill="#2a6e40" opacity="0.7">
-    <ellipse cx="150" cy="620" rx="34" ry="20"/>
-    <ellipse cx="250" cy="648" rx="30" ry="18"/>
-  </g>
-  <path d="M96 600 q-4 -26 10 -38 M180 590 q2 -22 18 -30 M280 626 q6 -22 22 -26" stroke="#0e2c18" stroke-width="4" fill="none"/>
-
-  <!-- JANITOR GUS (hotspot 48-62% x, 32-78% y) -->
-  <g>
-    <ellipse cx="880" cy="702" rx="66" ry="15" fill="#000" opacity="0.45"/>
-    <rect x="842" y="418" width="78" height="182" rx="24" fill="#46653f"/>
-    <path d="M842 452 q40 18 78 0" stroke="#395234" stroke-width="5" fill="none"/>
-    <rect x="852" y="430" width="58" height="82" fill="#5f8256"/>
-    <path d="M852 470 h58" stroke="#4a6a44" stroke-width="4"/>
-    <rect x="846" y="600" width="32" height="98" rx="9" fill="#31421f"/>
-    <rect x="886" y="600" width="32" height="98" rx="9" fill="#31421f"/>
-    <path d="M846 692 h32 M886 692 h32" stroke="#14200c" stroke-width="9"/>
-    <rect x="826" y="430" width="20" height="120" rx="9" fill="#46653f"/>
-    <rect x="918" y="430" width="20" height="120" rx="9" fill="#46653f"/>
-    <ellipse cx="836" cy="558" rx="10" ry="11" fill="#cfa77e"/>
-    <!-- rake -->
-    <path d="M958 378 L985 662" stroke="#7c5c30" stroke-width="9"/>
-    <path d="M958 662 h58 M962 662 v24 M976 664 v24 M990 664 v24 M1004 662 v24" stroke="#5c6165" stroke-width="6"/>
-    <ellipse cx="1000" cy="700" rx="46" ry="9" fill="#132a1a"/>
-    <!-- head -->
-    <ellipse cx="881" cy="382" rx="27" ry="30" fill="#cfa77e"/>
-    <path d="M853 374 a28 18 0 0 1 56 0 l-4 -26 h-48 Z" fill="#48545f"/>
-    <rect x="848" y="346" width="64" height="12" rx="6" fill="#48545f"/>
-    <circle cx="872" cy="384" r="3.4" fill="#221710"/>
-    <circle cx="892" cy="384" r="3.4" fill="#221710"/>
-    <path d="M864 376 q8 -6 14 -2 M884 374 q8 -4 14 2" stroke="#9c9c9c" stroke-width="2.5" fill="none"/>
-    <path d="M862 398 q20 14 40 0" stroke="#a8a8a8" stroke-width="5" fill="none"/>
-    <path d="M868 406 q13 6 26 0" stroke="#8a6a4a" stroke-width="3" fill="none"/>
-  </g>
-
-  <!-- VENDING MACHINE (hotspot 78-92% x, 34-76% y) — dangling box is a game overlay -->
-  <ellipse cx="1358" cy="700" rx="130" ry="16" fill="#000" opacity="0.45"/>
-  <rect x="1252" y="300" width="212" height="392" rx="12" fill="#5e161e"/>
-  <rect x="1252" y="300" width="212" height="392" rx="12" fill="url(#vendglow)"/>
-  <rect x="1262" y="310" width="192" height="372" rx="8" fill="none" stroke="#7c2830" stroke-width="3"/>
-  <rect x="1268" y="318" width="120" height="290" rx="8" fill="#0f0a14"/>
-  <path d="M1268 318 l120 290" stroke="#2b2138" stroke-width="2" opacity="0.5"/>
-  <text x="1420" y="356" font-family="Trebuchet MS" font-size="26" font-weight="bold" fill="#ffd98a" text-anchor="middle" transform="rotate(90 1420 356)">SCOOBY SNAX</text>
-  <!-- shelves + spirals -->
-  <g opacity="0.95">
-    <path d="M1272 368 h112 M1272 412 h112 M1272 456 h112 M1272 500 h112" stroke="#241a30" stroke-width="3"/>
-    <rect x="1282" y="336" width="40" height="26" rx="4" fill="#d98f2b"/>
-    <rect x="1332" y="336" width="40" height="26" rx="4" fill="#4a8fd9"/>
-    <rect x="1282" y="380" width="40" height="26" rx="4" fill="#57a35c"/>
-    <rect x="1332" y="380" width="40" height="26" rx="4" fill="#c95c8f"/>
-    <rect x="1282" y="424" width="40" height="26" rx="4" fill="#d98f2b"/>
-    <circle cx="1330" cy="470" r="9" fill="none" stroke="#5c5c66" stroke-width="3"/>
-    <circle cx="1298" cy="470" r="9" fill="none" stroke="#5c5c66" stroke-width="3"/>
-  </g>
-  <rect x="1268" y="622" width="120" height="44" rx="8" fill="#07040c"/>
-  <path d="M1278 664 q50 -14 100 0" stroke="#1d1428" stroke-width="3" fill="none"/>
-  <circle cx="1428" cy="470" r="16" fill="#26262e"/>
-  <circle cx="1428" cy="470" r="7" fill="#3d3d48"/>
-  <rect x="1420" y="500" width="18" height="60" rx="6" fill="#26262e"/>
-  <path d="M1252 306 q106 -18 212 0" stroke="#8f3a42" stroke-width="4" fill="none" opacity="0.6"/>
-
-  <!-- DRAINED POOL (hotspot 44-78% x, 82-96% y) -->
-  <path d="M676 744 L1284 744 L1230 872 L730 872 Z" fill="#0c1b1e"/>
-  <path d="M676 744 L1284 744 L1230 872 L730 872 Z" fill="none" stroke="#2f5b60" stroke-width="8"/>
-  <path d="M692 752 L1268 752" stroke="#3f7a80" stroke-width="4" opacity="0.6"/>
-  <g stroke="#22393c" stroke-width="5">
-    <path d="M760 800 l60 -8 M900 822 l80 -6 M1080 796 l70 10 M990 776 l44 -8"/>
-  </g>
-  <path d="M860 760 q10 30 -6 60 M1010 758 q-8 34 8 66 M1130 762 q6 28 -4 56" stroke="#101a1c" stroke-width="4" fill="none"/>
-  <!-- pool ladder -->
-  <path d="M1210 744 v-26 m26 26 v-26 m-26 8 h26 m-26 12 h26" stroke="#7c98a8" stroke-width="5" fill="none"/>
-  <!-- leaf muck + sneaker prints -->
-  <path d="M840 840 q60 -14 150 0 q80 12 160 -6 l-16 26 h-280 Z" fill="#1a3a24" opacity="0.7"/>
-  <g fill="#4a8f5c" opacity="0.9">
-    <ellipse cx="950" cy="840" rx="12" ry="6" transform="rotate(-18 950 840)"/>
-    <ellipse cx="990" cy="826" rx="12" ry="6" transform="rotate(-14 990 826)"/>
-    <ellipse cx="1030" cy="812" rx="12" ry="6" transform="rotate(-10 1030 812)"/>
-    <ellipse cx="1068" cy="800" rx="11" ry="5.5" transform="rotate(-8 1068 800)"/>
-  </g>
-
-  <rect width="1600" height="900" filter="url(#grain2)" opacity="0.5"/>
-  <rect width="1600" height="900" fill="url(#vign2)"/>
+<defs>
+<linearGradient id="groundsSky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0a1128"/>
+<stop offset="50%" stop-color="#133650"/>
+<stop offset="100%" stop-color="#1e5b52"/>
+</linearGradient>
+<linearGradient id="groundsLawn" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#2c6247"/>
+<stop offset="55%" stop-color="#1e4a33"/>
+<stop offset="100%" stop-color="#133223"/>
+</linearGradient>
+<radialGradient id="groundsMoonHalo" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#e8ecf5" stop-opacity="0.38"/>
+<stop offset="100%" stop-color="#e8ecf5" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="groundsMoonSurf" cx="42%" cy="40%" r="70%">
+<stop offset="0%" stop-color="#f7f9fe"/>
+<stop offset="100%" stop-color="#d7dfee"/>
+</radialGradient>
+<radialGradient id="groundsMoonPool" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#bcd7e8" stop-opacity="0.13"/>
+<stop offset="100%" stop-color="#bcd7e8" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="groundsTorchGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ffb45a" stop-opacity="0.34"/>
+<stop offset="100%" stop-color="#ffb45a" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="groundsVendGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ff8f8f" stop-opacity="0.26"/>
+<stop offset="100%" stop-color="#ff8f8f" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="groundsPoolFloor" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#205058"/>
+<stop offset="100%" stop-color="#0c1c22"/>
+</linearGradient>
+<linearGradient id="groundsShootTail" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#eef2fa" stop-opacity="0"/>
+<stop offset="100%" stop-color="#eef2fa" stop-opacity="0.9"/>
+</linearGradient>
+<radialGradient id="groundsVign" cx="50%" cy="44%" r="75%">
+<stop offset="58%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+</radialGradient>
+<filter id="groundsGrain">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+<feColorMatrix type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+<feComposite operator="over" in2="SourceGraphic"/>
+</filter>
+<clipPath id="groundsShedClip"><path d="M370 300 L530 226 L690 300 V592 H370 Z"/></clipPath>
+<clipPath id="groundsPoolClip"><path d="M676 744 L1284 744 L1230 872 L730 872 Z"/></clipPath>
+<clipPath id="groundsGlassClip"><rect x="1268" y="318" width="122" height="244" rx="6"/></clipPath>
+<path id="groundsFrondP" d="M0 0 Q46 -34 108 -26 Q64 -18 46 -10 Q80 -14 118 2 Q66 2 44 5 Q20 5 0 0 Z"/>
+<path id="groundsMonst" d="M0 0 Q-10 -52 22 -86 Q16 -56 28 -50 Q34 -92 66 -104 Q52 -68 62 -60 Q82 -88 112 -84 Q90 -58 92 -48 Q118 -52 130 -30 Q102 -24 98 -14 Q112 -4 110 8 Q84 4 54 8 Q20 10 0 0 Z"/>
+<g id="groundsFern" fill="none" stroke="#16402a" stroke-width="4" stroke-linecap="round">
+<path d="M0 0 Q10 -50 4 -96 M3 -18 l-16 -10 M4 -20 l14 -12 M5 -38 l-15 -9 M6 -40 l13 -11 M6 -58 l-13 -8 M7 -60 l11 -10 M6 -76 l-10 -7 M7 -78 l9 -8"/>
+</g>
+</defs>
+<!-- ===== sky ===== -->
+<rect width="1600" height="520" fill="url(#groundsSky)"/>
+<g fill="#e6ecf8">
+<circle cx="90" cy="64" r="1.8"/><circle cx="160" cy="150" r="1.3"/><circle cx="250" cy="84" r="1.6"/>
+<circle cx="330" cy="196" r="1.2"/><circle cx="420" cy="58" r="1.9"/><circle cx="505" cy="132" r="1.4"/>
+<circle cx="585" cy="74" r="1.3"/><circle cx="662" cy="168" r="1.7"/><circle cx="742" cy="96" r="1.3"/>
+<circle cx="818" cy="52" r="1.8"/><circle cx="908" cy="140" r="1.4"/><circle cx="966" cy="74" r="1.6"/>
+<circle cx="1024" cy="182" r="1.2"/><circle cx="1330" cy="52" r="1.5"/><circle cx="1398" cy="120" r="1.5"/>
+<circle cx="1470" cy="66" r="1.8"/><circle cx="1540" cy="168" r="1.3"/><circle cx="1584" cy="86" r="1.5"/>
+<circle cx="120" cy="262" r="1.2"/><circle cx="600" cy="262" r="1.2"/><circle cx="950" cy="272" r="1.2"/><circle cx="1420" cy="282" r="1.3"/><circle cx="60" cy="180" r="1.4"/>
+</g>
+<g stroke="#eef2fa" stroke-width="1.5" opacity="0.8">
+<path d="M420 44 v28 M406 58 h28"/><path d="M966 62 v24 M954 74 h24"/><path d="M1470 54 v24 M1458 66 h24"/>
+</g>
+<!-- shooting star -->
+<path d="M300 96 L472 148 L468 156 L298 102 Z" fill="url(#groundsShootTail)"/>
+<circle cx="470" cy="152" r="3" fill="#ffffff"/>
+<!-- moon -->
+<circle cx="1180" cy="150" r="125" fill="url(#groundsMoonHalo)"/>
+<circle cx="1180" cy="150" r="70" fill="url(#groundsMoonSurf)"/>
+<g fill="#c7cfe0">
+<circle cx="1156" cy="132" r="14"/><circle cx="1204" cy="168" r="10"/><circle cx="1186" cy="118" r="7"/>
+<circle cx="1150" cy="172" r="8"/><circle cx="1212" cy="132" r="5"/><circle cx="1170" cy="154" r="4"/><circle cx="1196" cy="192" r="4.5"/>
+</g>
+<g fill="#b2bdd4" opacity="0.7">
+<circle cx="1159" cy="135" r="9"/><circle cx="1207" cy="171" r="6.5"/><circle cx="1153" cy="175" r="5"/><circle cx="1188" cy="120" r="4"/>
+</g>
+<!-- clouds -->
+<path d="M880 208 q80 -26 170 -6 q70 16 150 2 q-60 34 -170 22 q-100 -6 -150 -18 Z" fill="#0a1630" opacity="0.75"/>
+<path d="M280 186 q60 -18 130 -4 q-40 26 -130 14 Z" fill="#0a1630" opacity="0.6"/>
+<path d="M1300 250 q54 -16 110 0 q-34 24 -110 10 Z" fill="#0a1630" opacity="0.65"/>
+<!-- ===== lawn ===== -->
+<rect y="520" width="1600" height="380" fill="url(#groundsLawn)"/>
+<!-- resort roofline far west (toward lobby) -->
+<path d="M0 470 V398 h34 v-22 h18 v22 h52 v30 h40 v42 Z" fill="#0a1a28"/>
+<circle cx="64" cy="422" r="15" fill="#e8b05a" opacity="0.12"/>
+<rect x="58" y="414" width="12" height="16" fill="#e8b05a" opacity="0.85"/>
+<!-- hedge line -->
+<path d="M0 478 Q120 462 240 476 Q380 490 520 474 Q660 460 800 476 Q940 490 1080 474 Q1220 462 1360 478 Q1480 490 1600 472 V536 H0 Z" fill="#0b2433"/>
+<path d="M0 508 Q140 492 300 506 Q460 518 640 504 Q820 492 1000 508 Q1180 520 1380 504 Q1500 494 1600 506 V540 H0 Z" fill="#0e3028"/>
+<g fill="#1d5238" opacity="0.6">
+<circle cx="180" cy="500" r="4"/><circle cx="470" cy="508" r="4"/><circle cx="760" cy="498" r="4"/><circle cx="1060" cy="510" r="4"/><circle cx="1330" cy="500" r="4"/>
+</g>
+<!-- distant small palm -->
+<g fill="#081c28">
+<path d="M1078 522 q-6 -34 2 -52 l10 2 q-4 22 2 50 Z"/>
+<g transform="translate(1084 468) scale(0.5)"><use href="#groundsFrondP" transform="rotate(-70)"/><use href="#groundsFrondP" transform="rotate(-25)"/><use href="#groundsFrondP" transform="rotate(20)"/><use href="#groundsFrondP" transform="rotate(-115) scale(0.9)"/><use href="#groundsFrondP" transform="rotate(60) scale(0.8)"/></g>
+</g>
+<!-- big palms: left + far right (behind everything) -->
+<g>
+<path d="M138 544 Q118 430 126 372 Q132 328 118 300 L138 294 Q150 336 146 380 Q142 440 164 542 Z" fill="#0c2232"/>
+<path d="M124 348 q10 5 20 2 M122 396 q12 5 22 2 M126 448 q12 6 24 2" stroke="#071827" stroke-width="3" fill="none"/>
+<g fill="#0e2b3d"><g transform="translate(127 298) scale(1.15)"><use href="#groundsFrondP" transform="rotate(-95)"/><use href="#groundsFrondP" transform="rotate(-60)"/><use href="#groundsFrondP" transform="rotate(-28)"/><use href="#groundsFrondP" transform="rotate(6)"/><use href="#groundsFrondP" transform="rotate(42) scale(0.95)"/><use href="#groundsFrondP" transform="rotate(80) scale(0.85)"/></g></g>
+<g fill="#164253" opacity="0.9"><g transform="translate(127 298)"><use href="#groundsFrondP" transform="rotate(-45) scale(0.85)"/><use href="#groundsFrondP" transform="rotate(20) scale(0.8)"/></g></g>
+<circle cx="132" cy="306" r="7" fill="#081c28"/><circle cx="146" cy="300" r="6" fill="#081c28"/>
+</g>
+<g>
+<path d="M1524 544 Q1540 436 1530 376 Q1524 334 1536 312 L1516 304 Q1506 344 1512 386 Q1518 444 1498 542 Z" fill="#0c2232"/>
+<path d="M1516 360 q-11 5 -20 2 M1518 408 q-12 5 -22 2" stroke="#071827" stroke-width="3" fill="none"/>
+<g fill="#0e2b3d"><g transform="translate(1524 310) scale(-1.2,1.2)"><use href="#groundsFrondP" transform="rotate(-95)"/><use href="#groundsFrondP" transform="rotate(-60)"/><use href="#groundsFrondP" transform="rotate(-26)"/><use href="#groundsFrondP" transform="rotate(8)"/><use href="#groundsFrondP" transform="rotate(46) scale(0.9)"/><use href="#groundsFrondP" transform="rotate(82) scale(0.8)"/></g></g>
+<g fill="#164253" opacity="0.9"><g transform="translate(1524 310) scale(-1,1)"><use href="#groundsFrondP" transform="rotate(-42) scale(0.85)"/><use href="#groundsFrondP" transform="rotate(24) scale(0.75)"/></g></g>
+<circle cx="1518" cy="318" r="7" fill="#081c28"/><circle cx="1506" cy="312" r="5.5" fill="#081c28"/>
+</g>
+<!-- palm tucked behind the vending machine -->
+<g fill="#0d2939">
+<path d="M1250 420 q-8 -50 0 -80 l16 2 q-6 34 0 78 Z"/>
+<g transform="translate(1258 340) scale(0.85)"><use href="#groundsFrondP" transform="rotate(-105)"/><use href="#groundsFrondP" transform="rotate(-70)"/><use href="#groundsFrondP" transform="rotate(-35)"/><use href="#groundsFrondP" transform="rotate(-140) scale(0.85)"/></g>
+</g>
+<!-- iron fence -->
+<g stroke="#06121a">
+<path d="M0 460 H1600" stroke-width="6"/>
+<path d="M0 502 H1600" stroke-width="4"/>
+<path d="M30 448 V520 M120 448 V520 M210 448 V520 M300 448 V520 M390 448 V520 M480 448 V520 M570 448 V520 M660 448 V520 M750 448 V520 M840 448 V520 M930 448 V520 M1020 448 V520 M1110 448 V520 M1200 448 V520 M1290 448 V520 M1380 448 V520 M1470 448 V520 M1560 448 V520" stroke-width="7"/>
+</g>
+<path d="M30 446 H1561" stroke="#06121a" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 90" fill="none"/>
+<!-- moonlight pool + lawn mottle -->
+<ellipse cx="720" cy="660" rx="480" ry="150" fill="url(#groundsMoonPool)"/>
+<ellipse cx="420" cy="760" rx="220" ry="58" fill="#35744e" opacity="0.22"/>
+<ellipse cx="980" cy="716" rx="170" ry="46" fill="#35744e" opacity="0.18"/>
+<g stroke="#255c3e" stroke-width="3" fill="none" opacity="0.7">
+<path d="M430 548 q4 -14 8 0 M448 550 q4 -12 8 0 M760 566 q4 -14 8 0 M1046 586 q4 -12 8 0 M1200 630 q4 -14 8 0 M560 720 q4 -14 8 0 M340 800 q5 -16 9 0 M1420 730 q4 -14 8 0"/>
+</g>
+<!-- stone path to the pool -->
+<g>
+<ellipse cx="700" cy="612" rx="30" ry="11" fill="#3a5c4a"/><path d="M672 610 a30 11 0 0 1 56 -2 q-28 -8 -56 2" fill="#4c7058"/>
+<ellipse cx="742" cy="648" rx="28" ry="10" fill="#3a5c4a"/><path d="M716 646 a28 10 0 0 1 52 -2 q-26 -7 -52 2" fill="#4c7058"/>
+<ellipse cx="780" cy="684" rx="29" ry="11" fill="#3a5c4a"/><path d="M753 682 a29 11 0 0 1 54 -2 q-27 -8 -54 2" fill="#4c7058"/>
+<ellipse cx="814" cy="720" rx="26" ry="10" fill="#3a5c4a"/><path d="M790 718 a26 10 0 0 1 48 -2 q-24 -7 -48 2" fill="#4c7058"/>
+<circle cx="712" cy="616" r="3" fill="#2a6e40" opacity="0.8"/><circle cx="788" cy="688" r="3" fill="#2a6e40" opacity="0.8"/>
+</g>
+<!-- TOOLSHED : 384-672 x 234-594; doorway = shed_light overlay 542-666 x 346-598 -->
+<ellipse cx="540" cy="600" rx="190" ry="22" fill="#000" opacity="0.35"/>
+<g clip-path="url(#groundsShedClip)">
+<rect x="370" y="220" width="32" height="380" fill="#382815"/><rect x="402" y="220" width="32" height="380" fill="#2f2011"/>
+<rect x="434" y="220" width="32" height="380" fill="#40301b"/><rect x="466" y="220" width="32" height="380" fill="#2f2011"/>
+<rect x="498" y="220" width="32" height="380" fill="#382815"/><rect x="530" y="220" width="32" height="380" fill="#332413"/>
+<rect x="562" y="220" width="32" height="380" fill="#382815"/>
+<rect x="594" y="220" width="32" height="380" fill="#2f2011"/><rect x="626" y="220" width="32" height="380" fill="#40301b"/>
+<rect x="658" y="220" width="32" height="380" fill="#332413"/>
+<path d="M386 340 q4 60 -2 120 M418 380 q3 50 -2 100 M610 360 q4 70 -2 130 M642 330 q3 60 -2 120" stroke="#241a0e" stroke-width="2" fill="none" opacity="0.8"/>
+<circle cx="452" cy="330" r="4" fill="#201409"/><circle cx="452" cy="330" r="7" fill="none" stroke="#241a0e" stroke-width="1.5"/>
+<circle cx="612" cy="470" r="3.5" fill="#201409"/><circle cx="612" cy="470" r="6" fill="none" stroke="#241a0e" stroke-width="1.5"/>
+</g>
+<!-- eave shadow + gable vent -->
+<path d="M370 300 L530 226 L690 300 L690 314 L530 242 L370 314 Z" fill="#221809"/>
+<path d="M512 288 L530 246 L548 288 Z" fill="#1a1208"/>
+<path d="M517 278 h26 M514 286 h32 M521 270 h18" stroke="#302010" stroke-width="2.5"/>
+<!-- tar-paper roof -->
+<path d="M344 314 L530 216 L716 314 L690 300 L530 230 L370 300 Z" fill="#171310"/>
+<path d="M356 312 L530 221 L704 312" stroke="#221c16" stroke-width="3" fill="none"/>
+<path d="M344 314 L530 216 L716 314" stroke="#9db8cc" stroke-width="2.5" fill="none" opacity="0.45"/>
+<g fill="#3a3430">
+<circle cx="400" cy="292" r="1.6"/><circle cx="452" cy="266" r="1.6"/><circle cx="504" cy="240" r="1.6"/>
+<circle cx="558" cy="240" r="1.6"/><circle cx="612" cy="268" r="1.6"/><circle cx="664" cy="294" r="1.6"/>
+</g>
+<!-- window with cracked pane -->
+<rect x="398" y="358" width="112" height="92" rx="4" fill="#0b1322"/>
+<path d="M404 366 l40 32 M416 364 l36 30" stroke="#7c9ab8" stroke-width="3" opacity="0.3"/>
+<path d="M468 402 l24 22 l-10 4" stroke="#7c9ab8" stroke-width="1.5" fill="none" opacity="0.28"/>
+<path d="M398 358 h112 v92 h-112 z M454 358 v92 M398 404 h112" stroke="#4a3620" stroke-width="6" fill="none"/>
+<rect x="392" y="450" width="124" height="8" rx="3" fill="#4a3620"/>
+<!-- hanging lantern (UNLIT) -->
+<path d="M380 296 V318" stroke="#2a2622" stroke-width="3" stroke-dasharray="4 3"/>
+<path d="M371 318 L389 318 L380 308 Z" fill="#23201c"/>
+<rect x="369" y="318" width="22" height="28" rx="3" fill="#23201c"/>
+<rect x="374" y="322" width="12" height="20" fill="#141820"/>
+<path d="M376 324 l7 8" stroke="#7c9ab8" stroke-width="1.5" opacity="0.4"/>
+<rect x="371" y="346" width="18" height="5" rx="2" fill="#191613"/>
+<!-- open doorway: dark interior, lit only by the shed_light overlay (542-666 x 346-598) -->
+<rect x="545" y="348" width="118" height="244" fill="#050302"/>
+<path d="M556 460 h94 M580 372 v50" stroke="#0e0a06" stroke-width="3"/>
+<rect x="531" y="348" width="14" height="244" fill="#4a3620"/>
+<path d="M534 360 v220" stroke="#33241a" stroke-width="2"/>
+<rect x="663" y="348" width="9" height="244" fill="#3a2a16"/>
+<rect x="527" y="338" width="149" height="10" rx="3" fill="#3f2c18"/>
+<path d="M545 348 h118 v244" stroke="#241a10" stroke-width="5" fill="none"/>
+<!-- base dressing -->
+<path d="M380 590 q6 -18 14 0 M400 592 q6 -16 12 0 M666 590 q6 -18 14 0 M646 592 q5 -14 11 0" stroke="#1d4a2e" stroke-width="4" fill="none"/>
+<g>
+<rect x="697" y="580" width="5" height="12" fill="#b8a08a"/><path d="M691 582 a9 7 0 0 1 17 0 Z" fill="#8a5a4a"/>
+<rect x="710" y="584" width="4" height="9" fill="#b8a08a"/><path d="M705 586 a7 6 0 0 1 14 0 Z" fill="#8a5a4a"/>
+</g>
+<!-- FLOOR GRATE : 416-640 x 558-702; grate_glint overlay 547-582 x 628-659; key_rise 534-592 x 580-657 -->
+<rect x="414" y="568" width="224" height="128" rx="12" fill="#262019"/>
+<rect x="424" y="576" width="204" height="112" rx="8" fill="#101812"/>
+<g stroke="#35463a" stroke-width="6">
+<path d="M446 584 v96 M484 584 v96 M522 584 v96 M560 584 v96 M598 584 v96"/>
+</g>
+<path d="M424 612 h204 M424 652 h204" stroke="#2b382e" stroke-width="5"/>
+<g fill="#5c6658">
+<circle cx="430" cy="584" r="4"/><circle cx="620" cy="584" r="4"/><circle cx="430" cy="680" r="4"/><circle cx="620" cy="680" r="4"/>
+</g>
+<path d="M438 572 q8 6 4 14 M612 690 q-8 -4 -4 -12" stroke="#6b4a2a" stroke-width="3" fill="none" opacity="0.5"/>
+<path d="M420 570 H632" stroke="#6f8276" stroke-width="2" opacity="0.4"/>
+<ellipse cx="602" cy="582" rx="9" ry="4.5" fill="#7c9a3a" transform="rotate(-16 602 582)"/>
+<!-- OVERGROWN BUSHES : 64-352 x 522-756; bush_stick overlay leans at 330-402 x 567-702 -->
+<g fill="#14371f">
+<ellipse cx="140" cy="650" rx="118" ry="84"/>
+<ellipse cx="250" cy="690" rx="128" ry="92"/>
+<ellipse cx="86" cy="740" rx="108" ry="76"/>
+<ellipse cx="330" cy="706" rx="86" ry="66"/>
+</g>
+<g fill="#1d5230">
+<ellipse cx="176" cy="632" rx="76" ry="52"/>
+<ellipse cx="274" cy="664" rx="72" ry="50"/>
+<ellipse cx="120" cy="690" rx="70" ry="48"/>
+<ellipse cx="322" cy="690" rx="56" ry="40"/>
+</g>
+<g fill="#2e7a48" opacity="0.75">
+<ellipse cx="154" cy="616" rx="40" ry="24"/>
+<ellipse cx="252" cy="644" rx="36" ry="22"/>
+<ellipse cx="330" cy="678" rx="30" ry="18"/>
+</g>
+<g stroke="#2e7a48" stroke-width="3" fill="none" opacity="0.5">
+<path d="M108 640 q10 -10 22 -8 M196 606 q10 -8 20 -6 M290 636 q10 -8 20 -4 M226 676 q10 -8 20 -6"/>
+</g>
+<path d="M96 600 q-4 -26 10 -38 M180 590 q2 -22 18 -30 M280 626 q6 -22 22 -26 M338 664 q6 -18 20 -22" stroke="#0d2a16" stroke-width="4" fill="none"/>
+<!-- moonflowers -->
+<g>
+<circle cx="198" cy="626" r="10" fill="#e8ecdc" opacity="0.14"/><circle cx="198" cy="626" r="5" fill="#e8ecdc"/><circle cx="198" cy="626" r="1.8" fill="#c9a24a"/>
+<circle cx="292" cy="652" r="9" fill="#e8ecdc" opacity="0.14"/><circle cx="292" cy="652" r="4.5" fill="#e8ecdc"/><circle cx="292" cy="652" r="1.6" fill="#c9a24a"/>
+<circle cx="126" cy="668" r="9" fill="#e8ecdc" opacity="0.14"/><circle cx="126" cy="668" r="4.5" fill="#e8ecdc"/><circle cx="126" cy="668" r="1.6" fill="#c9a24a"/>
+<path d="M192.5 626 h11 M198 620.5 v11 M286.8 652 h10.4 M292 646.8 v10.4 M120.8 668 h10.4 M126 662.8 v10.4" stroke="#1d5230" stroke-width="1.4"/>
+</g>
+<!-- ===== TIKI TORCH A (steady) ===== -->
+<ellipse cx="684" cy="666" rx="26" ry="7" fill="#000" opacity="0.35"/>
+<path d="M688 468 L680 664" stroke="#6b4a26" stroke-width="10"/>
+<path d="M682 500 l12 4 M681 560 l12 4 M680 620 l12 4" stroke="#3f2c14" stroke-width="4"/>
+<path d="M670 442 h36 l-6 30 h-24 Z" fill="#54381c"/>
+<path d="M672 448 l30 18 M702 448 l-30 18" stroke="#3a2410" stroke-width="2.5"/>
+<path d="M670 442 h36" stroke="#6b4a26" stroke-width="5"/>
+<circle cx="688" cy="428" r="85" fill="url(#groundsTorchGlow)"/>
+<path d="M688 404 q14 20 8 34 q-4 10 -8 12 q-4 -2 -8 -12 q-6 -14 8 -34 Z" fill="#ff9a3a"/>
+<path d="M688 418 q7 12 4 20 q-2 5 -4 6 q-2 -1 -4 -6 q-3 -8 4 -20 Z" fill="#ffd98a"/>
+<circle cx="688" cy="438" r="3" fill="#fff6d8"/>
+<circle cx="676" cy="398" r="2" fill="#ffd98a" opacity="0.8"/><circle cx="699" cy="390" r="1.7" fill="#ffd98a" opacity="0.6"/>
+<path d="M668 664 q5 -14 9 0 M690 664 q5 -14 9 0" stroke="#1d4a2e" stroke-width="4" fill="none"/>
+<!-- JANITOR GUS : 768-992 x 288-702 -->
+<g>
+<ellipse cx="880" cy="700" rx="70" ry="14" fill="#000" opacity="0.38"/>
+<!-- legs / boots -->
+<rect x="846" y="588" width="32" height="100" rx="8" fill="#46596e"/>
+<rect x="886" y="588" width="32" height="100" rx="8" fill="#46596e"/>
+<path d="M846 606 h32 M886 606 h32" stroke="#37485c" stroke-width="3"/>
+<rect x="850" y="630" width="22" height="18" rx="3" fill="#8a6636"/>
+<path d="M850 630 h22 M850 648 h22" stroke="#c9a24a" stroke-width="1.5" stroke-dasharray="3 3"/>
+<path d="M842 676 h40 v18 q0 6 -8 6 h-32 Z" fill="#241c14"/>
+<path d="M882 676 h40 v18 q0 6 -8 6 h-32 Z" fill="#241c14"/>
+<path d="M842 696 h40 M882 696 h40" stroke="#100c08" stroke-width="5"/>
+<!-- flannel torso + arms -->
+<rect x="838" y="436" width="88" height="132" rx="16" fill="#7c4034"/>
+<path d="M854 436 v130 M888 436 v130 M838 470 h88 M838 510 h88" stroke="#5c2c24" stroke-width="4" opacity="0.7"/>
+<rect x="824" y="440" width="20" height="112" rx="9" fill="#7c4034"/>
+<path d="M824 476 h20 M824 512 h20" stroke="#5c2c24" stroke-width="3" opacity="0.7"/>
+<ellipse cx="835" cy="560" rx="10" ry="11" fill="#d8b08a"/>
+<path d="M918 448 Q944 490 952 540" stroke="#7c4034" stroke-width="17" fill="none" stroke-linecap="round"/>
+<circle cx="953" cy="546" r="10" fill="#d8b08a"/>
+<!-- denim bib overalls -->
+<path d="M852 448 h60 v120 q-30 10 -60 0 Z" fill="#4a6178"/>
+<rect x="852" y="414" width="10" height="44" rx="4" fill="#4a6178"/>
+<rect x="902" y="414" width="10" height="44" rx="4" fill="#4a6178"/>
+<circle cx="858" cy="454" r="3.5" fill="#c9a24a"/><circle cx="906" cy="454" r="3.5" fill="#c9a24a"/>
+<rect x="868" y="466" width="28" height="24" rx="3" fill="#3d5266"/>
+<path d="M868 470 h28" stroke="#2e4152" stroke-width="2"/>
+<rect x="879" y="462" width="5" height="10" rx="2" fill="#e8c04a"/>
+<rect x="860" y="520" width="24" height="20" rx="3" fill="#8a6636"/>
+<path d="M860 520 h24 M860 540 h24" stroke="#c9a24a" stroke-width="1.5" stroke-dasharray="3 3"/>
+<path d="M852 560 q30 10 60 0" stroke="#37485c" stroke-width="4" fill="none"/>
+<!-- straw broom -->
+<path d="M948 386 L970 640" stroke="#8a6636" stroke-width="8"/>
+<path d="M947 384 l10 -2" stroke="#6b4a26" stroke-width="5"/>
+<path d="M958 640 h26 l6 16 h-40 Z" fill="#5c4020"/>
+<g stroke="#c9a24a" stroke-width="4" fill="none">
+<path d="M954 656 L936 698 M960 656 L950 700 M966 656 L962 700 M972 656 L974 700 M978 656 L986 698"/>
+</g>
+<g stroke="#8a6636" stroke-width="3" fill="none">
+<path d="M957 656 L943 699 M969 656 L968 700 M981 656 L990 696"/>
+</g>
+<path d="M952 664 h34" stroke="#3f2c14" stroke-width="3"/>
+<!-- leaf pile he keeps raking -->
+<path d="M918 700 q34 -18 74 -2 l-6 6 h-64 Z" fill="#23401f"/>
+<ellipse cx="936" cy="694" rx="9" ry="4.5" fill="#7c9a3a" transform="rotate(-14 936 694)"/>
+<ellipse cx="958" cy="690" rx="9" ry="4.5" fill="#a8552e" transform="rotate(10 958 690)"/>
+<ellipse cx="978" cy="695" rx="8" ry="4" fill="#8a6636" transform="rotate(-8 978 695)"/>
+<!-- head -->
+<rect x="870" y="408" width="22" height="14" fill="#d8b08a"/>
+<ellipse cx="881" cy="384" rx="26" ry="29" fill="#d8b08a"/>
+<path d="M858 396 a26 20 0 0 0 46 0" fill="#c69a74" opacity="0.45"/>
+<ellipse cx="856" cy="388" rx="5" ry="7" fill="#d8b08a"/>
+<circle cx="872" cy="382" r="3.2" fill="#221710"/>
+<circle cx="892" cy="382" r="3.2" fill="#221710"/>
+<path d="M863 374 q8 -6 15 -2 M883 372 q8 -4 15 2" stroke="#9c9ca4" stroke-width="3" fill="none"/>
+<path d="M877 390 q4 6 0 9" stroke="#b08a62" stroke-width="2.5" fill="none"/>
+<path d="M862 400 q9 8 17 4 q2 6 -8 7 q-10 0 -9 -11 Z M900 400 q-9 8 -17 4 q-2 6 8 7 q10 0 9 -11 Z" fill="#b8b8c0"/>
+<path d="M858 368 q-4 4 -4 9 M904 368 q4 4 4 9" stroke="#b08a62" stroke-width="2" fill="none"/>
+<!-- cap -->
+<path d="M853 372 a28 20 0 0 1 56 0 l-3 -22 h-50 Z" fill="#4e5a64"/>
+<rect x="846" y="346" width="68" height="11" rx="5" fill="#3f4a54"/>
+<circle cx="881" cy="342" r="4" fill="#3f4a54"/>
+<path d="M856 354 q10 -12 26 -13" stroke="#bcd7e8" stroke-width="2.5" fill="none" opacity="0.5"/>
+<path d="M918 440 q8 6 9 18" stroke="#bcd7e8" stroke-width="2.5" fill="none" opacity="0.45"/>
+</g>
+<!-- ===== TIKI TORCH B (guttering) ===== -->
+<ellipse cx="1040" cy="692" rx="22" ry="6" fill="#000" opacity="0.32"/>
+<path d="M1044 486 L1038 688" stroke="#6b4a26" stroke-width="9"/>
+<path d="M1039 520 l11 4 M1038 580 l11 4 M1037 636 l11 4" stroke="#3f2c14" stroke-width="4"/>
+<path d="M1026 462 h34 l-6 26 h-22 Z" fill="#54381c"/>
+<path d="M1028 466 l28 16 M1056 466 l-28 16" stroke="#3a2410" stroke-width="2.5"/>
+<path d="M1026 462 h34" stroke="#6b4a26" stroke-width="4"/>
+<circle cx="1043" cy="452" r="40" fill="url(#groundsTorchGlow)" opacity="0.6"/>
+<path d="M1043 442 q7 9 4 16 q-2 4 -4 5 q-2 -1 -4 -5 q-3 -7 4 -16 Z" fill="#ff9a3a"/>
+<path d="M1043 450 q3 5 2 8 q-1 2 -2 3 q-1 -1 -2 -3 q-1 -3 2 -8 Z" fill="#ffd98a"/>
+<path d="M1043 436 q10 -12 3 -24 q-6 -9 3 -20" stroke="#9aa8b4" stroke-width="3" fill="none" opacity="0.35"/>
+<!-- ===== leaning cabana umbrella skeleton ===== -->
+<ellipse cx="1158" cy="732" rx="58" ry="9" fill="#000" opacity="0.3"/>
+<path d="M1188 518 L1128 726" stroke="#5c4a36" stroke-width="8"/>
+<g stroke="#4a3a2c" stroke-width="4" fill="none">
+<path d="M1188 518 Q1130 528 1094 570"/>
+<path d="M1188 518 Q1146 522 1118 552"/>
+<path d="M1188 518 Q1216 530 1240 566"/>
+<path d="M1188 518 Q1226 540 1246 586"/>
+<path d="M1188 518 Q1196 560 1178 598"/>
+<path d="M1188 518 Q1214 514 1240 530"/>
+</g>
+<circle cx="1188" cy="518" r="6" fill="#3f3225"/>
+<path d="M1186 512 a6 6 0 0 1 6 3" stroke="#bcd7e8" stroke-width="1.8" fill="none" opacity="0.5"/>
+<path d="M1146 534 Q1156 564 1146 592 l7 -5 l4 8 l6 -9 l5 6 Q1174 568 1180 546 Q1168 534 1146 534 Z" fill="#a89078" opacity="0.9"/>
+<path d="M1152 538 q6 24 -1 46 M1166 540 q4 20 -2 40" stroke="#7c4a3a" stroke-width="5" opacity="0.8"/>
+<ellipse cx="1128" cy="728" rx="20" ry="7" fill="#3a3028"/>
+<rect x="1120" y="716" width="16" height="12" rx="3" fill="#463a30" transform="rotate(-16 1128 722)"/>
+<!-- VENDING MACHINE : 1248-1472 x 306-684; hanging box overlay 1322-1382 x 421-463; dropped box overlay 1274-1373 x 626-670 -->
+<ellipse cx="1358" cy="696" rx="128" ry="15" fill="#000" opacity="0.4"/>
+<rect x="1252" y="308" width="212" height="372" rx="12" fill="#641a24"/>
+<path d="M1258 312 q100 -14 200 0" stroke="#bcd7e8" stroke-width="3" fill="none" opacity="0.35"/>
+<rect x="1262" y="318" width="192" height="352" rx="8" fill="none" stroke="#8a2c36" stroke-width="3"/>
+<rect x="1394" y="318" width="60" height="352" rx="6" fill="#4f131c"/>
+<!-- glass front + interior -->
+<rect x="1268" y="318" width="122" height="244" rx="6" fill="#120d1c"/>
+<g clip-path="url(#groundsGlassClip)">
+<path d="M1272 368 h114 M1272 414 h114 M1272 460 h114 M1272 508 h114" stroke="#241a30" stroke-width="3"/>
+<rect x="1272" y="368" width="114" height="8" fill="#000" opacity="0.35"/>
+<rect x="1272" y="414" width="114" height="8" fill="#000" opacity="0.35"/>
+<rect x="1272" y="460" width="114" height="8" fill="#000" opacity="0.35"/>
+<rect x="1272" y="508" width="114" height="8" fill="#000" opacity="0.35"/>
+<!-- shelf 1 -->
+<rect x="1274" y="334" width="32" height="28" rx="3" fill="#d98f2b"/><rect x="1274" y="334" width="32" height="10" rx="3" fill="#b06f1c"/>
+<rect x="1310" y="334" width="32" height="28" rx="3" fill="#4a8fd9"/><rect x="1310" y="334" width="32" height="10" rx="3" fill="#3a6ea8"/>
+<rect x="1346" y="334" width="32" height="28" rx="3" fill="#57a35c"/><rect x="1346" y="334" width="32" height="10" rx="3" fill="#3f7c46"/>
+<!-- shelf 2 -->
+<rect x="1274" y="380" width="32" height="28" rx="3" fill="#c95c8f"/><rect x="1274" y="380" width="32" height="10" rx="3" fill="#a4436e"/>
+<rect x="1310" y="380" width="32" height="28" rx="3" fill="#d98f2b"/><rect x="1310" y="380" width="32" height="10" rx="3" fill="#b06f1c"/>
+<!-- shelf 3: one box left, EMPTY spiral slot right (the dangling Snax box is a game overlay) -->
+<rect x="1274" y="426" width="32" height="28" rx="3" fill="#4a8fd9"/><rect x="1274" y="426" width="32" height="10" rx="3" fill="#3a6ea8"/>
+<circle cx="1352" cy="452" r="10" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<!-- shelf 4: cans -->
+<rect x="1280" y="478" width="16" height="28" rx="5" fill="#c04a4a"/><rect x="1302" y="478" width="16" height="28" rx="5" fill="#4a8fd9"/><rect x="1340" y="478" width="16" height="28" rx="5" fill="#57a35c"/>
+<path d="M1284 482 v20 M1306 482 v20 M1344 482 v20" stroke="#fff" stroke-width="1.5" opacity="0.3"/>
+<!-- spirals at shelf fronts -->
+<circle cx="1292" cy="362" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<circle cx="1328" cy="362" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<circle cx="1364" cy="362" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<circle cx="1292" cy="408" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<circle cx="1328" cy="408" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<circle cx="1292" cy="454" r="8" fill="none" stroke="#5c5c66" stroke-width="3"/>
+<rect x="1268" y="318" width="14" height="244" fill="#000" opacity="0.35"/>
+<rect x="1268" y="520" width="122" height="42" fill="#0a0714" opacity="0.8"/>
+<!-- diagonal glass sheen -->
+<path d="M1268 520 L1390 400 L1390 372 L1268 492 Z" fill="#cfe0ff" opacity="0.10"/>
+<path d="M1268 468 L1390 348 L1390 334 L1268 454 Z" fill="#cfe0ff" opacity="0.07"/>
+</g>
+<rect x="1268" y="318" width="122" height="244" rx="6" fill="none" stroke="#7c8894" stroke-width="2.5"/>
+<!-- faded tropical panel art -->
+<rect x="1268" y="570" width="122" height="42" rx="4" fill="#55151e"/>
+<circle cx="1300" cy="590" r="12" fill="#e8c07c" opacity="0.25"/>
+<path d="M1330 604 q2 -22 -4 -30 q10 4 12 12 q4 -12 14 -14 q-8 10 -6 14 q10 -6 18 -2 q-12 4 -16 10 l-4 10 Z" fill="#d8a86a" opacity="0.3"/>
+<path d="M1272 604 q20 -8 40 0 q20 8 40 0 q16 -6 34 0" stroke="#d8a86a" stroke-width="2.5" fill="none" opacity="0.22"/>
+<!-- dispenser (dropped-box overlay lands here) -->
+<rect x="1268" y="620" width="122" height="46" rx="8" fill="#08050e"/>
+<rect x="1278" y="628" width="102" height="30" rx="4" fill="#140d1c" stroke="#241a30" stroke-width="2"/>
+<path d="M1284 654 q46 -10 90 0" stroke="#1d1428" stroke-width="3" fill="none"/>
+<!-- controls -->
+<text x="1424" y="400" font-family="Trebuchet MS" font-size="22" font-weight="bold" fill="#ffd98a" text-anchor="middle" transform="rotate(90 1424 400)">SCOOBY SNAX</text>
+<circle cx="1424" cy="496" r="15" fill="#26262e"/>
+<circle cx="1424" cy="496" r="6.5" fill="#3d3d48"/>
+<rect x="1410" y="524" width="28" height="8" rx="3" fill="#26262e"/>
+<rect x="1410" y="538" width="28" height="8" rx="3" fill="#26262e"/>
+<circle cx="1416" cy="562" r="3" fill="#ff6a5a"/><circle cx="1430" cy="562" r="3" fill="#5aff8f" opacity="0.7"/>
+<rect x="1412" y="592" width="24" height="16" rx="4" fill="#191921"/>
+<rect x="1266" y="676" width="26" height="8" rx="2" fill="#2a0d12"/>
+<rect x="1424" y="676" width="26" height="8" rx="2" fill="#2a0d12"/>
+<circle cx="1330" cy="440" r="185" fill="url(#groundsVendGlow)"/>
+<!-- DRAINED POOL : 704-1248 x 738-864; glove overlay 1016-1088 x 774-828 -->
+<rect x="664" y="724" width="632" height="24" rx="10" fill="#7e8468"/>
+<path d="M672 728 H1288" stroke="#a2a888" stroke-width="2" opacity="0.5"/>
+<path d="M664 748 L676 746 L731 872 L717 876 Z" fill="#5a604c"/>
+<path d="M1296 748 L1284 746 L1230 872 L1244 876 Z" fill="#5a604c"/>
+<g clip-path="url(#groundsPoolClip)">
+<path d="M676 744 L1284 744 L1230 872 L730 872 Z" fill="url(#groundsPoolFloor)"/>
+<rect x="676" y="744" width="608" height="26" fill="#26525c"/>
+<path d="M676 757 H1284" stroke="#1c424a" stroke-width="1.5"/>
+<path d="M676 770 H1284" stroke="#0f272c" stroke-width="3"/>
+<text x="964" y="766" font-family="Trebuchet MS" font-size="19" font-weight="bold" letter-spacing="5" fill="#b8ccc4" text-anchor="middle" opacity="0.5">NO DIVING</text>
+<!-- mosaic tile ring -->
+<path d="M678 750 H1282" stroke="#2c6a72" stroke-width="9"/>
+<path d="M678 750 H1282" stroke="#52aab4" stroke-width="9" stroke-dasharray="14 10"/>
+<path d="M685 750 H1282" stroke="#8adce4" stroke-width="9" stroke-dasharray="4 30"/>
+<path d="M681 756 L731 868" stroke="#2c6a72" stroke-width="7"/>
+<path d="M681 756 L731 868" stroke="#52aab4" stroke-width="7" stroke-dasharray="10 9"/>
+<path d="M1279 756 L1233 868" stroke="#2c6a72" stroke-width="7"/>
+<path d="M1279 756 L1233 868" stroke="#52aab4" stroke-width="7" stroke-dasharray="10 9"/>
+<!-- stains + cracks -->
+<ellipse cx="900" cy="832" rx="120" ry="26" fill="#0a1a20" opacity="0.5"/>
+<ellipse cx="1120" cy="802" rx="80" ry="20" fill="#0a1a20" opacity="0.45"/>
+<path d="M818 797 q40 14 98 8" stroke="#2c5560" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path d="M820 800 q40 14 96 8 q50 -6 84 12 M880 806 l18 22 M950 806 l-8 20" stroke="#081418" stroke-width="3.5" fill="none"/>
+<path d="M1060 776 q-10 30 8 60 M1064 800 l20 8" stroke="#081418" stroke-width="3" fill="none"/>
+<path d="M760 780 l30 10 M775 785 l-4 16" stroke="#081418" stroke-width="2.5" fill="none"/>
+<path d="M912 812 q-4 -16 4 -24 M918 812 q2 -14 -2 -22" stroke="#2c5a3c" stroke-width="3" fill="none"/>
+<!-- sneaker prints leading west toward the lobby -->
+<g fill="#35594e" opacity="0.85">
+<ellipse cx="1076" cy="832" rx="6" ry="11" transform="rotate(-70 1076 832)"/><circle cx="1088" cy="836" r="3.5"/>
+<ellipse cx="1014" cy="812" rx="6" ry="11" transform="rotate(-72 1014 812)"/><circle cx="1026" cy="815" r="3.5"/>
+<ellipse cx="952" cy="798" rx="6" ry="11" transform="rotate(-74 952 798)"/><circle cx="964" cy="800" r="3.5"/>
+<ellipse cx="892" cy="788" rx="6" ry="11" transform="rotate(-76 892 788)"/><circle cx="904" cy="790" r="3.5"/>
+</g>
+<!-- leaf drifts (right drift cushions the glove overlay zone) -->
+<path d="M800 852 q70 -20 170 -6 q60 8 90 -4 l-14 26 h-236 Z" fill="#1e3d28" opacity="0.9"/>
+<path d="M986 830 q60 -34 150 -14 q30 6 20 20 l-10 12 h-152 Z" fill="#1c3a26"/>
+<g opacity="0.95">
+<ellipse cx="852" cy="850" rx="10" ry="5" fill="#4a8f5c" transform="rotate(-14 852 850)"/>
+<ellipse cx="900" cy="844" rx="10" ry="5" fill="#7c9a3a" transform="rotate(10 900 844)"/>
+<ellipse cx="948" cy="850" rx="9" ry="4.5" fill="#8a6636" transform="rotate(-8 948 850)"/>
+<ellipse cx="1010" cy="820" rx="10" ry="5" fill="#7c9a3a" transform="rotate(-16 1010 820)"/>
+<ellipse cx="1042" cy="806" rx="10" ry="5" fill="#4a8f5c" transform="rotate(12 1042 806)"/>
+<ellipse cx="1072" cy="816" rx="9" ry="4.5" fill="#a8552e" transform="rotate(-10 1072 816)"/>
+<ellipse cx="1098" cy="804" rx="9" ry="4.5" fill="#8a6636" transform="rotate(14 1098 804)"/>
+<ellipse cx="1124" cy="818" rx="10" ry="5" fill="#7c9a3a" transform="rotate(-12 1124 818)"/>
+<ellipse cx="1056" cy="832" rx="9" ry="4.5" fill="#4a8f5c" transform="rotate(8 1056 832)"/>
+</g>
+</g>
+<!-- depth markers + ladder -->
+<text x="716" y="742" font-family="Trebuchet MS" font-size="13" font-weight="bold" fill="#3a4032">3FT</text>
+<text x="1236" y="742" font-family="Trebuchet MS" font-size="13" font-weight="bold" fill="#3a4032" text-anchor="end">9FT</text>
+<g stroke="#8fa8b8" stroke-width="5" fill="none">
+<path d="M1218 812 V730 q0 -18 18 -18 h10 v12"/>
+<path d="M1246 806 V730 q0 -18 18 -18 h10 v10"/>
+<path d="M1218 752 h28 M1218 776 h28 M1218 800 h28"/>
+</g>
+<path d="M1220 810 V732" stroke="#d8e6ee" stroke-width="1.5" opacity="0.6"/>
+<ellipse cx="1350" cy="702" rx="140" ry="22" fill="url(#groundsVendGlow)"/>
+<!-- ===== foreground framing ===== -->
+<g fill="#123626">
+<use href="#groundsMonst" transform="translate(24 924) scale(1.3)"/>
+<use href="#groundsMonst" transform="translate(1592 930) scale(-1.35 1.35) rotate(-6)"/>
+</g>
+<g fill="#0d2a1c">
+<use href="#groundsMonst" transform="translate(140 936) scale(1.05) rotate(10)"/>
+</g>
+<path d="M46 902 Q60 830 116 800 M168 918 Q186 862 232 842" stroke="#1d5a3c" stroke-width="3" fill="none" opacity="0.5"/>
+<use href="#groundsFern" transform="translate(1420 904) rotate(-14) scale(1.4)"/>
+<use href="#groundsFern" transform="translate(1502 912) rotate(6) scale(1.6)" opacity="0.85"/>
+<use href="#groundsFern" transform="translate(1362 908) rotate(-30) scale(1.1)" opacity="0.7"/>
+<path d="M320 900 q2 -26 12 -34 M336 900 q0 -20 8 -28 M604 900 q2 -24 12 -32 M1250 900 q2 -22 10 -30 M1310 900 q0 -18 8 -26" stroke="#0a2416" stroke-width="5" fill="none"/>
+<!-- fireflies -->
+<g fill="#d9f27e">
+<circle cx="322" cy="556" r="2.4"/><circle cx="354" cy="592" r="2" opacity="0.7"/><circle cx="288" cy="616" r="1.8" opacity="0.6"/>
+<circle cx="150" cy="544" r="2.2" opacity="0.85"/><circle cx="98" cy="590" r="1.8" opacity="0.6"/><circle cx="716" cy="536" r="2" opacity="0.8"/>
+<circle cx="662" cy="566" r="1.6" opacity="0.55"/><circle cx="1160" cy="646" r="2.2" opacity="0.9"/><circle cx="1198" cy="676" r="1.8" opacity="0.6"/>
+<circle cx="1120" cy="610" r="2" opacity="0.7"/><circle cx="1520" cy="566" r="2.2" opacity="0.8"/><circle cx="1556" cy="602" r="1.8" opacity="0.6"/>
+</g>
+<g fill="#d9f27e" opacity="0.12">
+<circle cx="322" cy="556" r="7"/><circle cx="150" cy="544" r="7"/><circle cx="716" cy="536" r="6"/><circle cx="1160" cy="646" r="7"/><circle cx="1520" cy="566" r="7"/>
+</g>
+<rect width="1600" height="900" filter="url(#groundsGrain)" opacity="0.3"/>
+<rect width="1600" height="900" fill="url(#groundsVign)"/>
 </svg>
