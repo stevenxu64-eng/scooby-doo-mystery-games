@@ -4,7 +4,9 @@ import { useEffect, useState, type ReactNode } from 'react'
  * Cinematic intro cutscene: the Mystery Machine rolls up to the abandoned
  * Grand Palm Resort at night while a bottom story card steps through four
  * beats explaining why the gang is here. Fully self-contained (inline SVG +
- * scoped "intro-" keyframes).
+ * scoped "intro-" keyframes). Scene art matches the repainted backdrop bar:
+ * layered depth, gradient lighting with glow pools, dense set dressing,
+ * cartoon shapes with dark outline accents, capped vignette.
  */
 
 const STARS: [number, number, number, number][] = [
@@ -13,6 +15,7 @@ const STARS: [number, number, number, number][] = [
   [505, 140, 1.2, 0.9], [548, 24, 1.4, 2.4], [600, 82, 1.7, 0.2], [648, 150, 1.1, 1.6],
   [700, 44, 1.5, 0.8], [742, 108, 1.2, 2.2], [800, 30, 1.7, 1.2], [858, 70, 1.2, 0.4],
   [905, 140, 1.4, 1.9], [935, 42, 1.7, 0.6], [520, 200, 1.0, 1.3], [70, 230, 1.1, 2.6],
+  [378, 178, 1.0, 3.1], [618, 218, 1.0, 1.9], [258, 214, 1.1, 0.9], [890, 208, 1.0, 2.8],
 ]
 
 /** Neon letters — a couple flicker, one is dead and just buzzes. */
@@ -46,24 +49,37 @@ function NeonSignRow() {
   )
 }
 
+/** Detailed palm silhouette: curved ringed trunk + reusable fronds via <use>. */
 function Palm({ x, y, s, sway, delay = '0s', flip = false }: {
   x: number; y: number; s: number; sway: string; delay?: string; flip?: boolean
 }) {
   return (
     <g transform={`translate(${x} ${y}) scale(${flip ? -s : s} ${s})`}>
-      <g className="intro-palm" style={{ animationDuration: sway, animationDelay: delay }} fill="#04121b">
-        {/* curved trunk */}
-        <path d="M-3 0 Q2 -24 14 -46 L19 -43 Q8 -23 4 0 Z" />
-        <path d="M-1 -8 h5 M0 -18 h5 M3 -28 h5" stroke="#04121b" strokeWidth="1.4" />
-        {/* frond crown */}
-        <path d="M16 -46 Q-6 -58 -25 -50 Q-4 -43 16 -43 Z" />
-        <path d="M16 -46 Q-2 -67 -21 -69 Q0 -52 17 -43 Z" />
-        <path d="M16 -46 Q13 -73 1 -81 Q10 -58 19 -44 Z" />
-        <path d="M16 -46 Q29 -71 47 -73 Q28 -54 17 -43 Z" />
-        <path d="M16 -46 Q38 -59 55 -53 Q34 -43 16 -42 Z" />
-        <path d="M16 -45 Q36 -45 51 -35 Q30 -37 15 -41 Z" />
-        <circle cx="13" cy="-44" r="2.6" />
-        <circle cx="19" cy="-42" r="2.2" />
+      <g className="intro-palm" style={{ animationDuration: sway, animationDelay: delay }}>
+        {/* curved trunk with ring notches */}
+        <path d="M-5 0 Q-10 -38 -4 -64 Q-1 -79 -8 -92 L3 -97 Q9 -80 5 -63 Q2 -38 9 0 Z" fill="#0a2029" />
+        <path d="M-5 -26 q7 3 12 1 M-4 -46 q7 3 12 1 M-4 -66 q6 3 11 1" stroke="#061620" strokeWidth="1.6" fill="none" />
+        {/* back frond crown (dark) */}
+        <g fill="#0c2a38">
+          <g transform="translate(-2 -94)">
+            <use href="#intro-frond" transform="rotate(-98)" />
+            <use href="#intro-frond" transform="rotate(-62)" />
+            <use href="#intro-frond" transform="rotate(-28)" />
+            <use href="#intro-frond" transform="rotate(6)" />
+            <use href="#intro-frond" transform="rotate(44) scale(0.92)" />
+            <use href="#intro-frond" transform="rotate(80) scale(0.8)" />
+          </g>
+        </g>
+        {/* moonlit front fronds */}
+        <g fill="#15455a" opacity="0.9">
+          <g transform="translate(-2 -94)">
+            <use href="#intro-frond" transform="rotate(-44) scale(0.82)" />
+            <use href="#intro-frond" transform="rotate(22) scale(0.76)" />
+          </g>
+        </g>
+        {/* coconuts */}
+        <circle cx="0" cy="-92" r="3.6" fill="#061821" />
+        <circle cx="7" cy="-89" r="3" fill="#061821" />
       </g>
     </g>
   )
@@ -74,7 +90,7 @@ function MysteryMachine() {
   const wheel = (cx: number) => (
     <g>
       <circle cx={cx} cy={84} r={19} fill="#0c1622" />
-      <circle cx={cx} cy={84} r={15.5} fill="#242b35" stroke="#0f151d" strokeWidth="3" />
+      <circle cx={cx} cy={84} r={15.5} fill="#2b3440" stroke="#0f151d" strokeWidth="3" />
       <circle cx={cx} cy={84} r={8.6} fill="url(#intro-chrome)" stroke="#5c6b7a" strokeWidth="1.2" />
       <g className="intro-wheel" stroke="#5c6b7a" strokeWidth="1.6">
         <line x1={cx - 7} y1={84} x2={cx + 7} y2={84} />
@@ -84,6 +100,8 @@ function MysteryMachine() {
         <circle cx={cx - 5} cy={84} r={1.2} fill="#5c6b7a" stroke="none" />
       </g>
       <circle cx={cx} cy={84} r={2.4} fill="#39434f" />
+      {/* static specular arc so the chrome reads even mid-spin */}
+      <path d={`M${cx - 6} ${84 - 5.5} a8.6 8.6 0 0 1 7.5 -3`} stroke="#eef6fb" strokeWidth="1.3" fill="none" opacity="0.75" />
     </g>
   )
 
@@ -107,15 +125,20 @@ function MysteryMachine() {
   return (
     <g transform="translate(60 402)">
       <g className="intro-van">
-        {/* ground shadow rides along but does not bounce */}
-        <ellipse cx="102" cy="99" rx="102" ry="6" fill="#000" opacity="0.35" />
+        {/* soft ground shadow rides along but does not bounce */}
+        <ellipse cx="102" cy="99" rx="106" ry="7.5" fill="url(#intro-vshadow)" />
         <g className="intro-van-brake">
           <g className="intro-van-bob">
             {/* headlight cone sweeping the road ahead */}
             <polygon className="intro-beam" points="203,45 348,16 348,86 203,61" fill="url(#intro-beamgrad)" />
             {/* body */}
             <rect x="2" y="14" width="200" height="64" rx="12" fill="url(#intro-vanbody)" stroke="#123a3a" strokeWidth="2.5" />
-            <path d="M12 17 q90 -6 180 0" stroke="#8fe6d6" strokeWidth="2.4" fill="none" opacity="0.55" strokeLinecap="round" />
+            {/* two-tone lower band */}
+            <path d="M4 51 H201 V64 Q201 77 189 77 H15 Q4 77 4 64 Z" fill="#1f7f74" />
+            <path d="M12 17 q90 -6 180 0" stroke="#a9f0e2" strokeWidth="2.4" fill="none" opacity="0.6" strokeLinecap="round" />
+            {/* moonlight reflection streak across the panel */}
+            <path d="M172 20 L150 74" stroke="#c9f4ea" strokeWidth="9" opacity="0.14" strokeLinecap="round" />
+            <path d="M182 22 L164 68" stroke="#c9f4ea" strokeWidth="3.5" opacity="0.18" strokeLinecap="round" />
             {/* orange roof stripe + trim line */}
             <rect x="5" y="15.5" width="194" height="9" rx="4" fill="#f08a1d" stroke="#b85606" strokeWidth="1.2" />
             <rect x="4" y="46" width="197" height="5" fill="#f08a1d" stroke="#b85606" strokeWidth="1" />
@@ -126,13 +149,17 @@ function MysteryMachine() {
               stroke="#4c8827"
               strokeWidth="1.5"
             />
+            {/* wheel wells */}
+            <path d="M25 78 a19 19 0 0 1 38 0 Z" fill="#0b161e" />
+            <path d="M145 78 a19 19 0 0 1 38 0 Z" fill="#0b161e" />
             {/* windshield + door window */}
             <path d="M166 21 L172 44 L198 44 L198 27 Q198 21 190 21 Z" fill="url(#intro-glass)" stroke="#123a3a" strokeWidth="2" />
             <path d="M176 25 l6 15" stroke="#fff" strokeWidth="2" opacity="0.55" strokeLinecap="round" />
             <rect x="124" y="22" width="36" height="22" rx="3.5" fill="url(#intro-glass)" stroke="#123a3a" strokeWidth="2" />
             <path d="M131 25 l5 15" stroke="#fff" strokeWidth="1.8" opacity="0.5" strokeLinecap="round" />
-            {/* door seam + handle */}
+            {/* door seams + handle */}
             <path d="M121 22 V66" stroke="#1d6a60" strokeWidth="1.6" opacity="0.8" />
+            <path d="M162 46 V66" stroke="#1d6a60" strokeWidth="1.4" opacity="0.7" />
             <rect x="146" y="49.5" width="9" height="2.6" rx="1.3" fill="#dce4ea" stroke="#5c6b7a" strokeWidth="0.7" />
             {/* side panel lettering */}
             <text x="62" y="34" textAnchor="middle" fontFamily='"Trebuchet MS", sans-serif' fontSize="11.5" fontWeight="bold" fill="#f08a1d" stroke="#8a3f04" strokeWidth="0.35" letterSpacing="0.4">
@@ -145,22 +172,36 @@ function MysteryMachine() {
             {flower(23, 57, 0.9)}
             {flower(86, 70, 1)}
             {flower(112, 56, 0.72)}
-            {/* roof rack */}
+            {/* roof rack + strapped duffel bag */}
             <rect x="26" y="8" width="128" height="3.6" rx="1.8" fill="#cbd5df" stroke="#7a8794" strokeWidth="1" />
             <path d="M36 11.5 v4 M76 11.5 v4 M116 11.5 v4 M148 11.5 v4" stroke="#7a8794" strokeWidth="2" />
+            <rect x="58" y="-2.5" width="46" height="10.5" rx="5" fill="#a8763c" stroke="#6e4a20" strokeWidth="1.3" />
+            <path d="M70 -2.5 v10.5 M92 -2.5 v10.5" stroke="#6e4a20" strokeWidth="1.6" />
+            <path d="M76 -2.5 q5 -5 10 0" stroke="#6e4a20" strokeWidth="1.6" fill="none" />
+            {/* orange fender arcs with dark outline */}
+            <path d="M23.5 78 A20.5 20.5 0 0 1 64.5 78" fill="none" stroke="#b85606" strokeWidth="6" />
+            <path d="M23.5 78 A20.5 20.5 0 0 1 64.5 78" fill="none" stroke="#f08a1d" strokeWidth="3.4" />
+            <path d="M143.5 78 A20.5 20.5 0 0 1 184.5 78" fill="none" stroke="#b85606" strokeWidth="6" />
+            <path d="M143.5 78 A20.5 20.5 0 0 1 184.5 78" fill="none" stroke="#f08a1d" strokeWidth="3.4" />
             {/* mirror */}
             <path d="M197 24 l7 -7" stroke="#123a3a" strokeWidth="2" />
             <rect x="202" y="12" width="5.5" height="8.5" rx="1.4" fill="#2f9c8c" stroke="#123a3a" strokeWidth="1.4" />
-            {/* bumpers */}
-            <rect x="-5" y="66" width="13" height="8.5" rx="3.5" fill="#f08a1d" stroke="#b85606" strokeWidth="1.4" />
-            <rect x="196" y="66" width="13" height="8.5" rx="3.5" fill="#f08a1d" stroke="#b85606" strokeWidth="1.4" />
-            {/* tail light + brake flash */}
+            {/* chrome bumpers with specular highlights */}
+            <rect x="-5" y="66" width="13" height="8.5" rx="3.5" fill="url(#intro-chrome)" stroke="#5c6b7a" strokeWidth="1.3" />
+            <rect x="196" y="66" width="13" height="8.5" rx="3.5" fill="url(#intro-chrome)" stroke="#5c6b7a" strokeWidth="1.3" />
+            <path d="M-3 67.6 h7 M198 67.6 h7" stroke="#fff" strokeWidth="1.3" opacity="0.85" strokeLinecap="round" />
+            {/* tail light + amber reflector + brake flash */}
             <rect x="0.5" y="55" width="4" height="6.5" rx="1.2" fill="#e04b3a" stroke="#8f2418" strokeWidth="0.8" />
+            <rect x="0.5" y="63.5" width="4" height="3.6" rx="1" fill="#e0942e" stroke="#8a5210" strokeWidth="0.7" />
             <circle className="intro-brakelight" cx="2.5" cy="58" r="7" fill="#ff5b45" opacity="0" />
-            {/* headlight */}
+            {/* mud flap behind the rear wheel */}
+            <rect x="16.5" y="76" width="7" height="15" rx="2" fill="#101820" stroke="#060b10" strokeWidth="1" />
+            {/* headlight: glass + radial glow */}
+            <circle cx="199" cy="52" r="13" fill="url(#intro-headglow)" />
             <circle cx="199" cy="52" r="7" fill="#ffe9a8" opacity="0.4" />
-            <circle cx="199" cy="52" r="4.4" fill="#ffe9a8" stroke="#d9a520" strokeWidth="1.4" />
-            {/* wheel wells + wheels */}
+            <circle cx="199" cy="52" r="4.4" fill="#fff3cd" stroke="#d9a520" strokeWidth="1.4" />
+            <path d="M196.4 50.4 a4.4 4.4 0 0 1 3.4 -2" stroke="#fff" strokeWidth="1.1" fill="none" opacity="0.8" />
+            {/* wheels */}
             {wheel(44)}
             {wheel(164)}
           </g>
@@ -181,23 +222,38 @@ function NightScene() {
     <svg viewBox="0 0 960 540" preserveAspectRatio="xMidYMax slice" className="absolute inset-0 h-full w-full">
       <defs>
         <linearGradient id="intro-sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#060d1e" />
-          <stop offset="72%" stopColor="#0d2e38" />
-          <stop offset="100%" stopColor="#175046" />
+          <stop offset="0%" stopColor="#0a1128" />
+          <stop offset="40%" stopColor="#123650" />
+          <stop offset="70%" stopColor="#175a54" />
+          <stop offset="100%" stopColor="#1e6a5b" />
+        </linearGradient>
+        <linearGradient id="intro-sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#17595a" />
+          <stop offset="50%" stopColor="#10404a" />
+          <stop offset="100%" stopColor="#0b2a36" />
+        </linearGradient>
+        <linearGradient id="intro-road" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#313c50" />
+          <stop offset="55%" stopColor="#222b3c" />
+          <stop offset="100%" stopColor="#141a26" />
         </linearGradient>
         <radialGradient id="intro-halo" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#f0ebc8" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#f0ebc8" stopOpacity="0.32" />
           <stop offset="60%" stopColor="#f0ebc8" stopOpacity="0.1" />
           <stop offset="100%" stopColor="#f0ebc8" stopOpacity="0" />
         </radialGradient>
+        <radialGradient id="intro-moonsurf" cx="42%" cy="40%" r="70%">
+          <stop offset="0%" stopColor="#fbfdf2" />
+          <stop offset="100%" stopColor="#d9e1ec" />
+        </radialGradient>
         <linearGradient id="intro-tower" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#122736" />
-          <stop offset="100%" stopColor="#0a1520" />
+          <stop offset="0%" stopColor="#1d4254" />
+          <stop offset="100%" stopColor="#0f2533" />
         </linearGradient>
         <linearGradient id="intro-vanbody" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#55cdbb" />
-          <stop offset="55%" stopColor="#3bb8a8" />
-          <stop offset="100%" stopColor="#2c9384" />
+          <stop offset="0%" stopColor="#5fd6c4" />
+          <stop offset="55%" stopColor="#3fbcac" />
+          <stop offset="100%" stopColor="#27897b" />
         </linearGradient>
         <linearGradient id="intro-glass" x1="0" y1="0" x2="0.3" y2="1">
           <stop offset="0%" stopColor="#c3e6f4" />
@@ -211,85 +267,216 @@ function NightScene() {
           <stop offset="0%" stopColor="#ffedb0" stopOpacity="0.5" />
           <stop offset="100%" stopColor="#ffedb0" stopOpacity="0" />
         </linearGradient>
+        <radialGradient id="intro-headglow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ffe9a8" stopOpacity="0.75" />
+          <stop offset="100%" stopColor="#ffe9a8" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="intro-vshadow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#000" stopOpacity="0.42" />
+          <stop offset="100%" stopColor="#000" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="intro-canopy" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ffcf7e" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#ffcf7e" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="intro-neonhalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#7df2dc" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#7df2dc" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="intro-heat" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#cfe9ff" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#cfe9ff" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="intro-shoot" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#eef2fa" stopOpacity="0" />
+          <stop offset="100%" stopColor="#eef2fa" stopOpacity="0.9" />
+        </linearGradient>
         <filter id="intro-glow" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="2.6" />
         </filter>
+        <filter id="intro-glow2" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="6" />
+        </filter>
+        {/* reusable flora */}
+        <path id="intro-frond" d="M0 0 Q23 -17 54 -13 Q32 -9 23 -5 Q40 -7 59 1 Q33 1 22 2.5 Q10 2.5 0 0 Z" />
+        <path id="intro-monst" d="M0 0 Q-5 -26 11 -43 Q8 -28 14 -25 Q17 -46 33 -52 Q26 -34 31 -30 Q41 -44 56 -42 Q45 -29 46 -24 Q59 -26 65 -15 Q51 -12 49 -7 Q56 -2 55 4 Q42 2 27 4 Q10 5 0 0 Z" />
+        <g id="intro-fern" fill="none" stroke="#14503a" strokeWidth="2.5" strokeLinecap="round">
+          <path d="M0 0 Q5 -25 2 -48 M1.5 -9 l-8 -5 M2 -10 l7 -6 M2.5 -19 l-7.5 -4.5 M3 -20 l6.5 -5.5 M3 -29 l-6.5 -4 M3.5 -30 l5.5 -5 M3 -38 l-5 -3.5 M3.5 -39 l4.5 -4" />
+        </g>
       </defs>
 
       {/* ---------- sky ---------- */}
       <rect x="0" y="0" width="960" height="540" fill="url(#intro-sky)" />
+      {/* distant heat lightning over the sea horizon */}
+      <ellipse cx="120" cy="400" rx="150" ry="44" fill="url(#intro-heat)" className="intro-heatlight" />
       {STARS.map(([x, y, r, d], i) => (
         <circle key={i} cx={x} cy={y} r={r} fill="#f4f0d8" className="intro-twinkle" style={{ animationDelay: `${d}s` }} />
       ))}
-      {/* moon + halo */}
-      <circle cx="180" cy="104" r="105" fill="url(#intro-halo)" />
-      <circle cx="180" cy="104" r="44" fill="#f2ecd7" />
-      <g fill="#b9b092" opacity="0.28">
-        <circle cx="166" cy="92" r="7" />
-        <circle cx="196" cy="116" r="5" />
-        <circle cx="178" cy="126" r="3.5" />
-        <circle cx="200" cy="90" r="3" />
+      {/* cross-sparkles on the brightest stars */}
+      <g stroke="#f4f0d8" strokeWidth="1.2" opacity="0.85" fill="none">
+        <path d="M235 50 v20 M225 60 h20" className="intro-twinkle" style={{ animationDelay: '0.3s' }} />
+        <path d="M455 39 v18 M446 48 h18" className="intro-twinkle" style={{ animationDelay: '1.8s' }} />
+        <path d="M700 36 v16 M692 44 h16" className="intro-twinkle" style={{ animationDelay: '0.8s' }} />
       </g>
-      {/* drifting night cloud */}
-      <g className="intro-cloud" fill="#0b1c2c" opacity="0.5">
-        <rect x="90" y="70" width="190" height="12" rx="6" />
-        <rect x="140" y="86" width="130" height="9" rx="4.5" />
+      {/* shooting star */}
+      <path d="M556 58 L668 92 L666 97 L554 62 Z" fill="url(#intro-shoot)" />
+      <circle cx="666" cy="94" r="2.4" fill="#fff" />
+      {/* moon: layered halo + cratered surface */}
+      <circle cx="180" cy="104" r="108" fill="url(#intro-halo)" />
+      <circle cx="180" cy="104" r="70" fill="url(#intro-halo)" opacity="0.9" />
+      <circle cx="180" cy="104" r="44" fill="url(#intro-moonsurf)" />
+      <g fill="#c9d1e0">
+        <circle cx="165" cy="92" r="9" />
+        <circle cx="196" cy="116" r="6.5" />
+        <circle cx="184" cy="84" r="4" />
+        <circle cx="162" cy="118" r="5" />
+        <circle cx="201" cy="94" r="3" />
+        <circle cx="178" cy="104" r="2.6" />
+      </g>
+      <g fill="#b4bfd2" opacity="0.7">
+        <circle cx="167" cy="94" r="5.5" />
+        <circle cx="198" cy="118" r="4" />
+        <circle cx="164" cy="120" r="3" />
+      </g>
+      {/* drifting clouds */}
+      <g className="intro-cloud" style={{ animationDuration: '30s' }} fill="#0a1a33" opacity="0.7">
+        <path d="M250 168 q52 -20 118 -8 q46 8 96 0 q-40 26 -120 18 q-64 -2 -94 -10 Z" />
+      </g>
+      <g className="intro-cloud" style={{ animationDuration: '34s', animationDelay: '-5s' }} fill="#0a1a33" opacity="0.3">
+        <path d="M136 138 q34 -8 78 -3 q-26 12 -78 7 Z" />
+      </g>
+      <g className="intro-cloud" style={{ animationDuration: '22s', animationDelay: '-8s' }} fill="#0a1a33" opacity="0.55">
+        <path d="M520 132 q44 -14 96 -4 q-30 20 -96 12 Z" />
+      </g>
+      <g className="intro-cloud" style={{ animationDuration: '26s', animationDelay: '-15s' }} fill="#0a1a33" opacity="0.6">
+        <path d="M640 60 q48 -14 104 -2 q-34 20 -104 10 Z" />
       </g>
 
-      {/* ---------- sea + headland ---------- */}
-      <rect x="0" y="398" width="960" height="72" fill="#0c333a" />
-      <path d="M0 398 H960" stroke="#1f5c55" strokeWidth="1.5" opacity="0.8" />
-      <g stroke="#9fd8c6" strokeWidth="2" strokeLinecap="round" opacity="0.3">
-        <path d="M140 412 h34 M168 424 h26 M150 438 h40 M180 452 h28" className="intro-twinkle" style={{ animationDelay: '0.8s' }} />
-        <path d="M420 420 h22 M330 442 h26" opacity="0.5" />
+      {/* ---------- moonlit sea ---------- */}
+      <rect x="0" y="398" width="960" height="70" fill="url(#intro-sea)" />
+      <path d="M0 398 H960" stroke="#2f7a6c" strokeWidth="2" opacity="0.8" />
+      {/* moonlight lane glints */}
+      <g stroke="#a9e6d2" strokeLinecap="round" fill="none">
+        <path d="M150 406 h44" strokeWidth="2.5" opacity="0.5" className="intro-twinkle" style={{ animationDelay: '0.4s' }} />
+        <path d="M132 416 h30 M186 419 h22" strokeWidth="2" opacity="0.4" className="intro-twinkle" style={{ animationDelay: '1.5s' }} />
+        <path d="M148 430 h52 M120 442 h24" strokeWidth="2.5" opacity="0.35" className="intro-twinkle" style={{ animationDelay: '2.3s' }} />
+        <path d="M172 452 h40 M226 436 h18" strokeWidth="2" opacity="0.3" className="intro-twinkle" style={{ animationDelay: '0.9s' }} />
       </g>
+      <g stroke="#5fae9c" strokeWidth="1.8" strokeLinecap="round" opacity="0.35" fill="none">
+        <path d="M330 424 h24 M420 440 h28 M300 452 h20 M500 430 h22 M96 448 h16" />
+      </g>
+      {/* distant pier with a lonely lamp */}
+      <g fill="#0a232e">
+        <rect x="16" y="406" width="146" height="4" rx="1.5" />
+        <path d="M24 410 v9 M48 410 v8 M72 410 v8 M96 410 v7 M120 410 v7 M144 410 v6" stroke="#0a232e" strokeWidth="3" />
+        <rect x="140" y="396" width="18" height="10" rx="2" />
+        <path d="M140 396 l9 -6 9 6 z" />
+      </g>
+      <circle cx="146" cy="401" r="1.6" fill="#ffd98a" opacity="0.8" />
+      {/* bell buoy with blinking light */}
+      <path d="M243 434 l5 -12 5 12 q-5 3 -10 0 z" fill="#0d2833" />
+      <circle cx="248" cy="419" r="2" fill="#ff6a55" className="intro-beacon" style={{ animationDelay: '2.6s' }} />
+      <path d="M239 436 h18" stroke="#0d2833" strokeWidth="2" opacity="0.7" />
       {/* resort headland */}
-      <path d="M590 468 Q610 434 660 436 H960 V468 Z" fill="#0d2622" />
+      <path d="M584 468 Q606 428 662 430 H960 V468 Z" fill="#123a33" />
+      <path d="M584 468 Q606 428 662 430 H760" stroke="#1e5f52" strokeWidth="2" fill="none" opacity="0.6" />
 
       {/* ---------- the coastal road (bottom third) ---------- */}
-      <rect x="0" y="468" width="960" height="72" fill="#141a23" />
-      <path d="M0 468 H960" stroke="#2a3442" strokeWidth="2.5" />
-      <path d="M0 505 H960" stroke="#cfc49a" strokeWidth="3" strokeDasharray="30 24" opacity="0.35" />
+      <rect x="0" y="468" width="960" height="72" fill="url(#intro-road)" />
+      <path d="M0 468 H960" stroke="#3a4658" strokeWidth="2.5" />
+      {/* curb toward the resort */}
+      <rect x="592" y="462" width="368" height="7" rx="2" fill="#3a4859" />
+      <path d="M594 463 H958" stroke="#54687c" strokeWidth="1.5" />
+      {/* cracked driveway up to the gate */}
+      <path d="M688 468 H812 L846 540 H656 Z" fill="#242e3c" />
+      <path d="M688 468 L656 540 M812 468 L846 540" stroke="#333f50" strokeWidth="2.5" />
+      <path d="M726 486 l14 10 -6 14 M768 476 q10 14 4 30 M700 512 l22 8" stroke="#141b26" strokeWidth="2.5" fill="none" />
+      <path d="M736 512 q3 -8 6 0 M792 500 q3 -8 6 0 M712 496 q2.5 -7 5.5 0" stroke="#2a5c40" strokeWidth="2.5" fill="none" />
+      {/* worn center dashes */}
+      <path d="M0 506 H960" stroke="#d8cd9e" strokeWidth="3.5" strokeDasharray="30 26" opacity="0.4" />
+      <path d="M14 506 H960" stroke="#12161f" strokeWidth="4" strokeDasharray="7 165" opacity="0.8" />
+      {/* asphalt cracks + roadside gravel */}
+      <path d="M120 522 q30 6 52 -2 M540 514 l28 8 M880 512 q18 10 36 6" stroke="#10151f" strokeWidth="2" fill="none" opacity="0.8" />
+      <g fill="#4d5a6e" opacity="0.8">
+        <circle cx="36" cy="476" r="1.4" /><circle cx="88" cy="481" r="1.2" /><circle cx="150" cy="474" r="1.5" />
+        <circle cx="222" cy="480" r="1.2" /><circle cx="286" cy="475" r="1.4" /><circle cx="352" cy="482" r="1.2" />
+        <circle cx="420" cy="476" r="1.5" /><circle cx="470" cy="483" r="1.2" /><circle cx="534" cy="477" r="1.4" />
+        <circle cx="120" cy="530" r="1.6" /><circle cx="320" cy="534" r="1.4" /><circle cx="520" cy="531" r="1.5" />
+        <circle cx="880" cy="532" r="1.5" /><circle cx="920" cy="524" r="1.3" />
+      </g>
+      <path d="M60 468 q3 -9 6 0 M240 468 q3 -9 6 0 M430 468 q3 -9 6 0 M560 468 q3 -8 6 0" stroke="#1d5a44" strokeWidth="3" fill="none" />
 
       {/* ---------- palm silhouettes ---------- */}
-      <Palm x={64} y={452} s={1.5} sway="5.6s" />
-      <Palm x={150} y={448} s={1.05} sway="6.4s" delay="1.2s" flip />
-      <Palm x={300} y={450} s={1.3} sway="5.1s" delay="0.5s" />
-      <Palm x={402} y={446} s={0.85} sway="6.8s" delay="2s" flip />
-      <Palm x={628} y={444} s={1.15} sway="5.9s" delay="0.9s" flip />
+      <Palm x={58} y={466} s={1.15} sway="5.6s" />
+      <Palm x={148} y={463} s={0.8} sway="6.4s" delay="1.2s" flip />
+      <Palm x={298} y={464} s={1.0} sway="5.1s" delay="0.5s" />
+      <Palm x={404} y={460} s={0.66} sway="6.8s" delay="2s" flip />
+      <Palm x={560} y={462} s={0.88} sway="6.2s" delay="1.6s" />
+      <Palm x={630} y={460} s={1.05} sway="5.9s" delay="0.9s" flip />
 
       {/* ---------- GRAND PALM RESORT facade ---------- */}
       <g>
-        {/* low entrance wing */}
+        {/* low entrance wing + parapet cap */}
         <rect x="636" y="330" width="130" height="138" fill="url(#intro-tower)" />
-        <path d="M636 330 h130" stroke="#2f6b62" strokeWidth="2" opacity="0.5" />
+        <rect x="631" y="324" width="140" height="9" rx="2" fill="#2c5a6c" />
+        <path d="M631 325 h140" stroke="#4d9485" strokeWidth="1.5" opacity="0.6" />
+        <path d="M636 333 V468" stroke="#3f7d70" strokeWidth="2" opacity="0.45" />
+        <g fill="#0d2130">
+          <rect x="648" y="348" width="22" height="28" rx="2" />
+          <rect x="682" y="348" width="22" height="28" rx="2" />
+          <rect x="716" y="348" width="22" height="28" rx="2" />
+        </g>
+        <path d="M650 350 l16 20 M684 350 l16 20 M718 350 l16 20" stroke="#7ca8b8" strokeWidth="1.2" opacity="0.25" />
         {/* stepped art-deco tower */}
         <rect x="756" y="200" width="188" height="268" fill="url(#intro-tower)" />
         <rect x="782" y="142" width="136" height="58" fill="url(#intro-tower)" />
         <rect x="812" y="92" width="76" height="50" fill="url(#intro-tower)" />
         <rect x="836" y="64" width="28" height="28" fill="url(#intro-tower)" />
+        {/* cornice bands at each setback */}
+        <g fill="#2c5a6c">
+          <rect x="750" y="194" width="200" height="8" rx="2" />
+          <rect x="777" y="136" width="146" height="8" rx="2" />
+          <rect x="807" y="86" width="86" height="8" rx="2" />
+          <rect x="832" y="58" width="36" height="8" rx="2" />
+        </g>
+        <path d="M750 195 h200 M777 137 h146 M807 87 h86 M832 59 h36" stroke="#4d9485" strokeWidth="1.5" opacity="0.55" />
         {/* moonlit left edges */}
-        <path d="M756 468 V200 M782 200 V142 M812 142 V92 M836 92 V64" stroke="#3f7d70" strokeWidth="2" opacity="0.4" />
+        <path d="M756 468 V202 M782 194 V144 M812 136 V94 M836 86 V66" stroke="#4d9485" strokeWidth="2" opacity="0.45" />
         {/* art-deco fluting */}
-        <g stroke="#23444f" strokeWidth="2" opacity="0.5">
-          <path d="M800 148 V196 M824 148 V196 M848 148 V196 M872 148 V196 M896 148 V196" />
-          <path d="M826 98 V138 M850 98 V138 M874 98 V138" />
+        <g stroke="#2a4d5e" strokeWidth="2" opacity="0.7">
+          <path d="M800 150 V194 M824 150 V194 M848 150 V194 M872 150 V194 M896 150 V194" />
+          <path d="M826 100 V136 M850 100 V136 M874 100 V136" />
+        </g>
+        {/* upper-step windows */}
+        <g fill="#0d2130">
+          <rect x="802" y="156" width="13" height="20" rx="4" />
+          <rect x="842" y="156" width="13" height="20" rx="4" />
+          <rect x="882" y="156" width="13" height="20" rx="4" />
+          <rect x="843" y="102" width="14" height="22" rx="5" />
         </g>
         {/* dead beacon on the antenna, coughing occasionally */}
-        <path d="M850 64 V34" stroke="#0a1520" strokeWidth="3" />
+        <path d="M850 64 V34" stroke="#0d2130" strokeWidth="3" />
         <circle cx="850" cy="31" r="3.5" fill="#ff6a55" className="intro-beacon" />
-        {/* neon sign */}
-        <rect x="760" y="228" width="178" height="32" rx="5" fill="rgba(5,13,22,0.92)" stroke="#28404e" strokeWidth="1.5" />
-        <g filter="url(#intro-glow)" opacity="0.8">
+        {/* neon sign: buzzing halo, brackets, twin tube-glow layers */}
+        <ellipse cx="850" cy="244" rx="112" ry="30" fill="url(#intro-neonhalo)" className="intro-buzz" />
+        <path d="M778 228 v-8 M922 228 v-8" stroke="#28404e" strokeWidth="4" />
+        <rect x="760" y="228" width="178" height="32" rx="5" fill="#071520" stroke="#2c5a6c" strokeWidth="1.5" />
+        <rect x="764" y="231.5" width="170" height="25" rx="3.5" fill="none" stroke="#173442" strokeWidth="1.2" />
+        <g filter="url(#intro-glow2)" opacity="0.55">
+          <NeonSignRow />
+        </g>
+        <g filter="url(#intro-glow)" opacity="0.85">
           <NeonSignRow />
         </g>
         <NeonSignRow />
-        {/* tower windows — mostly dark, a few dimly lit, one flickering */}
+        {/* decorative band above the window grid */}
+        <rect x="756" y="268" width="188" height="5" fill="#234b5c" />
+        {/* tower windows — mostly dark, two warmly lit, one flickering */}
         {Array.from({ length: 6 }).map((_, r) =>
           Array.from({ length: 6 }).map((_, c) => {
             const x = 772 + c * 27
             const y = 286 + r * 30
-            const lit = (r === 1 && c === 4) || (r === 3 && c === 1) || (r === 0 && c === 2)
+            const lit = (r === 1 && c === 4) || (r === 3 && c === 1)
             const flicker = r === 4 && c === 3
             return (
               <rect
@@ -299,50 +486,101 @@ function NightScene() {
                 width="11"
                 height="15"
                 rx="1.5"
-                fill={lit || flicker ? '#f7cf7f' : '#0a1622'}
-                opacity={lit ? 0.5 : flicker ? 0.6 : 1}
+                fill={lit || flicker ? '#ffd98a' : '#0c1e2c'}
+                opacity={lit ? 0.55 : flicker ? 0.6 : 1}
                 className={flicker ? 'intro-winflicker' : undefined}
               />
             )
           })
         )}
-        {/* upper-step windows */}
-        <g fill="#0a1622">
-          <rect x="802" y="156" width="13" height="20" rx="4" />
-          <rect x="842" y="156" width="13" height="20" rx="4" />
-          <rect x="882" y="156" width="13" height="20" rx="4" />
-          <rect x="843" y="102" width="14" height="22" rx="5" />
+        <path d="M773 288 l8 11 M854 348 l8 11 M800 408 l8 11" stroke="#7ca8b8" strokeWidth="1.2" opacity="0.3" />
+        {/* tower base course */}
+        <rect x="756" y="452" width="188" height="16" fill="#0d2331" />
+        <path d="M756 453 h188" stroke="#2a4d5e" strokeWidth="1.5" />
+        {/* porte-cochere: canopy slab, warm underglow, columns */}
+        <ellipse cx="723" cy="430" rx="58" ry="22" fill="url(#intro-canopy)" opacity="0.6" />
+        <path d="M676 394 L692 374 M770 394 L754 374" stroke="#16333f" strokeWidth="3" />
+        <rect x="656" y="392" width="134" height="9" rx="2" fill="#1d4254" />
+        <path d="M656 393 h134" stroke="#4d9485" strokeWidth="1.5" opacity="0.6" />
+        <rect x="656" y="401" width="134" height="7" fill="#0e2230" />
+        <path d="M660 408 v5 M688 408 v5 M716 408 v5 M744 408 v5 M772 408 v5 M786 408 v5" stroke="#0e2230" strokeWidth="3" />
+        <g>
+          <rect x="666" y="408" width="10" height="56" fill="#1c3a49" />
+          <rect x="770" y="408" width="10" height="56" fill="#1c3a49" />
+          <path d="M667.5 410 V462 M771.5 410 V462" stroke="#3f7d70" strokeWidth="1.5" opacity="0.5" />
+          <rect x="664" y="408" width="14" height="4" rx="1" fill="#254c5c" />
+          <rect x="768" y="408" width="14" height="4" rx="1" fill="#254c5c" />
+          <rect x="663" y="462" width="16" height="6" rx="1" fill="#14303c" />
+          <rect x="767" y="462" width="16" height="6" rx="1" fill="#14303c" />
         </g>
-        {/* entrance canopy + doors (the lobby that flickers) */}
-        <rect x="666" y="402" width="116" height="13" rx="4" fill="#0e2230" stroke="#2f6b62" strokeWidth="1.5" />
-        <path d="M672 415 v6 M700 415 v6 M728 415 v6 M756 415 v6 M776 415 v6" stroke="#0e2230" strokeWidth="3" />
-        <path d="M676 421 V468 M770 421 V468" stroke="#0a1826" strokeWidth="7" />
-        <rect x="694" y="420" width="58" height="48" fill="#081018" stroke="#1c333f" strokeWidth="2" />
-        <path d="M723 420 V468" stroke="#1c333f" strokeWidth="2" />
-        <rect x="698" y="426" width="21" height="36" fill="#f2c56d" opacity="0.35" className="intro-winflicker" />
-        <rect x="727" y="426" width="21" height="36" fill="#f2c56d" opacity="0.35" className="intro-winflicker" />
-        <rect x="688" y="460" width="70" height="8" fill="#0c1c28" />
+        {/* lobby doors (the lights that flicker) + entry steps */}
+        <rect x="694" y="418" width="58" height="50" fill="#081018" stroke="#1c333f" strokeWidth="2" />
+        <path d="M723 418 V468" stroke="#1c333f" strokeWidth="2" />
+        <rect x="698" y="424" width="21" height="38" fill="#f2c56d" opacity="0.35" className="intro-winflicker" />
+        <rect x="727" y="424" width="21" height="38" fill="#f2c56d" opacity="0.35" className="intro-winflicker" />
+        <path d="M712 442 h5 M729 442 h5" stroke="#3a2c14" strokeWidth="2" />
+        <rect x="688" y="462" width="70" height="4" fill="#243745" />
+        <rect x="684" y="466" width="78" height="3" fill="#1a2a36" />
+        {/* overgrown planters flanking the drive */}
+        <g>
+          <rect x="630" y="472" width="44" height="22" rx="3" fill="#33414f" />
+          <path d="M632 474 h40" stroke="#4a5c6e" strokeWidth="2" />
+          <ellipse cx="644" cy="470" rx="16" ry="9" fill="#16452e" />
+          <ellipse cx="662" cy="468" rx="13" ry="8" fill="#1e5a3c" />
+          <path d="M640 464 q-3 -9 3 -14 M660 462 q1 -8 8 -11" stroke="#1e5a3c" strokeWidth="2" fill="none" />
+          <rect x="826" y="472" width="44" height="22" rx="3" fill="#33414f" />
+          <path d="M828 474 h40" stroke="#4a5c6e" strokeWidth="2" />
+          <ellipse cx="840" cy="469" rx="15" ry="9" fill="#16452e" />
+          <ellipse cx="858" cy="467" rx="13" ry="8" fill="#1e5a3c" />
+          <path d="M838 462 q-2 -9 4 -13 M860 460 q2 -8 8 -10" stroke="#1e5a3c" strokeWidth="2" fill="none" />
+        </g>
       </g>
 
       {/* ---------- chained front gate (nearest layer, roadside) ---------- */}
       <g>
-        <rect x="700" y="436" width="15" height="62" fill="#0a1a24" />
-        <rect x="696" y="430" width="23" height="8" rx="2" fill="#0a1a24" />
-        <rect x="786" y="436" width="15" height="62" fill="#0a1a24" />
-        <rect x="782" y="430" width="23" height="8" rx="2" fill="#0a1a24" />
-        <g stroke="#0d222e" strokeWidth="3">
+        <rect x="700" y="436" width="15" height="62" fill="#122b38" />
+        <rect x="696" y="430" width="23" height="8" rx="2" fill="#122b38" />
+        <path d="M700 430 l7.5 -7 7.5 7 z" fill="#183848" />
+        <rect x="786" y="436" width="15" height="62" fill="#122b38" />
+        <rect x="782" y="430" width="23" height="8" rx="2" fill="#122b38" />
+        <path d="M786 430 l7.5 -7 7.5 7 z" fill="#183848" />
+        <path d="M701 436 V496 M787 436 V496" stroke="#3f7d70" strokeWidth="1.5" opacity="0.4" />
+        <g stroke="#16333f" strokeWidth="3">
           <path d="M715 452 H786 M715 490 H786" />
-          <path d="M724 452 V490 M736 452 V490 M748 452 V490 M760 452 V490 M772 452 V490" />
+          <path d="M724 446 V490 M736 446 V490 M748 446 V490 M760 446 V490 M772 446 V490" />
           <path d="M715 452 L750 490 M786 452 L750 490" strokeWidth="2.4" />
         </g>
-        {/* sagging chain + padlock */}
-        <path d="M722 464 Q750 482 779 464" stroke="#3c545f" strokeWidth="4.5" fill="none" strokeDasharray="5 3.5" strokeLinecap="round" />
-        <path d="M747 473 v-3.5 a3.5 3.5 0 0 1 7 0 V473" stroke="#4a616c" strokeWidth="2.4" fill="none" />
-        <rect x="744.5" y="473" width="12" height="10" rx="2" fill="#3c545f" stroke="#17242c" strokeWidth="1.4" />
+        <g fill="#183848">
+          <circle cx="724" cy="445" r="2.2" /><circle cx="736" cy="445" r="2.2" /><circle cx="748" cy="445" r="2.2" />
+          <circle cx="760" cy="445" r="2.2" /><circle cx="772" cy="445" r="2.2" />
+        </g>
+        {/* sagging chain + padlock with glint */}
+        <path d="M722 464 Q750 482 779 464" stroke="#46606c" strokeWidth="4.5" fill="none" strokeDasharray="5 3.5" strokeLinecap="round" />
+        <path d="M747 473 v-3.5 a3.5 3.5 0 0 1 7 0 V473" stroke="#5a747e" strokeWidth="2.4" fill="none" />
+        <rect x="744.5" y="473" width="12" height="10" rx="2" fill="#46606c" stroke="#17242c" strokeWidth="1.4" />
+        <circle cx="750.5" cy="477.5" r="1.5" fill="#17242c" />
+        <path d="M755 470.5 l1.8 3.9 3.9 1.8 -3.9 1.8 -1.8 3.9 -1.8 -3.9 -3.9 -1.8 3.9 -1.8 z" fill="#fff" opacity="0.9" />
       </g>
 
       {/* ---------- the Mystery Machine rolls in ---------- */}
       <MysteryMachine />
+
+      {/* ---------- foreground flora framing the corners ---------- */}
+      <g className="intro-fgsway" style={{ animationDelay: '0.8s' }}>
+        <g fill="#12382a">
+          <use href="#intro-monst" transform="translate(936 552) scale(1.7)" />
+          <use href="#intro-monst" transform="translate(968 556) scale(-1.5 1.5) rotate(-8)" />
+        </g>
+        <g fill="#0c2a1f">
+          <use href="#intro-monst" transform="translate(896 556) scale(1.25) rotate(8)" />
+        </g>
+        <use href="#intro-fern" transform="translate(864 550) rotate(-12) scale(1.3)" />
+        <use href="#intro-fern" transform="translate(950 554) rotate(10) scale(1.5)" />
+      </g>
+      <g className="intro-fgsway" style={{ animationDelay: '2s', animationDuration: '7.5s' }}>
+        <use href="#intro-fern" transform="translate(16 552) rotate(8) scale(1.2)" />
+        <use href="#intro-fern" transform="translate(30 556) rotate(-14) scale(0.9)" />
+      </g>
     </svg>
   )
 }
@@ -411,10 +649,24 @@ export function IntroScreen({ onDone }: { onDone: () => void }) {
         .intro-twinkle { animation: intro-twinkle 2.8s ease-in-out infinite; }
         @keyframes intro-sway { from { transform: rotate(-1.4deg); } to { transform: rotate(1.4deg); } }
         .intro-palm { animation: intro-sway 5.5s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+        @keyframes intro-fgsway { from { transform: rotate(-1deg); } to { transform: rotate(1deg); } }
+        .intro-fgsway { animation: intro-fgsway 6.5s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 60% 100%; }
         @keyframes intro-drift { from { transform: translateX(0); } to { transform: translateX(46px); } }
         .intro-cloud { animation: intro-drift 26s ease-in-out infinite alternate; }
         @keyframes intro-beaconblink { 0%, 86%, 100% { opacity: 0.08; } 90%, 95% { opacity: 0.75; } }
         .intro-beacon { animation: intro-beaconblink 5s linear infinite; }
+        @keyframes intro-heatflash { 0%, 87%, 100% { opacity: 0; } 89% { opacity: 0.55; } 91% { opacity: 0.12; } 93% { opacity: 0.4; } 96% { opacity: 0; } }
+        .intro-heatlight { animation: intro-heatflash 12s linear infinite; }
+        @keyframes intro-buzz {
+          0%, 100% { opacity: 0.32; }
+          10% { opacity: 0.22; }
+          14% { opacity: 0.34; }
+          38% { opacity: 0.24; }
+          42% { opacity: 0.35; }
+          66% { opacity: 0.26; }
+          72% { opacity: 0.33; }
+        }
+        .intro-buzz { animation: intro-buzz 1.4s steps(2, end) infinite; }
         @keyframes intro-neon-f1 {
           0%, 6%, 10%, 46%, 55%, 81%, 86%, 100% { opacity: 1; }
           7%, 9% { opacity: 0.08; }
@@ -448,10 +700,10 @@ export function IntroScreen({ onDone }: { onDone: () => void }) {
 
       <NightScene />
 
-      {/* vignette */}
+      {/* vignette (capped) */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 42%, transparent 55%, rgba(0,0,0,0.55) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 42%, transparent 58%, rgba(0,0,0,0.4) 100%)' }}
       />
 
       {/* skip */}
@@ -475,6 +727,11 @@ export function IntroScreen({ onDone }: { onDone: () => void }) {
               <div className="relative mx-auto mt-3 max-w-md -rotate-1 rounded-sm bg-[#f2e8cf] px-5 py-4 text-[#3a2f1d] shadow-[0_5px_16px_rgba(0,0,0,0.55)]">
                 <span className="absolute -top-2 left-8 h-4 w-12 -rotate-3 rounded-sm bg-amber-200/70" />
                 <span className="absolute -top-2 right-8 h-4 w-12 rotate-2 rounded-sm bg-amber-200/70" />
+                {/* fold crease + postage stamp */}
+                <span className="pointer-events-none absolute inset-x-4 top-[52%] h-px bg-[#b9a87f]/35" />
+                <span className="pointer-events-none absolute -top-1 right-16 flex h-9 w-8 rotate-3 items-center justify-center rounded-[2px] border border-dashed border-[#a8926a]/80 bg-[#e6d9ae] text-[13px]">
+                  🌴
+                </span>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
