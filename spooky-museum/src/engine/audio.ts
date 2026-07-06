@@ -9,12 +9,31 @@
  *   loops: ambience_museum (drone), chase (pursuit loop)
  */
 
-const AUDIO_BASE = '/assets/audio/'
+const AUDIO_BASE = `${import.meta.env.BASE_URL}assets/audio/`
 
 let muted = false
 let ambienceEl: HTMLAudioElement | null = null
 let currentAmbience: string | null = null
 let chaseEl: HTMLAudioElement | null = null
+let unlockAttached = false
+
+/**
+ * Browsers block autoplay until the first user gesture. Call once on mount:
+ * the first click/keypress resumes whatever loops were blocked.
+ */
+export function attachAudioUnlock(): void {
+  if (unlockAttached) return
+  unlockAttached = true
+  const resume = () => {
+    window.removeEventListener('pointerdown', resume)
+    window.removeEventListener('keydown', resume)
+    if (muted) return
+    if (ambienceEl?.paused) void ambienceEl.play().catch(() => {})
+    if (chaseEl?.paused) void chaseEl.play().catch(() => {})
+  }
+  window.addEventListener('pointerdown', resume)
+  window.addEventListener('keydown', resume)
+}
 
 function makeAudio(name: string, autoplay: boolean, loop = false, volume = 0.6): HTMLAudioElement {
   const el = new Audio(`${AUDIO_BASE}${name}.mp3`)

@@ -3,7 +3,7 @@ import { MAPS, useGameStore } from '../store/gameStore'
 import { drawScene } from '../engine/render'
 import { loadSprites } from '../engine/sprites'
 import { attachInput, detachInput } from '../engine/input'
-import { setAmbience } from '../engine/audio'
+import { attachAudioUnlock, setAmbience } from '../engine/audio'
 import { centerOffset, roundTile, screenToIso } from '../utils/iso'
 import type { Vec2 } from '../types/game'
 
@@ -28,6 +28,7 @@ export function GameCanvas() {
 
     loadSprites()
     attachInput()
+    attachAudioUnlock()
     setAmbience(MAPS[useGameStore.getState().activeRoomId].ambience)
 
     let raf = 0

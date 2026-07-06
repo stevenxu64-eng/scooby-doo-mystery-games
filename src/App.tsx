@@ -5,7 +5,7 @@ import { Inventory } from './components/Inventory'
 import { CharacterHub } from './components/CharacterHub'
 import { MessageBar } from './components/MessageBar'
 import { useGameStore } from './store/gameStore'
-import { toggleMute } from './engine/audio'
+import { attachAudioUnlock, toggleMute } from './engine/audio'
 import type { Direction } from './types/game'
 
 const KEY_TO_DIRECTION: Record<string, Direction> = {
@@ -28,6 +28,7 @@ export default function App() {
   const [muted, setMuted] = useState(false)
 
   useEffect(() => {
+    attachAudioUnlock()
     const onKey = (e: KeyboardEvent) => {
       const dir = KEY_TO_DIRECTION[e.key]
       if (dir) {

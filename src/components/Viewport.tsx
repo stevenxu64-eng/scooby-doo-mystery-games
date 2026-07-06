@@ -77,7 +77,7 @@ export function Viewport() {
       <div className="absolute inset-0" style={{ background: scene.fallback_gradient }} />
       {!imageFailed && (
         <img
-          src={scene.background_image_url}
+          src={`${import.meta.env.BASE_URL}${scene.background_image_url.replace(/^\//, '')}`}
           alt={scene.name}
           className="absolute inset-0 h-full w-full object-cover"
           onError={() => setFailedImages((f) => ({ ...f, [scene.id]: true }))}

@@ -12,6 +12,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "spooky-museum"],
       "port": 5174
+    },
+    {
+      "name": "static-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4173", "-d", "dist-site"],
+      "port": 4173
     }
   ]
 }

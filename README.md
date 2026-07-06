@@ -3,11 +3,44 @@
 A first-person, screen-by-screen point-and-click mystery in the style of the classic
 Nancy Drew PC games — built with React 19, Vite, Tailwind CSS v4, Zustand, and lucide-react.
 
+This repo holds **two games**: this one at the root, and
+[spooky-museum/](spooky-museum/) (an isometric stealth escape room).
+
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # type-check + production build
+npm run dev         # http://localhost:5173
+npm run build       # type-check + production build
+npm run build:site  # build BOTH games + launcher into dist-site/ (see Hosting)
 ```
+
+## Hosting the website
+
+`npm run build:site` assembles a fully static site in `dist-site/`
+(install deps in both projects first: `npm install && npm install --prefix spooky-museum`):
+
+```
+dist-site/
+├── index.html   # launcher landing page linking both episodes
+├── resort/      # Episode 1 — this game
+└── museum/      # Episode 2 — the isometric museum game
+```
+
+Upload the **contents of `dist-site/`** to any static host — no server code, no
+database, ~5 MB total:
+
+- **Netlify / Vercel / Cloudflare Pages**: drag-and-drop the folder, or point the
+  build command at `npm run build:site` with publish directory `dist-site`.
+- **GitHub Pages**: push `dist-site/` to a `gh-pages` branch (or use an action).
+  Both games are built with a *relative* base, so they work from a project
+  subpath (`user.github.io/repo/`) as well as a root domain.
+- **Any web server (nginx, Apache, S3...)**: copy the folder into the web root.
+
+To test the exact deployed bundle locally:
+`python3 -m http.server 4173 -d dist-site` → http://localhost:4173
+
+Note: the consoles will show a few 404s per page load — that's the asset
+fallback chain probing for optional overrides (`.mp3` before `.wav`, `.png`
+before `.svg`) and is harmless.
 
 ## How to play
 
@@ -36,7 +69,8 @@ npm run build    # type-check + production build
 4. **Grounds** — show Janitor Gus the glowing paint → he implicates Mr. Crane.
 5. **Boiler Room (down from the closet)** — use the rope on the ceiling hook, switch to
    Shaggy & Scooby and use the Scooby Snack on the bait crate, then pull the red lever.
-   Unmask the phantom. Case closed!
+6. **The accusation** — the gang won't pull the sheet until you name the culprit. Wrong
+   guesses (Gus, "a real ghost") get comedic rebuttals; accuse **Mr. Crane** to win.
 
 </details>
 

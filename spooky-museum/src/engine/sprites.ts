@@ -36,7 +36,7 @@ function tryLoad(name: SpriteName, ext: 'png' | 'svg', onFail?: () => void): voi
     rasters.set(name, canvas)
   })
   img.addEventListener('error', () => onFail?.())
-  img.src = `/assets/tiles/${name}.${ext}`
+  img.src = `${import.meta.env.BASE_URL}assets/tiles/${name}.${ext}`
 }
 
 export function loadSprites(): void {
