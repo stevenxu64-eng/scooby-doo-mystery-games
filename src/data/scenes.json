@@ -223,12 +223,38 @@
     "background_image_url": "/assets/scenes/grounds.svg",
     "fallback_gradient": "linear-gradient(180deg, #0f2d3d 0%, #1d4a38 55%, #12291c 100%)",
     "ambience": "ambience_grounds",
-    "description": "Overgrown gardens surround a drained, cracked swimming pool. A toolshed slumps in the shadows, and Janitor Gus rakes the same spot of dead leaves over and over.",
+    "description": "Overgrown gardens surround the drained pool. The dark toolshed looms north, a glass greenhouse glimmers south, and a vine-choked archway leads east. Janitor Gus rakes the same spot of dead leaves, forever.",
     "navigation_links": [
       {
         "direction": "west",
         "target": "lobby",
         "label": "Resort Lobby"
+      },
+      {
+        "direction": "north",
+        "target": "toolshed",
+        "label": "Toolshed",
+        "locked_by_flag": "shed_lit",
+        "locked_message": "The toolshed is pitch dark inside. Light it up first \u2014 a flashlight on that doorway would do."
+      },
+      {
+        "direction": "south",
+        "target": "greenhouse",
+        "label": "Greenhouse"
+      },
+      {
+        "direction": "east",
+        "target": "pool_cabana",
+        "label": "Pool Cabana",
+        "locked_by_flag": "path_cleared",
+        "locked_message": "The archway east to the pool deck is choked with vines. You'll need something sharp to clear it."
+      },
+      {
+        "direction": "down",
+        "target": "pump_room",
+        "label": "Pump Room",
+        "locked_by_flag": "hatch_open",
+        "locked_message": "The pool's maintenance hatch is cranked shut. No handle, no entry."
       }
     ],
     "clickable_hotspots": [
@@ -259,42 +285,6 @@
           {
             "type": "show_message",
             "text": "You fish a long, sturdy stick out of the bushes. You never know when a good stick will come in handy."
-          }
-        ]
-      },
-      {
-        "id": "vending_machine",
-        "label": "Old Vending Machine",
-        "x": 78,
-        "y": 34,
-        "w": 14,
-        "h": 42,
-        "required_character": "Shaggy_Scooby",
-        "hidden_if_flags": [
-          "shook_vending"
-        ],
-        "wrong_character_message": "An ancient vending machine with one Scooby Snax box dangling on the spiral. It won't budge. Shaking loose snacks is a job for Shaggy and Scooby.",
-        "action_triggers": [
-          {
-            "type": "play_sfx",
-            "sfx": "rattle"
-          },
-          {
-            "type": "add_to_inventory",
-            "item": "scooby_snack"
-          },
-          {
-            "type": "add_to_inventory",
-            "item": "chewing_gum"
-          },
-          {
-            "type": "set_flag",
-            "flag": "shook_vending",
-            "value": true
-          },
-          {
-            "type": "show_message",
-            "text": "Shaggy and Scooby rattle the machine like maniacs! Out drops a box of Scooby Snax... and a pack of extra-sticky chewing gum wedged under the flap. 'Like, jackpot!'"
           }
         ]
       },
@@ -332,7 +322,7 @@
         "hidden_if_flags": [
           "shed_lit"
         ],
-        "missing_item_message": "The toolshed is pitch black inside. Without a light you can't see a thing \u2014 something skitters in the dark. Zoinks.",
+        "missing_item_message": "The toolshed doorway is pitch black. Without a light you'd trip over every rake in Florida. (Velma has the flashlight... if you found it.)",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -345,43 +335,7 @@
           },
           {
             "type": "show_message",
-            "text": "The flashlight beam sweeps the shed... There! Something metal glints beneath the floor grate. A key! But the gap is far too narrow for fingers."
-          }
-        ]
-      },
-      {
-        "id": "shed_grate",
-        "label": "Floor Grate (something glints below)",
-        "x": 26,
-        "y": 62,
-        "w": 14,
-        "h": 16,
-        "visible_if_flags": [
-          "shed_lit"
-        ],
-        "hidden_if_flags": [
-          "got_janitor_key"
-        ],
-        "required_item": "sticky_stick",
-        "consume_item": true,
-        "missing_item_message": "The key is wedged deep under the grate. Your arm can't fit \u2014 you need something long, thin, and sticky to fish it out.",
-        "action_triggers": [
-          {
-            "type": "play_sfx",
-            "sfx": "pickup"
-          },
-          {
-            "type": "add_to_inventory",
-            "item": "janitor_key"
-          },
-          {
-            "type": "set_flag",
-            "flag": "got_janitor_key",
-            "value": true
-          },
-          {
-            "type": "show_message",
-            "text": "You lower the gummy stick through the grate... steady... GOT IT! A brass key stamped 'MAINTENANCE'. This must open the janitor's closet in the lobby."
+            "text": "The flashlight beam floods the shed \u2014 cobwebbed tools, a workbench... and something GLINTING under a floor grate inside. You can head NORTH into the toolshed now."
           }
         ]
       },
@@ -430,6 +384,62 @@
           {
             "type": "show_message",
             "text": "Half-buried in the leaf muck: a dress glove, monogrammed 'A.C.'. Daphne: 'Ambrose Crane wears gloves JUST like these. Ghosts don't do monograms.'"
+          }
+        ]
+      },
+      {
+        "id": "overgrown_path",
+        "label": "Overgrown Archway",
+        "x": 78,
+        "y": 30,
+        "w": 14,
+        "h": 46,
+        "required_item": "garden_shears",
+        "hidden_if_flags": [
+          "path_cleared"
+        ],
+        "missing_item_message": "A stone archway to the pool deck \u2014 completely sealed by a decade of vines. You'd need serious garden shears to cut through. Maybe the greenhouse (south) has some.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "combine"
+          },
+          {
+            "type": "set_flag",
+            "flag": "path_cleared",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "SNIP-SNIP-SNIP! Daphne directs, everyone else ducks flying vine bits. The archway to the POOL CABANA is clear \u2014 head east!"
+          }
+        ]
+      },
+      {
+        "id": "pool_hatch",
+        "label": "Pool Maintenance Hatch",
+        "x": 54,
+        "y": 80,
+        "w": 8,
+        "h": 12,
+        "required_item": "crank_handle",
+        "hidden_if_flags": [
+          "hatch_open"
+        ],
+        "missing_item_message": "A rusted steel hatch in the pool floor, stamped 'PUMP ROOM'. The crank socket is empty \u2014 the handle must be stored with the tools somewhere.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "hatch_open",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "The crank fits! Fred winds it and the hatch grinds open, breathing out cold, chlorine-and-mildew air. A ladder drops DOWN into the dark under the resort. Shaggy: 'I vote we never.'"
           }
         ]
       }
@@ -1014,6 +1024,382 @@
           {
             "type": "show_message",
             "text": "A pedal sewing machine threaded with glow-green thread. The needle's still warm. Velma: 'Our phantom does his own tailoring. Frugal AND theatrical.'"
+          }
+        ]
+      }
+    ]
+  },
+  "toolshed": {
+    "id": "toolshed",
+    "name": "Toolshed",
+    "background_image_url": "/assets/scenes/toolshed.svg",
+    "fallback_gradient": "linear-gradient(180deg, #2b2117 0%, #3d2f1e 60%, #171008 100%)",
+    "ambience": "ambience_closet",
+    "description": "Inside the toolshed, lit by wobbling flashlight glow. Rakes, rust, and cobwebs \u2014 and that tantalizing GLINT under the floor grate. A pegboard shows chalk outlines where tools should hang.",
+    "navigation_links": [
+      {
+        "direction": "south",
+        "target": "grounds",
+        "label": "Resort Grounds"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "shed_grate",
+        "label": "Floor Grate (something glints below)",
+        "x": 40,
+        "y": 62,
+        "w": 20,
+        "h": 20,
+        "visible_if_flags": [],
+        "hidden_if_flags": [
+          "got_janitor_key"
+        ],
+        "required_item": "sticky_stick",
+        "consume_item": true,
+        "missing_item_message": "The key is wedged deep under the grate. Your arm can't fit \u2014 you need something long, thin, and sticky to fish it out.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "janitor_key"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_janitor_key",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "You lower the gummy stick through the grate... steady... GOT IT! A brass key stamped 'MAINTENANCE'. This must open the janitor's closet in the lobby."
+          }
+        ]
+      },
+      {
+        "id": "crank_pegboard",
+        "label": "Pegboard \u2014 Crank Handle",
+        "x": 66,
+        "y": 26,
+        "w": 12,
+        "h": 22,
+        "hidden_if_flags": [
+          "got_crank"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "crank_handle"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_crank",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "An iron CRANK HANDLE hangs on the pegboard, square socket and all. Fred: 'This fits maintenance hatches. Pools have maintenance hatches. Gang \u2014 I have a plan.'"
+          }
+        ]
+      },
+      {
+        "id": "chalk_outlines",
+        "label": "Chalk Tool Outlines",
+        "x": 8,
+        "y": 40,
+        "w": 22,
+        "h": 24,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Gus chalked outlines for every tool. The BOLT CUTTERS outline is empty... and so is one labeled 'PAINT SPRAYER'. Somebody's been shopping in here after hours."
+          }
+        ]
+      }
+    ]
+  },
+  "greenhouse": {
+    "id": "greenhouse",
+    "name": "Greenhouse",
+    "background_image_url": "/assets/scenes/greenhouse.svg",
+    "fallback_gradient": "linear-gradient(180deg, #0c2a1e 0%, #14403a 55%, #0a1f14 100%)",
+    "ambience": "ambience_grounds",
+    "description": "The resort greenhouse: a glass cathedral of runaway plants. Moonlight filters through fogged panes onto moonflowers that only bloom for ghosts, apparently.",
+    "navigation_links": [
+      {
+        "direction": "north",
+        "target": "grounds",
+        "label": "Resort Grounds"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "shears_planter",
+        "label": "Planter Bench",
+        "x": 55,
+        "y": 55,
+        "w": 16,
+        "h": 18,
+        "hidden_if_flags": [
+          "got_shears"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "garden_shears"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_shears",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Half-buried in a planter: heavy GARDEN SHEARS, still sharp. Perfect for un-jungling that archway by the pool."
+          }
+        ]
+      },
+      {
+        "id": "broken_pot",
+        "label": "Shattered Pot",
+        "x": 20,
+        "y": 62,
+        "w": 14,
+        "h": 16,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A big pot lies shattered \u2014 and the shards are dusted with GLOWING GREEN residue. Velma swabs a sample: 'Someone stored paint cans in here before moving them. Our phantom rotates his hiding spots.'"
+          }
+        ]
+      },
+      {
+        "id": "phantom_topiary",
+        "label": "Suspicious Topiary",
+        "x": 74,
+        "y": 24,
+        "w": 16,
+        "h": 40,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "A topiary grown wild into a lumpy, sheet-like shape. Shaggy points, screams, and climbs Scooby. Scooby climbs a shelf. The topiary continues to be a bush."
+          }
+        ]
+      }
+    ]
+  },
+  "pool_cabana": {
+    "id": "pool_cabana",
+    "name": "Pool Cabana",
+    "background_image_url": "/assets/scenes/pool_cabana.svg",
+    "fallback_gradient": "linear-gradient(180deg, #123043 0%, #1d4a4a 55%, #0e2620 100%)",
+    "ambience": "ambience_grounds",
+    "description": "The pool cabana: striped canvas gone grey, a lifeguard chair missing a leg, towel cubbies full of spiders' luggage. And humming away in the corner \u2014 a SCOOBY SNAX vending machine.",
+    "navigation_links": [
+      {
+        "direction": "west",
+        "target": "grounds",
+        "label": "Resort Grounds"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "vending_machine",
+        "label": "Old Vending Machine",
+        "x": 64,
+        "y": 30,
+        "w": 14,
+        "h": 46,
+        "required_character": "Shaggy_Scooby",
+        "hidden_if_flags": [
+          "shook_vending"
+        ],
+        "wrong_character_message": "An ancient vending machine with one Scooby Snax box dangling on the spiral. It won't budge. Shaking loose snacks is a job for Shaggy and Scooby.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "rattle"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "scooby_snack"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "chewing_gum"
+          },
+          {
+            "type": "set_flag",
+            "flag": "shook_vending",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "Shaggy and Scooby rattle the machine like maniacs! Out drops a box of Scooby Snax... and a pack of extra-sticky chewing gum wedged under the flap. 'Like, jackpot!'"
+          }
+        ]
+      },
+      {
+        "id": "lifeguard_log",
+        "label": "Lifeguard Logbook",
+        "x": 10,
+        "y": 50,
+        "w": 16,
+        "h": 16,
+        "required_character": "Velma",
+        "wrong_character_message": "A mildewed logbook chained to the lifeguard stand. Water-damaged shorthand \u2014 Velma's department.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Velma deciphers the log: 'Final season \u2014 guest counts fell off a CLIFF the same week the Phantom first appeared. Almost like the haunting was... scheduled.'"
+          }
+        ]
+      },
+      {
+        "id": "towel_cubbies",
+        "label": "Towel Cubbies",
+        "x": 34,
+        "y": 36,
+        "w": 14,
+        "h": 30,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Mildewed towels, one abandoned flip-flop, and a fossilized herring. Scooby eats the herring before anyone can object. 'Relicious.'"
+          }
+        ]
+      }
+    ]
+  },
+  "pump_room": {
+    "id": "pump_room",
+    "name": "Pump Room",
+    "background_image_url": "/assets/scenes/pump_room.svg",
+    "fallback_gradient": "linear-gradient(180deg, #0e1a24 0%, #16303a 55%, #08121a 100%)",
+    "ambience": "ambience_boiler",
+    "description": "Under the pool: a cathedral of rusted pumps and dripping pipes. Glowing green footprints track through the dust, and somewhere in the dark, water goes drip... drip... drip.",
+    "navigation_links": [
+      {
+        "direction": "up",
+        "target": "grounds",
+        "label": "Pool (ladder up)"
+      }
+    ],
+    "clickable_hotspots": [
+      {
+        "id": "maintenance_log",
+        "label": "Maintenance Log",
+        "x": 12,
+        "y": 46,
+        "w": 14,
+        "h": 18,
+        "required_character": "Velma",
+        "wrong_character_message": "A clipboard of pump readings and angry pencil. Technical scribbles \u2014 Velma will want this.",
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Velma reads the log: 'PUMPS SHUT DOWN \u2014 BY ORDER OF A. CRANE.' She frowns. 'Why drain the pool of a resort you claim you're trying to SELL? Unless empty pools scare buyers better.'"
+          }
+        ]
+      },
+      {
+        "id": "lumo_stash",
+        "label": "Tarp-Covered Stash",
+        "x": 70,
+        "y": 52,
+        "w": 16,
+        "h": 22,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "show_message",
+            "text": "Under a tarp: a dozen empty LUMO-GLOW cans, brushes, and a phantom-sheet with a torn hem awaiting repairs. The Phantom's supply depot. Fred: 'He walks these tunnels to haunt the whole resort unseen.'"
+          }
+        ]
+      },
+      {
+        "id": "tunnel_map_spot",
+        "label": "Map Pinned to a Beam",
+        "x": 44,
+        "y": 58,
+        "w": 10,
+        "h": 12,
+        "hidden_if_flags": [
+          "got_tunnel_map"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "pickup"
+          },
+          {
+            "type": "add_to_inventory",
+            "item": "tunnel_map"
+          },
+          {
+            "type": "set_flag",
+            "flag": "got_tunnel_map",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "A hand-drawn TUNNEL MAP, pinned at eye height: pool pumps \u2192 laundry \u2192 BOILER ROOM, marked in fresh green ink. So THAT's how the phantom crosses the resort without being seen."
+          }
+        ]
+      },
+      {
+        "id": "sealed_boiler_door",
+        "label": "Steel Door \u2014 'BOILER'",
+        "x": 86,
+        "y": 34,
+        "w": 10,
+        "h": 32,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "error"
+          },
+          {
+            "type": "show_message",
+            "text": "A steel door stenciled 'BOILER', barred from the other side. Cold green light seeps under it. The phantom's private commute \u2014 you'll have to reach the boiler room through the janitor's closet."
           }
         ]
       }

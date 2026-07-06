@@ -8,11 +8,13 @@ import {
   Hand,
   Key,
   KeyRound,
+  Map,
   Megaphone,
   PaintBucket,
   Scissors,
   Wand,
   WandSparkles,
+  Wrench,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -127,6 +129,30 @@ export const ITEMS: Record<string, ItemDef> = {
       "A megaphone rigged with a warbling reed — it turns a whisper into the Phantom's famous pipe-organ wail.",
     icon: Megaphone,
     color: '#4ade80',
+  },
+  garden_shears: {
+    id: 'garden_shears',
+    name: 'Garden Shears',
+    description:
+      'Heavy pruning shears from the greenhouse. Rusty, but they still bite through vines like Scooby through a sandwich.',
+    icon: Scissors,
+    color: '#84cc16',
+  },
+  crank_handle: {
+    id: 'crank_handle',
+    name: 'Crank Handle',
+    description:
+      "An iron crank handle from the toolshed pegboard. The square socket matches the pool's maintenance hatch.",
+    icon: Wrench,
+    color: '#94a3b8',
+  },
+  tunnel_map: {
+    id: 'tunnel_map',
+    name: 'Tunnel Map',
+    description:
+      "A hand-drawn map of the resort's service tunnels — someone marked a route from the pool pumps to the boiler room in fresh green ink.",
+    icon: Map,
+    color: '#fbbf24',
   },
 }
 

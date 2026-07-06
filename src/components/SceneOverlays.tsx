@@ -128,30 +128,67 @@ const GROUNDS: OverlayDef[] = [
     ),
   },
   {
-    id: 'vend_box_hanging',
-    unless: ['shook_vending'],
-    style: pct(82.6, 46.8, 3.8, 4.6),
+    id: 'vines_blocking',
+    unless: ['path_cleared'],
+    style: pct(78, 30, 14, 46),
     node: (
-      <svg viewBox="0 0 60 42" className="h-full w-full">
-        <g transform="rotate(14 30 21)">
-          <rect x="6" y="4" width="46" height="30" rx="4" fill="#e8b73a" />
-          <rect x="6" y="4" width="46" height="12" rx="4" fill="#c99b28" />
-          <circle cx="29" cy="24" r="5" fill="#7a4b12" />
+      <svg viewBox="0 0 224 414" className="h-full w-full" preserveAspectRatio="none">
+        <g stroke="#173c22" strokeWidth="14" fill="none" strokeLinecap="round">
+          <path d="M24 0 q40 90 -8 180 q-30 100 30 234" />
+          <path d="M110 -6 q-44 110 10 210 q38 90 -16 210" />
+          <path d="M196 0 q30 96 -18 190 q-30 96 22 224" />
+        </g>
+        <g stroke="#1e5230" strokeWidth="8" fill="none" strokeLinecap="round">
+          <path d="M60 10 q50 80 6 170 q-36 90 26 228" />
+          <path d="M160 4 q-40 90 4 186 q30 96 -20 218" />
+          <path d="M20 120 q80 30 184 10 M16 250 q90 34 196 8" />
+        </g>
+        <g fill="#2a6e40">
+          <ellipse cx="46" cy="88" rx="16" ry="8" transform="rotate(-30 46 88)" />
+          <ellipse cx="130" cy="60" rx="17" ry="8" transform="rotate(20 130 60)" />
+          <ellipse cx="190" cy="140" rx="15" ry="7" transform="rotate(-15 190 140)" />
+          <ellipse cx="70" cy="210" rx="17" ry="8" transform="rotate(25 70 210)" />
+          <ellipse cx="160" cy="260" rx="16" ry="8" transform="rotate(-24 160 260)" />
+          <ellipse cx="52" cy="330" rx="15" ry="7" transform="rotate(16 52 330)" />
+          <ellipse cx="140" cy="368" rx="17" ry="8" transform="rotate(-18 140 368)" />
+        </g>
+        <g fill="#d8c2e8">
+          <circle cx="96" cy="140" r="6" /><circle cx="176" cy="220" r="5" /><circle cx="60" cy="286" r="5.5" />
         </g>
       </svg>
     ),
   },
   {
-    id: 'vend_box_dropped',
-    when: ['shook_vending'],
-    animFlag: 'shook_vending',
-    animClass: 'anim-drop-bounce',
-    style: pct(79.6, 69.6, 6.2, 4.8),
+    id: 'hatch_lid_closed',
+    unless: ['hatch_open'],
+    style: pct(54, 80, 8, 12),
     node: (
-      <svg viewBox="0 0 100 44" className="h-full w-full">
-        <rect x="20" y="8" width="52" height="32" rx="4" fill="#e8b73a" transform="rotate(-8 46 24)" />
-        <rect x="20" y="8" width="52" height="13" rx="4" fill="#c99b28" transform="rotate(-8 46 24)" />
-        <circle cx="44" cy="28" r="5.5" fill="#7a4b12" transform="rotate(-8 46 24)" />
+      <svg viewBox="0 0 128 108" className="h-full w-full" preserveAspectRatio="none">
+        <ellipse cx="64" cy="54" rx="58" ry="44" fill="#3d4a52" stroke="#1c262c" strokeWidth="5" />
+        <ellipse cx="64" cy="54" rx="42" ry="31" fill="none" stroke="#2b3840" strokeWidth="4" />
+        <rect x="52" y="44" width="24" height="20" rx="4" fill="#1c262c" />
+        <rect x="58" y="48" width="12" height="12" rx="2" fill="#0e161b" />
+        <g fill="#242f36">
+          <circle cx="64" cy="16" r="4" /><circle cx="64" cy="92" r="4" />
+          <circle cx="12" cy="54" r="4" /><circle cx="116" cy="54" r="4" />
+        </g>
+        <path d="M28 30 q30 -12 66 -2" stroke="#5b6a72" strokeWidth="3" fill="none" opacity="0.6" />
+      </svg>
+    ),
+  },
+  {
+    id: 'hatch_open_hole',
+    when: ['hatch_open'],
+    animFlag: 'hatch_open',
+    animClass: 'msg-in anim-soft-glow',
+    staticClass: 'anim-soft-glow',
+    style: pct(53.4, 79, 9.2, 14),
+    node: (
+      <svg viewBox="0 0 147 126" className="h-full w-full" preserveAspectRatio="none">
+        <ellipse cx="73" cy="60" rx="62" ry="47" fill="#04070a" />
+        <ellipse cx="73" cy="60" rx="62" ry="47" fill="none" stroke="#4ade80" strokeWidth="3" opacity="0.5" />
+        <path d="M52 34 v52 M94 34 v52 M52 52 h42 M52 72 h42" stroke="#5b6a72" strokeWidth="5" fill="none" />
+        <ellipse cx="73" cy="60" rx="34" ry="24" fill="#4ade80" opacity="0.1" />
       </svg>
     ),
   },
@@ -176,19 +213,6 @@ const GROUNDS: OverlayDef[] = [
     ),
   },
   {
-    id: 'grate_glint',
-    when: ['shed_lit'],
-    unless: ['got_janitor_key'],
-    staticClass: 'anim-soft-glow',
-    style: pct(34.2, 69.8, 2.2, 3.4),
-    node: (
-      <svg viewBox="0 0 36 30" className="h-full w-full">
-        <circle cx="18" cy="15" r="6" fill="#ffe9a0" />
-        <path d="M18 1 v28 M4 15 h28 M8 5 l20 20 M28 5 l-20 20" stroke="#ffe9a0" strokeWidth="2.4" opacity="0.85" />
-      </svg>
-    ),
-  },
-  {
     id: 'pool_glove',
     unless: ['got_glove'],
     style: pct(63.5, 86, 4.5, 6),
@@ -201,17 +225,127 @@ const GROUNDS: OverlayDef[] = [
       </svg>
     ),
   },
+]
+
+/* ------------------------------------------------------------- toolshed */
+
+const TOOLSHED: OverlayDef[] = [
   {
-    id: 'key_rise',
+    id: 'shed_grate_glint',
+    unless: ['got_janitor_key'],
+    staticClass: 'anim-soft-glow',
+    style: pct(48.5, 69, 3, 4.5),
+    node: (
+      <svg viewBox="0 0 48 40" className="h-full w-full">
+        <circle cx="24" cy="20" r="8" fill="#ffe9a0" />
+        <path d="M24 2 v36 M6 20 h36 M11 7 l26 26 M37 7 l-26 26" stroke="#ffe9a0" strokeWidth="3" opacity="0.85" />
+      </svg>
+    ),
+  },
+  {
+    id: 'shed_key_rise',
     when: ['got_janitor_key'],
     animFlag: 'got_janitor_key',
     animClass: 'anim-rise-fade',
     ephemeralMs: 2200,
-    style: pct(33.4, 64.5, 3.6, 8.5),
+    style: pct(47.5, 60, 4.2, 10),
     node: (
       <svg viewBox="0 0 58 76" className="h-full w-full">
         <circle cx="29" cy="20" r="14" fill="none" stroke="#e0bd60" strokeWidth="7" />
         <path d="M29 34 V66 M29 54 h12 M29 64 h9" stroke="#e0bd60" strokeWidth="7" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    id: 'crank_on_pegboard',
+    unless: ['got_crank'],
+    style: pct(67, 28, 9, 16),
+    node: (
+      <svg viewBox="0 0 144 144" className="h-full w-full">
+        <g stroke="#8a929c" strokeWidth="13" strokeLinecap="round" fill="none">
+          <path d="M40 26 v46 h48 v46" />
+        </g>
+        <rect x="26" y="10" width="28" height="22" rx="5" fill="#5b6a72" stroke="#39434c" strokeWidth="3" />
+        <rect x="33" y="16" width="14" height="10" rx="2" fill="#242c33" />
+        <rect x="76" y="106" width="24" height="30" rx="9" fill="#7a4b2a" stroke="#4a2c16" strokeWidth="3" />
+        <path d="M46 32 q8 -6 14 0" stroke="#c9d2da" strokeWidth="2.5" fill="none" opacity="0.7" />
+      </svg>
+    ),
+  },
+]
+
+/* ----------------------------------------------------------- greenhouse */
+
+const GREENHOUSE: OverlayDef[] = [
+  {
+    id: 'shears_in_planter',
+    unless: ['got_shears'],
+    style: pct(57, 58, 9, 9),
+    node: (
+      <svg viewBox="0 0 144 90" className="h-full w-full">
+        <g transform="rotate(-18 72 45)">
+          <path d="M20 30 L86 46 L84 56 L18 42 Z" fill="#aeb6bd" stroke="#5c666e" strokeWidth="2.5" />
+          <path d="M22 52 L86 50 L86 60 L24 64 Z" fill="#9aa3ab" stroke="#5c666e" strokeWidth="2.5" />
+          <circle cx="92" cy="52" r="6" fill="#39434c" />
+          <path d="M96 46 q28 -10 34 4 q4 12 -20 16" fill="none" stroke="#7c4a2a" strokeWidth="9" strokeLinecap="round" />
+          <path d="M98 58 q26 2 32 12" fill="none" stroke="#8f5a34" strokeWidth="9" strokeLinecap="round" />
+        </g>
+        <path d="M10 74 q60 14 124 0" stroke="#1a3a24" strokeWidth="8" fill="none" opacity="0.5" />
+      </svg>
+    ),
+  },
+]
+
+/* ---------------------------------------------------------- pool cabana */
+
+const POOL_CABANA: OverlayDef[] = [
+  {
+    id: 'cabana_box_hanging',
+    unless: ['shook_vending'],
+    style: pct(68.6, 46.8, 3.8, 4.6),
+    node: (
+      <svg viewBox="0 0 60 42" className="h-full w-full">
+        <g transform="rotate(14 30 21)">
+          <rect x="6" y="4" width="46" height="30" rx="4" fill="#e8b73a" />
+          <rect x="6" y="4" width="46" height="12" rx="4" fill="#c99b28" />
+          <circle cx="29" cy="24" r="5" fill="#7a4b12" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    id: 'cabana_box_dropped',
+    when: ['shook_vending'],
+    animFlag: 'shook_vending',
+    animClass: 'anim-drop-bounce',
+    style: pct(65.6, 69.8, 6.2, 4.8),
+    node: (
+      <svg viewBox="0 0 100 44" className="h-full w-full">
+        <rect x="20" y="8" width="52" height="32" rx="4" fill="#e8b73a" transform="rotate(-8 46 24)" />
+        <rect x="20" y="8" width="52" height="13" rx="4" fill="#c99b28" transform="rotate(-8 46 24)" />
+        <circle cx="44" cy="28" r="5.5" fill="#7a4b12" transform="rotate(-8 46 24)" />
+      </svg>
+    ),
+  },
+]
+
+/* ------------------------------------------------------------ pump room */
+
+const PUMP_ROOM: OverlayDef[] = [
+  {
+    id: 'pinned_tunnel_map',
+    unless: ['got_tunnel_map'],
+    style: pct(44.5, 58.5, 8, 10.5),
+    node: (
+      <svg viewBox="0 0 128 95" className="h-full w-full">
+        <g transform="rotate(-4 64 47)">
+          <rect x="12" y="10" width="104" height="74" rx="3" fill="#e8dcb4" stroke="#8f825e" strokeWidth="2.5" />
+          <path d="M24 62 q22 -18 36 -4 q16 14 30 -8 q10 -14 22 -10" stroke="#3f8f52" strokeWidth="4" fill="none" />
+          <circle cx="24" cy="62" r="4" fill="#3f8f52" />
+          <path d="M104 38 l8 -6 M104 38 l8 6" stroke="#8c2424" strokeWidth="3" />
+          <path d="M28 24 h32 M28 34 h24" stroke="#8f825e" strokeWidth="2.5" />
+          <circle cx="64" cy="10" r="5" fill="#8c2424" />
+        </g>
       </svg>
     ),
   },
@@ -606,6 +740,10 @@ const SCENE_OVERLAYS: Record<string, OverlayDef[]> = {
   trap_room: TRAP_ROOM,
   office: OFFICE,
   room_217: ROOM_217,
+  toolshed: TOOLSHED,
+  greenhouse: GREENHOUSE,
+  pool_cabana: POOL_CABANA,
+  pump_room: PUMP_ROOM,
 }
 
 const NO_OVERLAYS: OverlayDef[] = []

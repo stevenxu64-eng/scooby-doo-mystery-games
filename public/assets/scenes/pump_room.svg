@@ -1,0 +1,406 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="pumpWall" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#15333b"/>
+<stop offset="50%" stop-color="#1f5152"/>
+<stop offset="100%" stop-color="#143439"/>
+</linearGradient>
+<linearGradient id="pumpFloor" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#2e5254"/>
+<stop offset="55%" stop-color="#152c32"/>
+<stop offset="100%" stop-color="#0c191e"/>
+</linearGradient>
+<linearGradient id="pumpMetal" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#33504f"/>
+<stop offset="45%" stop-color="#628887"/>
+<stop offset="100%" stop-color="#2a4243"/>
+</linearGradient>
+<linearGradient id="pumpDoor" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#3f5c5a"/>
+<stop offset="100%" stop-color="#263e3d"/>
+</linearGradient>
+<linearGradient id="pumpWood" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#6f4d2e"/>
+<stop offset="100%" stop-color="#472e14"/>
+</linearGradient>
+<linearGradient id="pumpPaper" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ece2c0"/>
+<stop offset="100%" stop-color="#cfc39a"/>
+</linearGradient>
+<linearGradient id="pumpTarp" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#5b7684"/>
+<stop offset="100%" stop-color="#3a4f5a"/>
+</linearGradient>
+<linearGradient id="pumpShaft" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#bcd7e8" stop-opacity="0.32"/>
+<stop offset="100%" stop-color="#bcd7e8" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="pumpCone" cx="50%" cy="0%" r="80%">
+<stop offset="0%" stop-color="#ffe2a4" stop-opacity="0.5"/>
+<stop offset="55%" stop-color="#ffe2a4" stop-opacity="0.16"/>
+<stop offset="100%" stop-color="#ffe2a4" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpLampGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ffe6a8" stop-opacity="0.45"/>
+<stop offset="100%" stop-color="#ffe6a8" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpWarmPool" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ffd98a" stop-opacity="0.2"/>
+<stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpGreen" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#4ade80" stop-opacity="0.3"/>
+<stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpSeep" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#7dfba2" stop-opacity="0.5"/>
+<stop offset="50%" stop-color="#4ade80" stop-opacity="0.22"/>
+<stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpAmb" cx="46%" cy="40%" r="70%">
+<stop offset="0%" stop-color="#9fd8c8" stop-opacity="0.09"/>
+<stop offset="100%" stop-color="#9fd8c8" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="pumpVign" cx="50%" cy="44%" r="75%">
+<stop offset="55%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+</radialGradient>
+<pattern id="pumpBlk" width="180" height="96" patternUnits="userSpaceOnUse">
+<path d="M0 48 H180 M0 96 H180 M90 0 V48 M180 48 V96" stroke="#0d2126" stroke-width="2" fill="none"/>
+</pattern>
+<g id="pumpFt">
+<ellipse rx="7" ry="12" fill="#4ade80"/>
+<circle cy="-16" r="4.2" fill="#4ade80"/>
+</g>
+<g id="pumpDialG">
+<circle r="24" fill="#223a3c"/>
+<circle r="19" fill="#e3e8da"/>
+<path d="M0 -19 A19 19 0 0 1 16 -10" stroke="#c04a4a" stroke-width="5" fill="none"/>
+<path d="M0 -19 v6 M13 -13 l-4 4 M-13 -13 l4 4 M-19 0 h6" stroke="#5c6a5e" stroke-width="2"/>
+<path d="M0 0 L-11 11" stroke="#8c2424" stroke-width="3.5"/>
+<circle r="3" fill="#40292c"/>
+</g>
+<g id="pumpCanG">
+<rect x="-20" y="0" width="40" height="58" rx="4" fill="#15291a"/>
+<ellipse cy="0" rx="20" ry="6" fill="#1e3a22"/>
+<rect x="-20" y="16" width="40" height="24" fill="#e4ecd6"/>
+<text y="33" font-family="Trebuchet MS" font-size="11" font-weight="bold" fill="#2e7a3e" text-anchor="middle">LUMO</text>
+<path d="M-12 6 q2 8 -1 16 M10 4 q3 10 0 20" stroke="#4ade80" stroke-width="3.5" opacity="0.85" fill="none"/>
+</g>
+<filter id="pumpGrain">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+<feColorMatrix type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+<feComposite operator="over" in2="SourceGraphic"/>
+</filter>
+</defs>
+<!-- ===== cavern shell ===== -->
+<rect width="1600" height="632" fill="url(#pumpWall)"/>
+<rect y="150" width="1600" height="482" fill="url(#pumpBlk)" opacity="0.35"/>
+<rect width="1600" height="150" fill="#0b171c"/>
+<path d="M0 148 H1600" stroke="#071012" stroke-width="4"/>
+<ellipse cx="240" cy="230" rx="130" ry="66" fill="#0d2830" opacity="0.3"/>
+<ellipse cx="620" cy="300" rx="140" ry="70" fill="#0d2830" opacity="0.35"/>
+<ellipse cx="1200" cy="240" rx="120" ry="60" fill="#0d2830" opacity="0.3"/>
+<rect width="1600" height="900" fill="url(#pumpAmb)"/>
+<!-- floor -->
+<rect y="620" width="1600" height="280" fill="url(#pumpFloor)"/>
+<rect y="614" width="1600" height="10" fill="#0e2228"/>
+<path d="M0 626 H1600" stroke="#081216" stroke-width="3"/>
+<ellipse cx="800" cy="800" rx="420" ry="60" fill="#8fd0c0" opacity="0.05"/>
+<ellipse cx="1240" cy="730" rx="200" ry="30" fill="#4ade80" opacity="0.05"/>
+<path d="M180 700 l90 26 M1050 872 l130 -24 l90 10 M330 850 l70 -14" stroke="#0a1518" stroke-width="2.5" opacity="0.6" fill="none"/>
+<path d="M0 676 H1600" stroke="#0e2026" stroke-width="3" opacity="0.5"/>
+<path d="M0 782 H1600" stroke="#0e2026" stroke-width="3" opacity="0.35"/>
+<!-- ===== moonlit hatch shaft + ladder UP (top-right) ===== -->
+<path d="M1284 88 L1340 88 L1380 556 L1246 556 Z" fill="url(#pumpShaft)"/>
+<rect x="1262" y="50" width="116" height="10" rx="4" fill="#4a6a72"/>
+<rect x="1266" y="54" width="108" height="30" rx="10" fill="#030a0e"/>
+<path d="M1280 62 q30 -10 60 0" stroke="#bcd7e8" stroke-width="3" fill="none" opacity="0.6"/>
+<path d="M1270 84 h100" stroke="#9ec4d8" stroke-width="2" opacity="0.5"/>
+<g stroke="#8fa8b8" stroke-width="6" fill="none">
+<path d="M1292 84 V520 M1332 84 V520"/>
+</g>
+<g stroke="#8fa8b8" stroke-width="5">
+<path d="M1292 120 h40 M1292 168 h40 M1292 216 h40 M1292 264 h40 M1292 312 h40 M1292 360 h40 M1292 408 h40 M1292 456 h40 M1292 504 h40"/>
+</g>
+<path d="M1294 86 V518" stroke="#dce8f0" stroke-width="1.5" opacity="0.5"/>
+<g fill="#dce8f0" opacity="0.4">
+<circle cx="1300" cy="180" r="1.8"/><circle cx="1322" cy="260" r="1.4"/><circle cx="1310" cy="340" r="1.6"/><circle cx="1330" cy="430" r="1.3"/>
+</g>
+<!-- ===== SEALED STEEL DOOR "BOILER" : hotspot 1376-1536 x 306-594 ===== -->
+<rect x="1364" y="294" width="184" height="322" fill="#0a1c20"/>
+<rect x="1368" y="298" width="176" height="314" fill="none" stroke="#3a5a5e" stroke-width="4"/>
+<rect x="1384" y="312" width="144" height="290" rx="4" fill="url(#pumpDoor)"/>
+<rect x="1392" y="320" width="128" height="274" fill="none" stroke="#22383a" stroke-width="5" stroke-dasharray="0.1 22" stroke-linecap="round"/>
+<path d="M1384 402 h144 M1384 500 h144" stroke="#2b4544" stroke-width="4" opacity="0.8"/>
+<text x="1456" y="372" font-family="Trebuchet MS" font-size="27" font-weight="bold" letter-spacing="5" fill="#a8ccbc" text-anchor="middle" opacity="0.9">BOILER</text>
+<rect x="1384" y="340" width="16" height="30" fill="#33484c"/>
+<rect x="1384" y="540" width="16" height="30" fill="#33484c"/>
+<circle cx="1392" cy="348" r="2.5" fill="#1a2c2e"/><circle cx="1392" cy="562" r="2.5" fill="#1a2c2e"/>
+<rect x="1376" y="448" width="160" height="24" rx="4" fill="#58666a"/>
+<path d="M1376 452 h160" stroke="#7d8c90" stroke-width="2" opacity="0.6"/>
+<circle cx="1394" cy="460" r="5" fill="#33403f"/><circle cx="1518" cy="460" r="5" fill="#33403f"/>
+<path d="M1500 472 q4 40 -2 80" stroke="#5c3a20" stroke-width="5" opacity="0.35" fill="none"/>
+<g fill="#101f22">
+<rect x="1420" y="520" width="72" height="6" rx="2"/>
+<rect x="1420" y="534" width="72" height="6" rx="2"/>
+<rect x="1420" y="548" width="72" height="6" rx="2"/>
+</g>
+<path d="M1424 523 h64 M1424 537 h64 M1424 551 h64" stroke="#4ade80" stroke-width="2.5" opacity="0.5"/>
+<rect x="1386" y="598" width="140" height="5" fill="#4ade80" opacity="0.85"/>
+<rect x="1398" y="598" width="116" height="3" fill="#b6f7c8" opacity="0.8"/>
+<ellipse cx="1456" cy="612" rx="118" ry="22" fill="url(#pumpSeep)">
+<animate attributeName="opacity" values="1;0.75;1" dur="3.2s" repeatCount="indefinite"/>
+</ellipse>
+<g fill="#4ade80" opacity="0.12">
+<path d="M1400 602 L1348 668 L1400 672 Z"/>
+<path d="M1440 604 L1436 690 L1480 688 Z"/>
+<path d="M1500 602 L1560 664 L1516 676 Z"/>
+</g>
+<path d="M1384 602 h144" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+<path d="M1384 480 V600 M1528 480 V600" stroke="#4ade80" stroke-width="2" opacity="0.18"/>
+<ellipse cx="1456" cy="600" rx="170" ry="60" fill="#4ade80" opacity="0.07"/>
+<g fill="#3f8f52" opacity="0.4">
+<ellipse cx="1352" cy="592" rx="10" ry="4"/><ellipse cx="1560" cy="602" rx="12" ry="5"/><ellipse cx="1380" cy="606" rx="8" ry="3.5"/>
+</g>
+<!-- ===== ceiling pipe tangle ===== -->
+<g stroke="#1a2c32" stroke-width="8">
+<path d="M120 0 V70 M480 0 V70 M840 0 V70 M1140 0 V70"/>
+</g>
+<path d="M0 88 H1240" stroke="#2c4a50" stroke-width="36"/>
+<path d="M0 78 H1240" stroke="#6b9296" stroke-width="4" opacity="0.5"/>
+<path d="M0 102 H1240" stroke="#1a3036" stroke-width="5" opacity="0.6"/>
+<g fill="#3f6066">
+<rect x="142" y="64" width="16" height="48"/><rect x="492" y="64" width="16" height="48"/><rect x="852" y="64" width="16" height="48"/><rect x="1228" y="62" width="14" height="52"/>
+</g>
+<g fill="#22383c">
+<circle cx="150" cy="72" r="2.5"/><circle cx="150" cy="104" r="2.5"/><circle cx="500" cy="72" r="2.5"/><circle cx="500" cy="104" r="2.5"/><circle cx="860" cy="72" r="2.5"/><circle cx="860" cy="104" r="2.5"/>
+</g>
+<path d="M150 108 q6 60 -2 110 M860 108 q5 50 -2 90" stroke="#0d2024" stroke-width="8" opacity="0.5" fill="none"/>
+<path d="M1234 110 q4 50 -2 90" stroke="#5c3a20" stroke-width="6" opacity="0.35" fill="none"/>
+<path d="M1150 103 H1236" stroke="#4ade80" stroke-width="4" opacity="0.15"/>
+<path d="M0 150 H700" stroke="#24424a" stroke-width="24"/>
+<path d="M0 143 H700" stroke="#54787c" stroke-width="3" opacity="0.5"/>
+<rect x="634" y="160" width="12" height="16" fill="#3f6066"/>
+<circle cx="640" cy="192" r="20" fill="none" stroke="#8a4a3a" stroke-width="5"/>
+<path d="M620 192 h40 M640 172 v40" stroke="#8a4a3a" stroke-width="4"/>
+<circle cx="640" cy="192" r="5" fill="#5c2c22"/>
+<rect x="1098" y="106" width="12" height="14" fill="#3f6066"/>
+<circle cx="1104" cy="134" r="16" fill="none" stroke="#8a4a3a" stroke-width="5"/>
+<path d="M1088 134 h32 M1104 118 v32" stroke="#8a4a3a" stroke-width="3.5"/>
+<circle cx="1104" cy="134" r="4" fill="#5c2c22"/>
+<path d="M560 106 V196" stroke="#3a4a4c" stroke-width="3" stroke-dasharray="6 5"/>
+<path d="M560 196 q-8 6 -2 14 q8 6 12 -2" stroke="#54787c" stroke-width="4" fill="none"/>
+<!-- wall dressing: hose coil, stencil plate -->
+<circle cx="120" cy="300" r="34" fill="none" stroke="#3f6a58" stroke-width="9"/>
+<circle cx="120" cy="300" r="20" fill="none" stroke="#35594a" stroke-width="6"/>
+<path d="M148 322 q18 30 8 66" stroke="#3f6a58" stroke-width="7" fill="none"/>
+<rect x="112" y="258" width="16" height="10" rx="3" fill="#2c3a3e"/>
+<rect x="556" y="212" width="128" height="36" rx="5" fill="#9aa88c" stroke="#2c3a3e" stroke-width="3"/>
+<text x="620" y="237" font-family="Trebuchet MS" font-size="16" font-weight="bold" fill="#3a4a4e" text-anchor="middle">PUMP DECK 3</text>
+<!-- ===== PUMP NO.1 (west) + MAINTENANCE LOG : hotspot 192-416 x 414-576 ===== -->
+<ellipse cx="305" cy="652" rx="185" ry="20" fill="#000" opacity="0.35"/>
+<rect x="293" y="150" width="26" height="168" fill="#2f4c52"/>
+<rect x="287" y="160" width="38" height="12" fill="#3f6066"/>
+<rect x="287" y="300" width="38" height="12" fill="#3f6066"/>
+<rect x="168" y="598" width="274" height="50" rx="6" fill="#1e3336"/>
+<rect x="176" y="622" width="258" height="18" fill="#b8933a"/>
+<path d="M184 640 l14 -18 M220 640 l14 -18 M256 640 l14 -18 M292 640 l14 -18 M328 640 l14 -18 M364 640 l14 -18 M400 640 l14 -18" stroke="#24221c" stroke-width="8"/>
+<rect x="252" y="318" width="106" height="88" rx="12" fill="#3b5a60"/>
+<ellipse cx="305" cy="318" rx="53" ry="12" fill="#4c6e74"/>
+<path d="M266 332 V394 M282 332 V394 M298 332 V394 M314 332 V394 M330 332 V394 M346 332 V394" stroke="#2b454b" stroke-width="5"/>
+<rect x="350" y="350" width="26" height="30" rx="4" fill="#2c4248"/>
+<path d="M376 364 q40 10 44 60" stroke="#1c2a2e" stroke-width="4" fill="none"/>
+<ellipse cx="305" cy="404" rx="124" ry="32" fill="#4f7472"/>
+<path d="M200 398 a120 30 0 0 1 118 -16" stroke="#9ec4be" stroke-width="3" fill="none" opacity="0.5"/>
+<rect x="180" y="402" width="250" height="206" rx="22" fill="url(#pumpMetal)"/>
+<path d="M245 410 V600 M365 410 V600" stroke="#26403f" stroke-width="3" opacity="0.7"/>
+<path d="M196 420 V592 M414 420 V592 M204 596 H406" stroke="#223a3c" stroke-width="5" stroke-dasharray="0.1 24" stroke-linecap="round"/>
+<path d="M416 430 q6 60 -4 120" stroke="#6a4426" stroke-width="4" opacity="0.35" fill="none"/>
+<path d="M428 430 q6 80 -2 160" stroke="#ffd98a" stroke-width="3" opacity="0.25" fill="none"/>
+<text x="305" y="592" font-family="Trebuchet MS" font-size="16" font-weight="bold" fill="#1a2f31" text-anchor="middle" opacity="0.85">NO.1</text>
+<use href="#pumpDialG" transform="translate(394 458)"/>
+<rect x="388" y="480" width="12" height="16" fill="#223a3c"/>
+<circle cx="214" cy="486" r="13" fill="none" stroke="#8a4a3a" stroke-width="4.5"/>
+<path d="M201 486 h26 M214 473 v26" stroke="#8a4a3a" stroke-width="3.5"/>
+<path d="M214 499 q-4 8 -6 10" stroke="#c9bd8a" stroke-width="2" fill="none"/>
+<g transform="rotate(8 219 516)">
+<rect x="206" y="508" width="28" height="17" rx="3" fill="#e0d090"/>
+<text x="220" y="521" font-family="Trebuchet MS" font-size="10" font-weight="bold" fill="#6a1e1e" text-anchor="middle">OFF</text>
+</g>
+<!-- clipboard -->
+<circle cx="306" cy="424" r="4" fill="#223a3c"/>
+<rect x="262" y="430" width="88" height="126" rx="7" fill="#7a5230" stroke="#4a3018" stroke-width="3"/>
+<rect x="288" y="424" width="36" height="13" rx="4" fill="#9aa0a8"/>
+<rect x="270" y="446" width="72" height="102" fill="url(#pumpPaper)"/>
+<text x="306" y="464" font-family="Trebuchet MS" font-size="12" font-weight="bold" fill="#4a3a20" text-anchor="middle">MAINT. LOG</text>
+<path d="M276 478 h60 M276 492 h60 M276 506 h60 M276 520 h44" stroke="#9a8b66" stroke-width="2"/>
+<text x="305" y="541" font-family="Trebuchet MS" font-size="10" font-weight="bold" fill="#8c2424" text-anchor="middle" transform="rotate(-4 305 538)">SHUT DOWN!</text>
+<path d="M342 432 q14 24 6 44" stroke="#6b543c" stroke-width="2" fill="none"/>
+<g transform="rotate(14 348 488)">
+<rect x="344" y="476" width="8" height="24" fill="#d9a03a"/>
+<path d="M344 500 l4 8 l4 -8 Z" fill="#e8d0a0"/>
+</g>
+<!-- ===== WOODEN BEAM + NAIL (map overlay pct 44.5,58.5,8,10.5 sits here) ===== -->
+<ellipse cx="768" cy="692" rx="46" ry="9" fill="#000" opacity="0.3"/>
+<rect x="688" y="268" width="160" height="26" fill="#5a3d22"/>
+<path d="M688 272 h160" stroke="#7d5a34" stroke-width="3" opacity="0.7"/>
+<circle cx="702" cy="281" r="3.5" fill="#2c1c0c"/><circle cx="834" cy="281" r="3.5" fill="#2c1c0c"/>
+<rect x="740" y="150" width="56" height="536" fill="url(#pumpWood)"/>
+<rect x="788" y="150" width="8" height="536" fill="#3a2814"/>
+<path d="M752 180 q4 120 -2 240 M772 320 q3 130 -2 260 M760 160 q-3 60 2 120" stroke="#3a2410" stroke-width="2.5" fill="none" opacity="0.7"/>
+<path d="M742 160 V680" stroke="#9ec4d8" stroke-width="2" opacity="0.2"/>
+<rect x="736" y="470" width="64" height="12" fill="#2c2620"/>
+<circle cx="744" cy="476" r="2.8" fill="#54585e"/><circle cx="792" cy="476" r="2.8" fill="#54585e"/>
+<rect x="732" y="676" width="72" height="16" rx="3" fill="#2c2014"/>
+<rect x="733" y="546" width="90" height="64" rx="2" fill="none" stroke="#e8dcb4" stroke-width="5" opacity="0.08" transform="rotate(-4 778 578)"/>
+<circle cx="776" cy="538" r="3.2" fill="#d8dade"/>
+<path d="M776 541 l3 6" stroke="#241a10" stroke-width="1.5"/>
+<!-- ===== caged wall work light (the one warm source) ===== -->
+<path d="M600 224 V150" stroke="#223236" stroke-width="4"/>
+<rect x="590" y="146" width="20" height="12" rx="3" fill="#2c3a3e"/>
+<rect x="584" y="224" width="32" height="18" rx="5" fill="#2c3a3e"/>
+<circle cx="600" cy="256" r="120" fill="url(#pumpLampGlow)" opacity="0.5"/>
+<circle cx="600" cy="256" r="46" fill="url(#pumpLampGlow)"/>
+<circle cx="600" cy="256" r="11" fill="#fff0c2"/>
+<path d="M595 259 q5 -6 10 0" stroke="#e8b95f" stroke-width="2" fill="none"/>
+<g stroke="#3a2f22" stroke-width="3.5" fill="none">
+<path d="M582 244 a24 24 0 0 1 36 0"/>
+<path d="M582 244 q-3 22 10 32"/>
+<path d="M618 244 q3 22 -10 32"/>
+<path d="M592 276 h16"/>
+</g>
+<path d="M600 278 L430 900 L788 900 Z" fill="url(#pumpCone)"/>
+<ellipse cx="620" cy="790" rx="230" ry="66" fill="url(#pumpWarmPool)"/>
+<g fill="#ffe9b0" opacity="0.4">
+<circle cx="576" cy="380" r="1.8"/><circle cx="626" cy="470" r="1.5"/><circle cx="588" cy="560" r="1.9"/><circle cx="642" cy="640" r="1.4"/><circle cx="562" cy="700" r="1.7"/>
+</g>
+<!-- ===== PUMP NO.2 (center-east) ===== -->
+<ellipse cx="985" cy="648" rx="150" ry="18" fill="#000" opacity="0.35"/>
+<rect x="972" y="150" width="26" height="194" fill="#2f4c52"/>
+<rect x="966" y="200" width="38" height="12" fill="#3f6066"/>
+<rect x="966" y="330" width="38" height="12" fill="#3f6066"/>
+<rect x="858" y="596" width="254" height="46" rx="6" fill="#1e3336"/>
+<rect x="866" y="618" width="238" height="16" fill="#b8933a"/>
+<path d="M874 634 l12 -16 M910 634 l12 -16 M946 634 l12 -16 M982 634 l12 -16 M1018 634 l12 -16 M1054 634 l12 -16 M1090 634 l12 -16" stroke="#24221c" stroke-width="7"/>
+<rect x="930" y="340" width="110" height="84" rx="12" fill="#3b5a60"/>
+<ellipse cx="985" cy="340" rx="55" ry="12" fill="#4c6e74"/>
+<path d="M944 352 V412 M960 352 V412 M976 352 V412 M992 352 V412 M1008 352 V412 M1024 352 V412" stroke="#2b454b" stroke-width="5"/>
+<ellipse cx="985" cy="420" rx="116" ry="28" fill="#4f7472"/>
+<path d="M888 414 a112 26 0 0 1 110 -14" stroke="#9ec4be" stroke-width="3" fill="none" opacity="0.5"/>
+<rect x="868" y="418" width="234" height="182" rx="20" fill="url(#pumpMetal)"/>
+<rect x="1102" y="500" width="48" height="22" fill="#2f4c52"/>
+<path d="M930 424 V596 M1040 424 V596" stroke="#26403f" stroke-width="3" opacity="0.7"/>
+<path d="M882 434 V586 M1088 434 V586 M892 592 H1080" stroke="#223a3c" stroke-width="5" stroke-dasharray="0.1 24" stroke-linecap="round"/>
+<path d="M1086 440 q6 60 -4 116" stroke="#6a4426" stroke-width="4" opacity="0.35" fill="none"/>
+<path d="M1100 444 q6 76 -2 152" stroke="#4ade80" stroke-width="3" opacity="0.3" fill="none"/>
+<text x="985" y="584" font-family="Trebuchet MS" font-size="15" font-weight="bold" fill="#1a2f31" text-anchor="middle" opacity="0.85">NO.2</text>
+<use href="#pumpDialG" transform="translate(906 468) scale(0.85)"/>
+<!-- floor tools -->
+<ellipse cx="500" cy="662" rx="40" ry="8" fill="#000" opacity="0.3"/>
+<path d="M472 604 h56 l-6 54 h-44 Z" fill="#55707c"/>
+<ellipse cx="500" cy="604" rx="28" ry="7" fill="#33454e"/>
+<ellipse cx="500" cy="605" rx="20" ry="4.5" fill="#16323a"/>
+<path d="M492 604 q8 4 16 0" stroke="#4ade80" stroke-width="1.5" opacity="0.5" fill="none"/>
+<path d="M478 598 a22 14 0 0 1 44 0" stroke="#7d8c90" stroke-width="4" fill="none"/>
+<g transform="rotate(18 858 690)">
+<rect x="840" y="686" width="42" height="8" rx="4" fill="#7d868c"/>
+<circle cx="838" cy="690" r="8" fill="none" stroke="#7d868c" stroke-width="5"/>
+</g>
+<!-- ===== TARP STASH of LUMO-GLOW : hotspot 1120-1376 x 468-666 ===== -->
+<ellipse cx="1250" cy="662" rx="132" ry="18" fill="#000" opacity="0.35"/>
+<ellipse cx="1300" cy="470" rx="160" ry="60" fill="#4ade80" opacity="0.08"/>
+<use href="#pumpCanG" transform="translate(1331 498)"/>
+<use href="#pumpCanG" transform="translate(1310 556)"/>
+<use href="#pumpCanG" transform="translate(1352 560)"/>
+<path d="M1128 652 L1136 560 Q1150 498 1214 492 Q1268 488 1290 520 L1302 560 L1308 652 Z" fill="url(#pumpTarp)"/>
+<path d="M1152 640 q6 -70 22 -110 M1210 646 q0 -80 10 -128 M1262 648 q2 -60 -6 -108" stroke="#33454e" stroke-width="3" fill="none" opacity="0.8"/>
+<path d="M1140 560 Q1160 502 1216 494" stroke="#7d97a4" stroke-width="3" fill="none" opacity="0.6"/>
+<path d="M1150 522 q30 -16 66 -18" stroke="#bcd7e8" stroke-width="3" fill="none" opacity="0.25"/>
+<path d="M1290 520 q28 8 18 56 l-18 -16 Z" fill="#61798a"/>
+<circle cx="1136" cy="644" r="3.5" fill="#26343a"/><circle cx="1180" cy="650" r="3.5" fill="#26343a"/>
+<path d="M1136 646 q-18 12 -26 22" stroke="#8a6636" stroke-width="3" fill="none"/>
+<path d="M1132 604 q22 26 58 30 l4 22 h-58 Z" fill="#c9d4d8"/>
+<path d="M1138 626 l8 6 l-6 6 l9 5 l-7 7 M1160 640 q10 4 22 2" stroke="#98a6ac" stroke-width="2.5" fill="none"/>
+<g transform="rotate(-86 1248 664)">
+<rect x="1222" y="648" width="52" height="34" rx="4" fill="#15291a"/>
+<ellipse cx="1274" cy="665" rx="6" ry="17" fill="#1e3a22"/>
+<rect x="1236" y="648" width="20" height="34" fill="#e4ecd6"/>
+</g>
+<path d="M1268 676 q30 12 62 6 q14 -4 6 -12 q-28 -12 -60 -8 Z" fill="#4ade80" opacity="0.45"/>
+<path d="M1276 674 q26 8 48 4" stroke="#b6f7c8" stroke-width="3" opacity="0.7" fill="none"/>
+<g transform="rotate(-12 1196 676)">
+<rect x="1168" y="672" width="44" height="7" rx="3" fill="#8a6636"/>
+<path d="M1212 670 h18 l4 11 h-20 Z" fill="#d8cba4"/>
+<path d="M1230 672 q8 4 6 9" stroke="#4ade80" stroke-width="4" fill="none"/>
+</g>
+<circle cx="1320" cy="560" r="135" fill="url(#pumpGreen)"/>
+<circle cx="1268" cy="672" r="60" fill="url(#pumpGreen)" opacity="0.7"/>
+<!-- glowing footprints toward the boiler door -->
+<g fill="#4ade80" opacity="0.1">
+<circle cx="884" cy="846" r="16"/><circle cx="972" cy="812" r="16"/><circle cx="1060" cy="794" r="16"/><circle cx="1146" cy="760" r="16"/><circle cx="1232" cy="740" r="16"/><circle cx="1318" cy="702" r="16"/><circle cx="1398" cy="682" r="17"/><circle cx="1456" cy="652" r="17"/>
+</g>
+<use href="#pumpFt" transform="translate(884 846) rotate(82)" opacity="0.5"/>
+<use href="#pumpFt" transform="translate(972 812) rotate(88)" opacity="0.58"/>
+<use href="#pumpFt" transform="translate(1060 794) rotate(80)" opacity="0.66"/>
+<use href="#pumpFt" transform="translate(1146 760) rotate(90)" opacity="0.72"/>
+<use href="#pumpFt" transform="translate(1232 740) rotate(78)" opacity="0.8"/>
+<use href="#pumpFt" transform="translate(1318 702) rotate(88)" opacity="0.86"/>
+<use href="#pumpFt" transform="translate(1398 682) rotate(76)" opacity="0.92"/>
+<use href="#pumpFt" transform="translate(1456 652) rotate(84)" opacity="0.95"/>
+<!-- puddles + drips -->
+<ellipse cx="430" cy="792" rx="70" ry="13" fill="#0b1d24"/>
+<path d="M368 788 a70 13 0 0 1 92 -6" stroke="#59a7a0" stroke-width="2" fill="none" opacity="0.5"/>
+<path d="M404 792 q24 6 48 2" stroke="#4ade80" stroke-width="3" opacity="0.3" fill="none"/>
+<path d="M440 786 q14 5 30 4" stroke="#ffd98a" stroke-width="2" opacity="0.35" fill="none"/>
+<ellipse cx="640" cy="818" rx="60" ry="11" fill="#0b1d24"/>
+<path d="M588 814 a60 11 0 0 1 80 -5" stroke="#59a7a0" stroke-width="2" fill="none" opacity="0.5"/>
+<path d="M612 818 q22 6 44 2" stroke="#4ade80" stroke-width="3" opacity="0.3" fill="none"/>
+<ellipse cx="640" cy="818" rx="4" ry="1.5" fill="none" stroke="#7cc4bc" stroke-width="2">
+<animate attributeName="rx" values="4;42" dur="1.6s" repeatCount="indefinite"/>
+<animate attributeName="ry" values="1.5;9" dur="1.6s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0.6;0" dur="1.6s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="1000" cy="848" rx="90" ry="14" fill="#0b1d24"/>
+<path d="M920 844 a90 14 0 0 1 118 -7" stroke="#59a7a0" stroke-width="2" fill="none" opacity="0.45"/>
+<path d="M962 848 q30 7 60 2" stroke="#4ade80" stroke-width="3.5" opacity="0.35" fill="none"/>
+<ellipse cx="1566" cy="706" rx="26" ry="7" fill="#0b1d24"/>
+<path d="M1548 703 q16 6 34 2" stroke="#4ade80" stroke-width="2.5" opacity="0.45" fill="none"/>
+<circle cx="500" cy="120" r="3" fill="#9fd4e8" opacity="0.85">
+<animate attributeName="cy" values="120;600;600" dur="2.2s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.85;0" dur="2.2s" repeatCount="indefinite"/>
+</circle>
+<circle cx="640" cy="212" r="3" fill="#9fd4e8" opacity="0.85">
+<animate attributeName="cy" values="212;812;812" dur="1.6s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.85;0" dur="1.6s" repeatCount="indefinite"/>
+</circle>
+<circle cx="1566" cy="154" r="2.6" fill="#9fd4e8" opacity="0.8">
+<animate attributeName="cy" values="154;700;700" dur="2.8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.8;0" dur="2.8s" repeatCount="indefinite"/>
+</circle>
+<!-- rats in the dark corner -->
+<path d="M0 900 V812 q70 -6 132 30 l40 58 Z" fill="#050c0e"/>
+<ellipse cx="96" cy="850" rx="26" ry="12" fill="#071114"/>
+<circle cx="76" cy="842" r="6" fill="#071114"/>
+<path d="M120 852 q26 -4 34 10" stroke="#071114" stroke-width="3" fill="none"/>
+<g fill="#ffd24a">
+<circle cx="86" cy="844" r="2.6"/><circle cx="97" cy="844" r="2.6"/>
+<animate attributeName="opacity" values="1;1;1;0;1" dur="4.6s" repeatCount="indefinite"/>
+</g>
+<g fill="#ff9a4a" opacity="0.9">
+<circle cx="130" cy="864" r="2.2"/><circle cx="139" cy="864" r="2.2"/>
+</g>
+<g fill="#ffd24a" opacity="0.6">
+<circle cx="38" cy="874" r="1.8"/><circle cx="46" cy="874" r="1.8"/>
+</g>
+<path d="M1600 900 V846 q-70 -2 -118 22 l-26 32 Z" fill="#050c0e" opacity="0.85"/>
+<!-- cobwebs -->
+<g stroke="#9ab4ac" stroke-width="1.2" opacity="0.22" fill="none">
+<path d="M0 150 Q60 176 108 150 M0 208 Q52 200 92 162 M40 150 Q46 196 18 224"/>
+<path d="M718 106 Q762 132 812 108 M736 106 Q748 142 726 162"/>
+<path d="M1368 300 Q1408 322 1452 302 M1368 348 Q1398 336 1380 306"/>
+</g>
+<rect width="1600" height="900" filter="url(#pumpGrain)" opacity="0.3"/>
+<rect width="1600" height="900" fill="url(#pumpVign)"/>
+</svg>

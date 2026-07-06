@@ -1,0 +1,493 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="greenhouseSky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#050f1e"/>
+<stop offset="55%" stop-color="#0b2f38"/>
+<stop offset="100%" stop-color="#10493d"/>
+</linearGradient>
+<linearGradient id="greenhouseFloor" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#1e5245"/>
+<stop offset="55%" stop-color="#123830"/>
+<stop offset="100%" stop-color="#0a201a"/>
+</linearGradient>
+<radialGradient id="greenhouseMoonHalo" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#dff0ec" stop-opacity="0.4"/>
+<stop offset="100%" stop-color="#dff0ec" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="greenhouseMoonSurf" cx="42%" cy="40%" r="70%">
+<stop offset="0%" stop-color="#f6fbf7"/>
+<stop offset="100%" stop-color="#d3e4e0"/>
+</radialGradient>
+<linearGradient id="greenhouseBeam" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#dff0ec" stop-opacity="0.2"/>
+<stop offset="100%" stop-color="#dff0ec" stop-opacity="0.02"/>
+</linearGradient>
+<radialGradient id="greenhouseRose" cx="46%" cy="42%" r="60%">
+<stop offset="0%" stop-color="#b8e4da"/>
+<stop offset="100%" stop-color="#16424a"/>
+</radialGradient>
+<radialGradient id="greenhouseRoseGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#cfeee6" stop-opacity="0.28"/>
+<stop offset="100%" stop-color="#cfeee6" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="greenhousePool" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#bfe0dc" stop-opacity="0.13"/>
+<stop offset="100%" stop-color="#bfe0dc" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="greenhouseWarm" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ffbf6a" stop-opacity="0.32"/>
+<stop offset="100%" stop-color="#ffbf6a" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="greenhouseResidue" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#4ade80" stop-opacity="0.3"/>
+<stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="greenhouseWater" cx="42%" cy="40%" r="65%">
+<stop offset="0%" stop-color="#2c6a72"/>
+<stop offset="100%" stop-color="#0b2530"/>
+</radialGradient>
+<linearGradient id="greenhousePot" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#b06a42"/>
+<stop offset="100%" stop-color="#7c4128"/>
+</linearGradient>
+<linearGradient id="greenhouseWood" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#6b4a30"/>
+<stop offset="100%" stop-color="#47301e"/>
+</linearGradient>
+<radialGradient id="greenhouseVign" cx="50%" cy="42%" r="75%">
+<stop offset="55%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+</radialGradient>
+<pattern id="greenhouseBrick" width="120" height="44" patternUnits="userSpaceOnUse">
+<path d="M0 22 H120 M0 44 H120 M60 0 V22 M120 22 V44 M0 22 V44" stroke="#12241f" stroke-width="2" fill="none"/>
+</pattern>
+<filter id="greenhouseGrain">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+<feColorMatrix type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+<feComposite operator="over" in2="SourceGraphic"/>
+</filter>
+<g id="greenhouseBloom">
+<circle r="12" fill="#cbb8f0" opacity="0.16"/>
+<circle r="5.2" fill="#efe9fb"/>
+<path d="M-5.2 0 H5.2 M0 -5.2 V5.2" stroke="#9c86cc" stroke-width="1.4"/>
+<circle r="1.8" fill="#e8d27c"/>
+</g>
+<path id="greenhouseMonst" d="M0 0 Q-10 -52 22 -86 Q16 -56 28 -50 Q34 -92 66 -104 Q52 -68 62 -60 Q82 -88 112 -84 Q90 -58 92 -48 Q118 -52 130 -30 Q102 -24 98 -14 Q112 -4 110 8 Q84 4 54 8 Q20 10 0 0 Z"/>
+</defs>
+<!-- ===== night sky seen through the glass ===== -->
+<rect width="1600" height="570" fill="url(#greenhouseSky)"/>
+<g fill="#dfe9f2">
+<circle cx="120" cy="80" r="1.6"/><circle cx="210" cy="150" r="1.2"/><circle cx="320" cy="60" r="1.8"/>
+<circle cx="520" cy="100" r="1.3"/><circle cx="600" cy="180" r="1.5"/><circle cx="700" cy="90" r="1.3"/>
+<circle cx="900" cy="70" r="1.7"/><circle cx="1000" cy="150" r="1.2"/><circle cx="1120" cy="60" r="1.5"/>
+<circle cx="1300" cy="110" r="1.6"/><circle cx="1420" cy="70" r="1.3"/><circle cx="1490" cy="160" r="1.5"/>
+<circle cx="1560" cy="90" r="1.7"/><circle cx="840" cy="120" r="1.2"/>
+</g>
+<g stroke="#eef2fa" stroke-width="1.5" opacity="0.75">
+<path d="M320 48 v24 M308 60 h24"/><path d="M1300 98 v24 M1288 110 h24"/>
+</g>
+<path d="M560 130 q70 -20 150 -4 q60 12 120 0 q-50 28 -150 18 q-80 -4 -120 -14 Z" fill="#050e1c" opacity="0.6"/>
+<path d="M1180 84 q54 -14 108 0 q-32 22 -108 10 Z" fill="#050e1c" opacity="0.5"/>
+<!-- moon behind the left panes -->
+<circle cx="390" cy="178" r="112" fill="url(#greenhouseMoonHalo)"/>
+<circle cx="390" cy="178" r="62" fill="url(#greenhouseMoonSurf)"/>
+<g fill="#c2d2ce">
+<circle cx="368" cy="162" r="12"/><circle cx="408" cy="192" r="8"/><circle cx="398" cy="150" r="5"/>
+<circle cx="366" cy="196" r="6"/><circle cx="414" cy="166" r="4"/>
+</g>
+<g fill="#aabfba" opacity="0.7">
+<circle cx="371" cy="165" r="7"/><circle cx="410" cy="194" r="5"/><circle cx="368" cy="198" r="3.5"/>
+</g>
+<!-- ===== fogged glass panes + sheen + condensation ===== -->
+<g fill="#a8dcd8">
+<rect x="86" y="138" width="148" height="118" opacity="0.07"/>
+<rect x="406" y="268" width="148" height="118" opacity="0.1"/>
+<rect x="886" y="138" width="148" height="118" opacity="0.06"/>
+<rect x="1206" y="268" width="148" height="118" opacity="0.09"/>
+<rect x="566" y="398" width="148" height="96" opacity="0.12"/>
+<rect x="86" y="398" width="148" height="96" opacity="0.08"/>
+<rect x="1366" y="138" width="148" height="118" opacity="0.07"/>
+<rect x="246" y="50" width="148" height="76" opacity="0.05"/>
+<rect x="1046" y="138" width="148" height="118" opacity="0.05"/>
+</g>
+<path d="M120 460 L520 60 L600 60 L200 460 Z" fill="#cfe8e4" opacity="0.04"/>
+<path d="M980 470 L1380 70 L1440 70 L1040 470 Z" fill="#cfe8e4" opacity="0.04"/>
+<g stroke="#cfe8e4" fill="none" stroke-width="2">
+<path d="M448 278 q4 34 -2 66 q-2 22 2 34 M500 284 q-3 40 2 88" opacity="0.16"/>
+<path d="M610 406 q3 30 -1 62 M660 410 q-3 36 1 74" opacity="0.18"/>
+</g>
+<circle cx="612" r="2.4" fill="#cfe8e4">
+<animate attributeName="cy" values="410;486;486" dur="2.6s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.8;0" dur="2.6s" repeatCount="indefinite"/>
+</circle>
+<!-- ===== iron ribs and frame ===== -->
+<g stroke="#0b2229" stroke-width="10">
+<path d="M80 44 V496 M240 44 V496 M400 44 V496 M560 44 V496 M720 44 V496 M880 44 V496 M1040 44 V496 M1200 44 V496 M1360 44 V496 M1520 44 V496"/>
+</g>
+<path d="M84 48 V492 M244 48 V492 M404 48 V492 M564 48 V492 M884 48 V492 M1044 48 V492 M1204 48 V492 M1364 48 V492" stroke="#4a8a8c" stroke-width="1.8" opacity="0.22" fill="none"/>
+<g stroke="#0b2229" stroke-width="6">
+<path d="M20 132 H1580 M20 262 H1580 M20 392 H1580"/>
+</g>
+<path d="M20 44 L80 132 M80 44 L20 132 M1520 44 L1580 132 M1580 44 L1520 132" stroke="#0b2229" stroke-width="5"/>
+<rect x="14" y="44" width="18" height="524" fill="#0b2229"/>
+<rect x="1568" y="44" width="18" height="524" fill="#0b2229"/>
+<path d="M0 18 H1600" stroke="#0d242c" stroke-width="4" opacity="0.6"/>
+<path d="M80 18 V38 M240 18 V38 M400 18 V38 M560 18 V38 M720 18 V38 M880 18 V38 M1040 18 V38 M1200 18 V38 M1360 18 V38 M1520 18 V38" stroke="#0d242c" stroke-width="4" opacity="0.6"/>
+<rect y="38" width="1600" height="14" fill="#0d242c"/>
+<path d="M0 40 H1600" stroke="#4a8a8c" stroke-width="1.5" opacity="0.25"/>
+<g fill="#26424a">
+<circle cx="160" cy="45" r="2.5"/><circle cx="480" cy="45" r="2.5"/><circle cx="640" cy="45" r="2.5"/>
+<circle cx="960" cy="45" r="2.5"/><circle cx="1120" cy="45" r="2.5"/><circle cx="1440" cy="45" r="2.5"/>
+</g>
+<!-- pointed cathedral arches -->
+<g stroke="#0d242c" stroke-width="13" fill="none">
+<path d="M80 470 V210 Q86 92 320 60 Q554 92 560 210 V470"/>
+<path d="M560 470 V200 Q570 78 800 52 Q1030 78 1040 200 V470"/>
+<path d="M1040 470 V210 Q1046 92 1280 60 Q1514 92 1520 210 V470"/>
+</g>
+<g stroke="#3f7c7c" stroke-width="2.5" fill="none" opacity="0.3">
+<path d="M90 460 V212 Q96 100 320 70"/>
+<path d="M570 460 V202 Q580 88 800 62"/>
+<path d="M1050 460 V212 Q1056 100 1280 70"/>
+</g>
+<path d="M320 14 L330 32 L320 42 L310 32 Z M800 6 L811 24 L800 36 L789 24 Z M1280 14 L1290 32 L1280 42 L1270 32 Z" fill="#0d242c"/>
+<!-- rose-window end pane -->
+<circle cx="800" cy="196" r="135" fill="url(#greenhouseRoseGlow)"/>
+<circle cx="800" cy="196" r="90" fill="url(#greenhouseRose)" stroke="#0d242c" stroke-width="12"/>
+<path d="M800 110 V282 M714 196 H886 M739 135 L861 257 M861 135 L739 257" stroke="#0d242c" stroke-width="6"/>
+<g fill="none" stroke="#0d242c" stroke-width="4">
+<circle cx="856" cy="196" r="15"/><circle cx="744" cy="196" r="15"/><circle cx="800" cy="140" r="15"/><circle cx="800" cy="252" r="15"/>
+<circle cx="840" cy="156" r="15"/><circle cx="760" cy="156" r="15"/><circle cx="840" cy="236" r="15"/><circle cx="760" cy="236" r="15"/>
+</g>
+<circle cx="800" cy="196" r="26" fill="#0f3038" stroke="#0d242c" stroke-width="6"/>
+<path d="M756 160 a60 60 0 0 1 60 -22" stroke="#cfe8e4" stroke-width="3" fill="none" opacity="0.3"/>
+<!-- brick kneewall -->
+<rect y="492" width="1600" height="10" fill="#2f5348"/>
+<path d="M0 494 H1600" stroke="#6fa896" stroke-width="1.5" opacity="0.3"/>
+<rect y="502" width="1600" height="66" fill="#23413a"/>
+<rect y="502" width="1600" height="66" fill="url(#greenhouseBrick)" opacity="0.8"/>
+<path d="M240 502 v62 M880 502 v62 M1360 502 v62" stroke="#142a24" stroke-width="5" opacity="0.5"/>
+<!-- glass door north to the grounds -->
+<rect x="720" y="296" width="160" height="272" fill="#0d242c"/>
+<rect x="730" y="306" width="66" height="252" fill="#10333a"/>
+<rect x="804" y="306" width="66" height="252" fill="#10333a"/>
+<g fill="#0a2a34">
+<rect x="736" y="312" width="24" height="64"/><rect x="766" y="312" width="24" height="64"/>
+<rect x="736" y="384" width="24" height="64"/><rect x="766" y="384" width="24" height="64"/>
+<rect x="736" y="456" width="24" height="56"/><rect x="766" y="456" width="24" height="56"/>
+<rect x="810" y="312" width="24" height="64"/><rect x="840" y="312" width="24" height="64"/>
+<rect x="810" y="384" width="24" height="64"/><rect x="840" y="384" width="24" height="64"/>
+<rect x="810" y="456" width="24" height="56"/><rect x="840" y="456" width="24" height="56"/>
+</g>
+<path d="M738 500 q10 -8 20 0 M814 496 q12 -10 22 0 M844 502 q8 -6 16 0" fill="#06181c"/>
+<rect x="730" y="520" width="66" height="38" fill="#0b1e24"/>
+<rect x="804" y="520" width="66" height="38" fill="#0b1e24"/>
+<circle cx="790" cy="440" r="4" fill="#c9a24a"/><circle cx="810" cy="440" r="4" fill="#c9a24a"/>
+<rect x="720" y="560" width="160" height="8" fill="#1c332c"/>
+<!-- broken pane with escaping vine -->
+<path d="M1118 158 L1136 176 L1162 170 L1148 194 L1168 212 L1140 214 L1134 242 L1114 218 L1088 224 L1102 198 L1080 182 L1108 182 Z" fill="#0a2b36" stroke="#cfe8e4" stroke-width="2" opacity="0.9"/>
+<path d="M1088 224 L1052 250 M1136 176 L1176 148 M1168 212 L1190 232 M1114 218 L1094 252" stroke="#cfe8e4" stroke-width="1.5" opacity="0.35" fill="none"/>
+<path d="M1218 500 Q1200 430 1212 372 Q1220 322 1196 284 Q1172 248 1134 216" stroke="#16452f" stroke-width="5" fill="none"/>
+<path d="M1134 216 Q1104 196 1092 168 Q1082 142 1094 116" stroke="#0e2f24" stroke-width="5" fill="none"/>
+<path d="M1094 116 q10 -8 4 -16 q-6 -8 -14 -2" stroke="#0e2f24" stroke-width="3.5" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="1210" cy="420" rx="11" ry="5.5" transform="rotate(-30 1210 420)"/>
+<ellipse cx="1214" cy="330" rx="11" ry="5.5" transform="rotate(24 1214 330)"/>
+<ellipse cx="1180" cy="268" rx="10" ry="5" transform="rotate(-18 1180 268)"/>
+</g>
+<g fill="#0e2f24">
+<ellipse cx="1094" cy="150" rx="10" ry="5" transform="rotate(-24 1094 150)"/>
+<ellipse cx="1098" cy="128" rx="8" ry="4" transform="rotate(16 1098 128)"/>
+</g>
+<!-- ===== hanging baskets ===== -->
+<g>
+<path d="M250 46 V64" stroke="#46555c" stroke-width="3"/>
+<path d="M250 64 L212 150 M250 64 L288 150 M250 64 L250 146" stroke="#8a929c" stroke-width="2" fill="none"/>
+<g fill="#16452f">
+<circle cx="226" cy="140" r="20"/><circle cx="258" cy="132" r="24"/><circle cx="284" cy="142" r="16"/>
+</g>
+<circle cx="240" cy="130" r="14" fill="#1d5c40"/><circle cx="270" cy="136" r="12" fill="#1d5c40"/>
+<path d="M198 152 Q206 208 250 210 Q294 208 302 152 Z" fill="url(#greenhousePot)"/>
+<ellipse cx="250" cy="152" rx="52" ry="10" fill="#8a4a2c"/>
+<path d="M206 170 Q250 184 294 170 M212 188 Q250 200 288 188" stroke="#5c301c" stroke-width="2" fill="none"/>
+<path d="M212 158 q-10 60 6 118 M286 158 q14 54 -2 108 M250 210 q-6 44 4 84" stroke="#1d5c40" stroke-width="3.5" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="214" cy="216" rx="10" ry="5" transform="rotate(-24 214 216)"/>
+<ellipse cx="290" cy="212" rx="10" ry="5" transform="rotate(20 290 212)"/>
+<ellipse cx="248" cy="262" rx="9" ry="4.5" transform="rotate(-14 248 262)"/>
+</g>
+<use href="#greenhouseBloom" transform="translate(218 278)"/>
+<use href="#greenhouseBloom" transform="translate(282 258) scale(0.85)"/>
+</g>
+<g>
+<path d="M990 44 V58" stroke="#46555c" stroke-width="3"/>
+<path d="M990 58 L958 128 M990 58 L1022 128 M990 58 L990 124" stroke="#8a929c" stroke-width="2" fill="none"/>
+<g fill="#16452f">
+<circle cx="972" cy="120" r="15"/><circle cx="1000" cy="114" r="17"/><circle cx="1016" cy="124" r="11"/>
+</g>
+<circle cx="988" cy="112" r="10" fill="#1d5c40"/>
+<path d="M950 130 Q958 176 990 178 Q1022 176 1030 130 Z" fill="url(#greenhousePot)"/>
+<ellipse cx="990" cy="130" rx="40" ry="8" fill="#8a4a2c"/>
+<path d="M960 136 q-8 44 4 88 M1020 136 q10 40 -2 78" stroke="#1d5c40" stroke-width="3" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="962" cy="180" rx="9" ry="4.5" transform="rotate(-22 962 180)"/>
+<ellipse cx="1022" cy="176" rx="9" ry="4.5" transform="rotate(18 1022 176)"/>
+</g>
+<use href="#greenhouseBloom" transform="translate(964 226) scale(0.8)"/>
+</g>
+<!-- ===== floor ===== -->
+<rect y="566" width="1600" height="334" fill="url(#greenhouseFloor)"/>
+<rect y="562" width="1600" height="8" fill="#0a1c16"/>
+<ellipse cx="350" cy="760" rx="200" ry="40" fill="#2c6a54" opacity="0.12"/>
+<ellipse cx="1250" cy="780" rx="220" ry="44" fill="#2c6a54" opacity="0.12"/>
+<ellipse cx="150" cy="600" rx="90" ry="12" fill="#1d5c40" opacity="0.3"/>
+<ellipse cx="1470" cy="608" rx="80" ry="10" fill="#1d5c40" opacity="0.25"/>
+<!-- flagstone path from the north door -->
+<path d="M724 568 L876 568 L1010 900 L570 900 Z" fill="#26584a"/>
+<g stroke="#16382e" stroke-width="5" fill="none">
+<path d="M700 640 Q800 652 908 640 M666 720 Q800 736 950 722 M622 812 Q800 830 1000 814"/>
+<path d="M770 568 L750 640 M830 568 L846 640 M736 652 L710 720 M868 652 L900 720 M700 736 L668 812 M912 736 L952 812 M796 738 L800 812"/>
+</g>
+<path d="M718 700 q30 8 66 6 M810 776 q40 8 84 2" stroke="#3f7c64" stroke-width="2.5" fill="none" opacity="0.35"/>
+<ellipse cx="760" cy="700" rx="380" ry="115" fill="url(#greenhousePool)"/>
+<path d="M180 700 l90 26 M1340 720 l110 30 q30 8 60 4" stroke="#071812" stroke-width="2.5" opacity="0.6" fill="none"/>
+<g opacity="0.95">
+<ellipse cx="560" cy="614" rx="10" ry="5" fill="#2c7a58" transform="rotate(-12 560 614)"/>
+<ellipse cx="1120" cy="700" rx="10" ry="5" fill="#7c9a3a" transform="rotate(10 1120 700)"/>
+<ellipse cx="520" cy="700" rx="9" ry="4.5" fill="#8a6636" transform="rotate(-8 520 700)"/>
+<ellipse cx="270" cy="706" rx="9" ry="4.5" fill="#2c7a58" transform="rotate(14 270 706)"/>
+<ellipse cx="1420" cy="690" rx="10" ry="5" fill="#7c9a3a" transform="rotate(-16 1420 690)"/>
+</g>
+<g fill="#efe9fb" opacity="0.5">
+<circle cx="62" cy="600" r="2"/><circle cx="92" cy="616" r="1.7"/><circle cx="74" cy="632" r="1.5"/>
+</g>
+<!-- moonbeams -->
+<path d="M430 150 L540 134 L1030 700 L840 730 Z" fill="url(#greenhouseBeam)"/>
+<path d="M310 250 L370 240 L720 706 L620 720 Z" fill="url(#greenhouseBeam)" opacity="0.7"/>
+<path d="M756 300 L844 300 L950 640 L672 640 Z" fill="url(#greenhouseBeam)" opacity="0.5"/>
+<!-- vines climbing the frame -->
+<path d="M30 568 Q54 480 34 400 Q22 330 48 268 Q60 224 44 180" stroke="#16452f" stroke-width="5" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="42" cy="470" rx="11" ry="5.5" transform="rotate(-26 42 470)"/>
+<ellipse cx="32" cy="366" rx="11" ry="5.5" transform="rotate(20 32 366)"/>
+<ellipse cx="52" cy="252" rx="10" ry="5" transform="rotate(-18 52 252)"/>
+<ellipse cx="46" cy="196" rx="9" ry="4.5" transform="rotate(24 46 196)"/>
+</g>
+<use href="#greenhouseBloom" transform="translate(44 300)"/>
+<use href="#greenhouseBloom" transform="translate(36 392) scale(0.9)"/>
+<use href="#greenhouseBloom" transform="translate(56 236) scale(0.8)"/>
+<path d="M1572 568 Q1556 500 1570 440 Q1580 396 1562 350" stroke="#16452f" stroke-width="5" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="1566" cy="500" rx="10" ry="5" transform="rotate(-20 1566 500)"/>
+<ellipse cx="1574" cy="410" rx="9" ry="4.5" transform="rotate(18 1574 410)"/>
+</g>
+<path d="M540 502 q70 24 150 10 q90 -16 170 8" stroke="#16452f" stroke-width="4.5" fill="none"/>
+<g fill="#1d5c40">
+<ellipse cx="586" cy="516" rx="10" ry="5" transform="rotate(-14 586 516)"/>
+<ellipse cx="700" cy="510" rx="10" ry="5" transform="rotate(10 700 510)"/>
+<ellipse cx="812" cy="514" rx="9" ry="4.5" transform="rotate(-10 812 514)"/>
+</g>
+<use href="#greenhouseBloom" transform="translate(618 514) scale(0.9)"/>
+<use href="#greenhouseBloom" transform="translate(742 506) scale(0.8)"/>
+<!-- ===== long potting table west, seedling trays ===== -->
+<ellipse cx="190" cy="668" rx="150" ry="15" fill="#000" opacity="0.3"/>
+<rect x="74" y="532" width="14" height="128" fill="#47301e"/>
+<rect x="296" y="532" width="14" height="124" fill="#47301e"/>
+<rect x="70" y="600" width="250" height="10" fill="#52381f"/>
+<path d="M70 610 h250" stroke="#2c1c10" stroke-width="3"/>
+<rect x="90" y="564" width="52" height="10" fill="#a8623c"/>
+<rect x="94" y="570" width="44" height="30" fill="url(#greenhousePot)"/>
+<rect x="96" y="538" width="40" height="8" fill="#a8623c"/>
+<rect x="100" y="544" width="32" height="22" fill="url(#greenhousePot)"/>
+<rect x="166" y="568" width="42" height="8" fill="#a8623c"/>
+<rect x="170" y="574" width="34" height="26" fill="url(#greenhousePot)"/>
+<rect x="48" y="504" width="276" height="26" rx="3" fill="url(#greenhouseWood)"/>
+<path d="M52 508 H320" stroke="#c9a06a" stroke-width="2" opacity="0.3"/>
+<rect x="48" y="530" width="276" height="6" fill="#3a281a"/>
+<rect x="66" y="488" width="84" height="20" rx="3" fill="#5a3c22"/>
+<rect x="70" y="492" width="76" height="12" fill="#241a10"/>
+<path d="M80 493 q-3 -9 -8 -11 M80 493 q3 -9 8 -11 M100 493 q-3 -10 -7 -12 M100 493 q3 -10 7 -12 M120 493 q-3 -9 -8 -11 M120 493 q3 -9 8 -11 M138 493 q-3 -8 -7 -10 M138 493 q3 -8 7 -10" stroke="#4a9a5c" stroke-width="2.5" fill="none"/>
+<rect x="162" y="486" width="72" height="22" rx="3" fill="#4e3a24"/>
+<rect x="166" y="490" width="64" height="12" fill="#241a10"/>
+<path d="M174 490 q-2 -12 -8 -15 M174 490 q3 -12 8 -15 M192 490 q-2 -14 -7 -17 M192 490 q3 -14 8 -17 M210 490 q-2 -12 -7 -15 M210 490 q3 -12 8 -15 M226 490 q-2 -10 -6 -13 M226 490 q2 -10 6 -13" stroke="#7cc46a" stroke-width="2.5" fill="none"/>
+<!-- watering can on the table -->
+<path d="M252 480 L224 452 L236 446 L258 472 Z" fill="#4f6a72"/>
+<circle cx="229" cy="448" r="6" fill="#3f5a62"/>
+<rect x="250" y="464" width="54" height="42" rx="8" fill="#4f6a72"/>
+<ellipse cx="277" cy="464" rx="27" ry="7" fill="#3f5a62"/>
+<path d="M270 452 q24 -18 40 6" stroke="#3f5a62" stroke-width="5" fill="none"/>
+<path d="M258 476 q10 -6 22 -4" stroke="#bfe0dc" stroke-width="2" fill="none" opacity="0.5"/>
+<!-- night blooms sign -->
+<rect x="198" y="452" width="7" height="56" fill="#5a3c22"/>
+<rect x="152" y="426" width="100" height="26" rx="4" fill="#6b4a30" stroke="#3a281a" stroke-width="2.5"/>
+<text x="202" y="444" font-family="Trebuchet MS" font-size="12" font-weight="bold" fill="#ead9a8" text-anchor="middle">NIGHT BLOOMS</text>
+<!-- clay pots on the floor by the table -->
+<ellipse cx="86" cy="706" rx="60" ry="9" fill="#000" opacity="0.3"/>
+<rect x="44" y="658" width="48" height="10" fill="#a8623c"/>
+<rect x="48" y="664" width="40" height="34" fill="url(#greenhousePot)"/>
+<rect x="90" y="672" width="40" height="8" fill="#a8623c"/>
+<rect x="94" y="678" width="32" height="26" fill="url(#greenhousePot)"/>
+<!-- ===== SHATTERED POT (hotspot 320-544 x 558-702) ===== -->
+<ellipse cx="432" cy="652" rx="118" ry="44" fill="url(#greenhouseResidue)"/>
+<ellipse cx="430" cy="676" rx="88" ry="13" fill="#000" opacity="0.3"/>
+<ellipse cx="432" cy="668" rx="92" ry="18" fill="#1c120a" opacity="0.9"/>
+<ellipse cx="410" cy="660" rx="40" ry="9" fill="#302012"/>
+<path d="M374 612 L390 664 Q432 680 474 664 L488 608 L472 622 L458 602 L444 620 L430 600 L416 620 L402 604 L388 618 Z" fill="url(#greenhousePot)"/>
+<ellipse cx="431" cy="622" rx="38" ry="8" fill="#2a140c"/>
+<path d="M380 640 Q432 654 482 640" stroke="#6b3a20" stroke-width="3" fill="none"/>
+<g transform="rotate(-14 356 664)">
+<path d="M330 660 a30 10 0 0 1 56 0 l-5 9 a24 8 0 0 0 -46 0 Z" fill="#a8623c"/>
+</g>
+<path d="M344 678 L366 664 L372 686 Z" fill="#a8623c"/>
+<path d="M498 664 L522 654 L516 678 Z" fill="#8a4a2c"/>
+<path d="M462 686 L484 676 L490 696 Z" fill="#a8623c"/>
+<path d="M400 690 L416 680 L424 698 Z" fill="#7c4128"/>
+<path d="M470 630 L488 622 L492 640 Z" fill="#8a4a2c"/>
+<path d="M366 668 l4 14 M480 680 l6 12" stroke="#5c301c" stroke-width="2" fill="none"/>
+<ellipse cx="404" cy="630" rx="21" ry="7" fill="none" stroke="#4ade80" stroke-width="2.5" opacity="0.3"/>
+<ellipse cx="466" cy="648" rx="18" ry="6" fill="none" stroke="#4ade80" stroke-width="2.5" opacity="0.2"/>
+<path d="M396 648 q36 10 84 4" stroke="#4ade80" stroke-width="3" fill="none" opacity="0.22"/>
+<g fill="#4ade80">
+<circle cx="368" cy="676" r="2" opacity="0.8"/><circle cx="388" cy="664" r="1.6" opacity="0.6"/>
+<circle cx="430" cy="676" r="2.2" opacity="0.85"/><circle cx="452" cy="662" r="1.5" opacity="0.6"/>
+<circle cx="470" cy="688" r="2" opacity="0.75"/><circle cx="500" cy="668" r="1.8" opacity="0.7"/>
+<circle cx="416" cy="690" r="1.5" opacity="0.5"/><circle cx="444" cy="640" r="1.6" opacity="0.6"/>
+<circle cx="484" cy="632" r="1.4" opacity="0.55"/><circle cx="360" cy="660" r="1.4" opacity="0.5"/>
+</g>
+<!-- ===== rain barrel reflecting the moon ===== -->
+<ellipse cx="690" cy="748" rx="66" ry="10" fill="#000" opacity="0.32"/>
+<path d="M642 604 q-10 70 6 134 h84 q16 -64 6 -134 Z" fill="url(#greenhouseWood)"/>
+<path d="M660 608 q-6 62 4 126 M696 610 v126 M726 608 q6 62 -4 126" stroke="#3a281a" stroke-width="2" fill="none"/>
+<path d="M638 640 h104 M646 706 h88" stroke="#2c2c30" stroke-width="7"/>
+<path d="M638 638 h104 M646 704 h88" stroke="#7c8890" stroke-width="1.8" opacity="0.5"/>
+<ellipse cx="690" cy="604" rx="52" ry="13" fill="#47301e"/>
+<ellipse cx="690" cy="603" rx="44" ry="10" fill="url(#greenhouseWater)"/>
+<ellipse cx="676" cy="601" rx="13" ry="4.5" fill="#e8f4f0" opacity="0.75"/>
+<ellipse cx="676" cy="602" rx="21" ry="6.5" fill="none" stroke="#cfe8e4" stroke-width="1.5" opacity="0.25"/>
+<path d="M652 606 q10 3 22 1 M700 608 q8 2 16 0" stroke="#bfe0dc" stroke-width="1.8" fill="none" opacity="0.4"/>
+<ellipse cx="708" cy="606" rx="7" ry="3" fill="#2c7a58"/>
+<circle cx="690" r="2.6" fill="#9fd4e8">
+<animate attributeName="cy" values="396;594;594" dur="1.8s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.9;0" dur="1.8s" repeatCount="indefinite"/>
+</circle>
+<!-- small watering can by the path -->
+<ellipse cx="796" cy="712" rx="34" ry="6" fill="#000" opacity="0.3"/>
+<path d="M776 686 L758 664 L768 660 L782 680 Z" fill="#56646a"/>
+<circle cx="762" cy="662" r="5" fill="#46545a"/>
+<rect x="774" y="676" width="44" height="32" rx="6" fill="#56646a"/>
+<ellipse cx="796" cy="676" rx="22" ry="6" fill="#46545a"/>
+<path d="M786 662 q20 -16 34 2" stroke="#46545a" stroke-width="4" fill="none"/>
+<path d="M780 686 q8 -5 18 -3" stroke="#bfe0dc" stroke-width="1.8" fill="none" opacity="0.45"/>
+<!-- ===== PLANTER BENCH (hotspot 880-1136 x 495-657; shears overlay rect 912-1056 x 522-603 gets plain soil/trough/bench) ===== -->
+<ellipse cx="1010" cy="700" rx="160" ry="16" fill="#000" opacity="0.34"/>
+<rect x="884" y="584" width="16" height="108" fill="#47301e"/>
+<rect x="1116" y="584" width="16" height="108" fill="#47301e"/>
+<rect x="884" y="648" width="248" height="8" fill="#3a281a"/>
+<g transform="rotate(-8 1064 646)">
+<rect x="1032" y="606" width="64" height="84" rx="9" fill="#a08054" stroke="#6b4a30" stroke-width="2.5"/>
+<rect x="1032" y="640" width="64" height="20" fill="#6b4a30"/>
+<rect x="1038" y="606" width="52" height="10" fill="#8a6a42"/>
+<text x="1064" y="655" font-family="Trebuchet MS" font-size="12" font-weight="bold" fill="#f0e6c8" text-anchor="middle">SOIL</text>
+</g>
+<rect x="928" y="644" width="48" height="10" fill="#a8623c"/>
+<rect x="932" y="650" width="40" height="34" fill="url(#greenhousePot)"/>
+<rect x="986" y="656" width="38" height="8" fill="#a8623c"/>
+<rect x="990" y="662" width="30" height="24" fill="url(#greenhousePot)"/>
+<rect x="864" y="548" width="288" height="20" rx="3" fill="url(#greenhouseWood)"/>
+<path d="M868 552 H1148" stroke="#c9a06a" stroke-width="2" opacity="0.35"/>
+<path d="M940 550 v16 M1010 550 v16 M1080 550 v16" stroke="#3a281a" stroke-width="2"/>
+<rect x="868" y="568" width="280" height="14" fill="#3a281a"/>
+<!-- soil trough on the bench -->
+<rect x="884" y="508" width="200" height="12" rx="4" fill="#a8623c"/>
+<rect x="888" y="514" width="192" height="40" rx="4" fill="#8a4a2c"/>
+<path d="M940 528 v22 M1006 526 v24" stroke="#6b3a20" stroke-width="4" opacity="0.6"/>
+<path d="M892 550 h184" stroke="#1d5c40" stroke-width="2.5" opacity="0.4"/>
+<rect x="894" y="516" width="180" height="12" rx="5" fill="#241a10"/>
+<g fill="#382818">
+<circle cx="920" cy="521" r="3.5"/><circle cx="960" cy="519" r="3"/><circle cx="1000" cy="522" r="3.5"/><circle cx="1040" cy="520" r="3"/>
+</g>
+<circle cx="935" cy="523" r="2" fill="#6b6456"/><circle cx="1015" cy="523" r="2" fill="#6b6456"/>
+<path d="M902 514 q-3 -10 -8 -13 M902 514 q3 -10 8 -13" stroke="#4a9a5c" stroke-width="2.5" fill="none"/>
+<!-- pots at the bench's east end -->
+<rect x="1084" y="510" width="44" height="10" fill="#a8623c"/>
+<rect x="1088" y="516" width="36" height="34" fill="url(#greenhousePot)"/>
+<path d="M1106 516 q-2 -14 -10 -18 M1106 516 q4 -14 12 -17" stroke="#2c7a58" stroke-width="3" fill="none"/>
+<rect x="1122" y="524" width="30" height="8" fill="#a8623c"/>
+<rect x="1126" y="530" width="22" height="20" fill="url(#greenhousePot)"/>
+<path d="M1137 530 q-1 -10 -6 -13 M1137 530 q3 -10 7 -12" stroke="#2c7a58" stroke-width="2.5" fill="none"/>
+<!-- lantern post: the warm accent -->
+<rect x="1146" y="436" width="8" height="116" fill="#3a281a"/>
+<rect x="1146" y="444" width="28" height="6" fill="#3a281a"/>
+<circle cx="1170" cy="470" r="85" fill="url(#greenhouseWarm)"/>
+<path d="M1170 450 v6" stroke="#23201c" stroke-width="3"/>
+<rect x="1158" y="456" width="24" height="32" rx="3" fill="#23201c"/>
+<rect x="1163" y="461" width="14" height="22" fill="#ffd98a" opacity="0.9"/>
+<path d="M1170 478 q4 -7 0 -12 q-4 5 0 12 Z" fill="#fff1c4"/>
+<rect x="1160" y="452" width="20" height="5" rx="2" fill="#191613"/>
+<ellipse cx="1100" cy="556" rx="90" ry="14" fill="#ffbf6a" opacity="0.1"/>
+<!-- ===== SUSPICIOUS TOPIARY (hotspot 1184-1440 x 216-576) ===== -->
+<ellipse cx="1320" cy="700" rx="120" ry="14" fill="#000" opacity="0.35"/>
+<path d="M1252 572 q6 70 34 86 h68 q28 -16 34 -86 Z" fill="#4a5a52"/>
+<path d="M1258 596 h124 M1268 636 h104" stroke="#37453e" stroke-width="4"/>
+<rect x="1296" y="672" width="48" height="14" rx="3" fill="#37453e"/>
+<path d="M1266 600 q8 18 22 24" stroke="#1d5c40" stroke-width="4" fill="none" opacity="0.7"/>
+<!-- the phantom-shaped bush -->
+<path d="M1226 560 Q1210 500 1228 448 Q1206 430 1224 386 Q1236 344 1262 322 Q1250 292 1272 262 Q1284 232 1312 226 Q1344 228 1356 258 Q1374 286 1362 318 Q1394 340 1400 384 Q1420 402 1404 448 Q1428 470 1408 520 Q1418 546 1406 560 Z" fill="#10362a"/>
+<g fill="#10362a">
+<circle cx="1228" cy="500" r="16"/><circle cx="1224" cy="420" r="15"/><circle cx="1250" cy="340" r="16"/>
+<circle cx="1290" cy="244" r="18"/><circle cx="1336" cy="240" r="16"/><circle cx="1372" cy="300" r="15"/>
+<circle cx="1398" cy="392" r="16"/><circle cx="1412" cy="470" r="15"/><circle cx="1408" cy="540" r="14"/>
+</g>
+<g fill="#1a5038">
+<circle cx="1282" cy="300" r="26"/><circle cx="1258" cy="380" r="22"/><circle cx="1270" cy="470" r="26"/><circle cx="1300" cy="530" r="22"/>
+</g>
+<g fill="#2c7a58" opacity="0.8">
+<circle cx="1276" cy="282" r="12"/><circle cx="1252" cy="368" r="10"/><circle cx="1262" cy="452" r="11"/>
+</g>
+<path d="M1290 336 q10 -8 20 -6 M1266 416 q10 -8 20 -4 M1284 500 q10 -8 20 -6 M1330 300 q8 -8 18 -6" stroke="#2c7a58" stroke-width="3" fill="none" opacity="0.5"/>
+<ellipse cx="1288" cy="286" rx="11" ry="14" fill="#05130d" opacity="0.9"/>
+<ellipse cx="1334" cy="284" rx="11" ry="14" fill="#05130d" opacity="0.9"/>
+<path d="M1240 460 Q1218 400 1240 350 Q1252 316 1272 288" stroke="#bfe0dc" stroke-width="3" fill="none" opacity="0.3"/>
+<circle cx="1404" cy="420" r="20" fill="#10362a"/>
+<path d="M1416 412 L1452 392" stroke="#3a281a" stroke-width="4"/>
+<circle cx="1454" cy="390" r="8" fill="#16452f"/>
+<path d="M1244 566 q22 -14 42 0 q22 14 42 -2 q22 -14 42 2 q16 10 32 -2" stroke="#0a241c" stroke-width="6" fill="none" opacity="0.8"/>
+<g transform="rotate(-6 1272 598)">
+<rect x="1236" y="588" width="72" height="22" rx="3" fill="#d8cba4" stroke="#8a7a54" stroke-width="2"/>
+<text x="1272" y="603" font-family="Trebuchet MS" font-size="10.5" font-weight="bold" fill="#5a4a2c" text-anchor="middle">DO NOT TRIM</text>
+</g>
+<path d="M1262 588 q-8 -12 -4 -22" stroke="#8a7a54" stroke-width="2" fill="none"/>
+<!-- glass glints fallen from the broken pane -->
+<path d="M1156 594 l10 -4 l-2 8 Z M1176 602 l8 -2 l-3 7 Z" fill="#cfe8e4" opacity="0.5"/>
+<!-- ===== coiled hose foreground ===== -->
+<ellipse cx="190" cy="812" rx="92" ry="12" fill="#000" opacity="0.3"/>
+<g fill="none" stroke="#2c6e50" stroke-width="9">
+<ellipse cx="176" cy="792" rx="66" ry="19"/>
+<ellipse cx="176" cy="790" rx="50" ry="14"/>
+<ellipse cx="176" cy="788" rx="34" ry="9"/>
+<path d="M236 798 q46 -4 72 12"/>
+</g>
+<path d="M120 786 a60 17 0 0 1 56 -10" stroke="#47a578" stroke-width="2.5" fill="none" opacity="0.5"/>
+<rect x="306" y="806" width="22" height="10" rx="3" fill="#c9a24a" transform="rotate(8 317 811)"/>
+<!-- fireflies (a few slipped in through the broken pane) -->
+<g fill="#d9f27e">
+<circle cx="556" cy="646" r="2.2"/><circle cx="604" cy="610" r="1.7" opacity="0.6"/>
+<circle cx="486" cy="556" r="1.8" opacity="0.7"/><circle cx="1188" cy="646" r="2" opacity="0.85"/>
+<circle cx="1222" cy="616" r="1.6" opacity="0.55"/><circle cx="1494" cy="640" r="2" opacity="0.75"/>
+<circle cx="298" cy="586" r="1.7" opacity="0.6"/><circle cx="1078" cy="150" r="2" opacity="0.9"/>
+<circle cx="1058" cy="130" r="1.5" opacity="0.6"/>
+</g>
+<g fill="#d9f27e" opacity="0.12">
+<circle cx="556" cy="646" r="6"/><circle cx="1188" cy="646" r="6"/><circle cx="1078" cy="150" r="6"/><circle cx="1494" cy="640" r="6"/>
+</g>
+<!-- foreground leaf framing -->
+<g fill="#0e3325">
+<use href="#greenhouseMonst" transform="translate(26 926) scale(1.35)"/>
+<use href="#greenhouseMonst" transform="translate(1592 932) scale(-1.3 1.3)"/>
+</g>
+<use href="#greenhouseMonst" transform="translate(140 938) rotate(8)" fill="#082018"/>
+<path d="M330 900 q3 -24 13 -32 M348 900 q1 -18 9 -26 M1240 900 q2 -22 11 -30 M1265 900 q0 -16 8 -24" stroke="#0a2416" stroke-width="5" fill="none"/>
+<rect width="1600" height="900" filter="url(#greenhouseGrain)" opacity="0.3"/>
+<rect width="1600" height="900" fill="url(#greenhouseVign)"/>
+</svg>

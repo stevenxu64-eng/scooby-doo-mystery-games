@@ -64,10 +64,18 @@ replays on a fresh game).
 
 1. **Lobby** — flashlight from the front desk drawer; the 1969 brochure from the abandoned
    luggage; as Velma, read the guest ledger; talk to Mr. Crane.
-2. **Grounds (east)** — stick from the bushes; the monogrammed glove from the pool muck;
-   as Shaggy & Scooby, shake the vending machine (Scooby Snack + gum); combine stick + gum
-   into the Sticky Stick; flashlight on the dark toolshed, Sticky Stick on the floor
-   grate → Maintenance Key.
+2. **Grounds (east)** — the hub: stick from the bushes, monogrammed glove from the pool muck,
+   and Gus raking eternally. Four ways out: toolshed (north, dark), greenhouse (south),
+   vine-choked archway (east), pool hatch (down, cranked shut).
+2a. **Greenhouse (south)** — grab the **garden shears** from the planter bench.
+2b. **Grounds** — use the shears on the **overgrown archway** → the pool cabana opens (east).
+2c. **Pool Cabana (east)** — as Shaggy & Scooby, shake the **vending machine** (Scooby Snack +
+   chewing gum); Velma can decipher the lifeguard log. Combine stick + gum → **Sticky Stick**.
+2d. **Grounds** — flashlight on the dark **toolshed doorway**, then head north inside.
+2e. **Toolshed** — Sticky Stick on the floor grate → **Maintenance Key**; take the **crank
+   handle** off the pegboard; read the chalk outlines.
+2f. *(Optional)* **Grounds** — crank handle on the **pool hatch** → climb down to the **Pump
+   Room**: the phantom's tunnel map, Crane's pump shutdown order, and his supply stash.
 3. **Janitor's Closet (west of lobby, use the key)** — flashlight on the shadowy shelf
    (glowing paint!); take the rope and the box cutter; as Daphne, pick the padlocked
    floor grate.

@@ -1,0 +1,388 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="toolshedWallG" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#241809"/>
+<stop offset="55%" stop-color="#3c2d18"/>
+<stop offset="100%" stop-color="#4c3a20"/>
+</linearGradient>
+<linearGradient id="toolshedFloorG" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#55412a"/>
+<stop offset="60%" stop-color="#3a2b19"/>
+<stop offset="100%" stop-color="#1d1409"/>
+</linearGradient>
+<radialGradient id="toolshedAmb" cx="50%" cy="58%" r="68%">
+<stop offset="0%" stop-color="#ffdf9e" stop-opacity="0.11"/>
+<stop offset="100%" stop-color="#ffdf9e" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="toolshedPool" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#ffce7a" stop-opacity="0.34"/>
+<stop offset="100%" stop-color="#ffce7a" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="toolshedBeamG" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#ffd98a" stop-opacity="0.28"/>
+<stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="toolshedLens" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#fff3c4" stop-opacity="0.9"/>
+<stop offset="100%" stop-color="#ffe9b0" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="toolshedDoorG" x1="0" y1="1" x2="0" y2="0">
+<stop offset="0%" stop-color="#cfe2f4" stop-opacity="0.32"/>
+<stop offset="60%" stop-color="#cfe2f4" stop-opacity="0.10"/>
+<stop offset="100%" stop-color="#cfe2f4" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="toolshedBurlap" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ab8c5f"/>
+<stop offset="100%" stop-color="#7c6238"/>
+</linearGradient>
+<radialGradient id="toolshedVign" cx="50%" cy="44%" r="74%">
+<stop offset="50%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.40"/>
+</radialGradient>
+<pattern id="toolshedPegP" width="34" height="40" patternUnits="userSpaceOnUse">
+<circle cx="11" cy="13" r="2.6" fill="#241a10"/>
+</pattern>
+<filter id="toolshedGrain">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+<feColorMatrix type="saturate" values="0"/>
+<feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+<feComposite operator="over" in2="SourceGraphic"/>
+</filter>
+<g id="toolshedHook" stroke="#9aa0a8" stroke-width="4" fill="none">
+<path d="M0 0 v12 q0 7 8 7"/>
+</g>
+</defs>
+<!-- ===== plank walls ===== -->
+<rect width="1600" height="600" fill="url(#toolshedWallG)"/>
+<g opacity="0.55">
+<rect x="160" y="60" width="80" height="540" fill="#46351d"/>
+<rect x="480" y="60" width="80" height="540" fill="#2e2110"/>
+<rect x="800" y="60" width="80" height="540" fill="#46351d" opacity="0.8"/>
+<rect x="1120" y="60" width="80" height="540" fill="#2e2110"/>
+<rect x="1440" y="60" width="80" height="540" fill="#46351d"/>
+</g>
+<path d="M80 60 V600 M160 60 V600 M240 60 V600 M320 60 V600 M400 60 V600 M480 60 V600 M560 60 V600 M640 60 V600 M720 60 V600 M800 60 V600 M880 60 V600 M960 60 V600 M1040 60 V600 M1120 60 V600 M1200 60 V600 M1280 60 V600 M1360 60 V600 M1440 60 V600 M1520 60 V600" stroke="#201509" stroke-width="3" opacity="0.75"/>
+<g>
+<circle cx="244" cy="214" r="5" fill="#241708"/><circle cx="244" cy="214" r="8.5" fill="none" stroke="#2a1c0d" stroke-width="2"/>
+<circle cx="686" cy="268" r="4.5" fill="#241708"/><circle cx="686" cy="268" r="7.5" fill="none" stroke="#2a1c0d" stroke-width="2"/>
+<circle cx="120" cy="322" r="4" fill="#241708"/><circle cx="120" cy="322" r="7" fill="none" stroke="#2a1c0d" stroke-width="2"/>
+<circle cx="1520" cy="330" r="5" fill="#241708"/><circle cx="1520" cy="330" r="8" fill="none" stroke="#2a1c0d" stroke-width="2"/>
+</g>
+<!-- moonlight slits between planks -->
+<g>
+<rect x="68" y="170" width="14" height="418" fill="#b8d4ee" opacity="0.09"/>
+<rect x="73" y="170" width="3.5" height="418" fill="#cfe2f4" opacity="0.42"/>
+<rect x="515" y="140" width="14" height="210" fill="#b8d4ee" opacity="0.08"/>
+<rect x="520" y="140" width="3.5" height="210" fill="#cfe2f4" opacity="0.38"/>
+<rect x="995" y="170" width="14" height="414" fill="#b8d4ee" opacity="0.09"/>
+<rect x="1000" y="170" width="3.5" height="414" fill="#cfe2f4" opacity="0.42"/>
+<rect x="1323" y="150" width="14" height="310" fill="#b8d4ee" opacity="0.08"/>
+<rect x="1328" y="150" width="3.5" height="310" fill="#cfe2f4" opacity="0.36"/>
+<rect x="1517" y="200" width="14" height="388" fill="#b8d4ee" opacity="0.09"/>
+<rect x="1522" y="200" width="3.5" height="388" fill="#cfe2f4" opacity="0.42"/>
+</g>
+<!-- ===== rafters ===== -->
+<rect width="1600" height="96" fill="#150d05"/>
+<rect y="30" width="1600" height="22" fill="#1a1006"/>
+<rect y="84" width="1600" height="36" fill="#241708"/>
+<path d="M0 86 H1600" stroke="#5c4426" stroke-width="3" opacity="0.6"/>
+<path d="M0 118 H1600" stroke="#0e0803" stroke-width="4"/>
+<path d="M0 148 L128 84 M1600 148 L1472 84" stroke="#241708" stroke-width="14"/>
+<path d="M300 84 v36 M760 84 v36 M1240 84 v36" stroke="#150d05" stroke-width="5" opacity="0.7"/>
+<!-- bird nest on the beam -->
+<g>
+<path d="M1282 84 q33 16 66 0 l-7 -16 q-26 12 -52 0 Z" fill="#4a3418"/>
+<path d="M1280 82 l20 -8 M1300 78 l24 4 M1322 72 l22 8 M1288 74 l30 6 M1346 82 l-18 -10" stroke="#6b4e2a" stroke-width="2.5" fill="none"/>
+<path d="M1284 80 l26 -2 M1330 70 l16 10" stroke="#8a6636" stroke-width="2" fill="none"/>
+<ellipse cx="1315" cy="66" rx="10" ry="8" fill="#5a5e74"/>
+<circle cx="1325" cy="58" r="6" fill="#5a5e74"/>
+<path d="M1331 58 l7 2 -7 3 Z" fill="#d9a44a"/>
+<path d="M1323 57 q3 2 5 1" stroke="#1a1a20" stroke-width="1.5" fill="none"/>
+<path d="M1306 64 q-8 -4 -10 -10" stroke="#494d60" stroke-width="3" fill="none"/>
+</g>
+<!-- hanging rope coil -->
+<g>
+<path d="M1012 120 v26" stroke="#5c4526" stroke-width="5"/>
+<rect x="1000" y="146" width="24" height="16" rx="4" fill="#5c4526"/>
+<ellipse cx="1012" cy="208" rx="36" ry="46" fill="none" stroke="#7c5f36" stroke-width="8"/>
+<ellipse cx="1012" cy="208" rx="24" ry="34" fill="none" stroke="#6b4e2a" stroke-width="6"/>
+<path d="M990 176 a36 46 0 0 1 22 -14" stroke="#b8d4ee" stroke-width="2.5" fill="none" opacity="0.3"/>
+<path d="M1032 244 q12 28 4 52" stroke="#6b4e2a" stroke-width="6" fill="none"/>
+<path d="M1032 294 l-6 12 M1036 295 l1 14 M1039 292 l8 11" stroke="#7c5f36" stroke-width="2.5" fill="none"/>
+</g>
+<!-- unlit hanging lantern -->
+<g>
+<path d="M565 120 V150" stroke="#2a2622" stroke-width="3" stroke-dasharray="4 3"/>
+<path d="M553 152 L577 152 L565 140 Z" fill="#23201c"/>
+<rect x="549" y="152" width="32" height="42" rx="4" fill="#2c2620"/>
+<rect x="556" y="158" width="18" height="30" fill="#131820"/>
+<path d="M559 162 l10 12" stroke="#9fc0e0" stroke-width="1.5" opacity="0.4"/>
+<rect x="551" y="194" width="28" height="6" rx="2" fill="#191613"/>
+<path d="M550 154 v38" stroke="#b8d4ee" stroke-width="2" opacity="0.3"/>
+</g>
+<!-- ===== floor ===== -->
+<rect y="600" width="1600" height="300" fill="url(#toolshedFloorG)"/>
+<rect y="588" width="1600" height="16" fill="#2a1c0d"/>
+<path d="M0 602 H1600" stroke="#14100a" stroke-width="3"/>
+<path d="M0 628 H1600 M0 668 H1600 M0 716 H1600 M0 772 H1600 M0 836 H1600" stroke="#1c1208" stroke-width="3" opacity="0.7"/>
+<path d="M310 628 v40 M760 668 v48 M1180 628 v40 M520 716 v56 M1050 772 v64 M240 772 v64 M1400 668 v48" stroke="#1c1208" stroke-width="2.5" opacity="0.55"/>
+<path d="M120 644 q60 6 120 0 M900 756 q70 8 130 2 M1300 700 q50 6 100 0" stroke="#6b4e2a" stroke-width="2" fill="none" opacity="0.3"/>
+<ellipse cx="1130" cy="780" rx="7" ry="4" fill="#1a1108"/>
+<ellipse cx="560" cy="648" rx="6" ry="3.5" fill="#1a1108"/>
+<!-- moonlight streaks from slits -->
+<path d="M68 604 L85 604 L118 676 L98 676 Z" fill="#b8d4ee" opacity="0.06"/>
+<path d="M995 604 L1012 604 L1046 668 L1026 668 Z" fill="#b8d4ee" opacity="0.06"/>
+<path d="M1517 604 L1534 604 L1580 690 L1556 690 Z" fill="#b8d4ee" opacity="0.06"/>
+<!-- ambient + flashlight pool -->
+<rect width="1600" height="900" fill="url(#toolshedAmb)"/>
+<ellipse cx="800" cy="525" rx="400" ry="110" fill="#ffce7a" opacity="0.07"/>
+<ellipse cx="800" cy="664" rx="430" ry="170" fill="url(#toolshedPool)"/>
+<!-- ===== south doorway (moonlit opening, bottom center) ===== -->
+<path d="M712 892 L888 892 L948 740 L652 740 Z" fill="url(#toolshedDoorG)"/>
+<path d="M736 892 L864 892 L900 760 L700 760 Z" fill="#cfe2f4" opacity="0.08"/>
+<rect x="664" y="812" width="18" height="80" fill="#2c1d0e"/>
+<rect x="679" y="812" width="4" height="80" fill="#b8d4ee" opacity="0.25"/>
+<rect x="918" y="812" width="18" height="80" fill="#2c1d0e"/>
+<rect x="917" y="812" width="4" height="80" fill="#b8d4ee" opacity="0.25"/>
+<rect x="660" y="874" width="280" height="18" rx="4" fill="#6b4e2a"/>
+<path d="M666 877 H934" stroke="#cfe2f4" stroke-width="2.5" opacity="0.4"/>
+<rect x="682" y="892" width="236" height="8" fill="#55452e"/>
+<g fill="#dfe9f6" opacity="0.5">
+<circle cx="760" cy="800" r="1.6"/><circle cx="838" cy="772" r="1.4"/><circle cx="800" cy="838" r="1.8"/>
+</g>
+<!-- ===== push mower silhouette (far left wall) ===== -->
+<g>
+<circle cx="96" cy="566" r="46" fill="#1a1108"/>
+<circle cx="96" cy="566" r="12" fill="#2e2011"/>
+<path d="M62 538 a46 46 0 0 1 52 -14" stroke="#6b4e2c" stroke-width="3" fill="none" opacity="0.4"/>
+<path d="M70 594 q26 -34 58 -6 M64 552 q34 -18 62 8" stroke="#241708" stroke-width="4" fill="none"/>
+<path d="M110 528 L34 414" stroke="#1a1108" stroke-width="9"/>
+<path d="M16 414 h36" stroke="#1a1108" stroke-width="8" stroke-linecap="round"/>
+<rect x="126" y="594" width="46" height="18" rx="8" fill="#1a1108"/>
+</g>
+<!-- ===== WORKBENCH + chalk tool outlines (hotspot 128-480 x 360-576) ===== -->
+<g stroke="#e8e2ce" stroke-width="3.5" stroke-dasharray="7 6" stroke-linecap="round" fill="none" opacity="0.65">
+<path d="M156 372 h44 v36 l-20 50 l-21 -48 Z"/>
+<path d="M262 392 q4 -16 13 -16 q9 0 12 16"/>
+<path d="M266 402 L240 456 M282 402 L308 456"/>
+<rect x="356" y="392" width="64" height="26" rx="9"/>
+<path d="M356 402 h-13 M382 418 q-8 20 -14 34 M374 420 q-8 6 -4 14"/>
+<circle cx="400" cy="446" r="18"/>
+</g>
+<path d="M270 396 l8 8 M278 396 l-8 8" stroke="#e8e2ce" stroke-width="3" opacity="0.6"/>
+<circle cx="343" cy="405" r="3" fill="#e8e2ce" opacity="0.55"/>
+<g font-family="Trebuchet MS" font-size="12" font-weight="bold" fill="#d9d2ba" text-anchor="middle" opacity="0.78">
+<text x="177" y="474">TROWEL</text>
+<text x="273" y="474">BOLT CUTTERS</text>
+<text x="390" y="474">PAINT SPRAYER</text>
+</g>
+<!-- trowel still on its nail -->
+<g>
+<circle cx="177" cy="372" r="3.5" fill="#2c2115"/>
+<rect x="171" y="376" width="12" height="26" rx="5" fill="#7c4a2a"/>
+<rect x="172" y="402" width="10" height="6" fill="#9aa2ab"/>
+<path d="M163 408 h28 l-14 44 Z" fill="#9aa2ab" stroke="#5c666e" stroke-width="2"/>
+<path d="M170 412 l7 26" stroke="#c9d2da" stroke-width="1.5" opacity="0.6"/>
+</g>
+<!-- bench -->
+<ellipse cx="306" cy="628" rx="196" ry="15" fill="#000" opacity="0.32"/>
+<rect x="120" y="478" width="372" height="26" rx="3" fill="#6b4f2e"/>
+<path d="M124 481 H488" stroke="#8f6c3e" stroke-width="3" opacity="0.8"/>
+<rect x="120" y="504" width="372" height="13" fill="#4a3418"/>
+<rect x="136" y="517" width="20" height="100" fill="#3f2d18"/>
+<rect x="456" y="517" width="20" height="100" fill="#3f2d18"/>
+<rect x="136" y="556" width="340" height="13" fill="#4a3418"/>
+<rect x="150" y="536" width="90" height="20" rx="8" fill="#46554c"/>
+<path d="M158 544 q22 -8 46 0 q18 6 34 0" stroke="#2e3b39" stroke-width="2.5" fill="none"/>
+<rect x="262" y="530" width="26" height="26" rx="3" fill="#7a4636"/>
+<rect x="304" y="546" width="120" height="10" rx="2" fill="#55412a"/>
+<!-- bench-top clutter: oil can far left, vise at right corner -->
+<g>
+<ellipse cx="518" cy="612" rx="24" ry="5" fill="#000" opacity="0.3"/>
+<path d="M500 602 q0 -18 14 -18 h8 q14 0 14 18 v8 h-36 Z" fill="#6a6e76"/>
+<path d="M510 584 L498 562" stroke="#6a6e76" stroke-width="4"/>
+<circle cx="497" cy="560" r="2.5" fill="#8f959c"/>
+<path d="M504 588 q8 -6 16 0" stroke="#8f959c" stroke-width="2" fill="none" opacity="0.7"/>
+</g>
+<g>
+<rect x="452" y="462" width="52" height="16" rx="3" fill="#565b62"/>
+<rect x="458" y="440" width="18" height="24" fill="#6a6f76"/>
+<rect x="482" y="440" width="18" height="24" fill="#6a6f76"/>
+<rect x="476" y="444" width="6" height="20" fill="#1c1e22"/>
+<path d="M504 470 h20" stroke="#8f959c" stroke-width="4"/>
+<circle cx="525" cy="470" r="3.5" fill="#8f959c"/>
+</g>
+<rect x="316" y="540" width="20" height="5" rx="2.5" fill="#e8e2ce" transform="rotate(-6 326 542)"/>
+<rect x="342" y="542" width="16" height="4.5" rx="2" fill="#d9d2ba" transform="rotate(5 350 544)"/>
+<path d="M466 502 q12 -6 24 0 q4 10 -2 18 q-12 4 -20 -2 Z" fill="#8a4a3a"/>
+<!-- ===== jars of nails on a shelf ===== -->
+<g>
+<rect x="498" y="336" width="170" height="14" rx="3" fill="#4e3a20"/>
+<path d="M498 350 H668" stroke="#2c1d0e" stroke-width="4"/>
+<path d="M512 350 v20 l18 -20 Z M636 350 v20 l18 -20 Z" fill="#33241a"/>
+<rect x="518" y="286" width="30" height="8" rx="3" fill="#6a5a3a"/>
+<rect x="514" y="292" width="38" height="44" rx="6" fill="#9fb6ba" opacity="0.28"/>
+<rect x="514" y="292" width="38" height="44" rx="6" fill="none" stroke="#8ea4a8" stroke-width="2" opacity="0.6"/>
+<path d="M520 312 l8 16 M528 316 l6 14 M536 310 l4 18 M542 318 l-6 12 M524 322 l10 8" stroke="#8a8f96" stroke-width="2.5"/>
+<path d="M519 296 v34" stroke="#dfe9f6" stroke-width="2" opacity="0.35"/>
+<rect x="568" y="290" width="26" height="8" rx="3" fill="#6a5a3a"/>
+<rect x="564" y="296" width="34" height="40" rx="6" fill="#9fb6ba" opacity="0.28"/>
+<rect x="564" y="296" width="34" height="40" rx="6" fill="none" stroke="#8ea4a8" stroke-width="2" opacity="0.6"/>
+<path d="M570 316 l7 14 M578 320 l5 12 M586 314 l3 16 M574 326 l10 6" stroke="#7a6a4a" stroke-width="3"/>
+<rect x="610" y="304" width="30" height="32" rx="5" fill="#9fb6ba" opacity="0.26"/>
+<rect x="610" y="304" width="30" height="32" rx="5" fill="none" stroke="#8ea4a8" stroke-width="2" opacity="0.55"/>
+<circle cx="620" cy="326" r="3.5" fill="none" stroke="#7c8188" stroke-width="2"/>
+<circle cx="629" cy="320" r="3.5" fill="none" stroke="#7c8188" stroke-width="2"/>
+<circle cx="632" cy="329" r="3" fill="none" stroke="#7c8188" stroke-width="2"/>
+</g>
+<!-- ===== FLOOR GRATE (hotspot 640-960 x 558-738; glint overlay 776-824 x 621-661) ===== -->
+<g>
+<ellipse cx="800" cy="734" rx="190" ry="16" fill="#000" opacity="0.28"/>
+<path d="M676 610 L924 610 L948 726 L652 726 Z" fill="#33291a" stroke="#14100a" stroke-width="4" stroke-linejoin="round"/>
+<path d="M684 616 L916 616" stroke="#8a6c40" stroke-width="3" opacity="0.75"/>
+<path d="M692 622 L908 622 L928 714 L672 714 Z" fill="#0b0704"/>
+<g stroke="#574733" stroke-width="9">
+<path d="M714 622 L698 714 M748 622 L738 714 M782 622 L779 714 M816 622 L819 714 M850 622 L860 714 M884 622 L900 714"/>
+</g>
+<path d="M692 625 L908 625" stroke="#7c5f3c" stroke-width="4" opacity="0.8"/>
+<path d="M686 650 L914 650 M678 686 L922 686" stroke="#453722" stroke-width="7"/>
+<g fill="#6b5b40">
+<circle cx="666" cy="620" r="4"/><circle cx="934" cy="620" r="4"/><circle cx="660" cy="718" r="4"/><circle cx="940" cy="718" r="4"/>
+<circle cx="800" cy="615" r="3"/><circle cx="800" cy="721" r="3"/>
+</g>
+<path d="M660 734 q60 10 140 8" stroke="#1a1108" stroke-width="3" fill="none" opacity="0.5"/>
+</g>
+<!-- ===== flashlight on a folded tarp, beam + dust motes ===== -->
+<path d="M544 828 q-4 -34 26 -44 q40 -12 78 6 q16 8 12 24 q-4 18 -30 20 q-48 6 -86 -6 Z" fill="#46554c"/>
+<path d="M560 796 q30 -12 74 -2 M552 814 q40 10 96 2" stroke="#2e3b39" stroke-width="3" fill="none"/>
+<g transform="rotate(-7 618 786)">
+<rect x="586" y="776" width="62" height="22" rx="9" fill="#a03c34"/>
+<path d="M596 776 v22 M610 776 v22 M624 776 v22" stroke="#6e2822" stroke-width="3"/>
+<rect x="646" y="770" width="20" height="34" rx="5" fill="#7c8188"/>
+<rect x="663" y="773" width="6" height="28" rx="2" fill="#fff3c4"/>
+</g>
+<circle cx="672" cy="784" r="24" fill="url(#toolshedLens)"/>
+<path d="M670 774 L948 596 L948 768 L670 800 Z" fill="url(#toolshedBeamG)"/>
+<g fill="#ffe9b0" opacity="0.55">
+<circle cx="716" cy="708" r="2.2"/><circle cx="762" cy="668" r="1.8"/><circle cx="808" cy="700" r="2"/>
+<circle cx="852" cy="652" r="1.7"/><circle cx="890" cy="688" r="2.1"/><circle cx="742" cy="736" r="1.6"/>
+</g>
+<g fill="#ffe9b0" opacity="0.3">
+<circle cx="700" cy="640" r="1.5"/><circle cx="786" cy="616" r="1.4"/><circle cx="836" cy="726" r="1.5"/>
+<circle cx="906" cy="632" r="1.3"/><circle cx="778" cy="560" r="1.4"/><circle cx="848" cy="540" r="1.2"/>
+</g>
+<g fill="#ffe9b0" opacity="0.12">
+<circle cx="762" cy="668" r="6"/><circle cx="890" cy="688" r="6"/><circle cx="716" cy="708" r="5"/>
+</g>
+<!-- ===== PEGBOARD (hotspot 1056-1248 x 234-432; crank overlay 1072-1216 x 252-396) ===== -->
+<g>
+<rect x="1048" y="222" width="210" height="224" rx="8" fill="#574430" stroke="#33241a" stroke-width="5"/>
+<rect x="1056" y="230" width="194" height="208" rx="6" fill="url(#toolshedPegP)" opacity="0.6"/>
+<path d="M1052 228 q100 -8 202 0" stroke="#8f6c3e" stroke-width="2.5" fill="none" opacity="0.5"/>
+<!-- empty hooks around the crank rect -->
+<use href="#toolshedHook" x="1076" y="238"/>
+<use href="#toolshedHook" x="1150" y="234"/>
+<use href="#toolshedHook" x="1226" y="240"/>
+<use href="#toolshedHook" x="1230" y="300"/>
+<use href="#toolshedHook" x="1232" y="356"/>
+<use href="#toolshedHook" x="1078" y="408"/>
+<use href="#toolshedHook" x="1188" y="412"/>
+<circle cx="1076" cy="236" r="2.5" fill="#3a2c1a"/>
+<circle cx="1150" cy="232" r="2.5" fill="#3a2c1a"/>
+<circle cx="1226" cy="238" r="2.5" fill="#3a2c1a"/>
+<!-- sturdy peg the crank hangs from -->
+<circle cx="1112" cy="260" r="6" fill="#5a4c3e"/>
+<path d="M1112 260 v10 q0 6 7 6" stroke="#8a8f96" stroke-width="5" fill="none"/>
+<!-- chalk outline of the crank handle (revealed when crank is taken) -->
+<g stroke="#e8e2ce" stroke-width="3.5" stroke-dasharray="7 6" fill="none" opacity="0.6" stroke-linecap="round">
+<path d="M1103 272 V333 H1151 V378 H1169 V315 H1121 V272 Z"/>
+<rect x="1094" y="258" width="36" height="28" rx="5"/>
+<rect x="1142" y="354" width="36" height="38" rx="11"/>
+</g>
+<text x="1136" y="414" font-family="Trebuchet MS" font-size="12" font-weight="bold" fill="#d9d2ba" text-anchor="middle" opacity="0.75">CRANK</text>
+<path d="M1048 226 Q1070 244 1052 264 M1048 242 Q1080 254 1094 234" stroke="#cfc9b8" stroke-width="1.2" fill="none" opacity="0.25"/>
+</g>
+<!-- mouse peeking from a knothole -->
+<g>
+<circle cx="1298" cy="566" r="13" fill="#0d0803"/>
+<circle cx="1298" cy="566" r="15" fill="none" stroke="#241708" stroke-width="2.5"/>
+<circle cx="1291" cy="559" r="4.5" fill="#7c7686"/><circle cx="1291" cy="559" r="2" fill="#d9a8b4"/>
+<circle cx="1305" cy="559" r="4.5" fill="#7c7686"/><circle cx="1305" cy="559" r="2" fill="#d9a8b4"/>
+<circle cx="1298" cy="568" r="8" fill="#8a8494"/>
+<circle cx="1294.5" cy="566" r="1.6" fill="#16161c"/><circle cx="1301.5" cy="566" r="1.6" fill="#16161c"/>
+<circle cx="1295" cy="565.4" r="0.6" fill="#fff"/><circle cx="1302" cy="565.4" r="0.6" fill="#fff"/>
+<circle cx="1298" cy="571.5" r="1.8" fill="#d98a96"/>
+<path d="M1290 570 l-8 -1 M1290 572 l-7 3 M1306 570 l8 -1 M1306 572 l7 3" stroke="#cfc9b8" stroke-width="1" opacity="0.6"/>
+<path d="M1306 576 q10 6 6 16" stroke="#9a8f9e" stroke-width="2.5" fill="none"/>
+</g>
+<!-- ===== corner barrel with rakes, shovel, hoe ===== -->
+<ellipse cx="1408" cy="744" rx="100" ry="15" fill="#000" opacity="0.32"/>
+<g>
+<path d="M1352 656 L1338 368" stroke="#6b4e2a" stroke-width="7"/>
+<rect x="1322" y="344" width="34" height="14" rx="3" fill="#6a6e76" transform="rotate(-14 1339 351)"/>
+<path d="M1378 652 L1402 312" stroke="#7c5a32" stroke-width="8"/>
+<path d="M1380 316 h44" stroke="#5c666e" stroke-width="6" transform="rotate(4 1402 316)"/>
+<path d="M1384 314 l-3 -20 M1394 313 l-1 -21 M1404 313 l1 -21 M1414 314 l3 -20 M1422 316 l6 -19" stroke="#5c666e" stroke-width="3.5" fill="none"/>
+<path d="M1420 650 L1452 352" stroke="#8a6636" stroke-width="8"/>
+<path d="M1440 356 q-4 -34 14 -52 q20 14 10 54 q-10 12 -24 -2 Z" fill="#7c8188"/>
+<path d="M1448 352 q0 -24 8 -38" stroke="#565b62" stroke-width="2.5" fill="none"/>
+<path d="M1356 612 q-12 62 0 124 h110 q12 -62 0 -124 Z" fill="#5a4227"/>
+<ellipse cx="1411" cy="612" rx="55" ry="12" fill="#3a2a16"/>
+<ellipse cx="1411" cy="613" rx="44" ry="8" fill="#241708"/>
+<path d="M1378 616 v116 M1411 618 v118 M1444 616 v116" stroke="#3c2a16" stroke-width="3"/>
+<path d="M1350 646 q61 14 122 0" stroke="#2e2620" stroke-width="9" fill="none"/>
+<path d="M1352 706 q59 13 118 0" stroke="#2e2620" stroke-width="9" fill="none"/>
+<path d="M1462 620 q8 56 -2 112" stroke="#b8d4ee" stroke-width="2.5" fill="none" opacity="0.25"/>
+</g>
+<!-- ===== sacks of potting soil + clay pots (left foreground) ===== -->
+<ellipse cx="210" cy="824" rx="170" ry="19" fill="#000" opacity="0.3"/>
+<g>
+<path d="M244 816 q-16 -70 8 -108 q6 -10 30 -10 q26 0 32 12 q20 44 10 106 Z" fill="#937752"/>
+<path d="M262 700 l14 -14 l16 12" stroke="#6b4e2a" stroke-width="5" fill="none"/>
+<path d="M258 730 q20 10 44 2 M254 768 q22 10 48 2" stroke="#7c6238" stroke-width="2.5" fill="none"/>
+</g>
+<g>
+<path d="M100 812 q-14 -90 22 -148 q10 -16 42 -16 q34 0 44 18 q28 60 18 146 Z" fill="url(#toolshedBurlap)"/>
+<path d="M118 660 q46 -20 92 0 l-6 -18 q-40 -14 -80 0 Z" fill="#8a6c42"/>
+<path d="M118 660 q46 -20 92 0" stroke="#5c4526" stroke-width="3" fill="none"/>
+<path d="M106 760 q10 8 8 30 M206 728 q8 12 6 34" stroke="#7c6238" stroke-width="2.5" fill="none"/>
+<path d="M104 700 l-4 60 M222 690 l6 66" stroke="#6b4e2a" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
+<rect x="118" y="706" width="124" height="58" rx="6" fill="#e2d4ae" stroke="#8a6c42" stroke-width="3"/>
+<text x="180" y="732" font-family="Trebuchet MS" font-size="17" font-weight="bold" fill="#5c4020" text-anchor="middle">POTTING</text>
+<text x="180" y="754" font-family="Trebuchet MS" font-size="17" font-weight="bold" fill="#5c4020" text-anchor="middle">SOIL</text>
+</g>
+<path d="M250 814 q40 -12 78 2 l-8 14 h-62 Z" fill="#241708"/>
+<circle cx="272" cy="820" r="2.5" fill="#3a2a16"/><circle cx="298" cy="824" r="2" fill="#3a2a16"/><circle cx="316" cy="818" r="2.2" fill="#3a2a16"/>
+<!-- stacked clay pots -->
+<g>
+<path d="M346 754 h72 l-9 46 h-54 Z" fill="#9c5230"/>
+<rect x="340" y="742" width="84" height="14" rx="4" fill="#b06038"/>
+<path d="M404 758 l-6 38" stroke="#e8a06a" stroke-width="3" opacity="0.6"/>
+<g transform="rotate(-4 382 726)">
+<path d="M356 724 h56 l-7 30 h-42 Z" fill="#a05430"/>
+<rect x="351" y="712" width="66" height="12" rx="4" fill="#b06038"/>
+</g>
+<g transform="rotate(3 386 694)">
+<path d="M364 694 h44 l-6 22 h-32 Z" fill="#8f4a2c"/>
+<rect x="360" y="684" width="52" height="10" rx="4" fill="#a05430"/>
+</g>
+<path d="M352 760 l6 34" stroke="#5c2c18" stroke-width="3" opacity="0.5"/>
+</g>
+<g transform="rotate(-14 466 786)">
+<path d="M442 772 h52 l-6 30 h-40 Z" fill="#7c3f26"/>
+<ellipse cx="442" cy="787" rx="7" ry="16" fill="#2e1409"/>
+<rect x="488" y="768" width="12" height="38" rx="4" fill="#8f4a2c"/>
+</g>
+<!-- cobwebs -->
+<g stroke="#cfc9b8" stroke-width="1.2" opacity="0.24" fill="none">
+<path d="M0 96 Q60 122 118 94 M0 152 Q56 148 98 110 M44 96 Q52 140 22 168"/>
+<path d="M1600 60 Q1544 88 1512 60 M1600 118 Q1552 110 1526 74"/>
+<path d="M600 120 Q612 152 596 172 M584 120 Q602 144 622 134"/>
+<path d="M1360 120 Q1348 150 1362 172"/>
+</g>
+<!-- foreground corner shadows -->
+<path d="M0 900 V818 q92 6 140 26 l26 56 Z" fill="#0b0704" opacity="0.8"/>
+<path d="M1600 900 V832 q-76 4 -116 20 l-18 48 Z" fill="#0b0704" opacity="0.75"/>
+<rect width="1600" height="900" filter="url(#toolshedGrain)" opacity="0.3"/>
+<rect width="1600" height="900" fill="url(#toolshedVign)"/>
+</svg>

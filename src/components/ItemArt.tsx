@@ -410,6 +410,96 @@ function VoiceMegaphoneArt() {
   )
 }
 
+function GardenShearsArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="garden_shears-steel" from="#e5e7eb" to="#8b949e" />
+        <Grad id="garden_shears-wood" from="#b5854a" to="#71501f" x2={1} />
+      </defs>
+      {/* leaf snippet caught mid-cut (blades paint over its base) */}
+      <path d="M24.2 4.2 Q28.6 6.2 27.7 11.4 Q24.4 13.6 22.4 10 Q22.2 6.2 24.2 4.2 Z" fill="#3f9142" stroke="#2c6e31" strokeWidth="1.2" />
+      <path d="M24.6 6 Q25.4 8.6 25.1 11.6" stroke="#2c6e31" strokeWidth="0.9" fill="none" />
+      {/* snip motion ticks */}
+      <path d="M19.4 4.6 l-1.8 -2 M29.4 3.6 l1.4 -2.2" stroke="#84cc16" strokeWidth="1.4" fill="none" />
+      {/* crossed pruning blades */}
+      <path d="M25.5 24.5 Q34.5 20 35 7 Q33.2 5.2 31.6 6.6 Q25.5 13.5 21.8 22.5 Z" fill="url(#garden_shears-steel)" stroke={OUTLINE} strokeWidth="2" />
+      <path d="M22.5 24.5 Q13.5 20 13 7 Q14.8 5.2 16.4 6.6 Q22.5 13.5 26.2 22.5 Z" fill="url(#garden_shears-steel)" stroke={OUTLINE} strokeWidth="2" />
+      {/* edge highlight + rust flecks */}
+      <path d="M16 9.5 Q21.2 15.5 24.4 22" stroke="#f3f4f6" strokeWidth="1.4" fill="none" opacity="0.9" />
+      <circle cx="31.8" cy="12.5" r="1.1" fill="#a16207" />
+      <circle cx="29.6" cy="17.5" r="0.9" fill="#854d0e" />
+      <circle cx="15.6" cy="13.8" r="0.9" fill="#a16207" />
+      {/* wooden handles */}
+      <Tube d="M22 26.5 Q15.8 33 13.6 41.5" w={5} color="url(#garden_shears-wood)" />
+      <Tube d="M26 26.5 Q32.2 33 34.4 41.5" w={5} color="url(#garden_shears-wood)" />
+      <path d="M20.6 28.5 Q16.6 33.5 15.2 39" stroke="#e2b877" strokeWidth="1.3" fill="none" opacity="0.8" />
+      {/* pivot bolt */}
+      <circle cx="24" cy="24.5" r="2.9" fill="#6b7280" stroke={OUTLINE} strokeWidth="1.8" />
+      <circle cx="23.2" cy="23.7" r="1" fill="#d1d5db" />
+      <Sparkle cx={34.5} cy={16.5} r={1.6} />
+    </>
+  )
+}
+
+function CrankHandleArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="crank_handle-iron" from="#9aa5b1" to="#4e5866" />
+        <Grad id="crank_handle-wood" from="#b5854a" to="#71501f" x2={1} />
+      </defs>
+      <g transform="rotate(8 24 24)">
+        {/* Z-shaped iron arm */}
+        <Tube d="M13 37 L13 25.5 Q13 21.5 17 21.5 L31 21.5 Q35 21.5 35 17.5 L35 14" w={4.6} color="url(#crank_handle-iron)" />
+        {/* metal sheen */}
+        <path d="M11.7 34 L11.7 26.5 M17 20.3 L26 20.3" stroke="#cbd5e1" strokeWidth="1.3" fill="none" opacity="0.85" />
+        {/* square socket end */}
+        <rect x="7.5" y="35.5" width="11" height="10" rx="1.6" fill="url(#crank_handle-iron)" stroke={OUTLINE} strokeWidth="2" />
+        <rect x="10.7" y="38.7" width="4.6" height="4.4" fill={OUTLINE} />
+        <circle cx="9.7" cy="37.7" r="0.8" fill="#3b4450" />
+        <circle cx="16.3" cy="43.3" r="0.8" fill="#3b4450" />
+        <path d="M9.3 36.8 l1.6 1.2" stroke="#cbd5e1" strokeWidth="1.1" fill="none" opacity="0.8" />
+        {/* washer + wooden grip that spins on the top pin */}
+        <rect x="32.6" y="14.2" width="4.8" height="2.4" rx="1" fill="#7b8794" stroke={OUTLINE} strokeWidth="1.4" />
+        <rect x="30.6" y="2.5" width="8.8" height="12.6" rx="4" fill="url(#crank_handle-wood)" stroke={OUTLINE} strokeWidth="2" />
+        <path d="M31.2 6.5 h7.6 M31.2 10.8 h7.6" stroke="#71501f" strokeWidth="1.1" fill="none" />
+        <path d="M32.6 4.6 q1.3 -1 2.9 -1" stroke="#e2b877" strokeWidth="1.3" fill="none" opacity="0.85" />
+      </g>
+      <Sparkle cx={42} cy={20} r={1.6} fill="#e5e7eb" />
+    </>
+  )
+}
+
+function TunnelMapArt() {
+  return (
+    <>
+      <defs>
+        <Grad id="tunnel_map-paper" from="#faf3dc" to="#d9c390" x2={0.2} />
+      </defs>
+      <g transform="rotate(-4 24 24)">
+        {/* accordion-folded cream sheet */}
+        <path d="M7 13.5 L19 9.5 L31 13.5 L43 9.5 L43 37.5 L31 41.5 L19 37.5 L7 41.5 Z" fill="url(#tunnel_map-paper)" stroke={OUTLINE} strokeWidth="2" />
+        <path d="M19 9.5 L31 13.5 L31 41.5 L19 37.5 Z" fill="#c9b075" opacity="0.35" />
+        <path d="M19 9.5 L19 37.5 M31 13.5 L31 41.5" stroke="#a08c5a" strokeWidth="1.2" fill="none" />
+        {/* doodles: tunnel arch, water squiggle, copy lines */}
+        <path d="M22.5 20.6 v-1.8 Q25 15.4 27.5 18.8 v1.8 Z" fill="#8a6a3c" />
+        <path d="M20.5 36 q2 -1.4 4 0 q2 1.4 4 0" stroke="#60a5fa" strokeWidth="1.2" fill="none" />
+        <path d="M34.5 33 h6 M34.5 35.6 h4.5" stroke="#a08c5a" strokeWidth="1.1" fill="none" />
+        {/* green dashed route ending at a red X */}
+        <path d="M14.8 32 Q20.5 34 24.5 29 Q28.5 24 33 21.5" stroke="#2f8f3c" strokeWidth="2" strokeDasharray="3 2.6" fill="none" />
+        <path d="M34.3 15.8 l4.6 4.6 M38.9 15.8 l-4.6 4.6" stroke="#dc2626" strokeWidth="2.6" fill="none" />
+        {/* push pin marking the start */}
+        <path d="M13.2 28.8 L14.6 32.4" stroke="#6b7280" strokeWidth="1.6" fill="none" />
+        <circle cx="12.6" cy="26.6" r="3.3" fill="#3b82f6" stroke={OUTLINE} strokeWidth="1.6" />
+        <circle cx="11.5" cy="25.5" r="1" fill="#fff" opacity="0.75" />
+        {/* paper shine */}
+        <path d="M9.5 14.6 l6.5 -2.2" stroke="#fff" strokeWidth="1.4" fill="none" opacity="0.55" />
+      </g>
+    </>
+  )
+}
+
 const ART: Record<string, () => ReactElement> = {
   flashlight: FlashlightArt,
   stick: () => <StickBody prefix="stick" />,
@@ -425,6 +515,9 @@ const ART: Record<string, () => ReactElement> = {
   box_cutter: BoxCutterArt,
   deed_draft: DeedDraftArt,
   voice_megaphone: VoiceMegaphoneArt,
+  garden_shears: GardenShearsArt,
+  crank_handle: CrankHandleArt,
+  tunnel_map: TunnelMapArt,
 }
 
 /**
