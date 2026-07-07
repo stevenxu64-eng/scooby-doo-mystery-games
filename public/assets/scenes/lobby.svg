@@ -137,7 +137,8 @@
   <ellipse cx="400" cy="592" rx="70" ry="11" fill="url(#lobby-lamp)" opacity="0.14"/>
   <ellipse cx="1200" cy="592" rx="70" ry="11" fill="url(#lobby-lamp)" opacity="0.14"/>
 
-  <!-- ================= GHOST POSTER (hotspot 1344-1536 x, 198-432 y) ================= -->
+  <!-- ================= GHOST POSTER (moved to the west wall; hotspot 259-419 x, 198-432 y) ================= -->
+  <g transform="translate(-1090 0)">
   <path d="M1394 190 h64 q5 0 5 8 l-3 8 h-68 l-3 -8 q0 -8 5 -8 z" fill="#b98c4e"/>
   <ellipse cx="1426" cy="236" rx="66" ry="38" fill="url(#lobby-lamp)" opacity="0.28"/>
   <rect x="1350" y="200" width="150" height="230" rx="3" fill="#241708"/>
@@ -162,6 +163,7 @@
   <path d="M1486 416 L1486 374 L1446 416 Z" fill="#241708"/>
   <path d="M1446 416 L1486 374 L1444 376 Z" fill="#f2e8ca"/>
   <path d="M1446 416 L1486 374" stroke="#8d7c50" stroke-width="1.5" opacity="0.5"/>
+  </g>
 
   <!-- ================= GRANDFATHER CLOCK, stopped 3:17 ================= -->
   <ellipse cx="1285" cy="634" rx="54" ry="10" fill="#000" opacity="0.35"/>
