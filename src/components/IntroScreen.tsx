@@ -724,26 +724,52 @@ export function IntroScreen({ onDone }: { onDone: () => void }) {
           {beat === 0 && (
             <div>
               <h2 className="font-title text-2xl tracking-wider text-amber-400">THREE DAYS AGO...</h2>
-              <div className="relative mx-auto mt-3 max-w-md -rotate-1 rounded-sm bg-[#f2e8cf] px-5 py-4 text-[#3a2f1d] shadow-[0_5px_16px_rgba(0,0,0,0.55)]">
+              <div className="relative mx-auto mt-3 max-w-lg -rotate-1 rounded-sm bg-[#f2e8cf] px-6 py-4 text-[#3a2f1d] shadow-[0_5px_16px_rgba(0,0,0,0.55)]">
                 <span className="absolute -top-2 left-8 h-4 w-12 -rotate-3 rounded-sm bg-amber-200/70" />
                 <span className="absolute -top-2 right-8 h-4 w-12 rotate-2 rounded-sm bg-amber-200/70" />
-                {/* fold crease + postage stamp */}
-                <span className="pointer-events-none absolute inset-x-4 top-[52%] h-px bg-[#b9a87f]/35" />
-                <span className="pointer-events-none absolute -top-1 right-16 flex h-9 w-8 rotate-3 items-center justify-center rounded-[2px] border border-dashed border-[#a8926a]/80 bg-[#e6d9ae] text-[13px]">
-                  🌴
-                </span>
+                {/* faint fold crease */}
+                <span className="pointer-events-none absolute inset-x-4 top-[54%] h-px bg-[#b9a87f]/35" />
+                {/* letterhead row: postmark + stamp live HERE, never over the words */}
+                <div className="mb-1.5 flex items-center justify-between">
+                  <span className="text-[10px] tracking-[0.2em] text-[#8a7a55]">GRAND PALM POST · JUL 3</span>
+                  <span className="flex h-9 w-8 rotate-3 items-center justify-center rounded-[2px] border border-dashed border-[#a8926a]/80 bg-[#e6d9ae] text-[13px]">
+                    🌴
+                  </span>
+                </div>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
                 >
-                  Dear Mystery Inc. — Before I decide the fate of my grandfather&rsquo;s resort, I need what
-                  only you can deliver: the truth. Something haunts the Grand Palm. Catch it.
+                  Dear Mystery Inc. —
+                </p>
+                <p
+                  className="mt-1.5 text-sm leading-relaxed"
+                  style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
+                >
+                  My grandfather built the Grand Palm in 1969 — &ldquo;a paradise for my family,
+                  forever.&rdquo; I came home this month to reopen it. That same week, the
+                  &ldquo;Phantom Guest&rdquo; began his performances: wailing in the walls, glowing
+                  footprints around the drained pool, every buyer scared off by midnight.
+                </p>
+                <p
+                  className="mt-1.5 text-sm leading-relaxed"
+                  style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
+                >
+                  Our caretaker insists I sell. The bank insists I decide by Friday. Before I sign
+                  away my family&rsquo;s name, I need what only you can deliver: the truth.
+                  Something haunts the Grand Palm. Catch it.
                 </p>
                 <p
                   className="mt-2 text-right text-sm"
                   style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
                 >
                   — George Palm III
+                </p>
+                <p
+                  className="mt-1.5 text-[12.5px] leading-snug text-[#5c4c30]"
+                  style={{ fontFamily: '"Bradley Hand", "Segoe Script", "Comic Sans MS", cursive' }}
+                >
+                  P.S. — Ask for me at the gate. If I&rsquo;m not there to meet you... start worrying.
                 </p>
               </div>
             </div>
