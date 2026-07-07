@@ -2,15 +2,16 @@
  * Velma's Case Notes — the game's running log.
  *
  * Every meaningful flag maps to one notebook line (clue or event), written in
- * Velma's voice. Item pickups and crafted combos are logged automatically by
- * the store. Entries are appended in discovery order and deduped by `key`.
+ * Velma's voice. Item pickups live in the inventory tray, not here — the notes
+ * track evidence and story beats only. Entries are appended in discovery order
+ * and deduped by `key`.
  */
 
-export type CaseLogKind = 'clue' | 'item' | 'event'
+export type CaseLogKind = 'clue' | 'event'
 
 export interface CaseLogEntry {
   id: number
-  /** Dedupe key: `flag:<flag>` or `item:<itemId>`. */
+  /** Dedupe key: `flag:<flag>`. */
   key: string
   kind: CaseLogKind
   text: string
@@ -52,7 +53,7 @@ export const NOTEBOOK_NOTES: NotebookNote[] = [
   { flag: 'got_magnet', kind: 'clue', text: 'The padlocked toolbox is oiled, organized, alphabetized — and held a BRAND-NEW magnet. Our ghost shops retail.' },
   { flag: 'found_sleeping_bag', kind: 'clue', text: "A sleeping bag stashed inside a soil sack — someone's been camping in the toolshed." },
   // — Pump room —
-  { flag: 'read_pump_log', kind: 'clue', text: "Pump log: 'PUMPS SHUT DOWN — BY ORDER OF A. CRANE.' The ruined pool is a business decision." },
+  { flag: 'read_pump_log', kind: 'clue', text: "Pump log: 'PUMPS SHUT DOWN — BY ORDER OF A. CRANE.' Who kills the pool at a resort that's supposed to be for sale?" },
   { flag: 'fred_turned_valve', kind: 'clue', text: 'The pumps still WORK. The drained pool is sabotage, not decay.' },
   { flag: 'daphne_opened_panel', kind: 'clue', text: 'One unlabeled, brand-new breaker circuit wired straight past the meter, humming toward the boiler room.' },
   { flag: 'scooby_sniffed_trail', kind: 'clue', text: "Scooby's verdict: the glowing prints in the pump room are MINUTES old, heading for the boiler door." },
@@ -67,7 +68,7 @@ export const NOTEBOOK_NOTES: NotebookNote[] = [
   { flag: 'scooby_found_wrappers', kind: 'clue', text: 'A burger wrapper and a COLD soda behind the closet mops. The phantom eats fast food.' },
   { flag: 'trap_room_open', kind: 'event', text: 'Daphne picked the padlocked floor grate — the boiler room below is open.' },
   // — Gus —
-  { flag: 'knows_truth', kind: 'clue', text: "Gus cracked: MR. CRANE ordered the glowing paint, 'for a pool mural'. Gus will back our story." },
+  { flag: 'knows_truth', kind: 'clue', text: "Gus's testimony: MR. CRANE ordered the glowing paint — six cans, 'for a pool mural.' Six cans. One mural. He'll repeat that to the police." },
   { flag: 'got_office_key', kind: 'event', text: "Gus handed over his spare office passkey — and mentioned BANGING from behind the office wall." },
   // — Office —
   { flag: 'office_unlocked', kind: 'event', text: "Unlocked the manager's office." },
@@ -101,7 +102,7 @@ export const NOTEBOOK_NOTES: NotebookNote[] = [
   { flag: 'rosa_glove_id', kind: 'clue', text: 'Rosa laundry-confirmed it: the muddy glove is CRANE’S — she washes its twin every Tuesday.' },
   { flag: 'met_marco', kind: 'event', text: "Met Marco, the 'retired' maintenance man who secretly keeps the resort humming." },
   { flag: 'marco_tools', kind: 'clue', text: "Marco's bolt cutters and paint sprayer 'walked off' a month ago — exactly the phantom's kit." },
-  { flag: 'marco_pumps', kind: 'clue', text: 'Marco keeps the pumps ready to run — CRANE ordered them off. A dry pool is a dead resort, on purpose.' },
+  { flag: 'marco_pumps', kind: 'clue', text: 'Marco keeps the pumps ready to run — CRANE ordered them off. A dry pool is a dead resort. So who wants it dead?' },
   { flag: 'marco_boiler', kind: 'clue', text: 'Marco: the boiler fires at 2 AM some nights, and he never lights it. Somebody LIVES down there.' },
   { flag: 'marco_crank', kind: 'clue', text: "Marco standardized every socket on the property in '81 — ONE crank fits all of it." },
   { flag: 'met_tomas', kind: 'event', text: 'Met Tomás the groundskeeper. He talks to the plants; the plants, apparently, gossip back.' },
@@ -111,7 +112,7 @@ export const NOTEBOOK_NOTES: NotebookNote[] = [
   { flag: 'ghost_impostor', kind: 'clue', text: 'Palm Sr. (deceased, unimpeachable): the Phantom is a man in a painted sheet borrowing HIS corridors.' },
   { flag: 'ghost_tunnels', kind: 'clue', text: "Palm Sr. built the tunnels in '69 — and printed the full corridor plan in his grand-opening BROCHURE." },
   { flag: 'ghost_family', kind: 'clue', text: 'Palm Sr. hears his grandson BANGING behind walls, somewhere above the office. George III is hidden on-site.' },
-  { flag: 'ghost_blessing', kind: 'event', text: "Palm Sr.'s blessing: spring the trap well — and tell Ambrose 'the Palms never sold.'" },
+  { flag: 'ghost_blessing', kind: 'event', text: "Palm Sr.'s blessing: spring the trap well — and when the sheet comes off, tell whoever's under it 'the Palms never sold.'" },
   { flag: 'ghost_reviewed_decoy', kind: 'event', text: "An actual ghost reviewed our counterfeit phantom: 'insulted and, somehow, proud.'" },
   { flag: 'trap_sprung', kind: 'event', text: 'THE TRAP SPRUNG — the Phantom Guest is in the net!' },
 ]

@@ -37,6 +37,14 @@ export default function App() {
   useEffect(() => {
     attachAudioUnlock()
     const onKey = (e: KeyboardEvent) => {
+      // Don't hijack keys while the player is typing (e.g. the notebook search box).
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        if (e.key === 'Escape') {
+          setNotebookOpen(false)
+          e.target.blur()
+        }
+        return
+      }
       const dir = KEY_TO_DIRECTION[e.key]
       if (dir) {
         e.preventDefault()

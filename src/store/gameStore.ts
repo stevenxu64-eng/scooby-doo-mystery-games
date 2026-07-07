@@ -117,13 +117,6 @@ export const useGameStore = create<GameState>()(
         case 'add_to_inventory':
           if (action.item && !get().playerInventory.includes(action.item)) {
             set((s) => ({ playerInventory: [...s.playerInventory, action.item!] }))
-            get().logCase([
-              {
-                key: `item:${action.item}`,
-                kind: 'item',
-                text: `Picked up: ${ITEMS[action.item]?.name ?? action.item}`,
-              },
-            ])
           }
           break
         case 'remove_from_inventory':
@@ -308,13 +301,6 @@ export const useGameStore = create<GameState>()(
           ],
           selectedItem: null,
         }))
-        get().logCase([
-          {
-            key: `item:${recipe.result}`,
-            kind: 'item',
-            text: `Crafted: ${ITEMS[recipe.result]?.name ?? recipe.result}`,
-          },
-        ])
         state.showMessage(recipe.message)
         return
       }
@@ -355,13 +341,6 @@ export const useGameStore = create<GameState>()(
           ...choice.give_items!.filter((i) => !s.playerInventory.includes(i)),
         ],
       }))
-      state.logCase(
-        choice.give_items.map((i) => ({
-          key: `item:${i}`,
-          kind: 'item' as const,
-          text: `Picked up: ${ITEMS[i]?.name ?? i}`,
-        })),
-      )
     }
     if (choice.end_game) {
       set({ activeDialogue: null, gameWon: true })
@@ -399,22 +378,15 @@ export const useGameStore = create<GameState>()(
         const p = (persisted ?? {}) as Partial<GameState>
         // Guard against saves referencing rooms that no longer exist.
         if (!p.activeRoom || !SCENES[p.activeRoom]) return current
-        // Older saves have no notebook — backfill it from their flags + items.
-        let caseLog = p.caseLog
-        if (!caseLog || caseLog.length === 0) {
+        // Older saves logged item pickups too — the notes are clues + events only now.
+        let caseLog = (p.caseLog ?? []).filter((e) => (e.kind as string) !== 'item')
+        if (caseLog.length === 0) {
+          // No notebook at all (pre-notebook save) — backfill it from the flags.
           const drafts: CaseLogEntry[] = []
           for (const note of NOTEBOOK_NOTES) {
             if (p.gameFlags?.[note.flag]) {
               drafts.push({ id: drafts.length, key: `flag:${note.flag}`, kind: note.kind, text: note.text })
             }
-          }
-          for (const item of p.playerInventory ?? []) {
-            drafts.push({
-              id: drafts.length,
-              key: `item:${item}`,
-              kind: 'item',
-              text: `Picked up: ${ITEMS[item]?.name ?? item}`,
-            })
           }
           caseLog = drafts
         }

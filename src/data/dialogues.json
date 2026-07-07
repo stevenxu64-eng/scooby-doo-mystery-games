@@ -78,7 +78,7 @@
         ]
       },
       "ledger_press": {
-        "text": "Crane goes very still. 'You read the ledger? Nosy little... ahem. A clerical error, nothing more. Room 217 was \u2014 water damaged. Yes. Don't go poking around the boiler room, it isn't SAFE.' He didn't mention the boiler room before you did.",
+        "text": "Crane goes very still. 'You read the ledger? Nosy little... ahem. A clerical error, nothing more. Room 217 was \u2014 water damaged. Yes. Don't go poking around the boiler room, it isn't SAFE.' Funny — nobody had said a word about any boiler room.",
         "choices": [
           {
             "text": "Ask something else",
@@ -173,10 +173,10 @@
         ]
       },
       "confront": {
-        "text": "You hold up the can of LUMO-GLOW paint. Gus goes white as a \u2014 well, you know. 'Where'd you\u2014 okay, OKAY! I bought that paint, but only 'cause MR. CRANE told me to! Said it was for renovatin' the pool mural! Six cans of ghost-green paint for a mural, and him prowlin' the boiler room every night \u2014 I ain't stupid, kids, and I ain't takin' the fall!'",
+        "text": "You hold up the can of LUMO-GLOW paint. Gus goes white as a \u2014 well, you know. 'Where'd you\u2014 okay, OKAY! I bought that paint, but only 'cause MR. CRANE told me to! Said it was for renovatin' the pool mural.' He leans on his rake. 'Six cans of ghost-green paint... for ONE mural. I just rake here, kids. Do your own arithmetic \u2014 I ain't takin' the fall for nobody!'",
         "choices": [
           {
-            "text": "'So Crane IS the Phantom Guest...'",
+            "text": "'Six cans. One mural. That math is going straight in the case notes, Gus.'",
             "next": "truth",
             "set_flags": [
               "knows_truth"
@@ -185,7 +185,7 @@
         ]
       },
       "truth": {
-        "text": "Gus nods grimly. 'Catch him in the act and I'll back your story. He keeps his getup down in the boiler room, under my closet \u2014 and take my spare passkey to his OFFICE. Whatever that man's really planning, the paperwork's up those lobby stairs. And kids... lately I hear BANGING from behind his office wall. Walls ain't supposed to bang.'",
+        "text": "Gus nods slowly. 'That's what I know, and I'll say it to the police word for word. You want the WHY of it, that's paperwork \u2014 and paperwork lives in the manager's office, top of the lobby stairs. Take my spare passkey. And kids... lately I hear BANGING behind that office wall, and my closet floor grate rattlin' after midnight. Buildings ain't supposed to do either.'",
         "choices": [
           {
             "text": "'Thanks, Gus. Gang \u2014 we've got an office to search!'",
@@ -657,7 +657,7 @@
             ]
           },
           {
-            "text": "'We know who it is. We're springing a trap tonight.'",
+            "text": "'We've got a case file full of evidence — and a trap ready for tonight.'",
             "next": "blessing",
             "required_flags": [
               "knows_truth"
@@ -709,7 +709,7 @@
         ]
       },
       "blessing": {
-        "text": "'Then spring it WELL.' He rises an inch off the floor, which is somehow formal. 'And when you unmask him, tell Ambrose this, word for word: the Palms never sold.' He tips the boater. 'He will know exactly what it means.' The pump-light flickers, and he is gone.",
+        "text": "'Then spring it WELL.' He rises an inch off the floor, which is somehow formal. 'And when the sheet comes off, tell the man under it this, word for word: the Palms never sold.' He tips the boater. 'He will know exactly what it means.' The pump-light flickers, and he is gone.",
         "choices": [
           {
             "text": "'...Like, did anybody else just get chills?' (Leave)",

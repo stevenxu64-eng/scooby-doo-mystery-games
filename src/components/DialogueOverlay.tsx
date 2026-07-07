@@ -23,6 +23,8 @@ export function DialogueOverlay() {
   useEffect(() => {
     if (!node) return
     const onKey = (e: KeyboardEvent) => {
+      // Ignore digits typed into text fields (e.g. the notebook search box).
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
       const idx = Number(e.key) - 1
       if (idx >= 0 && idx < visibleChoices.length) {
         chooseDialogueOption(visibleChoices[idx])

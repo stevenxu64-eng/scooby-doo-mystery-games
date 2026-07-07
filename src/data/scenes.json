@@ -981,7 +981,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma taps the gauge: 'Pressure's UP. This boiler ran within the HOUR — in a resort that's been \"abandoned\" for years. Heating bills are murder... unless you're planning to own the place by Friday.'"
+            "text": "Velma taps the gauge: 'Pressure's UP. This boiler ran within the HOUR — in a resort that's been \"abandoned\" for years. Heating bills are murder... so who keeps paying to keep an empty hotel toasty?'"
           }
         ]
       },
@@ -1162,7 +1162,7 @@
           },
           {
             "type": "show_message",
-            "text": "6... 9... 1969 — CLUNK. Inside: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for pennies, dated NEXT WEEK. He wasn't scaring buyers away for fun — he was clearing the field."
+            "text": "6... 9... 1969 — CLUNK. Inside: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for pennies, dated NEXT WEEK. Velma blinks: 'A sale dated NEXT WEEK? Somebody was awfully confident no other buyer would still want the place by then.'"
           }
         ]
       },
@@ -2119,7 +2119,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma reads the log: 'PUMPS SHUT DOWN — BY ORDER OF A. CRANE.' She frowns. 'Why drain the pool of a resort you claim you're trying to SELL? Unless empty pools scare buyers better.'"
+            "text": "Velma reads the log: 'PUMPS SHUT DOWN — BY ORDER OF A. CRANE.' She frowns. 'Jinkies — who orders the pool drained at a resort that's supposed to be FOR SALE? Filing that under: questions for the caretaker.'"
           }
         ]
       },

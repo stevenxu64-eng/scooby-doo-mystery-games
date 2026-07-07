@@ -61,7 +61,8 @@ replays on a fresh game).
 - **Dialogue**: click a branch or press **1–9**. Choices appear/disappear based on the
   clues (flags) you've gathered.
 - **Velma's Case Notes** (**N**, or the notebook button in the header): a running list of
-  every clue found, item picked up, and key event — review the whole case at any time.
+  every clue found and key event. Type in the search box (or filter by Clues/Events) to
+  find a half-remembered lead in seconds.
 
 <details>
 <summary><b>Full walkthrough (spoilers!)</b></summary>
@@ -83,8 +84,8 @@ replays on a fresh game).
 3. **Janitor's Closet (west of lobby, use the key)** — flashlight on the shadowy shelf
    (glowing paint!); take the rope and the box cutter; as Daphne, pick the padlocked
    floor grate.
-4. **Grounds** — show Gus the glowing paint → he implicates Mr. Crane and hands over the
-   office passkey.
+4. **Grounds** — show Gus the glowing paint → his testimony about the paint order goes in
+   the case notes, and he hands over the office passkey.
 5. **Manager's Office (north of lobby, use the passkey)** — as Velma, read the blueprint
    chest (Room 217 exists!); examine the founder's portrait (6-9-1969); open the wall
    safe → draft deed; as Fred, muscle the east bookshelf aside (pull the clean book).
