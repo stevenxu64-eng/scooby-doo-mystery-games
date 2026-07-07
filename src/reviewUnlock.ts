@@ -1,8 +1,11 @@
 /**
- * Review helper: visiting the game with ?unlock=doors opens every passage
- * (merging into any existing save, wiping nothing) so all ten areas can be
- * toured freely. Runs before the store module hydrates from localStorage —
- * this file must stay the FIRST import in main.tsx.
+ * Review helpers via URL param (merged into any existing save, wiping nothing):
+ *   ?unlock=doors  — open every passage so all ten areas can be toured
+ *   ?unlock=finale — everything staged in the boiler room: net rigged, bait
+ *                    set, testimony + witness gathered; pull the lever
+ *   ?unlock=solved — jump straight to the MYSTERY SOLVED screen
+ * Runs before the store module hydrates from localStorage — this file must
+ * stay the FIRST import in main.tsx.
  */
 
 const DOOR_FLAGS = [
@@ -16,6 +19,16 @@ const DOOR_FLAGS = [
   'boiler_door_open',
 ]
 
+const FINALE_FLAGS = [
+  ...DOOR_FLAGS,
+  'found_glowing_paint',
+  'knows_truth',
+  'george_freed',
+  'george_witness',
+  'rope_set',
+  'bait_set',
+]
+
 interface PersistedSave {
   state: {
     activeRoom: string
@@ -24,11 +37,13 @@ interface PersistedSave {
     activeCharacter: string
     introSeen: boolean
     caseLog?: unknown[]
+    gameWon?: boolean
   }
   version: number
 }
 
-if (new URLSearchParams(window.location.search).get('unlock') === 'doors') {
+const mode = new URLSearchParams(window.location.search).get('unlock')
+if (mode === 'doors' || mode === 'finale' || mode === 'solved') {
   const KEY = 'scooby-resort-save'
   let save: PersistedSave | null = null
   try {
@@ -49,8 +64,14 @@ if (new URLSearchParams(window.location.search).get('unlock') === 'doors') {
     }
   }
   save.state.gameFlags = save.state.gameFlags ?? {}
-  for (const flag of DOOR_FLAGS) save.state.gameFlags[flag] = true
+  const flags = mode === 'doors' ? DOOR_FLAGS : FINALE_FLAGS
+  for (const flag of flags) save.state.gameFlags[flag] = true
   save.state.introSeen = true
+  if (mode !== 'doors') save.state.activeRoom = 'trap_room'
+  if (mode === 'solved') {
+    save.state.gameFlags.trap_sprung = true
+    save.state.gameWon = true
+  }
   localStorage.setItem(KEY, JSON.stringify(save))
 }
 

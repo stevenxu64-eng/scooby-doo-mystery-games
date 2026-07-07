@@ -392,6 +392,8 @@ export const useGameStore = create<GameState>()(
         activeCharacter: s.activeCharacter,
         introSeen: s.introSeen,
         caseLog: s.caseLog,
+        // A solved case stays solved across reloads (until Play Again).
+        gameWon: s.gameWon,
       }),
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<GameState>
