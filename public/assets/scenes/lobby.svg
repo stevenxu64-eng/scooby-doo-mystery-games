@@ -201,10 +201,18 @@
   <ellipse cx="132" cy="700" rx="92" ry="12" fill="#000" opacity="0.25"/>
 
   <!-- ================= OFFICE STAIRCASE + DOOR (hotspot 1472-1584 x, 234-468 y) ================= -->
-  <!-- east archway glimpse at far right (east nav) -->
-  <path d="M1564 560 V308 q18 -22 36 0 V560 Z" fill="#100a1e"/>
-  <path d="M1572 560 V332 q10 -12 20 0 V560 Z" fill="#1c3a3c" opacity="0.5"/>
-  <path d="M1564 560 V308" stroke="#2c2148" stroke-width="4"/>
+  <!-- east archway to the grounds: widened moonlit passage (east nav), stairs overlap it in front -->
+  <path d="M1536 596 V304 q32 -30 64 0 V596 Z" fill="#100a1e"/>
+  <path d="M1544 596 V324 q24 -22 48 0 V596 Z" fill="#16323c"/>
+  <circle cx="1580" cy="366" r="8" fill="#e8f2fa" opacity="0.8"/>
+  <path d="M1550 474 q10 -28 28 -32 q-9 19 -5 36 q-13 4 -23 -4 Z" fill="#0d5246" opacity="0.85"/>
+  <path d="M1592 520 q-8 -18 -20 -22" stroke="#0d5246" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <circle cx="1558" cy="436" r="2" fill="#d9f27e" opacity="0.8"/>
+  <circle cx="1586" cy="502" r="1.6" fill="#d9f27e" opacity="0.6"/>
+  <path d="M1536 596 V304" stroke="#2c2148" stroke-width="5"/>
+  <path d="M1540 590 V320" stroke="#3a6a70" stroke-width="2" opacity="0.5"/>
+  <path d="M1536 596 L1600 596 L1600 650 L1498 650 Z" fill="#2a6a6e" opacity="0.10"/>
+  <ellipse cx="1560" cy="658" rx="66" ry="14" fill="#2a6a6e" opacity="0.12"/>
   <!-- steps -->
   <g>
     <rect x="1385" y="610" width="175" height="30" fill="#503420"/>
