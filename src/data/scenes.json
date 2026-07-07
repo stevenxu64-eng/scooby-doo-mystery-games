@@ -29,7 +29,8 @@
           "y": 23.5,
           "w": 13,
           "h": 55
-        }
+        },
+        "zone_hidden_until_unlocked": true
       },
       {
         "direction": "north",
@@ -332,7 +333,8 @@
           "y": 37.5,
           "w": 9.2,
           "h": 29.5
-        }
+        },
+        "zone_hidden_until_unlocked": true
       },
       {
         "direction": "south",
@@ -356,7 +358,8 @@
           "y": 31,
           "w": 14,
           "h": 43.5
-        }
+        },
+        "zone_hidden_until_unlocked": true
       },
       {
         "direction": "down",
@@ -369,7 +372,8 @@
           "y": 79.5,
           "w": 8.5,
           "h": 15.5
-        }
+        },
+        "zone_hidden_until_unlocked": true
       }
     ],
     "clickable_hotspots": [
@@ -632,7 +636,8 @@
           "y": 69,
           "w": 28,
           "h": 26
-        }
+        },
+        "zone_hidden_until_unlocked": true
       }
     ],
     "clickable_hotspots": [
@@ -1028,7 +1033,8 @@
           "y": 27,
           "w": 18.5,
           "h": 49
-        }
+        },
+        "zone_hidden_until_unlocked": true
       }
     ],
     "clickable_hotspots": [
@@ -2047,7 +2053,8 @@
           "y": 32.5,
           "w": 12,
           "h": 36.5
-        }
+        },
+        "zone_hidden_until_unlocked": true
       }
     ],
     "clickable_hotspots": [

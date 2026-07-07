@@ -63,6 +63,12 @@ export interface NavLink {
   /** Passage requires this flag to be true. */
   locked_by_flag?: string
   locked_message?: string
+  /**
+   * Hide the clickable zone while locked — used when a puzzle hotspot
+   * (locked door, barred grate, vine-choked arch) occupies the same spot,
+   * so the player sees ONE object until it actually opens.
+   */
+  zone_hidden_until_unlocked?: boolean
 }
 
 export interface Scene {

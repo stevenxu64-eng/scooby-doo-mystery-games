@@ -48,6 +48,9 @@ function NavZone({ link }: { link: NavLink }) {
   )
   const zone = link.zone ?? EDGE_ZONES[link.direction]
   const Icon = NAV_ICONS[link.direction]
+  // While the passage is sealed, the puzzle hotspot IS the door — don't
+  // render a second, identical-looking exit on top of it.
+  if (locked && link.zone_hidden_until_unlocked) return null
   return (
     <button
       onClick={() => moveTo(link.direction)}
