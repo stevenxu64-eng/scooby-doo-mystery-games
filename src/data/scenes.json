@@ -13,9 +13,9 @@
         "label": "Resort Grounds",
         "zone": {
           "x": 95.5,
-          "y": 53,
+          "y": 33,
           "w": 4.5,
-          "h": 35
+          "h": 55
         }
       },
       {
@@ -39,10 +39,10 @@
         "locked_by_flag": "office_unlocked",
         "locked_message": "The manager's office at the top of the stairs is locked. Mr. Crane 'keeps the only key'... though Gus might know otherwise.",
         "zone": {
-          "x": 84,
-          "y": 53,
-          "w": 11,
-          "h": 20
+          "x": 80,
+          "y": 52.5,
+          "w": 11.5,
+          "h": 20.5
         }
       }
     ],
@@ -225,9 +225,9 @@
       {
         "id": "office_door_lock",
         "label": "Office Stairs (locked door)",
-        "x": 92,
+        "x": 87,
         "y": 26,
-        "w": 7,
+        "w": 6.5,
         "h": 26,
         "required_item": "office_key",
         "consume_item": true,
