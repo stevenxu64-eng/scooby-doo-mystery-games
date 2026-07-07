@@ -856,6 +856,20 @@
           "w": 9,
           "h": 73
         }
+      },
+      {
+        "direction": "west",
+        "target": "pump_room",
+        "label": "Pump Room",
+        "zone": {
+          "x": 21.5,
+          "y": 35.3,
+          "w": 8.8,
+          "h": 34.4
+        },
+        "locked_by_flag": "boiler_door_open",
+        "locked_message": "A steel service door stenciled 'PUMPS', held shut by a heavy drop-bar.",
+        "zone_hidden_until_unlocked": true
       }
     ],
     "clickable_hotspots": [
@@ -998,6 +1012,32 @@
           {
             "type": "start_dialogue",
             "dialogue": "unmasking"
+          }
+        ]
+      },
+      {
+        "id": "pump_door_bar",
+        "label": "Barred Service Door",
+        "x": 21.5,
+        "y": 35.3,
+        "w": 8.8,
+        "h": 34.4,
+        "hidden_if_flags": [
+          "boiler_door_open"
+        ],
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "unlock"
+          },
+          {
+            "type": "set_flag",
+            "flag": "boiler_door_open",
+            "value": true
+          },
+          {
+            "type": "show_message",
+            "text": "You heft the drop-bar out of its brackets — CLANG — and the service door stenciled 'PUMPS' swings open. Cold pump-gallery air rolls in. So THIS is the phantom's commute."
           }
         ]
       }

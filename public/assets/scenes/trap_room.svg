@@ -422,6 +422,19 @@
     <path d="M376 712 q10 2 8 12 q-12 4 -14 -4" stroke="#77909c" stroke-width="5" fill="none"/>
   </g>
 
+  <!-- service door to the PUMP ROOM (west wall); the drop-bar is a runtime overlay until boiler_door_open -->
+  <g>
+    <rect x="344" y="318" width="140" height="310" fill="#0d1f16"/>
+    <rect x="348" y="322" width="132" height="302" fill="none" stroke="#2c4a3a" stroke-width="4"/>
+    <rect x="360" y="334" width="108" height="278" rx="4" fill="#3a4c50"/>
+    <rect x="366" y="340" width="96" height="266" rx="3" fill="none" stroke="#2a3a3e" stroke-width="4" stroke-dasharray="0.1 20" stroke-linecap="round"/>
+    <path d="M360 424 h108 M360 522 h108" stroke="#2b3f42" stroke-width="4" opacity="0.85"/>
+    <text x="414" y="392" font-family="Trebuchet MS" font-size="21" font-weight="bold" letter-spacing="4" fill="#9cc0ae" text-anchor="middle" opacity="0.9">PUMPS</text>
+    <circle cx="378" cy="478" r="5" fill="#66807c" stroke="#22343a" stroke-width="2"/>
+    <path d="M352 470 h14 v16 h-14 M476 470 h-14 v16 h14" stroke="#26343a" stroke-width="4" fill="none"/>
+    <path d="M352 624 L476 624 L488 650 L340 650 Z" fill="#4ade80" opacity="0.10"/>
+    <ellipse cx="414" cy="642" rx="60" ry="10" fill="#4ade80" opacity="0.12"/>
+  </g>
   <rect width="1600" height="900" filter="url(#trap_room_grain)" opacity="0.35"/>
   <rect width="1600" height="900" fill="url(#trap_room_vign)"/>
 </svg>

@@ -57,7 +57,7 @@ export const NOTEBOOK_NOTES: NotebookNote[] = [
   { flag: 'daphne_opened_panel', kind: 'clue', text: 'One unlabeled, brand-new breaker circuit wired straight past the meter, humming toward the boiler room.' },
   { flag: 'scooby_sniffed_trail', kind: 'clue', text: "Scooby's verdict: the glowing prints in the pump room are MINUTES old, heading for the boiler door." },
   { flag: 'got_tunnel_map', kind: 'clue', text: "The phantom's hand-drawn tunnel map: pool pumps → laundry → boiler room. That's how he haunts the resort unseen." },
-  { flag: 'boiler_door_open', kind: 'event', text: "Fished the bar off the BOILER door with the magnet line — a secret passage into the phantom's lair." },
+  { flag: 'boiler_door_open', kind: 'event', text: "The barred service door between the pump room and the boiler room is OPEN — the phantom's commute is now ours." },
   { flag: 'found_phantom_kit', kind: 'clue', text: "Behind oddly-new brickwork: Gus's missing bolt cutters and paint sprayer, wrapped in an 'A.C.' handkerchief." },
   // — Janitor's closet —
   { flag: 'closet_unlocked', kind: 'event', text: "Unlocked the janitor's closet with the maintenance key." },

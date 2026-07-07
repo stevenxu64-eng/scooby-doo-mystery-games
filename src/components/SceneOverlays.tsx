@@ -453,6 +453,19 @@ const CLOSET: OverlayDef[] = [
 
 const TRAP_ROOM: OverlayDef[] = [
   {
+    id: 'pump_door_bar',
+    unless: ['boiler_door_open'],
+    style: pct(21.25, 51.1, 9.4, 4.4),
+    node: (
+      <svg viewBox="0 0 150 40" className="h-full w-full" preserveAspectRatio="none">
+        <rect x="4" y="12" width="142" height="16" rx="3" fill="#5a4a2e" stroke="#241505" strokeWidth="3" />
+        <path d="M10 16 h130" stroke="#7a6a42" strokeWidth="2" opacity="0.7" />
+        <rect x="10" y="6" width="14" height="28" rx="2" fill="#26343a" />
+        <rect x="126" y="6" width="14" height="28" rx="2" fill="#26343a" />
+      </svg>
+    ),
+  },
+  {
     id: 'rigged_net',
     when: ['rope_set'],
     unless: ['trap_sprung'],

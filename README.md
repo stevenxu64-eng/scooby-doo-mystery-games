@@ -101,7 +101,8 @@ and Shaggy & Scooby) — press **H** in any room and try the walkie.
 **Combine side-quests** (inventory: click item A, then item B):
 - **Clothesline + Horseshoe Magnet → Magnet on a Line.** George hands over the clothesline with
   his testimony; Daphne picks the toolshed toolbox for the magnet. Use it on the pump room's
-  barred **BOILER door** → opens a secret east passage straight into the boiler room.
+  barred **BOILER door** → opens a two-way passage between the pump room and the boiler room.
+  (Already in the boiler room? Lift the drop-bar off the 'PUMPS' door there instead.)
 - **Old Bedsheet + Glowing Paint → Counterfeit Phantom.** Fred pops the Room 217 steamer trunk
   for the sheet. Wave it at Mr. Crane (or Gus) and watch the reaction. Also try showing Crane
   the muddy glove...
