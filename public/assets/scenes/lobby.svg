@@ -442,11 +442,36 @@
   </g>
 
   <!-- ================= dust-sheet furniture (foreground) ================= -->
-  <ellipse cx="1292" cy="872" rx="120" ry="15" fill="#000" opacity="0.35"/>
-  <path d="M1196 852 q-8 -96 40 -122 q20 -46 78 -40 q58 6 66 52 q36 24 26 78 q-6 44 -58 46 q-96 6 -152 -14 z" fill="#a49ec0"/>
-  <path d="M1214 842 q60 22 158 4 M1252 716 q14 -20 40 -16 M1230 780 q-6 34 4 58 M1352 764 q10 34 2 70" stroke="#7c7699" stroke-width="4" fill="none"/>
-  <path d="M1262 706 q26 -14 58 0" stroke="#c6c1da" stroke-width="4" fill="none"/>
-  <path d="M1198 856 q78 18 204 -2" stroke="#5f5a7c" stroke-width="3" fill="none" opacity="0.7"/>
+  <!-- dust-sheeted ARMCHAIR: tall back, two rolled arms, seat ridge, drape folds, hem, carved leg -->
+  <g id="lobby-sheet-armchair">
+    <ellipse cx="1305" cy="862" rx="98" ry="11" fill="#000" opacity="0.35"/>
+    <!-- sheet silhouette: tall back between two rounded arm rolls, hem lifted at right corner -->
+    <path d="M1238 851 Q1223 838 1225 806 Q1227 786 1246 780 Q1262 776 1266 792 Q1261 760 1269 737 Q1276 726 1306 725 Q1336 726 1343 738 Q1350 758 1346 792 Q1352 777 1367 780 Q1385 785 1387 806 Q1389 826 1380 838 Q1372 842 1362 840 Q1350 854 1334 850 Q1316 845 1300 852 Q1284 858 1268 851 Q1252 845 1238 851 Z" fill="#a49ec0"/>
+    <!-- shade on right (away from moonbeam) -->
+    <path d="M1370 782 Q1385 787 1387 806 Q1389 826 1380 838 Q1377 818 1375 804 Q1373 791 1370 782 Z" fill="#7c7699" opacity="0.4"/>
+    <!-- creases where the tall back meets the arm rolls -->
+    <path d="M1268 790 Q1273 768 1272 744 M1344 790 Q1339 768 1340 744" stroke="#7c7699" stroke-width="3.5" fill="none"/>
+    <!-- seat cushion ridge between the arms -->
+    <path d="M1268 818 Q1306 828 1344 816" stroke="#7c7699" stroke-width="4" fill="none"/>
+    <path d="M1274 811 Q1306 819 1338 809" stroke="#c6c1da" stroke-width="2.5" fill="none" opacity="0.65"/>
+    <!-- hanging drape folds: seat front and outer arm faces -->
+    <path d="M1284 822 Q1281 838 1285 850 M1308 826 Q1310 840 1308 851 M1330 822 Q1333 837 1331 849" stroke="#7c7699" stroke-width="3" fill="none"/>
+    <path d="M1232 798 Q1229 822 1237 844 M1380 800 Q1383 820 1376 836" stroke="#7c7699" stroke-width="3" fill="none"/>
+    <!-- moonlit rims: crown of the back + arm roll tops -->
+    <path d="M1278 733 Q1293 726 1318 727" stroke="#c6c1da" stroke-width="3.5" fill="none" opacity="0.8"/>
+    <path d="M1234 787 Q1245 780 1257 784 M1357 784 Q1368 780 1379 788" stroke="#c6c1da" stroke-width="3" fill="none" opacity="0.8"/>
+    <!-- hem shadow along the drop of the sheet -->
+    <path d="M1240 853 Q1252 848 1268 853 Q1284 860 1300 854 Q1316 848 1334 852 Q1348 856 1360 843" stroke="#5f5a7c" stroke-width="3" fill="none" opacity="0.75"/>
+    <!-- lifted-hem opening + carved wooden leg peeking out at the right corner -->
+    <path d="M1360 842 Q1368 839 1377 841 L1379 851 Q1368 856 1360 852 Z" fill="#120a04" opacity="0.8"/>
+    <rect x="1364.5" y="840" width="7" height="5" fill="#3a2413"/>
+    <ellipse cx="1368" cy="847" rx="7" ry="5.5" fill="#6e4a22" stroke="#241505" stroke-width="1"/>
+    <rect x="1362.5" y="851" width="11" height="2.5" rx="1" fill="#3a2413"/>
+    <path d="M1364.5 853.5 L1371.5 853.5 L1370 858.5 L1366 858.5 Z" fill="#6e4a22"/>
+    <path d="M1365.5 841 Q1363.5 846 1365.5 852" stroke="#c9995a" stroke-width="1.5" fill="none" opacity="0.75"/>
+    <ellipse cx="1368" cy="857.8" rx="7" ry="1.2" fill="#000" opacity="0.3"/>
+    <path d="M1360 841 Q1370 837 1379 839" stroke="#c6c1da" stroke-width="2" fill="none" opacity="0.5"/>
+  </g>
   <ellipse cx="102" cy="878" rx="70" ry="11" fill="#000" opacity="0.32"/>
   <path d="M40 872 q-6 -66 28 -74 q10 -22 40 -18 q30 4 32 26 q20 10 14 44 q-4 26 -50 26 q-46 2 -64 -4 z" fill="#948ead"/>
   <path d="M56 862 q40 12 88 2 M78 792 q10 -12 28 -8" stroke="#6b6584" stroke-width="3.5" fill="none"/>

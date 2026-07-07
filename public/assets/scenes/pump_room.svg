@@ -87,6 +87,11 @@
 <text y="33" font-family="Trebuchet MS" font-size="11" font-weight="bold" fill="#2e7a3e" text-anchor="middle">LUMO</text>
 <path d="M-12 6 q2 8 -1 16 M10 4 q3 10 0 20" stroke="#4ade80" stroke-width="3.5" opacity="0.85" fill="none"/>
 </g>
+<radialGradient id="pumpGhostGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#bcd8ec" stop-opacity="0.5"/>
+<stop offset="60%" stop-color="#bcd8ec" stop-opacity="0.18"/>
+<stop offset="100%" stop-color="#bcd8ec" stop-opacity="0"/>
+</radialGradient>
 <filter id="pumpGrain">
 <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
 <feColorMatrix type="saturate" values="0"/>
@@ -447,6 +452,67 @@
 <path d="M524 612 q26 8 54 0 l0 6 q-28 8 -54 0 Z" fill="#06121a" opacity="0.7"/>
 <path d="M612 560 q6 10 0 22" stroke="#4ade80" stroke-width="2" opacity="0.25" fill="none"/>
 <circle cx="500" cy="618" r="2" fill="#4ade80" opacity="0.3"/><circle cx="509" cy="621" r="1.5" fill="#4ade80" opacity="0.25"/>
+</g>
+<!-- ===== THE GHOST of George Palm Sr. (1969 suit, bow tie, straw boater) ===== -->
+<g id="pump_room_ghost" opacity="0.75">
+<ellipse cx="390" cy="824" rx="85" ry="20" fill="url(#pumpGhostGlow)">
+<animate attributeName="opacity" values="1;0.65;1" dur="3.4s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cx="390" cy="710" rx="88" ry="130" fill="url(#pumpGhostGlow)" opacity="0.5">
+<animate attributeName="opacity" values="0.5;0.3;0.5" dur="3.4s" repeatCount="indefinite"/>
+</ellipse>
+<!-- trousers with a slight 1969 flare -->
+<path d="M370 748 q-2 34 -4 62 h22 l1 -60 Z" fill="#93b4cc"/>
+<path d="M410 748 q2 34 4 62 h-22 l-1 -60 Z" fill="#93b4cc"/>
+<path d="M391 752 v56" stroke="#7fa2bc" stroke-width="2"/>
+<ellipse cx="374" cy="814" rx="15" ry="6" fill="#6e92ac"/>
+<ellipse cx="406" cy="814" rx="15" ry="6" fill="#6e92ac"/>
+<!-- arms -->
+<path d="M362 672 Q348 700 346 732" stroke="#a9c8de" stroke-width="16" stroke-linecap="round" fill="none"/>
+<circle cx="346" cy="736" r="7" fill="#d6e8f4"/>
+<path d="M418 672 Q440 690 447 710" stroke="#a9c8de" stroke-width="16" stroke-linecap="round" fill="none"/>
+<circle cx="449" cy="715" r="7" fill="#d6e8f4"/>
+<!-- suit jacket -->
+<path d="M360 664 Q390 650 420 664 L428 748 Q390 764 352 748 Z" fill="#a9c8de"/>
+<path d="M420 664 L428 748 Q412 756 400 758 L406 668 Z" fill="#7fa2bc" opacity="0.45"/>
+<path d="M376 660 L390 706 L404 660 Q390 653 376 660 Z" fill="#e8f3fa"/>
+<path d="M376 660 L390 706 L371 678 Z" fill="#8fb2ca"/>
+<path d="M404 660 L390 706 L409 678 Z" fill="#8fb2ca"/>
+<circle cx="390" cy="718" r="2.5" fill="#7fa2bc"/>
+<circle cx="390" cy="734" r="2.5" fill="#7fa2bc"/>
+<!-- bow tie -->
+<path d="M390 666 l-14 -7 v14 Z" fill="#5f86a8"/>
+<path d="M390 666 l14 -7 v14 Z" fill="#5f86a8"/>
+<circle cx="390" cy="666" r="3.5" fill="#4a6e90"/>
+<!-- head -->
+<rect x="384" y="646" width="12" height="12" fill="#d6e8f4"/>
+<circle cx="390" cy="626" r="25" fill="#d6e8f4"/>
+<circle cx="381" cy="624" r="2.6" fill="#51708a"/>
+<circle cx="399" cy="624" r="2.6" fill="#51708a"/>
+<path d="M390 628 q-3 6 1 9" stroke="#8fb2ca" stroke-width="2" fill="none"/>
+<path d="M383 642 q7 5 14 0" stroke="#51708a" stroke-width="2" fill="none"/>
+<path d="M377 614 q4 -3 8 0 M395 614 q4 -3 8 0" stroke="#8fb2ca" stroke-width="2" fill="none"/>
+<!-- straw boater hat -->
+<ellipse cx="390" cy="606" rx="42" ry="8" fill="#d0e2ee"/>
+<path d="M348 606 a42 8 0 0 0 84 0" stroke="#a9c8de" stroke-width="2" fill="none"/>
+<rect x="369" y="582" width="42" height="26" rx="5" fill="#d0e2ee"/>
+<rect x="369" y="596" width="42" height="8" fill="#7fa2bc"/>
+<ellipse cx="390" cy="584" rx="21" ry="5" fill="#dcebf4"/>
+<!-- upward-drifting glow motes -->
+<g fill="#cfe6f4">
+<circle cx="356" cy="760" r="3">
+<animate attributeName="cy" values="760;640" dur="4s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite"/>
+</circle>
+<circle cx="428" cy="742" r="2.4">
+<animate attributeName="cy" values="742;618" dur="5s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.7;0" dur="5s" repeatCount="indefinite"/>
+</circle>
+<circle cx="394" cy="700" r="2">
+<animate attributeName="cy" values="700;598" dur="3.2s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.75;0" dur="3.2s" repeatCount="indefinite"/>
+</circle>
+</g>
 </g>
 <rect width="1600" height="900" filter="url(#pumpGrain)" opacity="0.3"/>
 <rect width="1600" height="900" fill="url(#pumpVign)"/>

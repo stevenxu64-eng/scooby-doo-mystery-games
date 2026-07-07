@@ -54,6 +54,12 @@ export interface NavLink {
   direction: Direction
   target: string
   label: string
+  /**
+   * Clickable region (viewport %) sitting on the painted exit — doorway,
+   * path, archway, ladder... Falls back to a subtle screen-edge strip when
+   * the way out is behind the camera.
+   */
+  zone?: { x: number; y: number; w: number; h: number }
   /** Passage requires this flag to be true. */
   locked_by_flag?: string
   locked_message?: string

@@ -16,35 +16,52 @@ import { WinScreen } from './WinScreen'
 import { SceneOverlays } from './SceneOverlays'
 import { CharacterBust } from './CharacterArt'
 
-const NAV_META: Record<
-  Direction,
-  { icon: typeof ChevronUp; className: string }
-> = {
-  north: { icon: ChevronUp, className: 'top-2 left-1/2 -translate-x-1/2' },
-  south: { icon: ChevronDown, className: 'bottom-2 left-1/2 -translate-x-1/2' },
-  east: { icon: ChevronRight, className: 'right-2 top-1/2 -translate-y-1/2' },
-  west: { icon: ChevronLeft, className: 'left-2 top-1/2 -translate-y-1/2' },
-  up: { icon: ArrowUpFromLine, className: 'top-2 right-14' },
-  down: { icon: ArrowDownToLine, className: 'bottom-2 right-14' },
+const NAV_ICONS: Record<Direction, typeof ChevronUp> = {
+  north: ChevronUp,
+  south: ChevronDown,
+  east: ChevronRight,
+  west: ChevronLeft,
+  up: ArrowUpFromLine,
+  down: ArrowDownToLine,
 }
 
-function NavArrow({ link }: { link: NavLink }) {
+/** Fallback click strips for exits that sit behind the camera. */
+const EDGE_ZONES: Record<Direction, { x: number; y: number; w: number; h: number }> = {
+  west: { x: 0, y: 28, w: 4.5, h: 50 },
+  east: { x: 95.5, y: 28, w: 4.5, h: 50 },
+  north: { x: 33, y: 0, w: 34, h: 7 },
+  south: { x: 33, y: 93, w: 34, h: 7 },
+  up: { x: 80, y: 0, w: 15, h: 8 },
+  down: { x: 80, y: 92, w: 15, h: 8 },
+}
+
+/**
+ * Diegetic exit: an invisible zone over the painted doorway/path/archway.
+ * Hovering reveals a soft glow and a floating label; H outlines all exits.
+ * Rendered BELOW hotspots so locked-door puzzles keep priority.
+ */
+function NavZone({ link }: { link: NavLink }) {
   const moveTo = useGameStore((s) => s.moveTo)
+  const showHotspotHints = useGameStore((s) => s.showHotspotHints)
   const locked = useGameStore(
     (s) => !!link.locked_by_flag && !s.gameFlags[link.locked_by_flag],
   )
-  const meta = NAV_META[link.direction]
-  const Icon = meta.icon
+  const zone = link.zone ?? EDGE_ZONES[link.direction]
+  const Icon = NAV_ICONS[link.direction]
   return (
     <button
       onClick={() => moveTo(link.direction)}
       title={locked ? `${link.label} (locked)` : `Go to ${link.label}`}
-      className={`kenney-btn absolute z-20 flex items-center gap-1 px-2 py-2 text-amber-100 ${
-        locked ? 'bg-stone-800/90 opacity-70' : 'bg-amber-700/90'
-      } ${meta.className}`}
+      aria-label={`Go to ${link.label}`}
+      style={{ left: `${zone.x}%`, top: `${zone.y}%`, width: `${zone.w}%`, height: `${zone.h}%` }}
+      className={`group absolute z-[5] rounded-xl border-2 transition-colors duration-150 ${
+        showHotspotHints
+          ? 'border-amber-300/70 bg-amber-200/10'
+          : 'border-transparent hover:border-amber-200/60 hover:bg-amber-100/10'
+      }`}
     >
-      <Icon size={22} strokeWidth={3} />
-      <span className="hidden text-xs font-bold uppercase tracking-wide md:inline">
+      <span className="pointer-events-none absolute left-1/2 top-1/2 z-30 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 whitespace-nowrap rounded border border-stone-500 bg-stone-900/95 px-2 py-0.5 text-xs font-bold text-amber-200 group-hover:flex">
+        <Icon size={12} strokeWidth={3} />
         {link.label}
         {locked ? ' 🔒' : ''}
       </span>
@@ -118,9 +135,9 @@ export function Viewport() {
         </button>
       ))}
 
-      {/* Navigation arrows */}
+      {/* Diegetic exits: click the doorway, path, or archway itself */}
       {scene.navigation_links.map((link) => (
-        <NavArrow key={link.direction} link={link} />
+        <NavZone key={link.direction} link={link} />
       ))}
 
       <ActionCameo />

@@ -345,5 +345,381 @@
         ]
       }
     }
+  },
+  "rosa_main": {
+    "speaker": "Rosa (Housekeeping)",
+    "portrait_color": "#c2703d",
+    "nodes": {
+      "start": {
+        "text": "A small woman in a pressed uniform folds the same striped towel, again. 'Oh! GUESTS! We haven't had guests since... well.' She smooths her apron. 'Rosa Delgado, housekeeping. Forty years. And no, I am not leaving because of some glow-in-the-dark bedsheet.'",
+        "choices": [
+          {
+            "text": "Ask about the resort's glory days",
+            "next": "heyday",
+            "set_flags": [
+              "rosa_heyday"
+            ]
+          },
+          {
+            "text": "Ask about the Phantom Guest",
+            "next": "wail",
+            "set_flags": [
+              "rosa_wail"
+            ]
+          },
+          {
+            "text": "Ask about Mr. Crane",
+            "next": "crane",
+            "set_flags": [
+              "rosa_blazer"
+            ]
+          },
+          {
+            "text": "'About this dry-cleaned blazer in the staff locker...'",
+            "next": "ticket",
+            "required_flags": [
+              "daphne_picked_locker"
+            ]
+          },
+          {
+            "text": "Let her get back to her towel.",
+            "next": null
+          }
+        ]
+      },
+      "heyday": {
+        "text": "'You should have SEEN it in '69, niños. Orchestras by the pool. Movie stars in the cabana. Mr. Palm Senior kept Room 217 as his own private suite — best view on the coast. He said the Grand Palm would outlive us all.' She sighs at the towel. 'It is certainly outliving its reputation.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "wail": {
+        "text": "'I hear it some nights — that awful pipe-organ wail. But here is the thing.' She leans in. 'It always comes from UNDER my cabana. Under the deck, under the pool. Ghosts do not take the service tunnels, niños. STAFF take the service tunnels.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "crane": {
+        "text": "'Señor Crane still has me press his staff blazer every single week. Very particular. Creases like knife edges.' She folds the towel with sudden violence. 'Where a caretaker goes at MIDNIGHT that needs a pressed blazer, I could not tell you.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "ticket": {
+        "text": "'Sí, that is my ticket — I sign them A.C., for Ambrose Crane. Every week, like the resort never closed.' Daphne beams: 'The laundry never lies. NEVER.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      }
+    }
+  },
+  "marco_main": {
+    "speaker": "Marco (Maintenance)",
+    "portrait_color": "#64748b",
+    "nodes": {
+      "start": {
+        "text": "A wiry old man in coveralls jumps, then relaxes, oil can still raised like a duelling pistol. 'Madre— you scared me! Marco. Forty years keeping this place running. Officially retired.' He pats the workbench. 'Unofficially... somebody has to keep her humming.'",
+        "choices": [
+          {
+            "text": "Ask about the missing tools",
+            "next": "tools",
+            "set_flags": [
+              "marco_tools"
+            ]
+          },
+          {
+            "text": "Ask about the pool pumps",
+            "next": "pumps",
+            "set_flags": [
+              "marco_pumps"
+            ]
+          },
+          {
+            "text": "Ask about the boiler",
+            "next": "boiler",
+            "set_flags": [
+              "marco_boiler"
+            ]
+          },
+          {
+            "text": "'We, uh, borrowed a magnet from your toolbox.'",
+            "next": "toolbox",
+            "required_flags": [
+              "got_magnet"
+            ]
+          },
+          {
+            "text": "Leave him to his tinkering.",
+            "next": null
+          }
+        ]
+      },
+      "tools": {
+        "text": "'Funny thing. My bolt cutters and my paint sprayer walked off about a month back — right when the haunting got AMBITIOUS. And somebody keeps borrowing my padlock oil.' He squints. 'Thieves don't usually MAINTAIN what they steal from, eh?'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "pumps": {
+        "text": "'Those pumps could run TODAY — I keep them oiled, don't tell Crane. HE ordered them shut down, you know. First rule of resorts: a dry pool is a dead resort.' He wipes his hands slowly. 'It is like the man WANTS her ugly.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "boiler": {
+        "text": "'Some nights the boiler kicks on at two in the morning. I never light her. So either this place has a very COZY ghost...' he taps his temple, '...or somebody is living down there. Warm, private, and paid for.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "toolbox": {
+        "text": "'My little red one! Keep the magnet — it isn't mine. Somebody's been using MY shed as THEIR locker.' He grins suddenly. 'And kid — every socket on this property is the same size. I standardized them in '81. One crank fits ALL of it. You're welcome.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      }
+    }
+  },
+  "tomas_main": {
+    "speaker": "Tomás (Groundskeeper)",
+    "portrait_color": "#4d7c0f",
+    "nodes": {
+      "start": {
+        "text": "An old man in a straw hat waters a fern that is frankly beyond help. 'Shhh. They are listening.' He tips the hat. 'Tomás. I keep the green things. KEPT,' he corrects himself, sadly, 'the green things.'",
+        "choices": [
+          {
+            "text": "Ask about the greenhouse",
+            "next": "flowers",
+            "set_flags": [
+              "tomas_nine"
+            ]
+          },
+          {
+            "text": "Ask if he's seen the Phantom",
+            "next": "walker",
+            "set_flags": [
+              "tomas_trip"
+            ]
+          },
+          {
+            "text": "Ask about the terrifying topiary",
+            "next": "topiary"
+          },
+          {
+            "text": "'We found a green thread on your roses...'",
+            "next": "thread",
+            "required_flags": [
+              "daphne_found_thread"
+            ]
+          },
+          {
+            "text": "Leave him with his patients.",
+            "next": null
+          }
+        ]
+      },
+      "flowers": {
+        "text": "'Palm Senior planted half these beds with his own hands. The moonflowers were his favorite — they only open for the night.' He frowns. 'Lately they open at NINE SHARP. Every night. Flowers do not lie about visitors, niños. Something walks my greenhouse on a schedule.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "walker": {
+        "text": "'Seen him? Señorita, I watched your terrible phantom catch his sheet on my roses, TRIP over my good urn, and say a word no ghost should know.' He sips from a thermos. 'Ghosts float. Frauds stumble.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "topiary": {
+        "text": "'The scary bush? I trimmed it like that as a JOKE in 1975. Palm Senior laughed so hard he gave me Fridays off, forever.' He looks at it fondly. 'Nobody remembers the joke now. Only the fear. That is resorts for you.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "thread": {
+        "text": "'From my roses, sí — shoulder height on the thorns.' He holds a flat hand up to demonstrate, then raises it a notch. 'Your ghost is exactly one CRANE tall. I have trimmed hedges shorter than that man's alibi.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      }
+    }
+  },
+  "ghost_main": {
+    "speaker": "George Palm Sr.",
+    "portrait_color": "#a5b4fc",
+    "nodes": {
+      "start": {
+        "text": "The temperature drops ten degrees. By Pump No. 1 stands a silver, translucent gentleman in a 1969 suit and straw boater. Shaggy and Scooby stack themselves into one trembling totem pole. 'Peace, gentlemen. George Palm, SENIOR. Yes — a real ghost. No, I do not wail.' He straightens his bow tie. 'That RACKET upstairs is an impostor, and frankly, it embarrasses the whole profession.'",
+        "choices": [
+          {
+            "text": "Ask about the impostor",
+            "next": "impostor",
+            "set_flags": [
+              "ghost_impostor"
+            ]
+          },
+          {
+            "text": "Ask about the tunnels",
+            "next": "tunnels",
+            "set_flags": [
+              "ghost_tunnels"
+            ]
+          },
+          {
+            "text": "Ask about his family",
+            "next": "family",
+            "set_flags": [
+              "ghost_family"
+            ]
+          },
+          {
+            "text": "'We know who it is. We're springing a trap tonight.'",
+            "next": "blessing",
+            "required_flags": [
+              "knows_truth"
+            ]
+          },
+          {
+            "text": "Back away. Politely. (Shaggy is already gone.)",
+            "next": null
+          }
+        ]
+      },
+      "impostor": {
+        "text": "'A man in a painted BEDSHEET, using my resort's good name to frighten away buyers. He walks MY service corridors like he owns them.' The pumps rattle softly. 'He does not. Not yet — and if you children are half as clever as you look, not ever.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "tunnels": {
+        "text": "'I built these corridors in 1969 — pumps to laundry to boiler. A good host is never SEEN pushing a maintenance cart.' He allows himself a small smile. 'I was so proud, I printed the full corridor plan in my grand-opening BROCHURE. Vanity. But perhaps useful vanity, hmm?'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "family": {
+        "text": "'My grandson came home to REOPEN my paradise. Then he vanished into the walls — some nights I hear him BANGING, poor boy, somewhere above the office.' The glow flickers. 'Find him. Palms keep their promises. It's the family curse — the good kind.'",
+        "choices": [
+          {
+            "text": "Ask something else",
+            "next": "start"
+          },
+          {
+            "text": "Leave",
+            "next": null
+          }
+        ]
+      },
+      "blessing": {
+        "text": "'Then spring it WELL.' He rises an inch off the floor, which is somehow formal. 'And when you unmask him, tell Ambrose this, word for word: the Palms never sold.' He tips the boater. 'He will know exactly what it means.' The pump-light flickers, and he is gone.",
+        "choices": [
+          {
+            "text": "'...Like, did anybody else just get chills?' (Leave)",
+            "next": null,
+            "set_flags": [
+              "ghost_blessing"
+            ]
+          }
+        ]
+      }
+    }
   }
 }

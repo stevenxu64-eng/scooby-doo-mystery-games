@@ -10,21 +10,39 @@
       {
         "direction": "east",
         "target": "grounds",
-        "label": "Resort Grounds"
+        "label": "Resort Grounds",
+        "zone": {
+          "x": 97.5,
+          "y": 33,
+          "w": 2.5,
+          "h": 30
+        }
       },
       {
         "direction": "west",
         "target": "janitor_closet",
         "label": "Janitor's Closet",
         "locked_by_flag": "closet_unlocked",
-        "locked_message": "The janitor's closet door is locked tight. A heavy old lock \u2014 you'd need the right key."
+        "locked_message": "The janitor's closet door is locked tight. A heavy old lock — you'd need the right key.",
+        "zone": {
+          "x": 1.5,
+          "y": 23.5,
+          "w": 13,
+          "h": 55
+        }
       },
       {
         "direction": "north",
         "target": "office",
         "label": "Manager's Office",
         "locked_by_flag": "office_unlocked",
-        "locked_message": "The manager's office at the top of the stairs is locked. Mr. Crane 'keeps the only key'... though Gus might know otherwise."
+        "locked_message": "The manager's office at the top of the stairs is locked. Mr. Crane 'keeps the only key'... though Gus might know otherwise.",
+        "zone": {
+          "x": 86,
+          "y": 25.5,
+          "w": 11.5,
+          "h": 47.5
+        }
       }
     ],
     "clickable_hotspots": [
@@ -40,7 +58,7 @@
         "hidden_if_flags": [
           "closet_unlocked"
         ],
-        "missing_item_message": "The janitor's closet. The lock is old but sturdy \u2014 no key, no entry.",
+        "missing_item_message": "The janitor's closet. The lock is old but sturdy — no key, no entry.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -156,7 +174,7 @@
         "w": 12,
         "h": 26,
         "required_character": "Shaggy_Scooby",
-        "wrong_character_message": "A sun-bleached poster with something scrawled across it. Threatening graffiti is Shaggy and Scooby's area of expertise \u2014 mostly the running-away part.",
+        "wrong_character_message": "A sun-bleached poster with something scrawled across it. Threatening graffiti is Shaggy and Scooby's area of expertise — mostly the running-away part.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -169,7 +187,7 @@
           },
           {
             "type": "show_message",
-            "text": "Shaggy reads the scrawl aloud: 'THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT.' Scooby sniffs it and recoils \u2014 'Rarker!' Fresh marker ink. Like, fifty-year-old ghosts don't buy NEW markers, man!"
+            "text": "Shaggy reads the scrawl aloud: 'THE PHANTOM GUEST CHECKS IN, YOU CHECK OUT.' Scooby sniffs it and recoils — 'Rarker!' Fresh marker ink. Like, fifty-year-old ghosts don't buy NEW markers, man!"
           }
         ]
       },
@@ -295,33 +313,63 @@
       {
         "direction": "west",
         "target": "lobby",
-        "label": "Resort Lobby"
+        "label": "Resort Lobby",
+        "zone": {
+          "x": 0,
+          "y": 40,
+          "w": 9.4,
+          "h": 17.5
+        }
       },
       {
         "direction": "north",
         "target": "toolshed",
         "label": "Toolshed",
         "locked_by_flag": "shed_lit",
-        "locked_message": "The toolshed is pitch dark inside. Light it up first \u2014 a flashlight on that doorway would do."
+        "locked_message": "The toolshed is pitch dark inside. Light it up first — a flashlight on that doorway would do.",
+        "zone": {
+          "x": 32.9,
+          "y": 37.5,
+          "w": 9.2,
+          "h": 29.5
+        }
       },
       {
         "direction": "south",
         "target": "greenhouse",
-        "label": "Greenhouse"
+        "label": "Greenhouse",
+        "zone": {
+          "x": 34.1,
+          "y": 82.5,
+          "w": 9.7,
+          "h": 17.5
+        }
       },
       {
         "direction": "east",
         "target": "pool_cabana",
         "label": "Pool Cabana",
         "locked_by_flag": "path_cleared",
-        "locked_message": "The archway east to the pool deck is choked with vines. You'll need something sharp to clear it."
+        "locked_message": "The archway east to the pool deck is choked with vines. You'll need something sharp to clear it.",
+        "zone": {
+          "x": 78,
+          "y": 31,
+          "w": 14,
+          "h": 43.5
+        }
       },
       {
         "direction": "down",
         "target": "pump_room",
         "label": "Pump Room",
         "locked_by_flag": "hatch_open",
-        "locked_message": "The maintenance hatch beside the pool is cranked shut. No handle, no entry."
+        "locked_message": "The maintenance hatch beside the pool is cranked shut. No handle, no entry.",
+        "zone": {
+          "x": 25.5,
+          "y": 79.5,
+          "w": 8.5,
+          "h": 15.5
+        }
       }
     ],
     "clickable_hotspots": [
@@ -408,7 +456,7 @@
           },
           {
             "type": "show_message",
-            "text": "The flashlight beam floods the shed \u2014 cobwebbed tools, a workbench... and something GLINTING under a floor grate inside. You can head NORTH into the toolshed now."
+            "text": "The flashlight beam floods the shed — cobwebbed tools, a workbench... and something GLINTING under a floor grate inside. You can head NORTH into the toolshed now."
           }
         ]
       },
@@ -480,7 +528,7 @@
         "hidden_if_flags": [
           "path_cleared"
         ],
-        "missing_item_message": "A stone archway to the pool deck \u2014 completely sealed by a decade of vines. You'd need serious garden shears to cut through. Maybe the greenhouse (south) has some.",
+        "missing_item_message": "A stone archway to the pool deck — completely sealed by a decade of vines. You'd need serious garden shears to cut through. Maybe the greenhouse (south) has some.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -493,7 +541,7 @@
           },
           {
             "type": "show_message",
-            "text": "SNIP-SNIP-SNIP! Daphne directs, everyone else ducks flying vine bits. The archway to the POOL CABANA is clear \u2014 head east!"
+            "text": "SNIP-SNIP-SNIP! Daphne directs, everyone else ducks flying vine bits. The archway to the POOL CABANA is clear — head east!"
           }
         ]
       },
@@ -506,11 +554,11 @@
         "h": 12,
         "required_item": "crank_handle",
         "required_character": "Fred",
-        "wrong_character_message": "A rusted steel hatch stamped 'PUMP ROOM'. Even with a crank, winding open a decade of rust is a job for team muscle \u2014 get Fred on the walkie.",
+        "wrong_character_message": "A rusted steel hatch stamped 'PUMP ROOM'. Even with a crank, winding open a decade of rust is a job for team muscle — get Fred on the walkie.",
         "hidden_if_flags": [
           "hatch_open"
         ],
-        "missing_item_message": "A rusted steel hatch set into the lawn beside the pool, stamped 'PUMP ROOM'. The crank socket is empty \u2014 the handle must be stored with the tools somewhere.",
+        "missing_item_message": "A rusted steel hatch set into the lawn beside the pool, stamped 'PUMP ROOM'. The crank socket is empty — the handle must be stored with the tools somewhere.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -565,14 +613,26 @@
       {
         "direction": "east",
         "target": "lobby",
-        "label": "Resort Lobby"
+        "label": "Resort Lobby",
+        "zone": {
+          "x": 94.5,
+          "y": 14,
+          "w": 5.5,
+          "h": 54.5
+        }
       },
       {
         "direction": "down",
         "target": "trap_room",
         "label": "Boiler Room",
         "locked_by_flag": "trap_room_open",
-        "locked_message": "A padlocked grate blocks the way down. The lock is rusted but stubborn."
+        "locked_message": "A padlocked grate blocks the way down. The lock is rusted but stubborn.",
+        "zone": {
+          "x": 36,
+          "y": 69,
+          "w": 28,
+          "h": 26
+        }
       }
     ],
     "clickable_hotspots": [
@@ -604,7 +664,7 @@
           },
           {
             "type": "show_message",
-            "text": "The beam lands on a half-empty can of LUMO-GLOW PHANTOM GREEN theatrical paint \u2014 the exact eerie green of the Phantom Guest! You take the can as evidence."
+            "text": "The beam lands on a half-empty can of LUMO-GLOW PHANTOM GREEN theatrical paint — the exact eerie green of the Phantom Guest! You take the can as evidence."
           }
         ]
       },
@@ -634,7 +694,7 @@
           },
           {
             "type": "show_message",
-            "text": "A long coil of sturdy rope. Freddy would be proud \u2014 this is prime trap-building material."
+            "text": "A long coil of sturdy rope. Freddy would be proud — this is prime trap-building material."
           }
         ]
       },
@@ -687,7 +747,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma smooths the invoice: '6 cans LUMO-GLOW paint \u2014 CHARGED TO ROOM 217.' She pushes up her glasses. 'The ledger says there IS no Room 217. Somebody's hiding purchases inside a fake room number.'"
+            "text": "Velma smooths the invoice: '6 cans LUMO-GLOW paint — CHARGED TO ROOM 217.' She pushes up her glasses. 'The ledger says there IS no Room 217. Somebody's hiding purchases inside a fake room number.'"
           }
         ]
       },
@@ -717,7 +777,7 @@
           },
           {
             "type": "show_message",
-            "text": "A box cutter on the shelf edge. Handy for opening crates \u2014 or cutting somebody loose."
+            "text": "A box cutter on the shelf edge. Handy for opening crates — or cutting somebody loose."
           }
         ]
       },
@@ -767,7 +827,7 @@
           },
           {
             "type": "show_message",
-            "text": "Scooby noses the mop bucket \u2014 SNEEZE \u2014 and out rolls a crumpled BURGER WRAPPER and a soda cup, still cold. Shaggy: 'Zoinks, the phantom eats FAST FOOD? Like... same, but SUSPICIOUS.'"
+            "text": "Scooby noses the mop bucket — SNEEZE — and out rolls a crumpled BURGER WRAPPER and a soda cup, still cold. Shaggy: 'Zoinks, the phantom eats FAST FOOD? Like... same, but SUSPICIOUS.'"
           }
         ]
       }
@@ -779,12 +839,18 @@
     "background_image_url": "/assets/scenes/trap_room.svg",
     "fallback_gradient": "linear-gradient(180deg, #14532d 0%, #052e16 45%, #1c1917 100%)",
     "ambience": "ambience_boiler",
-    "description": "The boiler room glows sickly green \u2014 glowing footprints everywhere! A bedsheet 'costume' hangs by the furnace. An iron hook juts from a ceiling beam above a bait-sized crate, next to a big red lever marked 'LAUNDRY NET'.",
+    "description": "The boiler room glows sickly green — glowing footprints everywhere! A bedsheet 'costume' hangs by the furnace. An iron hook juts from a ceiling beam above a bait-sized crate, next to a big red lever marked 'LAUNDRY NET'.",
     "navigation_links": [
       {
         "direction": "up",
         "target": "janitor_closet",
-        "label": "Janitor's Closet"
+        "label": "Janitor's Closet",
+        "zone": {
+          "x": 1,
+          "y": 0,
+          "w": 9,
+          "h": 73
+        }
       }
     ],
     "clickable_hotspots": [
@@ -813,7 +879,7 @@
           },
           {
             "type": "show_message",
-            "text": "Fred whips the rope into a double-pulley snare net like he's done it a hundred times. (He has.) 'Classic Palm Beach Snare, gang. When the phantom takes the bait \u2014 WHOOSH.'"
+            "text": "Fred whips the rope into a double-pulley snare net like he's done it a hundred times. (He has.) 'Classic Palm Beach Snare, gang. When the phantom takes the bait — WHOOSH.'"
           }
         ],
         "required_character": "Fred",
@@ -832,7 +898,7 @@
         "hidden_if_flags": [
           "bait_set"
         ],
-        "wrong_character_message": "The crate sits right under the net. It needs bait \u2014 and nobody arranges a Scooby Snack more irresistibly than Shaggy and Scooby.",
+        "wrong_character_message": "The crate sits right under the net. It needs bait — and nobody arranges a Scooby Snack more irresistibly than Shaggy and Scooby.",
         "missing_item_message": "The crate sits right under the net. It needs bait. Something no phantom with taste could resist... like a Scooby Snack.",
         "action_triggers": [
           {
@@ -858,7 +924,7 @@
         "w": 14,
         "h": 34,
         "required_character": "Daphne",
-        "wrong_character_message": "A glowing bedsheet 'costume' hangs by the furnace. One of us can read fabric like a fingerprint \u2014 get Daphne on the walkie.",
+        "wrong_character_message": "A glowing bedsheet 'costume' hangs by the furnace. One of us can read fabric like a fingerprint — get Daphne on the walkie.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -871,7 +937,7 @@
           },
           {
             "type": "show_message",
-            "text": "Daphne pinches the hem at arm's length: 'Still WET. And this stitching matches a hurried hand \u2014 same thread as the sheets someone's been sewing. He'll be back for his costume soon... better spring the trap before then!'"
+            "text": "Daphne pinches the hem at arm's length: 'Still WET. And this stitching matches a hurried hand — same thread as the sheets someone's been sewing. He'll be back for his costume soon... better spring the trap before then!'"
           }
         ]
       },
@@ -896,13 +962,13 @@
           },
           {
             "type": "show_message",
-            "text": "Velma taps the gauge: 'Pressure's UP. This boiler ran within the HOUR \u2014 in a resort that's been \"abandoned\" for years. Heating bills are murder... unless you're planning to own the place by Friday.'"
+            "text": "Velma taps the gauge: 'Pressure's UP. This boiler ran within the HOUR — in a resort that's been \"abandoned\" for years. Heating bills are murder... unless you're planning to own the place by Friday.'"
           }
         ]
       },
       {
         "id": "trap_lever",
-        "label": "Red Lever \u2014 'LAUNDRY NET'",
+        "label": "Red Lever — 'LAUNDRY NET'",
         "x": 10,
         "y": 44,
         "w": 10,
@@ -913,7 +979,7 @@
           "knows_truth",
           "george_witness"
         ],
-        "locked_message": "Not yet! To spring the trap you need the net rigged, the bait set, Gus's testimony about the paint \u2014 and you'd better find whoever the phantom has been HIDING before you tip your hand. (Crane's office might hold answers.)",
+        "locked_message": "Not yet! To spring the trap you need the net rigged, the bait set, Gus's testimony about the paint — and you'd better find whoever the phantom has been HIDING before you tip your hand. (Crane's office might hold answers.)",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -943,14 +1009,26 @@
       {
         "direction": "south",
         "target": "lobby",
-        "label": "Resort Lobby"
+        "label": "Resort Lobby",
+        "zone": {
+          "x": 21,
+          "y": 78.5,
+          "w": 32.4,
+          "h": 19
+        }
       },
       {
         "direction": "east",
         "target": "room_217",
         "label": "Room 217",
         "locked_by_flag": "door_217_open",
-        "locked_message": "The east wall is solid bookshelf... though the blueprint suggests otherwise."
+        "locked_message": "The east wall is solid bookshelf... though the blueprint suggests otherwise.",
+        "zone": {
+          "x": 74,
+          "y": 27,
+          "w": 18.5,
+          "h": 49
+        }
       }
     ],
     "clickable_hotspots": [
@@ -978,7 +1056,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma unrolls the master blueprint: 'Jinkies! There IS a Room 217 \u2014 right behind this office's east bookshelf! And someone pencilled in: PORTRAIT KNOWS THE COMBINATION.'"
+            "text": "Velma unrolls the master blueprint: 'Jinkies! There IS a Room 217 — right behind this office's east bookshelf! And someone pencilled in: PORTRAIT KNOWS THE COMBINATION.'"
           }
         ]
       },
@@ -1038,7 +1116,7 @@
           },
           {
             "type": "show_message",
-            "text": "6... 9... 1969 \u2014 CLUNK. Inside: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for pennies, dated NEXT WEEK. He wasn't scaring buyers away for fun \u2014 he was clearing the field."
+            "text": "6... 9... 1969 — CLUNK. Inside: a pre-drafted deed selling the Grand Palm to 'A. CRANE' for pennies, dated NEXT WEEK. He wasn't scaring buyers away for fun — he was clearing the field."
           }
         ]
       },
@@ -1068,7 +1146,7 @@
           },
           {
             "type": "show_message",
-            "text": "Fred plants his feet, tugs the one clean book \u2014 'GHOST STORIES, Vol. 2' \u2014 and muscles the whole bookshelf aside! Room 217 is real. 'And THAT, gang, is why you stretch first.' Head east... carefully."
+            "text": "Fred plants his feet, tugs the one clean book — 'GHOST STORIES, Vol. 2' — and muscles the whole bookshelf aside! Room 217 is real. 'And THAT, gang, is why you stretch first.' Head east... carefully."
           }
         ],
         "required_character": "Fred",
@@ -1082,7 +1160,7 @@
         "w": 26,
         "h": 20,
         "required_character": "Daphne",
-        "wrong_character_message": "Crane's desk is drowning in paperwork \u2014 and the center drawer is LOCKED. Locked drawers are Daphne's favorite genre.",
+        "wrong_character_message": "Crane's desk is drowning in paperwork — and the center drawer is LOCKED. Locked drawers are Daphne's favorite genre.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1095,7 +1173,7 @@
           },
           {
             "type": "show_message",
-            "text": "Daphne's hairpin pops the drawer in four seconds flat. Inside: overdue notices, foreclosure warnings, and a fresh newspaper \u2014 'PALM HEIR RETURNS: GEORGE PALM III TO DECIDE RESORT'S FATE.' The heir is HERE? Then where is he?"
+            "text": "Daphne's hairpin pops the drawer in four seconds flat. Inside: overdue notices, foreclosure warnings, and a fresh newspaper — 'PALM HEIR RETURNS: GEORGE PALM III TO DECIDE RESORT'S FATE.' The heir is HERE? Then where is he?"
           }
         ]
       },
@@ -1120,7 +1198,7 @@
           },
           {
             "type": "show_message",
-            "text": "Shaggy cracks the globe open \u2014 fancy peanuts, fresh crackers, ZERO dust. Scooby inhales the peanuts. 'Like, who restocks the SNACK GLOBE of an abandoned resort? A guy who still LIVES here, that's who!'"
+            "text": "Shaggy cracks the globe open — fancy peanuts, fresh crackers, ZERO dust. Scooby inhales the peanuts. 'Like, who restocks the SNACK GLOBE of an abandoned resort? A guy who still LIVES here, that's who!'"
           }
         ]
       }
@@ -1132,12 +1210,18 @@
     "background_image_url": "/assets/scenes/room_217.svg",
     "fallback_gradient": "linear-gradient(180deg, #1c2438 0%, #2c2440 60%, #120e1c 100%)",
     "ambience": "ambience_closet",
-    "description": "The room that 'doesn't exist'. A phantom workshop \u2014 costume rack, sewing machine, paint-spattered workbench... and a young man tied to a chair, glaring at everyone.",
+    "description": "The room that 'doesn't exist'. A phantom workshop — costume rack, sewing machine, paint-spattered workbench... and a young man tied to a chair, glaring at everyone.",
     "navigation_links": [
       {
         "direction": "west",
         "target": "office",
-        "label": "Manager's Office"
+        "label": "Manager's Office",
+        "zone": {
+          "x": 0,
+          "y": 9,
+          "w": 6.5,
+          "h": 62
+        }
       }
     ],
     "clickable_hotspots": [
@@ -1217,7 +1301,7 @@
           },
           {
             "type": "show_message",
-            "text": "The workbench holds a megaphone rigged with a warbling reed \u2014 one whisper becomes the Phantom's pipe-organ WAIL. Shaggy tries it. Everyone regrets it. (Evidence bagged!)"
+            "text": "The workbench holds a megaphone rigged with a warbling reed — one whisper becomes the Phantom's pipe-organ WAIL. Shaggy tries it. Everyone regrets it. (Evidence bagged!)"
           }
         ]
       },
@@ -1336,12 +1420,18 @@
     "background_image_url": "/assets/scenes/toolshed.svg",
     "fallback_gradient": "linear-gradient(180deg, #2b2117 0%, #3d2f1e 60%, #171008 100%)",
     "ambience": "ambience_closet",
-    "description": "Inside the toolshed, lit by wobbling flashlight glow. Rakes, rust, and cobwebs \u2014 and that tantalizing GLINT under the floor grate. A pegboard shows chalk outlines where tools should hang.",
+    "description": "Inside the toolshed, lit by wobbling flashlight glow. Rakes, rust, and cobwebs — and that tantalizing GLINT under the floor grate. A pegboard shows chalk outlines where tools should hang.",
     "navigation_links": [
       {
         "direction": "south",
         "target": "grounds",
-        "label": "Resort Grounds"
+        "label": "Resort Grounds",
+        "zone": {
+          "x": 40.7,
+          "y": 82.4,
+          "w": 18.5,
+          "h": 17
+        }
       }
     ],
     "clickable_hotspots": [
@@ -1358,7 +1448,7 @@
         ],
         "required_item": "sticky_stick",
         "consume_item": true,
-        "missing_item_message": "The key is wedged deep under the grate. Your arm can't fit \u2014 you need something long, thin, and sticky to fish it out.",
+        "missing_item_message": "The key is wedged deep under the grate. Your arm can't fit — you need something long, thin, and sticky to fish it out.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1381,7 +1471,7 @@
       },
       {
         "id": "crank_pegboard",
-        "label": "Pegboard \u2014 Crank Handle",
+        "label": "Pegboard — Crank Handle",
         "x": 66,
         "y": 26,
         "w": 12,
@@ -1405,7 +1495,7 @@
           },
           {
             "type": "show_message",
-            "text": "An iron CRANK HANDLE hangs on the pegboard, square socket and all. Fred: 'This fits maintenance hatches. Pools have maintenance hatches. Gang \u2014 I have a plan.'"
+            "text": "An iron CRANK HANDLE hangs on the pegboard, square socket and all. Fred: 'This fits maintenance hatches. Pools have maintenance hatches. Gang — I have a plan.'"
           }
         ]
       },
@@ -1415,7 +1505,7 @@
         "x": 8,
         "y": 40,
         "w": 22,
-        "h": 24,
+        "h": 13,
         "required_character": "Velma",
         "wrong_character_message": "Gus chalked an outline for every tool on this wall. Deducing what's MISSING — and why — is textbook Velma.",
         "action_triggers": [
@@ -1437,10 +1527,10 @@
       {
         "id": "fred_bench",
         "label": "Heavy Workbench",
-        "x": 30.2,
-        "y": 48,
-        "w": 6.5,
-        "h": 20,
+        "x": 7.5,
+        "y": 53.2,
+        "w": 23.3,
+        "h": 15.3,
         "required_character": "Fred",
         "wrong_character_message": "The workbench is bolted down... no, wait — just unbelievably HEAVY. Heavy is Fred's entire category.",
         "action_triggers": [
@@ -1515,6 +1605,35 @@
             "text": "Scooby pounces the lumpiest sack — POOF, soil everywhere — and drags out a rolled-up SLEEPING BAG stashed inside. Shaggy: 'Like, phantoms don't NAP, man! Somebody's been CAMPING in here!'"
           }
         ]
+      },
+      {
+        "id": "marco_maintenance",
+        "label": "Marco (Maintenance)",
+        "x": 79,
+        "y": 66.9,
+        "w": 8.5,
+        "h": 27.6,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "met_marco",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "marco_main"
+          }
+        ],
+        "item_reactions": {
+          "crank_handle": {
+            "message": "'My old crank! Keep it, kid — every socket on this property is the same size. I standardized them in '81. You're welcome.'",
+            "set_flag": "marco_crank"
+          }
+        }
       }
     ]
   },
@@ -1529,7 +1648,13 @@
       {
         "direction": "north",
         "target": "grounds",
-        "label": "Resort Grounds"
+        "label": "Resort Grounds",
+        "zone": {
+          "x": 44,
+          "y": 30,
+          "w": 11,
+          "h": 34
+        }
       }
     ],
     "clickable_hotspots": [
@@ -1584,7 +1709,7 @@
           },
           {
             "type": "show_message",
-            "text": "A big pot lies shattered \u2014 the shards dusted with GLOWING GREEN residue. Velma swabs a sample: 'Someone stored paint cans in here before moving them. Our phantom rotates his hiding spots.'"
+            "text": "A big pot lies shattered — the shards dusted with GLOWING GREEN residue. Velma swabs a sample: 'Someone stored paint cans in here before moving them. Our phantom rotates his hiding spots.'"
           }
         ]
       },
@@ -1680,6 +1805,34 @@
             "text": "Daphne plucks a GLOW-GREEN thread off a thorn: 'Torn poly-cotton, machine-hemmed, snagged at shoulder height. Our phantom came through here in costume — and he's exactly Mr. Crane's height, by the way.'"
           }
         ]
+      },
+      {
+        "id": "tomas_groundskeeper",
+        "label": "Tomás (Groundskeeper)",
+        "x": 9.3,
+        "y": 51,
+        "w": 10.5,
+        "h": 31,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "met_tomas",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "tomas_main"
+          }
+        ],
+        "item_reactions": {
+          "garden_shears": {
+            "message": "'Ah, my shears! Keep them oiled, niños, and they will cut anything green — or anything phantom-flavored HIDING in the green.'"
+          }
+        }
       }
     ]
   },
@@ -1689,12 +1842,18 @@
     "background_image_url": "/assets/scenes/pool_cabana.svg",
     "fallback_gradient": "linear-gradient(180deg, #123043 0%, #1d4a4a 55%, #0e2620 100%)",
     "ambience": "ambience_grounds",
-    "description": "The pool cabana: striped canvas gone grey, a lifeguard chair missing a leg, towel cubbies full of spiders' luggage. And humming away in the corner \u2014 a SCOOBY SNAX vending machine.",
+    "description": "The pool cabana: striped canvas gone grey, a lifeguard chair missing a leg, towel cubbies full of spiders' luggage. And humming away in the corner — a SCOOBY SNAX vending machine.",
     "navigation_links": [
       {
         "direction": "west",
         "target": "grounds",
-        "label": "Resort Grounds"
+        "label": "Resort Grounds",
+        "zone": {
+          "x": 0,
+          "y": 36,
+          "w": 4.5,
+          "h": 31
+        }
       }
     ],
     "clickable_hotspots": [
@@ -1742,7 +1901,7 @@
         "w": 16,
         "h": 16,
         "required_character": "Velma",
-        "wrong_character_message": "A mildewed logbook chained to the lifeguard stand. Water-damaged shorthand \u2014 Velma's department.",
+        "wrong_character_message": "A mildewed logbook chained to the lifeguard stand. Water-damaged shorthand — Velma's department.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1755,7 +1914,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma deciphers the log: 'Final season \u2014 guest counts fell off a CLIFF the same week the Phantom first appeared. Almost like the haunting was... scheduled.'"
+            "text": "Velma deciphers the log: 'Final season — guest counts fell off a CLIFF the same week the Phantom first appeared. Almost like the haunting was... scheduled.'"
           }
         ]
       },
@@ -1826,6 +1985,35 @@
             "text": "Fred heaves the lifeguard stand level and braces it with the broken leg. From the top: 'Gang — you can see EVERY window of the resort from up here, including the office. Perfect lookout for scheduling a haunting around witnesses.'"
           }
         ]
+      },
+      {
+        "id": "rosa_maid",
+        "label": "Rosa (Housekeeping)",
+        "x": 51.8,
+        "y": 52.8,
+        "w": 6.2,
+        "h": 25.2,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "met_rosa",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "rosa_main"
+          }
+        ],
+        "item_reactions": {
+          "muddy_glove": {
+            "message": "Rosa barely glances at it: 'That is Señor Crane's. I wash its TWIN every Tuesday. He is always losing the left one.'",
+            "set_flag": "rosa_glove_id"
+          }
+        }
       }
     ]
   },
@@ -1840,14 +2028,26 @@
       {
         "direction": "up",
         "target": "grounds",
-        "label": "Grounds (ladder up)"
+        "label": "Grounds (ladder up)",
+        "zone": {
+          "x": 77,
+          "y": 8,
+          "w": 7,
+          "h": 43
+        }
       },
       {
         "direction": "east",
         "target": "trap_room",
         "label": "Boiler Room",
         "locked_by_flag": "boiler_door_open",
-        "locked_message": "The steel BOILER door is barred from the far side. The phantom clearly has his own way through... maybe you can fish that bar loose somehow."
+        "locked_message": "The steel BOILER door is barred from the far side. The phantom clearly has his own way through... maybe you can fish that bar loose somehow.",
+        "zone": {
+          "x": 85,
+          "y": 32.5,
+          "w": 12,
+          "h": 36.5
+        }
       }
     ],
     "clickable_hotspots": [
@@ -1859,7 +2059,7 @@
         "w": 14,
         "h": 18,
         "required_character": "Velma",
-        "wrong_character_message": "A clipboard of pump readings and angry pencil. Technical scribbles \u2014 Velma will want this.",
+        "wrong_character_message": "A clipboard of pump readings and angry pencil. Technical scribbles — Velma will want this.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1872,7 +2072,7 @@
           },
           {
             "type": "show_message",
-            "text": "Velma reads the log: 'PUMPS SHUT DOWN \u2014 BY ORDER OF A. CRANE.' She frowns. 'Why drain the pool of a resort you claim you're trying to SELL? Unless empty pools scare buyers better.'"
+            "text": "Velma reads the log: 'PUMPS SHUT DOWN — BY ORDER OF A. CRANE.' She frowns. 'Why drain the pool of a resort you claim you're trying to SELL? Unless empty pools scare buyers better.'"
           }
         ]
       },
@@ -2006,13 +2206,13 @@
           },
           {
             "type": "show_message",
-            "text": "A hand-drawn TUNNEL MAP, pinned at eye height: pool pumps \u2192 laundry \u2192 BOILER ROOM, marked in fresh green ink. So THAT's how the phantom crosses the resort without being seen."
+            "text": "A hand-drawn TUNNEL MAP, pinned at eye height: pool pumps → laundry → BOILER ROOM, marked in fresh green ink. So THAT's how the phantom crosses the resort without being seen."
           }
         ]
       },
       {
         "id": "sealed_boiler_door",
-        "label": "Steel Door \u2014 'BOILER'",
+        "label": "Steel Door — 'BOILER'",
         "x": 84,
         "y": 34,
         "w": 6,
@@ -2035,7 +2235,7 @@
           },
           {
             "type": "show_message",
-            "text": "You feed the magnet under the door, walk it up the far side... CLICK \u2014 it grabs the latch bar. Everyone pulls. CLANG! The bar drops and the door groans open: a straight shot into the BOILER ROOM. The phantom's commute is now YOUR commute \u2014 head east."
+            "text": "You feed the magnet under the door, walk it up the far side... CLICK — it grabs the latch bar. Everyone pulls. CLANG! The bar drops and the door groans open: a straight shot into the BOILER ROOM. The phantom's commute is now YOUR commute — head east."
           }
         ]
       },
@@ -2047,7 +2247,7 @@
         "w": 20,
         "h": 15,
         "required_character": "Shaggy_Scooby",
-        "wrong_character_message": "Glowing footprints track through the dust. Telling FRESH spooky paint from old spooky paint calls for a world-class nose \u2014 Scooby's, specifically.",
+        "wrong_character_message": "Glowing footprints track through the dust. Telling FRESH spooky paint from old spooky paint calls for a world-class nose — Scooby's, specifically.",
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -2063,6 +2263,35 @@
             "text": "Scooby snuffles along the prints... and his tail SHOOTS straight up. 'RESH! RERY RESH!' The phantom walked through MINUTES ago, heading for the boiler door. Shaggy climbs onto Scooby. Scooby climbs onto Shaggy. Somehow it works."
           }
         ]
+      },
+      {
+        "id": "palm_ghost",
+        "label": "A Silvery Gentleman",
+        "x": 19.75,
+        "y": 64.2,
+        "w": 9.25,
+        "h": 30.9,
+        "action_triggers": [
+          {
+            "type": "play_sfx",
+            "sfx": "click"
+          },
+          {
+            "type": "set_flag",
+            "flag": "met_ghost",
+            "value": true
+          },
+          {
+            "type": "start_dialogue",
+            "dialogue": "ghost_main"
+          }
+        ],
+        "item_reactions": {
+          "decoy_costume": {
+            "message": "The ghost inspects your counterfeit at arm's length. 'The eye holes are crooked and the drape is amateur... yet the shade of green is accurate. I am insulted and, somehow, proud.'",
+            "set_flag": "ghost_reviewed_decoy"
+          }
+        }
       }
     ]
   }

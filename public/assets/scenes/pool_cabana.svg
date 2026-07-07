@@ -453,6 +453,60 @@
 </g>
 <!-- canopy-corner cobweb -->
 <path d="M60 296 Q110 316 150 296 M60 330 Q104 324 134 300 M84 296 Q88 328 68 344" stroke="#8f8a7c" stroke-width="1.2" opacity="0.28" fill="none"/>
+<!-- ===== ROSA the housekeeper, folding a striped beach towel by the cubbies ===== -->
+<g id="poolcab_rosa">
+<ellipse id="poolcab_rosa_shadow" cx="878" cy="698" rx="72" ry="11" fill="#000000" opacity="0.32"/>
+<rect x="851" y="656" width="11" height="30" rx="4" fill="#cfc6b4"/>
+<rect x="894" y="656" width="11" height="30" rx="4" fill="#cfc6b4"/>
+<ellipse cx="855" cy="690" rx="13" ry="7" fill="#3a2c20"/>
+<ellipse cx="901" cy="690" rx="13" ry="7" fill="#3a2c20"/>
+<path id="poolcab_rosa_dress" d="M856 562 Q878 550 900 562 Q914 590 920 634 Q924 662 916 668 Q878 680 840 668 Q832 662 836 634 Q842 590 856 562 Z" fill="#2e8089"/>
+<path d="M856 562 Q846 592 840 636 Q836 660 842 667 Q848 664 846 640 Q850 598 862 568 Z" fill="#205f68"/>
+<path d="M840 668 Q878 680 916 668" stroke="#1a4a52" stroke-width="3" fill="none" opacity="0.7"/>
+<path d="M866 560 Q878 554 890 560 L884 570 Q878 574 872 570 Z" fill="#f0ece0"/>
+<path d="M866 578 L871 562 M890 578 L885 562" stroke="#f0ece0" stroke-width="3" fill="none"/>
+<rect x="864" y="574" width="28" height="28" rx="4" fill="#f2eee2"/>
+<path id="poolcab_rosa_apron" d="M850 602 Q878 596 906 602 L912 658 Q878 670 844 658 Z" fill="#f2eee2"/>
+<path d="M850 602 Q878 596 906 602" stroke="#ccc6b4" stroke-width="2.5" fill="none"/>
+<path d="M858 612 L855 654 M898 612 L901 654" stroke="#d8d2c0" stroke-width="2" opacity="0.8"/>
+<path d="M846 603 q-9 -3 -12 4 q7 4 12 -4" fill="#f2eee2"/>
+<path d="M861 576 Q846 590 849 602" stroke="#2e8089" stroke-width="13" stroke-linecap="round" fill="none"/>
+<path d="M895 576 Q910 590 907 602" stroke="#2e8089" stroke-width="13" stroke-linecap="round" fill="none"/>
+<circle cx="850" cy="601" r="7" fill="#f0ece0"/>
+<circle cx="906" cy="601" r="7" fill="#f0ece0"/>
+<g id="poolcab_rosa_towel">
+<rect x="846" y="602" width="64" height="46" rx="4" fill="#eae2cc"/>
+<rect x="855" y="602" width="8" height="46" fill="#cc6644"/>
+<rect x="874" y="602" width="8" height="46" fill="#cc6644"/>
+<rect x="893" y="602" width="8" height="46" fill="#cc6644"/>
+<rect x="846" y="602" width="64" height="22" rx="4" fill="#f4eedd"/>
+<rect x="855" y="602" width="8" height="22" fill="#d87a52"/>
+<rect x="874" y="602" width="8" height="22" fill="#d87a52"/>
+<rect x="893" y="602" width="8" height="22" fill="#d87a52"/>
+<path d="M846 624 h64" stroke="#c8bfa6" stroke-width="2"/>
+<path d="M850 648 v5 M858 648 v5 M866 648 v5 M874 648 v5 M882 648 v5 M890 648 v5 M898 648 v5 M906 648 v5" stroke="#d6cfbc" stroke-width="2"/>
+</g>
+<circle cx="850" cy="603" r="6" fill="#e0aa7e"/>
+<circle cx="906" cy="603" r="6" fill="#e0aa7e"/>
+<path d="M846 605 q4 3 8 0 M902 605 q4 3 8 0" stroke="#c08a5e" stroke-width="1.5" fill="none"/>
+<circle id="poolcab_rosa_bun" cx="878" cy="492" r="12" fill="#ccd2d8"/>
+<path d="M870 488 q8 -6 16 2 q-6 8 -16 4" fill="none" stroke="#a4acb6" stroke-width="2"/>
+<circle cx="852" cy="530" r="5" fill="#e0aa7e"/>
+<circle cx="904" cy="530" r="5" fill="#e0aa7e"/>
+<circle id="poolcab_rosa_head" cx="878" cy="528" r="26" fill="#e0aa7e"/>
+<path d="M852 526 Q852 502 878 500 Q904 502 904 526 Q898 512 878 511 Q858 512 852 526 Z" fill="#ccd2d8"/>
+<path d="M853 524 q-4 8 -1 12 M903 524 q4 8 1 12" stroke="#ccd2d8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M858 512 Q866 505 878 505" stroke="#a4acb6" stroke-width="2" fill="none" opacity="0.8"/>
+<path d="M862 518 q5 -4 11 -1 M883 517 q6 -3 11 1" stroke="#b0b8c0" stroke-width="2.5" fill="none"/>
+<ellipse cx="868" cy="525" rx="2.4" ry="3.2" fill="#3a2a20"/>
+<ellipse cx="888" cy="525" rx="2.4" ry="3.2" fill="#3a2a20"/>
+<path d="M877 526 q3 4 0 8" stroke="#c08a5e" stroke-width="2" fill="none"/>
+<path d="M867 540 Q878 549 890 540" stroke="#8a4a34" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<circle cx="861" cy="537" r="4" fill="#d98a6a" opacity="0.4"/>
+<circle cx="896" cy="537" r="4" fill="#d98a6a" opacity="0.4"/>
+<path d="M903 514 Q908 522 907 534" stroke="#ffcf8a" stroke-width="2" opacity="0.35" fill="none"/>
+<path d="M902 566 Q916 594 919 634" stroke="#ffcf8a" stroke-width="2.5" opacity="0.3" fill="none"/>
+</g>
 <rect width="1600" height="900" filter="url(#poolcabGrain)" opacity="0.3"/>
 <rect width="1600" height="900" fill="url(#poolcabVign)"/>
 </svg>

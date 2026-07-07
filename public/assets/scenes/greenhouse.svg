@@ -526,6 +526,74 @@
 <g fill="#d9f27e" opacity="0.12">
 <circle cx="556" cy="646" r="6"/><circle cx="1188" cy="646" r="6"/><circle cx="1078" cy="150" r="6"/><circle cx="1494" cy="640" r="6"/>
 </g>
+<!-- ===== TOMAS the ancient groundskeeper, mid-conversation with a potted fern ===== -->
+<g id="greenhouseTomasFern">
+<ellipse cx="154" cy="716" rx="36" ry="6.5" fill="#000" opacity="0.28"/>
+<path d="M154 688 Q132 648 114 632 M154 688 Q148 636 158 610 M154 688 Q174 642 192 626 M154 688 Q138 662 120 658 M154 688 Q170 664 188 662" stroke="#2c7a58" stroke-width="3" fill="none"/>
+<g fill="#2c7a58">
+<ellipse cx="118" cy="640" rx="8" ry="3.5" transform="rotate(-38 118 640)"/>
+<ellipse cx="130" cy="660" rx="8" ry="3.5" transform="rotate(-24 130 660)"/>
+<ellipse cx="156" cy="622" rx="8" ry="3.5" transform="rotate(-78 156 622)"/>
+<ellipse cx="184" cy="636" rx="8" ry="3.5" transform="rotate(34 184 636)"/>
+<ellipse cx="176" cy="666" rx="7" ry="3" transform="rotate(20 176 666)"/>
+</g>
+<g fill="#1d5c40">
+<ellipse cx="126" cy="648" rx="7" ry="3" transform="rotate(-30 126 648)"/>
+<ellipse cx="150" cy="640" rx="7" ry="3" transform="rotate(-84 150 640)"/>
+<ellipse cx="188" cy="648" rx="7" ry="3" transform="rotate(28 188 648)"/>
+</g>
+<rect x="130" y="678" width="48" height="10" fill="#a8623c"/>
+<rect x="134" y="688" width="40" height="26" fill="url(#greenhousePot)"/>
+<path d="M138 700 h32" stroke="#7c4128" stroke-width="2" opacity="0.6"/>
+</g>
+<g id="greenhouseTomas">
+<ellipse cx="266" cy="720" rx="56" ry="9" fill="#000" opacity="0.3"/>
+<rect x="242" y="636" width="20" height="70" rx="7" fill="#6b5f42"/>
+<rect x="274" y="636" width="20" height="70" rx="7" fill="#6b5f42"/>
+<path d="M252 642 v58 M284 642 v58" stroke="#52482f" stroke-width="4" opacity="0.5"/>
+<rect x="234" y="700" width="30" height="15" rx="6" fill="#3a281a"/>
+<rect x="270" y="700" width="32" height="15" rx="6" fill="#3a281a"/>
+<path d="M236 648 Q228 576 252 556 Q268 546 286 554 Q304 570 300 648 Z" fill="#c2b27e"/>
+<path d="M288 556 Q302 572 299 646 L284 646 Q292 590 282 560 Z" fill="#9a8a5c"/>
+<path d="M262 566 v76" stroke="#9a8a5c" stroke-width="2" opacity="0.7"/>
+<circle cx="262" cy="584" r="1.8" fill="#7c6e46"/><circle cx="262" cy="604" r="1.8" fill="#7c6e46"/><circle cx="262" cy="624" r="1.8" fill="#7c6e46"/>
+<path d="M250 556 L262 566 L276 554 L266 548 Z" fill="#d2c493"/>
+<path d="M250 570 Q226 586 212 606" stroke="#c2b27e" stroke-width="13" stroke-linecap="round" fill="none"/>
+<circle cx="210" cy="610" r="7" fill="#a9744a"/>
+<path d="M196 614 q12 -12 26 -2" stroke="#3f5a62" stroke-width="4" fill="none"/>
+<rect x="184" y="618" width="44" height="32" rx="6" fill="#4f6a72"/>
+<ellipse cx="206" cy="618" rx="22" ry="6" fill="#3f5a62"/>
+<path d="M188 632 L158 604" stroke="#4f6a72" stroke-width="7" stroke-linecap="round"/>
+<circle cx="156" cy="601" r="5.5" fill="#3f5a62"/>
+<path d="M190 640 q9 -5 20 -3" stroke="#bfe0dc" stroke-width="1.8" fill="none" opacity="0.45"/>
+<circle cx="152" r="2.2" fill="#9fd4e8">
+<animate attributeName="cy" values="606;664;664" dur="2.4s" repeatCount="indefinite"/>
+<animate attributeName="opacity" values="0;0.8;0" dur="2.4s" repeatCount="indefinite"/>
+</circle>
+<path d="M284 572 Q302 588 305 566" stroke="#c2b27e" stroke-width="13" stroke-linecap="round" fill="none"/>
+<circle cx="305" cy="562" r="7" fill="#a9744a"/>
+<path d="M252 548 h18 v10 h-18 Z" fill="#a9744a"/>
+<ellipse cx="260" cy="516" rx="24" ry="26" fill="#a9744a"/>
+<path d="M272 494 q14 12 12 30 q-2 16 -12 22 q8 -26 0 -52 Z" fill="#8a5a36" opacity="0.7"/>
+<circle cx="284" cy="518" r="5" fill="#a9744a"/>
+<circle cx="284" cy="518" r="2" fill="#8a5a36"/>
+<circle cx="246" cy="508" r="2.6" fill="#241408"/>
+<circle cx="263" cy="508" r="2.6" fill="#241408"/>
+<path d="M240 500 q6 -4 11 -1 M257 499 q6 -3 11 0" stroke="#e8e0d2" stroke-width="2.5" fill="none"/>
+<ellipse cx="239" cy="519" rx="4.5" ry="3.5" fill="#96613c"/>
+<path d="M243 530 q-3 6 -8 7" stroke="#8a5a36" stroke-width="1.5" fill="none" opacity="0.6"/>
+<path d="M226 528 q13 -9 26 -3 q13 -7 26 3 q-8 11 -24 8 q-16 7 -28 -8 Z" fill="#f2ede2"/>
+<ellipse cx="252" cy="541" rx="5" ry="3.5" fill="#5c3220"/>
+<ellipse cx="260" cy="496" rx="44" ry="10" fill="#d8b86a"/>
+<path d="M218 499 q42 12 84 0" stroke="#b89448" stroke-width="3" fill="none" opacity="0.7"/>
+<path d="M234 496 q4 -30 26 -30 q22 0 26 30 Z" fill="#d8b86a"/>
+<path d="M236 488 q26 9 50 0 l0 7 q-24 9 -50 0 Z" fill="#a8843c"/>
+<g fill="#cfe8e4">
+<circle cx="216" cy="478" r="2.4" opacity="0.4"/>
+<circle cx="206" cy="470" r="2" opacity="0.32"/>
+<circle cx="197" cy="463" r="1.6" opacity="0.25"/>
+</g>
+</g>
 <!-- foreground leaf framing -->
 <g fill="#0e3325">
 <use href="#greenhouseMonst" transform="translate(26 926) scale(1.35)"/>

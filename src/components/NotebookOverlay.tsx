@@ -54,7 +54,11 @@ export function NotebookOverlay({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Entries */}
-        <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto px-4 py-3" style={{ scrollbarWidth: 'thin' }}>
+        <div
+          ref={listRef}
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-3"
+          style={{ scrollbarWidth: 'thin', scrollbarColor: '#78716c #1c1917' }}
+        >
           {caseLog.length === 0 ? (
             <p className="py-8 text-center text-sm italic text-stone-400">
               Nothing yet. Go poke something suspicious — I'll write it down. — Velma
