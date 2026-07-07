@@ -1,3 +1,4 @@
+import './reviewUnlock.ts'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '@fontsource/creepster/index.css'
