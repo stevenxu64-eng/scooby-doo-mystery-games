@@ -12,10 +12,10 @@
         "target": "grounds",
         "label": "Resort Grounds",
         "zone": {
-          "x": 95.5,
-          "y": 33,
-          "w": 4.5,
-          "h": 55
+          "x": 95.4,
+          "y": 31,
+          "w": 4.6,
+          "h": 44.8
         }
       },
       {
@@ -25,10 +25,10 @@
         "locked_by_flag": "closet_unlocked",
         "locked_message": "The janitor's closet door is locked tight. A heavy old lock — you'd need the right key.",
         "zone": {
-          "x": 1.5,
-          "y": 23.5,
-          "w": 13,
-          "h": 55
+          "x": 1.6,
+          "y": 23.3,
+          "w": 13.1,
+          "h": 54.4
         },
         "zone_hidden_until_unlocked": true
       },
@@ -40,9 +40,9 @@
         "locked_message": "The manager's office at the top of the stairs is locked. Mr. Crane 'keeps the only key'... though Gus might know otherwise.",
         "zone": {
           "x": 80,
-          "y": 52.5,
-          "w": 11.5,
-          "h": 20.5
+          "y": 50.6,
+          "w": 12.2,
+          "h": 24.3
         }
       }
     ],
@@ -50,10 +50,10 @@
       {
         "id": "closet_door_lock",
         "label": "Locked Closet Door",
-        "x": 2,
-        "y": 28,
-        "w": 12,
-        "h": 48,
+        "x": 1.6,
+        "y": 23.3,
+        "w": 13.1,
+        "h": 54.4,
         "required_item": "janitor_key",
         "consume_item": true,
         "hidden_if_flags": [
@@ -79,10 +79,10 @@
       {
         "id": "front_desk_drawer",
         "label": "Front Desk Drawer",
-        "x": 38,
-        "y": 62,
-        "w": 16,
-        "h": 16,
+        "x": 38.8,
+        "y": 61.3,
+        "w": 15.6,
+        "h": 14.5,
         "hidden_if_flags": [
           "took_flashlight"
         ],
@@ -109,10 +109,10 @@
       {
         "id": "guest_ledger",
         "label": "Guest Ledger",
-        "x": 40,
-        "y": 48,
-        "w": 12,
-        "h": 10,
+        "x": 40.1,
+        "y": 46.6,
+        "w": 11.6,
+        "h": 8,
         "required_character": "Velma",
         "hidden_if_flags": [
           "read_ledger"
@@ -137,10 +137,10 @@
       {
         "id": "mr_crane",
         "label": "Mr. Crane (Caretaker)",
-        "x": 62,
-        "y": 30,
-        "w": 15,
-        "h": 46,
+        "x": 64.9,
+        "y": 36.9,
+        "w": 9.1,
+        "h": 40.2,
         "item_reactions": {
           "decoy_costume": {
             "message": "You unfurl the counterfeit phantom. Crane doesn't scream — he INSPECTS it. 'The hem is wrong,' he sniffs... then freezes. Velma, sweetly: 'Wrong compared to WHAT, Mr. Crane?'",
@@ -170,10 +170,10 @@
       {
         "id": "ghost_poster",
         "label": "Faded Poster",
-        "x": 16.2,
-        "y": 22,
-        "w": 10,
-        "h": 26,
+        "x": 15.6,
+        "y": 20,
+        "w": 10.6,
+        "h": 28.9,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A sun-bleached poster with something scrawled across it. Threatening graffiti is Shaggy and Scooby's area of expertise — mostly the running-away part.",
         "action_triggers": [
@@ -196,9 +196,9 @@
         "id": "old_luggage",
         "label": "Abandoned Luggage",
         "x": 17,
-        "y": 58,
-        "w": 12,
-        "h": 22,
+        "y": 56.9,
+        "w": 12.3,
+        "h": 23.6,
         "hidden_if_flags": [
           "got_brochure"
         ],
@@ -225,10 +225,10 @@
       {
         "id": "office_door_lock",
         "label": "Office Stairs (locked door)",
-        "x": 87,
-        "y": 26,
+        "x": 86.8,
+        "y": 25.3,
         "w": 6.5,
-        "h": 26,
+        "h": 25.2,
         "required_item": "office_key",
         "consume_item": true,
         "hidden_if_flags": [
@@ -254,10 +254,10 @@
       {
         "id": "sheeted_furniture",
         "label": "Dust-Sheeted Armchair",
-        "x": 76.3,
-        "y": 80.5,
-        "w": 10.6,
-        "h": 15,
+        "x": 75.8,
+        "y": 79.4,
+        "w": 11.6,
+        "h": 17.1,
         "required_character": "Fred",
         "wrong_character_message": "A hulking armchair under a dust sheet, wedged hard against the wall. Shoving heavy suspicious furniture is Freddy's whole personality.",
         "action_triggers": [
@@ -279,10 +279,10 @@
       {
         "id": "daphne_chandelier",
         "label": "Swaying Chandelier",
-        "x": 42,
-        "y": 9,
-        "w": 16,
-        "h": 12.5,
+        "x": 42.7,
+        "y": 5.6,
+        "w": 14.6,
+        "h": 16.9,
         "required_character": "Daphne",
         "wrong_character_message": "The chandelier sways with NO breeze. Somebody with an eye for stagecraft should study it — where's Daphne?",
         "action_triggers": [
@@ -329,10 +329,10 @@
         "locked_by_flag": "shed_lit",
         "locked_message": "The toolshed is pitch dark inside. Light it up first — a flashlight on that doorway would do.",
         "zone": {
-          "x": 32.9,
-          "y": 37.5,
-          "w": 9.2,
-          "h": 29.5
+          "x": 32.3,
+          "y": 36.4,
+          "w": 10.1,
+          "h": 31.4
         },
         "zone_hidden_until_unlocked": true
       },
@@ -342,9 +342,9 @@
         "label": "Greenhouse",
         "zone": {
           "x": 34.1,
-          "y": 82.5,
-          "w": 9.7,
-          "h": 17.5
+          "y": 82.1,
+          "w": 8.1,
+          "h": 17.9
         }
       },
       {
@@ -355,9 +355,9 @@
         "locked_message": "The archway east to the pool deck is choked with vines. You'll need something sharp to clear it.",
         "zone": {
           "x": 78,
-          "y": 31,
+          "y": 30,
           "w": 14,
-          "h": 43.5
+          "h": 46
         },
         "zone_hidden_until_unlocked": true
       },
@@ -368,10 +368,10 @@
         "locked_by_flag": "hatch_open",
         "locked_message": "The maintenance hatch beside the pool is cranked shut. No handle, no entry.",
         "zone": {
-          "x": 25.5,
-          "y": 79.5,
-          "w": 8.5,
-          "h": 15.5
+          "x": 26,
+          "y": 80.4,
+          "w": 8.1,
+          "h": 13.6
         },
         "zone_hidden_until_unlocked": true
       }
@@ -380,10 +380,10 @@
       {
         "id": "bushes",
         "label": "Overgrown Bushes",
-        "x": 4,
-        "y": 58,
-        "w": 18,
-        "h": 26,
+        "x": 0,
+        "y": 61.1,
+        "w": 25.3,
+        "h": 30.7,
         "hidden_if_flags": [
           "got_stick"
         ],
@@ -410,10 +410,10 @@
       {
         "id": "janitor_gus",
         "label": "Janitor Gus",
-        "x": 48,
-        "y": 32,
-        "w": 14,
-        "h": 46,
+        "x": 50.9,
+        "y": 35.3,
+        "w": 11.7,
+        "h": 44.6,
         "item_reactions": {
           "decoy_costume": {
             "message": "You raise the glowing sheet. Gus levels his rake like a lance: 'BACK, HAUNT!' ...then squints closer. 'That's paint and a bedsheet, ain't it.' He lowers the rake, thoroughly disgusted. 'Congratulations, kids. You built a SECOND ghost.'",
@@ -439,10 +439,10 @@
       {
         "id": "toolshed_dark",
         "label": "Dark Toolshed",
-        "x": 24,
-        "y": 26,
-        "w": 18,
-        "h": 40,
+        "x": 32.3,
+        "y": 36.4,
+        "w": 10.1,
+        "h": 31.4,
         "required_item": "flashlight",
         "hidden_if_flags": [
           "shed_lit"
@@ -467,10 +467,10 @@
       {
         "id": "empty_pool",
         "label": "Drained Pool",
-        "x": 44,
-        "y": 82,
-        "w": 34,
-        "h": 14,
+        "x": 42.2,
+        "y": 80,
+        "w": 21.2,
+        "h": 18.4,
         "required_character": "Velma",
         "wrong_character_message": "Fresh footprints crisscross the leaf muck at the bottom of the drained pool. Reading a trail like a crime scene is Velma's kind of fun.",
         "action_triggers": [
@@ -492,10 +492,10 @@
       {
         "id": "pool_glove",
         "label": "Something in the Pool Muck",
-        "x": 62,
-        "y": 84,
-        "w": 9,
-        "h": 10,
+        "x": 63.5,
+        "y": 86,
+        "w": 4.5,
+        "h": 6,
         "required_character": "Daphne",
         "wrong_character_message": "Something pale is half-buried in the pool muck. Identifying designer anything at twenty paces is Daphne's superpower — radio her in.",
         "hidden_if_flags": [
@@ -553,9 +553,9 @@
         "id": "pool_hatch",
         "label": "Pool Maintenance Hatch",
         "x": 26,
-        "y": 81,
-        "w": 8,
-        "h": 12,
+        "y": 80.4,
+        "w": 8.1,
+        "h": 13.6,
         "required_item": "crank_handle",
         "required_character": "Fred",
         "wrong_character_message": "A rusted steel hatch stamped 'PUMP ROOM'. Even with a crank, winding open a decade of rust is a job for team muscle — get Fred on the walkie.",
@@ -582,10 +582,10 @@
       {
         "id": "shaggy_mushrooms",
         "label": "Wild Mushrooms",
-        "x": 42.3,
-        "y": 63.5,
-        "w": 5.5,
-        "h": 9.5,
+        "x": 42.4,
+        "y": 62.8,
+        "w": 5.1,
+        "h": 11.2,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A clump of fat wild mushrooms by the shed. Only two members of this gang consider lawn fungus 'a snack situation'.",
         "action_triggers": [
@@ -619,10 +619,10 @@
         "target": "lobby",
         "label": "Resort Lobby",
         "zone": {
-          "x": 94.5,
-          "y": 14,
-          "w": 5.5,
-          "h": 54.5
+          "x": 96.5,
+          "y": 14.4,
+          "w": 3.5,
+          "h": 55.4
         }
       },
       {
@@ -632,10 +632,10 @@
         "locked_by_flag": "trap_room_open",
         "locked_message": "A padlocked grate blocks the way down. The lock is rusted but stubborn.",
         "zone": {
-          "x": 36,
-          "y": 69,
-          "w": 28,
-          "h": 26
+          "x": 36.6,
+          "y": 69.6,
+          "w": 26.2,
+          "h": 24.4
         },
         "zone_hidden_until_unlocked": true
       }
@@ -644,10 +644,10 @@
       {
         "id": "paint_shelf",
         "label": "Shadowy Back Shelf",
-        "x": 6,
-        "y": 22,
-        "w": 22,
-        "h": 34,
+        "x": 3.9,
+        "y": 17.6,
+        "w": 25.5,
+        "h": 46.6,
         "required_item": "flashlight",
         "hidden_if_flags": [
           "found_glowing_paint"
@@ -676,10 +676,10 @@
       {
         "id": "rope_coil",
         "label": "Coil of Rope",
-        "x": 68,
-        "y": 26,
-        "w": 14,
-        "h": 22,
+        "x": 70.2,
+        "y": 27,
+        "w": 10.2,
+        "h": 20.5,
         "hidden_if_flags": [
           "got_rope"
         ],
@@ -706,10 +706,10 @@
       {
         "id": "floor_grate_lock",
         "label": "Padlocked Floor Grate",
-        "x": 38,
-        "y": 72,
-        "w": 24,
-        "h": 20,
+        "x": 36.6,
+        "y": 65.4,
+        "w": 26.2,
+        "h": 28.6,
         "required_character": "Daphne",
         "hidden_if_flags": [
           "trap_room_open"
@@ -734,10 +734,10 @@
       {
         "id": "supply_invoice",
         "label": "Crumpled Invoice",
-        "x": 46,
-        "y": 50,
-        "w": 12,
-        "h": 12,
+        "x": 46.4,
+        "y": 49.3,
+        "w": 7.9,
+        "h": 11.6,
         "required_character": "Velma",
         "wrong_character_message": "A crumpled invoice covered in smudged fine print. Deciphering supplier paperwork is Velma's department.",
         "action_triggers": [
@@ -760,9 +760,9 @@
         "id": "box_cutter_shelf",
         "label": "Box Cutter",
         "x": 29.5,
-        "y": 57,
-        "w": 5,
-        "h": 8,
+        "y": 58,
+        "w": 4.5,
+        "h": 5,
         "hidden_if_flags": [
           "got_box_cutter"
         ],
@@ -789,10 +789,10 @@
       {
         "id": "fred_shelf",
         "label": "Dented Supply Cabinet",
-        "x": 63,
-        "y": 48.5,
-        "w": 6.6,
-        "h": 15,
+        "x": 62.9,
+        "y": 26,
+        "w": 6.7,
+        "h": 46.9,
         "required_character": "Fred",
         "wrong_character_message": "A dented steel supply cabinet, wedged crooked against the wall. Heavy-appliance choreography is a Fred event.",
         "action_triggers": [
@@ -814,10 +814,10 @@
       {
         "id": "shaggy_mops",
         "label": "Mop Bucket Corner",
-        "x": 68.5,
-        "y": 64.5,
-        "w": 9.5,
-        "h": 14,
+        "x": 69.7,
+        "y": 62.7,
+        "w": 8.4,
+        "h": 17.9,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A mop bucket that smells like bleach and regret. Snout-first investigation is the Shaggy & Scooby specialty.",
         "action_triggers": [
@@ -862,10 +862,10 @@
       {
         "id": "ceiling_hook",
         "label": "Iron Ceiling Hook",
-        "x": 40,
-        "y": 8,
-        "w": 12,
-        "h": 18,
+        "x": 44.9,
+        "y": 8.2,
+        "w": 6.6,
+        "h": 14.8,
         "required_item": "rope",
         "consume_item": true,
         "hidden_if_flags": [
@@ -924,10 +924,10 @@
       {
         "id": "ghost_costume",
         "label": "Glowing Bedsheet",
-        "x": 76,
-        "y": 28,
-        "w": 14,
-        "h": 34,
+        "x": 76.8,
+        "y": 27,
+        "w": 9.2,
+        "h": 28.5,
         "required_character": "Daphne",
         "wrong_character_message": "A glowing bedsheet 'costume' hangs by the furnace. One of us can read fabric like a fingerprint — get Daphne on the walkie.",
         "action_triggers": [
@@ -950,9 +950,9 @@
         "id": "velma_gauge",
         "label": "Boiler Pressure Gauge",
         "x": 60.2,
-        "y": 42.5,
-        "w": 6,
-        "h": 9,
+        "y": 42.7,
+        "w": 5.8,
+        "h": 10.2,
         "required_character": "Velma",
         "wrong_character_message": "The boiler's pressure gauge needle is drifting lazily upward. Interpreting dials is peak Velma content.",
         "action_triggers": [
@@ -1017,9 +1017,9 @@
         "label": "Resort Lobby",
         "zone": {
           "x": 21,
-          "y": 78.5,
-          "w": 32.4,
-          "h": 19
+          "y": 80.9,
+          "w": 31.8,
+          "h": 16.6
         }
       },
       {
@@ -1029,10 +1029,10 @@
         "locked_by_flag": "door_217_open",
         "locked_message": "The east wall is solid bookshelf... though the blueprint suggests otherwise.",
         "zone": {
-          "x": 74,
-          "y": 27,
-          "w": 18.5,
-          "h": 49
+          "x": 74.8,
+          "y": 29.1,
+          "w": 16.5,
+          "h": 49.1
         },
         "zone_hidden_until_unlocked": true
       }
@@ -1041,10 +1041,10 @@
       {
         "id": "blueprint_chest",
         "label": "Blueprint Chest",
-        "x": 6,
-        "y": 56,
-        "w": 16,
-        "h": 20,
+        "x": 5.4,
+        "y": 55.1,
+        "w": 17.2,
+        "h": 21.1,
         "required_character": "Velma",
         "hidden_if_flags": [
           "knows_217"
@@ -1069,10 +1069,10 @@
       {
         "id": "founder_portrait",
         "label": "Portrait of George Palm Sr.",
-        "x": 41,
-        "y": 16,
-        "w": 17,
-        "h": 30,
+        "x": 39.9,
+        "y": 13.3,
+        "w": 19.2,
+        "h": 34.6,
         "hidden_if_flags": [
           "saw_portrait"
         ],
@@ -1161,10 +1161,10 @@
       {
         "id": "crane_desk",
         "label": "Crane's Desk (locked drawer)",
-        "x": 26,
-        "y": 58,
-        "w": 26,
-        "h": 20,
+        "x": 25.6,
+        "y": 58.7,
+        "w": 17.3,
+        "h": 22,
         "required_character": "Daphne",
         "wrong_character_message": "Crane's desk is drowning in paperwork — and the center drawer is LOCKED. Locked drawers are Daphne's favorite genre.",
         "action_triggers": [
@@ -1186,10 +1186,10 @@
       {
         "id": "shaggy_snacks",
         "label": "Globe Bar",
-        "x": 53.5,
-        "y": 66.5,
-        "w": 9.5,
-        "h": 23.5,
+        "x": 52.9,
+        "y": 66.1,
+        "w": 10.5,
+        "h": 23.9,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A fancy globe that's secretly a snack bar. Detecting hidden snacks is a joint Shaggy & Scooby operation.",
         "action_triggers": [
@@ -1224,9 +1224,9 @@
         "label": "Manager's Office",
         "zone": {
           "x": 0,
-          "y": 9,
-          "w": 6.5,
-          "h": 62
+          "y": 8,
+          "w": 6.1,
+          "h": 71.1
         }
       }
     ],
@@ -1234,10 +1234,10 @@
       {
         "id": "george_tied",
         "label": "The Tied-Up Stranger",
-        "x": 56,
-        "y": 34,
-        "w": 16,
-        "h": 44,
+        "x": 48.9,
+        "y": 30.9,
+        "w": 20.7,
+        "h": 53.3,
         "required_item": "box_cutter",
         "consume_item": true,
         "hidden_if_flags": [
@@ -1263,10 +1263,10 @@
       {
         "id": "george_freed_npc",
         "label": "George Palm III",
-        "x": 56,
-        "y": 34,
-        "w": 16,
-        "h": 44,
+        "x": 48.9,
+        "y": 30.9,
+        "w": 20.7,
+        "h": 53.3,
         "visible_if_flags": [
           "george_freed"
         ],
@@ -1284,10 +1284,10 @@
       {
         "id": "workbench_megaphone",
         "label": "Rigged Megaphone",
-        "x": 10,
-        "y": 52,
-        "w": 12,
-        "h": 16,
+        "x": 10.9,
+        "y": 51.4,
+        "w": 9.2,
+        "h": 14.2,
         "hidden_if_flags": [
           "got_megaphone"
         ],
@@ -1314,10 +1314,10 @@
       {
         "id": "costume_rack",
         "label": "Costume Rack",
-        "x": 76,
-        "y": 26,
-        "w": 18,
-        "h": 44,
+        "x": 75.8,
+        "y": 26.9,
+        "w": 18.6,
+        "h": 51,
         "required_character": "Daphne",
         "wrong_character_message": "A rack of half-finished phantom sheets. Only one of us can read a hem line like a police report — get Daphne on the walkie.",
         "action_triggers": [
@@ -1339,10 +1339,10 @@
       {
         "id": "sewing_machine",
         "label": "Sewing Machine",
-        "x": 30,
-        "y": 56,
-        "w": 12,
-        "h": 16,
+        "x": 29.1,
+        "y": 55.3,
+        "w": 14.3,
+        "h": 28.8,
         "required_character": "Velma",
         "wrong_character_message": "A pedal sewing machine mid-project. Reverse-engineering machinery is Velma's happy place.",
         "action_triggers": [
@@ -1364,10 +1364,10 @@
       {
         "id": "fred_trunk",
         "label": "Steamer Trunk",
-        "x": 81.3,
-        "y": 78.2,
-        "w": 13.7,
-        "h": 16.9,
+        "x": 80.5,
+        "y": 78.1,
+        "w": 15.2,
+        "h": 18.1,
         "required_character": "Fred",
         "hidden_if_flags": [
           "fred_opened_trunk"
@@ -1396,10 +1396,10 @@
       {
         "id": "shaggy_tray",
         "label": "Room-Service Tray",
-        "x": 45,
+        "x": 44.4,
         "y": 84.5,
-        "w": 9.5,
-        "h": 8.9,
+        "w": 10.6,
+        "h": 9.6,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A room-service tray under a silver dome. Investigating unattended food is the founding charter of Shaggy & Scooby Incorporated.",
         "action_triggers": [
@@ -1433,10 +1433,10 @@
         "target": "grounds",
         "label": "Resort Grounds",
         "zone": {
-          "x": 40.7,
-          "y": 82.4,
-          "w": 18.5,
-          "h": 17
+          "x": 40.1,
+          "y": 81.2,
+          "w": 19.8,
+          "h": 18.8
         }
       }
     ],
@@ -1444,10 +1444,10 @@
       {
         "id": "shed_grate",
         "label": "Floor Grate (something glints below)",
-        "x": 40,
-        "y": 62,
-        "w": 20,
-        "h": 20,
+        "x": 40.1,
+        "y": 66.7,
+        "w": 19.8,
+        "h": 14.4,
         "visible_if_flags": [],
         "hidden_if_flags": [
           "got_janitor_key"
@@ -1478,10 +1478,10 @@
       {
         "id": "crank_pegboard",
         "label": "Pegboard — Crank Handle",
-        "x": 66,
-        "y": 26,
-        "w": 12,
-        "h": 22,
+        "x": 67,
+        "y": 28,
+        "w": 9,
+        "h": 16,
         "hidden_if_flags": [
           "got_crank"
         ],
@@ -1508,10 +1508,10 @@
       {
         "id": "chalk_outlines",
         "label": "Chalk Tool Outlines",
-        "x": 8,
-        "y": 40,
-        "w": 22,
-        "h": 13,
+        "x": 9.1,
+        "y": 39.8,
+        "w": 18.7,
+        "h": 13.2,
         "required_character": "Velma",
         "wrong_character_message": "Gus chalked an outline for every tool on this wall. Deducing what's MISSING — and why — is textbook Velma.",
         "action_triggers": [
@@ -1533,10 +1533,10 @@
       {
         "id": "fred_bench",
         "label": "Heavy Workbench",
-        "x": 7.5,
-        "y": 53.2,
-        "w": 23.3,
-        "h": 15.3,
+        "x": 6.9,
+        "y": 53.1,
+        "w": 24.5,
+        "h": 16.6,
         "required_character": "Fred",
         "wrong_character_message": "The workbench is bolted down... no, wait — just unbelievably HEAVY. Heavy is Fred's entire category.",
         "action_triggers": [
@@ -1558,10 +1558,10 @@
       {
         "id": "daphne_toolbox",
         "label": "Padlocked Toolbox",
-        "x": 67,
-        "y": 71.5,
-        "w": 10.8,
-        "h": 12,
+        "x": 66.6,
+        "y": 71,
+        "w": 11.5,
+        "h": 12.6,
         "required_character": "Daphne",
         "hidden_if_flags": [
           "got_magnet"
@@ -1590,10 +1590,10 @@
       {
         "id": "shaggy_sacks",
         "label": "Potting-Soil Sacks",
-        "x": 6,
-        "y": 71,
-        "w": 14.5,
-        "h": 19.5,
+        "x": 5.2,
+        "y": 69.8,
+        "w": 15.9,
+        "h": 23.6,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "Lumpy burlap sacks of potting soil. Poking suspicious lumps is a job for the gang's two professional lump-pokers.",
         "action_triggers": [
@@ -1615,10 +1615,10 @@
       {
         "id": "marco_maintenance",
         "label": "Marco (Maintenance)",
-        "x": 79,
-        "y": 66.9,
-        "w": 8.5,
-        "h": 27.6,
+        "x": 79.1,
+        "y": 66,
+        "w": 8.8,
+        "h": 27.7,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1656,10 +1656,10 @@
         "target": "grounds",
         "label": "Resort Grounds",
         "zone": {
-          "x": 44,
-          "y": 30,
-          "w": 11,
-          "h": 34
+          "x": 44.4,
+          "y": 31.8,
+          "w": 9.4,
+          "h": 39.3
         }
       }
     ],
@@ -1667,10 +1667,10 @@
       {
         "id": "shears_planter",
         "label": "Planter Bench",
-        "x": 55,
-        "y": 55,
-        "w": 16,
-        "h": 18,
+        "x": 54,
+        "y": 54.2,
+        "w": 18.6,
+        "h": 24,
         "hidden_if_flags": [
           "got_shears"
         ],
@@ -1698,9 +1698,9 @@
         "id": "broken_pot",
         "label": "Shattered Pot",
         "x": 20,
-        "y": 62,
-        "w": 14,
-        "h": 16,
+        "y": 65.6,
+        "w": 13.4,
+        "h": 13.1,
         "required_character": "Velma",
         "wrong_character_message": "A shattered pot dusted with faintly glowing residue. Sample-swabbing is strictly a Velma operation.",
         "action_triggers": [
@@ -1722,10 +1722,10 @@
       {
         "id": "phantom_topiary",
         "label": "Suspicious Topiary",
-        "x": 74,
-        "y": 24,
-        "w": 16,
-        "h": 40,
+        "x": 74.9,
+        "y": 23.8,
+        "w": 17.1,
+        "h": 53.6,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1740,10 +1740,10 @@
       {
         "id": "dig_spot",
         "label": "Freshly Turned Soil",
-        "x": 63.5,
-        "y": 79.5,
-        "w": 12,
-        "h": 10.5,
+        "x": 63,
+        "y": 78.4,
+        "w": 12.8,
+        "h": 11.6,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "A mound of freshly turned soil. Digging in questionable dirt is a certified two-expert job: one Shaggy, one Scooby.",
         "action_triggers": [
@@ -1765,10 +1765,10 @@
       {
         "id": "fred_planter",
         "label": "Tipped Stone Urn",
-        "x": 25.5,
-        "y": 80,
-        "w": 12,
-        "h": 12,
+        "x": 25,
+        "y": 79.2,
+        "w": 10.9,
+        "h": 14.3,
         "required_character": "Fred",
         "wrong_character_message": "A tipped stone urn the size of Scooby. Righting furniture-adjacent boulders: that's a Fred call.",
         "action_triggers": [
@@ -1790,10 +1790,10 @@
       {
         "id": "daphne_thread",
         "label": "Snagged Thread",
-        "x": 0.5,
-        "y": 32,
-        "w": 6.5,
-        "h": 10,
+        "x": 0.6,
+        "y": 31.3,
+        "w": 3.5,
+        "h": 11.1,
         "required_character": "Daphne",
         "wrong_character_message": "Something glints on the thorny vine by the west frame. Daphne notices details like that before the rest of us notice the greenhouse.",
         "action_triggers": [
@@ -1815,10 +1815,10 @@
       {
         "id": "tomas_groundskeeper",
         "label": "Tomás (Groundskeeper)",
-        "x": 9.3,
-        "y": 51,
-        "w": 10.5,
-        "h": 31,
+        "x": 8.8,
+        "y": 50.7,
+        "w": 11.1,
+        "h": 29.9,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1866,10 +1866,10 @@
       {
         "id": "vending_machine",
         "label": "Old Vending Machine",
-        "x": 64,
-        "y": 30,
-        "w": 14,
-        "h": 46,
+        "x": 64.1,
+        "y": 30.6,
+        "w": 13.8,
+        "h": 46.7,
         "required_character": "Shaggy_Scooby",
         "hidden_if_flags": [
           "shook_vending"
@@ -1902,10 +1902,10 @@
       {
         "id": "lifeguard_log",
         "label": "Lifeguard Logbook",
-        "x": 10,
-        "y": 50,
-        "w": 16,
-        "h": 16,
+        "x": 27.7,
+        "y": 63.4,
+        "w": 5.6,
+        "h": 8.3,
         "required_character": "Velma",
         "wrong_character_message": "A mildewed logbook chained to the lifeguard stand. Water-damaged shorthand — Velma's department.",
         "action_triggers": [
@@ -1927,10 +1927,10 @@
       {
         "id": "towel_cubbies",
         "label": "Towel Cubbies",
-        "x": 34,
-        "y": 36,
-        "w": 14,
-        "h": 30,
+        "x": 33.5,
+        "y": 34.9,
+        "w": 15.1,
+        "h": 32.7,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -1945,10 +1945,10 @@
       {
         "id": "staff_locker",
         "label": "Padlocked Staff Cabinet",
-        "x": 79.5,
-        "y": 84.9,
-        "w": 6,
-        "h": 14,
+        "x": 78.9,
+        "y": 84,
+        "w": 7.1,
+        "h": 16,
         "required_character": "Daphne",
         "wrong_character_message": "A padlocked STAFF cabinet built into the tiki bar. Rusty padlock, no key in sight — in other words, a Daphne problem.",
         "action_triggers": [
@@ -1970,10 +1970,10 @@
       {
         "id": "fred_chair",
         "label": "Broken Lifeguard Stand",
-        "x": 15,
-        "y": 34.5,
-        "w": 7.5,
-        "h": 15,
+        "x": 13.4,
+        "y": 34.2,
+        "w": 14.1,
+        "h": 34.3,
         "required_character": "Fred",
         "wrong_character_message": "The lifeguard stand lists like a sinking ship — one leg snapped clean off. Sounds like a Fred-sized fix.",
         "action_triggers": [
@@ -1995,10 +1995,10 @@
       {
         "id": "rosa_maid",
         "label": "Rosa (Housekeeping)",
-        "x": 51.8,
-        "y": 52.8,
-        "w": 6.2,
-        "h": 25.2,
+        "x": 51.5,
+        "y": 52.2,
+        "w": 6.7,
+        "h": 26.3,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -2036,10 +2036,10 @@
         "target": "grounds",
         "label": "Grounds (ladder up)",
         "zone": {
-          "x": 77,
-          "y": 8,
-          "w": 7,
-          "h": 43
+          "x": 78.3,
+          "y": 4.4,
+          "w": 7.6,
+          "h": 49.3
         }
       },
       {
@@ -2049,10 +2049,10 @@
         "locked_by_flag": "boiler_door_open",
         "locked_message": "The steel BOILER door is barred from the far side. The phantom clearly has his own way through... maybe you can fish that bar loose somehow.",
         "zone": {
-          "x": 85,
-          "y": 32.5,
-          "w": 12,
-          "h": 36.5
+          "x": 86,
+          "y": 31.6,
+          "w": 11.4,
+          "h": 38
         },
         "zone_hidden_until_unlocked": true
       }
@@ -2061,10 +2061,10 @@
       {
         "id": "maintenance_log",
         "label": "Maintenance Log",
-        "x": 12,
-        "y": 46,
-        "w": 14,
-        "h": 18,
+        "x": 15.7,
+        "y": 45.6,
+        "w": 7.1,
+        "h": 17.5,
         "required_character": "Velma",
         "wrong_character_message": "A clipboard of pump readings and angry pencil. Technical scribbles — Velma will want this.",
         "action_triggers": [
@@ -2086,10 +2086,10 @@
       {
         "id": "lumo_stash",
         "label": "Tarp-Covered Stash",
-        "x": 70,
-        "y": 52,
-        "w": 16,
-        "h": 22,
+        "x": 68.8,
+        "y": 53.8,
+        "w": 17.1,
+        "h": 23.1,
         "action_triggers": [
           {
             "type": "play_sfx",
@@ -2104,10 +2104,10 @@
       {
         "id": "fred_valve",
         "label": "Main Pump Valve",
-        "x": 58.5,
-        "y": 49.5,
-        "w": 6.8,
-        "h": 11.5,
+        "x": 57.9,
+        "y": 49.1,
+        "w": 7.3,
+        "h": 12.9,
         "required_character": "Fred",
         "required_item": "crank_handle",
         "hidden_if_flags": [
@@ -2134,10 +2134,10 @@
       {
         "id": "daphne_panel",
         "label": "Locked Breaker Cabinet",
-        "x": 29.2,
-        "y": 33.2,
-        "w": 6,
-        "h": 12.6,
+        "x": 28.8,
+        "y": 32.4,
+        "w": 6.7,
+        "h": 14.3,
         "required_character": "Daphne",
         "hidden_if_flags": [
           "daphne_opened_panel"
@@ -2162,10 +2162,10 @@
       {
         "id": "notched_bricks",
         "label": "Oddly New Brickwork",
-        "x": 30,
-        "y": 62,
-        "w": 9,
-        "h": 12,
+        "x": 29.8,
+        "y": 59.8,
+        "w": 9.5,
+        "h": 10.5,
         "required_item": "marked_map",
         "hidden_if_flags": [
           "found_phantom_kit"
@@ -2190,10 +2190,10 @@
       {
         "id": "tunnel_map_spot",
         "label": "Map Pinned to a Beam",
-        "x": 44,
-        "y": 58,
-        "w": 10,
-        "h": 12,
+        "x": 44.5,
+        "y": 58.5,
+        "w": 8,
+        "h": 10.5,
         "hidden_if_flags": [
           "got_tunnel_map"
         ],
@@ -2220,10 +2220,10 @@
       {
         "id": "sealed_boiler_door",
         "label": "Steel Door — 'BOILER'",
-        "x": 84,
-        "y": 34,
-        "w": 6,
-        "h": 32,
+        "x": 86,
+        "y": 31.6,
+        "w": 11.4,
+        "h": 38,
         "required_item": "magnet_line",
         "consume_item": true,
         "hidden_if_flags": [
@@ -2249,10 +2249,10 @@
       {
         "id": "glow_trail",
         "label": "Glowing Footprints",
-        "x": 65,
-        "y": 75,
-        "w": 20,
-        "h": 15,
+        "x": 53.9,
+        "y": 77,
+        "w": 30.4,
+        "h": 18.9,
         "required_character": "Shaggy_Scooby",
         "wrong_character_message": "Glowing footprints track through the dust. Telling FRESH spooky paint from old spooky paint calls for a world-class nose — Scooby's, specifically.",
         "action_triggers": [
@@ -2274,10 +2274,10 @@
       {
         "id": "palm_ghost",
         "label": "A Silvery Gentleman",
-        "x": 19.75,
-        "y": 64.2,
-        "w": 9.25,
-        "h": 30.9,
+        "x": 20.4,
+        "y": 63.2,
+        "w": 8.7,
+        "h": 29,
         "action_triggers": [
           {
             "type": "play_sfx",

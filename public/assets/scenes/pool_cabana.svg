@@ -223,7 +223,7 @@
 <circle cx="724" cy="536" r="3" fill="#2c2115"/>
 <path d="M724 512 v21" stroke="#8f8a7c" stroke-width="1" opacity="0.4"/>
 <path d="M547 330 V580" stroke="#9db8cc" stroke-width="2" opacity="0.22"/>
-<!-- ===== LIFEGUARD STAND + chained LOGBOOK : hotspot 160-416 x 450-594 ===== -->
+<!-- ===== LIFEGUARD STAND (stand bbox 224-430 x 318-607) + chained LOGBOOK lying on deck (453-523 x 580-635) ===== -->
 <ellipse cx="300" cy="606" rx="120" ry="13" fill="#000" opacity="0.34"/>
 <path d="M252 592 L286 432" stroke="#6e766c" stroke-width="10"/>
 <path d="M334 432 L348 500 L342 512 L352 504 L356 522" stroke="#6e766c" stroke-width="9" fill="none"/>
@@ -249,9 +249,10 @@
 <rect x="295" y="359" width="12" height="6" fill="#c04a4a"/>
 <path d="M262 336 l32 54" stroke="#8a927f" stroke-width="2" opacity="0.5"/>
 </g>
-<path d="M340 430 q12 34 6 68" stroke="#8f959c" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
-<circle cx="344" cy="452" r="2.5" fill="#8f959c"/><circle cx="348" cy="478" r="2.5" fill="#8f959c"/>
-<g transform="rotate(-7 350 522)">
+<path d="M340 430 Q354 500 362 588 Q404 602 452 596" stroke="#8f959c" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+<circle cx="346" cy="470" r="2.5" fill="#8f959c"/><circle cx="357" cy="544" r="2.5" fill="#8f959c"/><circle cx="404" cy="598" r="2.5" fill="#8f959c"/>
+<ellipse cx="488" cy="634" rx="42" ry="7" fill="#000" opacity="0.28"/>
+<g transform="translate(137 86) rotate(-7 350 522)">
 <rect x="320" y="500" width="62" height="44" rx="4" fill="#3e5570" stroke="#26364a" stroke-width="3"/>
 <ellipse cx="333" cy="512" rx="10" ry="6" fill="#5c7a5c" opacity="0.6"/>
 <ellipse cx="368" cy="534" rx="7" ry="4" fill="#5c7a5c" opacity="0.5"/>
