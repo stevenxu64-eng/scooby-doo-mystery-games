@@ -44,9 +44,13 @@ export interface GameState {
   lastCameo: { id: number; x: number; y: number; character: CharacterId } | null
   /** Velma's Case Notes: every clue, pickup, and key event in discovery order (persisted). */
   caseLog: CaseLogEntry[]
+  /** How many case-log entries the player has reviewed — the header badge counts the rest. */
+  caseSeen: number
 
   /** Append deduped entries to Velma's Case Notes. */
   logCase: (drafts: Array<Omit<CaseLogEntry, 'id'>>) => void
+  /** Player opened the notes — everything logged so far counts as reviewed. */
+  markCaseSeen: () => void
   hasFlag: (flag: string) => boolean
   hasAllFlags: (flags?: string[]) => boolean
   isHotspotVisible: (h: Hotspot) => boolean
@@ -78,6 +82,7 @@ const initialState = {
   actionPulse: 0,
   lastCameo: null as { id: number; x: number; y: number; character: CharacterId } | null,
   caseLog: [] as CaseLogEntry[],
+  caseSeen: 0,
 }
 
 export const useGameStore = create<GameState>()(
@@ -96,6 +101,8 @@ export const useGameStore = create<GameState>()(
       }
     })
   },
+
+  markCaseSeen: () => set((s) => (s.caseSeen === s.caseLog.length ? {} : { caseSeen: s.caseLog.length })),
 
   hasFlag: (flag) => !!get().gameFlags[flag],
 
@@ -371,6 +378,7 @@ export const useGameStore = create<GameState>()(
         activeCharacter: s.activeCharacter,
         introSeen: s.introSeen,
         caseLog: s.caseLog,
+        caseSeen: s.caseSeen,
         // A solved case stays solved across reloads (until Play Again).
         gameWon: s.gameWon,
       }),
@@ -390,7 +398,9 @@ export const useGameStore = create<GameState>()(
           }
           caseLog = drafts
         }
-        return { ...current, ...p, caseLog, message: SCENES[p.activeRoom].description }
+        // Older saves have no seen-count (or one from a longer, item-padded log) — clamp it.
+        const caseSeen = Math.min(p.caseSeen ?? 0, caseLog.length)
+        return { ...current, ...p, caseLog, caseSeen, message: SCENES[p.activeRoom].description }
       },
     },
   ),

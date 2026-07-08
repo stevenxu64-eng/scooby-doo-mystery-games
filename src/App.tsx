@@ -31,8 +31,16 @@ export default function App() {
   const introSeen = useGameStore((s) => s.introSeen)
   const completeIntro = useGameStore((s) => s.completeIntro)
   const caseCount = useGameStore((s) => s.caseLog.length)
+  const caseSeen = useGameStore((s) => s.caseSeen)
+  const markCaseSeen = useGameStore((s) => s.markCaseSeen)
   const [muted, setMuted] = useState(false)
   const [notebookOpen, setNotebookOpen] = useState(false)
+
+  // The badge counts only NEW notes; reviewing the list clears it.
+  const caseUnread = Math.max(0, caseCount - caseSeen)
+  useEffect(() => {
+    if (notebookOpen) markCaseSeen()
+  }, [notebookOpen, caseCount, markCaseSeen])
 
   useEffect(() => {
     attachAudioUnlock()
@@ -84,9 +92,9 @@ export default function App() {
             className={`kenney-btn relative p-2 ${notebookOpen ? 'bg-amber-800 text-amber-200' : 'bg-stone-800 text-amber-300'}`}
           >
             <NotebookText size={18} />
-            {caseCount > 0 && (
+            {caseUnread > 0 && (
               <span className="absolute -right-1.5 -top-1.5 rounded-full bg-amber-400 px-1.5 text-[9px] font-bold leading-4 text-stone-900">
-                {caseCount}
+                {caseUnread}
               </span>
             )}
           </button>
