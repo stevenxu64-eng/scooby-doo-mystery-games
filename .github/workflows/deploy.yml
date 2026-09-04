@@ -26,6 +26,7 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
       - run: npm ci
       - run: npm ci --prefix spooky-museum
+      - run: npm ci --prefix fft-save-editor
       - run: npm run build:site
       - uses: actions/configure-pages@v5
         with:

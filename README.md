@@ -3,8 +3,10 @@
 A first-person, screen-by-screen point-and-click mystery in the style of the classic
 Nancy Drew PC games — built with React 19, Vite, Tailwind CSS v4, Zustand, and lucide-react.
 
-This repo holds **two games**: this one at the root, and
-[spooky-museum/](spooky-museum/) (an isometric stealth escape room).
+This repo holds **two games** and one tool: this game at the root,
+[spooky-museum/](spooky-museum/) (an isometric stealth escape room), and
+[fft-save-editor/](fft-save-editor/) (a browser-based save editor for *FINAL FANTASY TACTICS –
+The Ivalice Chronicles* that gives your party every piece of equipment; see its README).
 
 ```bash
 npm install
@@ -16,13 +18,15 @@ npm run build:site  # build BOTH games + launcher into dist-site/ (see Hosting)
 ## Hosting the website
 
 `npm run build:site` assembles a fully static site in `dist-site/`
-(install deps in both projects first: `npm install && npm install --prefix spooky-museum`):
+(install deps in all three projects first:
+`npm install && npm install --prefix spooky-museum && npm install --prefix fft-save-editor`):
 
 ```
 dist-site/
 ├── index.html   # launcher landing page linking both episodes
 ├── resort/      # Episode 1 — this game
-└── museum/      # Episode 2 — the isometric museum game
+├── museum/      # Episode 2 — the isometric museum game
+└── fft-save-editor/  # FFT: The Ivalice Chronicles save editor
 ```
 
 Upload the **contents of `dist-site/`** to any static host — no server code, no

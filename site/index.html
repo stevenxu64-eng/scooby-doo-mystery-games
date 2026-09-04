@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scooby-Doo Mystery Games</title>
-  <meta name="description" content="Two fan-made Scooby-Doo browser games: a point-and-click mystery and an isometric stealth escape room." />
+  <meta name="description" content="Two fan-made Scooby-Doo browser games plus a browser-based save editor for FFT: The Ivalice Chronicles." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👻</text></svg>" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,6 +45,7 @@
     .card .art { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 84px; }
     .card.resort .art { background: linear-gradient(180deg, #3b2f4f 0%, #6d4c2f 80%); }
     .card.museum .art { background: linear-gradient(180deg, #14324b 0%, #14532d 80%); }
+    .card.fft .art { background: linear-gradient(180deg, #3b2a12 0%, #1f1a3a 80%); }
     .card .body { padding: 18px 20px 22px; }
     .badge {
       display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.1em;
@@ -52,6 +53,7 @@
     }
     .resort .badge { background: #713f12; color: #fde68a; }
     .museum .badge { background: #14532d; color: #bbf7d0; }
+    .fft .badge { background: #78350f; color: #fde68a; }
     .card h2 { font-size: 20px; color: #fcd34d; letter-spacing: 0.04em; margin-bottom: 8px; }
     .card p { font-size: 14px; line-height: 1.55; color: #d6d3d1; }
     .card .controls { margin-top: 12px; font-size: 12px; color: #78716c; line-height: 1.5; }
@@ -98,11 +100,25 @@
         <span class="play">Play Episode 2</span>
       </div>
     </a>
+
+    <a class="card fft" href="fft-save-editor/">
+      <div class="art">⚔️</div>
+      <div class="body">
+        <span class="badge">Tool · Save Editor</span>
+        <h2>FFT: The Ivalice Chronicles Save Editor</h2>
+        <p>Give your party every weapon, shield, helm, armor and accessory in <em>FINAL FANTASY
+           TACTICS – The Ivalice Chronicles</em> (Steam / Steam Deck). Drop in <code>enhanced.png</code>,
+           pick a slot, download the patched save. Nothing is uploaded.</p>
+        <div class="controls">Back up your save folder first · turn off Steam Cloud for the game</div>
+        <span class="play">Open the editor</span>
+      </div>
+    </a>
   </div>
 
   <footer>
     Fan-made, non-commercial prototypes built for fun. Scooby-Doo and all related characters are
-    trademarks of Warner Bros. Entertainment Inc. All game code, art, and audio here are original.
+    trademarks of Warner Bros. Entertainment Inc. FINAL FANTASY TACTICS is a trademark of Square Enix.
+    All game code, art, and audio here are original.
   </footer>
 </body>
 </html>

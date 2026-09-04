@@ -1,0 +1,6 @@
+node_modules
+dist
+*.local
+# keep fixtures/*.png tracked (real-save test fixture); ignore scratch copies
+fixtures/*.bak
+fixtures/*.patched.png
