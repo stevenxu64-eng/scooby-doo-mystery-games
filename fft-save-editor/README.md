@@ -7,6 +7,8 @@ pick a slot, download the patched file, copy it back.
 
 Nothing is uploaded anywhere; the whole pipeline runs in the browser tab.
 
+Picking this up as a maintainer rather than a player? Start with [HANDOFF.md](HANDOFF.md).
+
 ```bash
 npm install
 npm run dev     # http://localhost:5175
